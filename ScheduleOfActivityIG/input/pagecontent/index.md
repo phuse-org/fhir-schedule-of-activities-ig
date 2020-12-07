@@ -1,3 +1,10 @@
-# ScheduleOfActivityIG
+### Background
 
-Feel free to modify this index page with your own awesome content!
+Schedule of Activities Project
+
+![Resource Hierarchy](./FHIR.png)
+
+
+
+
+
