@@ -1,5 +1,7 @@
-Profile:        SOAPlanDefinition
+Profile:        SOAProtocolPlanDefinition
 Parent:         PlanDefinition
-Id:             SOA-plan-definition
-Title:          "SOA Plan Defintion"
-Description:    "An example of the plan definition for the study."
+Id:             SOA-protocol-plan-definition
+Title:          "SOA Protocol Plan Defintion"
+Description:    "A profile on the plan definition resource to define the events in a protocol."
+* type = http://terminology.hl7.org/CodeSystem/plan-definition-type#clinical-protocol "Clinical Protocol"
+* action.definitionCanonical = Canonical(SOAEPOCHDefinition|1.0.1)
