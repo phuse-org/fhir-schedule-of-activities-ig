@@ -23,3 +23,7 @@
     $ cd ScheduleOfActivityIG
     $ ./_genonce.sh
     ```
+
+## Visual Studio Code Support
+1. Install `vscode-language-fsh` and call the file with an extension `.fsh`
+
