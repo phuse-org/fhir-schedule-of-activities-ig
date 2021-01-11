@@ -5,7 +5,7 @@ Parent:         PlanDefinition
 Id:             SOA-epoch-definition
 Title:          "SOA Epoch Defintion"
 Description:    "An example of a study epoch definition for the study."
-* ^status = #deprecated
+* ^status = #draft
 * extension contains SOAEpochType named epochType 0..1 MS
 
 ValueSet:  SOAEpochTypes
