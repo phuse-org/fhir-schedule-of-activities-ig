@@ -1,5 +1,8 @@
 # Setup
 
+## Tutorials:
+* [https://fshschool.org/](https://fshschool.org/)
+
 ## Installation Instructions (Mac OSX)
 1. Install Sushi
     ```
