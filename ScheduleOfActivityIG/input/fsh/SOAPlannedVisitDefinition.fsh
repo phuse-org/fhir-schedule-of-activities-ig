@@ -12,7 +12,7 @@ Description:    "An example of a planned visit definition for the study."
 Extension: PlannedStudyDay
 Id: planned-visit-study-day
 Title: "Planned Study Day of Visit"
-Description: "Planned Study Day of Visit"
+Description: "Planned Study Day of Visit, such as Day -21, Day 1, Day 52"
 * value[x] only integer
 
 Extension: PlannedStudyWindow
