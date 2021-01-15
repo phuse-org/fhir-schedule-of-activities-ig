@@ -1,4 +1,4 @@
-Alias: NCIT = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+Alias: NCIT = http://ncimeta.nci.nih.gov
 
 Profile:        SOAEpochDefinition
 Parent:         PlanDefinition
@@ -12,19 +12,20 @@ ValueSet:  SOAEpochTypes
 Id: soa-epoch-epochtype-value-set
 Title: "Epoch Type Value Set"
 Description: "Set of permitted values for Epoch"
-* NCIT#C125938 "BASELINE"
-* NCIT#C101526 "BLINDED TREATMENT"
-* NCIT#C16032 "LONG-TERM FOLLOW-UP"
-* NCIT#C123453 "INDUCTION TREATMENT"
-* NCIT#C123452 "CONTINUATION TREATMENT"
-* NCIT#C98779 "RUN-IN"
-* NCIT#C48262 "SCREENING"
-* NCIT#C101526 "TREATMENT"
-* NCIT#C99158 "FOLLOW-UP"
-* NCIT#C165873 "OBSERVATION"
-* NCIT#C102255 "BLINDED TREATMENT"
-* NCIT#C102256 "OPEN LABEL TREATMENT"
-* NCIT#C42872 "WASHOUT"
+* include codes from system NCIT where concept is-a #C99079
+// * NCIT#C125938 "BASELINE"
+// * NCIT#C101526 "BLINDED TREATMENT"
+// * NCIT#C16032 "LONG-TERM FOLLOW-UP"
+// * NCIT#C123453 "INDUCTION TREATMENT"
+// * NCIT#C123452 "CONTINUATION TREATMENT"
+// * NCIT#C98779 "RUN-IN"
+// * NCIT#C48262 "SCREENING"
+// * NCIT#C101526 "TREATMENT"
+// * NCIT#C99158 "FOLLOW-UP"
+// * NCIT#C165873 "OBSERVATION"
+// * NCIT#C102255 "BLINDED TREATMENT"
+// * NCIT#C102256 "OPEN LABEL TREATMENT"
+// * NCIT#C42872 "WASHOUT"
 
 Extension: SOAEpochType
 Id: soa-epoch-epochtype
