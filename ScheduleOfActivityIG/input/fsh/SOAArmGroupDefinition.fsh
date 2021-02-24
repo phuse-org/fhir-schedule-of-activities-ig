@@ -38,6 +38,7 @@ Instance: LZZT-Research-Study
 InstanceOf: ResearchStudy
 Title: "H2Q-MC-LZZT"
 Description: "Study"
+Usage: #example
 * status = #active
 
 

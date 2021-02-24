@@ -16,13 +16,14 @@ Title: "Study Milestone"
 Extension: SOAStudyMilestone
 Id: soa-study-activity-milestne
 Title: "Study Milestone"
-Description: "Categorization of Epoch Type"
+Description: "Categorization of Study Milestone"
 * value[x] only CodeableConcept
 * valueCodeableConcept from StudyMilestoneValueset
 
 Instance: SubjectRandomizationDate
 InstanceOf: SOAStudyActivityDefinition
 Title: "Subject Randomization"
+Usage: #example
 * status = #active
 * extension[studyMilestone].valueCodeableConcept = NCIT#C114209 "Subject is Randomized"
 * extension[studyMilestone][1].valueCodeableConcept = NCIT#C161417 "Subject Entered Into Trial"
