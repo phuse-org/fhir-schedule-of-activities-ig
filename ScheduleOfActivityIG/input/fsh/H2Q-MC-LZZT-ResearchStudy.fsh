@@ -6,10 +6,28 @@ InstanceOf: Organization
 Title: "Eli Lilly and Company"
 * identifier[0].value = "Eli Lilly and Company"
 * identifier[0].use = #official
+* type = #crs
+
+Instance: SamGetWell
+InstanceOf: Practitioner
+Title: "Samuel Home, M.D."
+* identifier[0].value = "ABC123"
+* identifier[0].type = #UPIN
+* identifier[0].use = #official
+* active = true
+* name[0].use = #usual
+* name[0].family = "Home"
+* name[0].given = "Samuel"
+* name[0].prefix = "Dr"
+* name[0].suffix[0] = "M.D."
+* gender = #male
+* telecom.value = "555-123-5467"
+* telecom.system = #phone
+* telecom.use = #work
 
 Instance: H2Q-MC-LZZT-ResearchStudy
 InstanceOf: ResearchStudy
-Title: "Sample ResearchStudy Resource for H2Q-MC-LZZT"
+Title: "H2Q-MC-LZZT Research Study"
 Usage: #example
 * identifier[0].use = #usual
 * identifier[0].value = "H2Q-MC-LZZT" 
@@ -20,7 +38,7 @@ Usage: #example
 * identifier[2].type = #PLAC
 * identifier[2].value = "NCTA12313212"
 * title = "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease"
-* protocol = Reference(LZZT-Study-Definition)
+* protocol[PlanDefinition] = Reference(LZZT-Study-Definition)
 * status = #completed
 * primaryPurposeType = #treatment
 * phase = #phase-3
@@ -47,5 +65,5 @@ The primary objectives of this study are:
 * To document the safety profile of the xanomeline TTS.
 """
 * sponsor[Organization] = Reference(EliLillyAndCompany)
-
+* principalInvestigator[Practitioner] = Reference(SamGetWell)
 
