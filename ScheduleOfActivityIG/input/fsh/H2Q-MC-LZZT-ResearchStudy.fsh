@@ -98,4 +98,3 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
 * objective[=].type = #secondary
 * objective[+].name = "To assess the treatment response as a function of Apo E genotype."
 * objective[=].type = #secondary
-
