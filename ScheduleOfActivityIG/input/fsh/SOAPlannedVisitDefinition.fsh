@@ -12,7 +12,7 @@ Description:    "An example of a planned visit definition for the study."
 Extension: PlannedStudyDay
 Id: planned-visit-study-day
 Title: "Planned Study Day of Visit"
-Description: "Planned Study Day of Visit"
+Description: "Planned Study Day of Visit, such as Day -21, Day 1, Day 52"
 * value[x] only integer
 
 Extension: PlannedStudyWindow
@@ -37,6 +37,7 @@ Description: "OID for Study Event in Design"
 Instance: Visit1
 InstanceOf: SOAPlannedVisitDefinition
 Title: "Screening - Day -21"
+Description: "Screening Visit - Day -21"
 Usage: #example
 * status = #active
 * extension[studyEventOID].valueString = "VISIT1"
@@ -47,6 +48,7 @@ Usage: #example
 Instance: Visit2
 InstanceOf: SOAPlannedVisitDefinition
 Title: "Screening - Day -1"
+Description: "Screening Visit - Day -1"
 Usage: #example
 * status = #active
 * extension[studyEventOID].valueString =  "VISIT2"
@@ -55,6 +57,7 @@ Usage: #example
 Instance: Visit3
 InstanceOf: SOAPlannedVisitDefinition
 Title: "Treatment - Day 1"
+Description: "Treatment Visit - Day 1"
 Usage: #example
 * status = #active
 * extension[plannedStudyDay].valueInteger = 1

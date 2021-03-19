@@ -11,6 +11,7 @@ Instance: LZZT-Study-Definition
 InstanceOf: SOAStudyDefinition
 Title: "Study Definition for H2Q-MC-LZZT"
 Description: "Study"
+Usage: #example
 * version = "1.0"
 * status = #active
 
