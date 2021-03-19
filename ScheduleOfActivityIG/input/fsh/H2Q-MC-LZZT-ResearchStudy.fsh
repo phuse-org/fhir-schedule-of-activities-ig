@@ -1,5 +1,11 @@
 Alias: NCIT = http://ncimeta.nci.nih.gov
 Alias: SCT = http://snomed.info/sct
+// TODO: Fix this
+Alias: MEDDRA = http://snomed.info/sct
+// TODO: Fix this
+Alias: ICD10 = http://snomed.info/sct
+// TODO: Fix this
+Alias: MESH = http://purl.bioontology.org/ontology/MESH/
 
 Instance: EliLillyAndCompany
 InstanceOf: Organization
@@ -50,20 +56,45 @@ Usage: #example
 * focus[0] = NCIT#C152926 "Xanomeline"
 * focus[1] = NCIT#C149996 "Transdermal Patch Dosage Form"
 * condition[0] = SCT#26929004 "Alzheimer's Disease (Disorder)"
+* condition[1] = ICD10#G30 "Alzheimer's disease"
+* condition[2] = MEDDRA#10001896 "Alzheimer's disease"
 // TODO: Contact should include an address and URL
 * contact[0].name = "Bob James, Ph.D."
 * contact[0].telecom.value = "555-555-5555"
 * contact[0].telecom.system = #phone
 * contact[0].telecom.use = #work
-// * relatedArtifact[0]
-// * keyword[0].
-// * location[0]
-* description = """
-# Primary Objectives
-The primary objectives of this study are:
-* To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog (see Attachment LZZT.2) and CIBIC+ (see Attachment LZZT.3) scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).
-* To document the safety profile of the xanomeline TTS.
+* relatedArtifact[+].type = #documentation
+* relatedArtifact[=].label = "Protocol H2Q-MC-LZZT(c)"
+* relatedArtifact[=].url = "https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"
+* keyword[+].text = "Selective M1 muscarinic agonists"
+* keyword[=].coding[+] = MESH#D018721
+//* location[+] =   
+* description = """# Xanomeline (LY246708)
+# Protocol H2Q-MC-LZZT(c) 
+Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease
 """
+// TODO: Collaborator also?
 * sponsor[Organization] = Reference(EliLillyAndCompany)
 * principalInvestigator[Practitioner] = Reference(SamGetWell)
-
+//* reasonStopped = #accrual-goal-met 
+* arm[+].name = "Placebo"
+* arm[=].type = NCIT#C49648
+* arm[=].description = "Placebo arm"
+* arm[+].name = "Low-dose xanomeline arm"
+* arm[=].type = NCIT#C174266
+* arm[=].description = "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"
+* arm[+].name = "High-dose xanomeline arm"
+* arm[=].type = NCIT#C174266
+* arm[=].description = "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
+* objective[+].name = "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
+* objective[=].type = #primary
+* objective[+].name = "To document the safety profile of the xanomeline TTS."
+* objective[=].type = #primary
+* objective[+].name = "To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas."
+* objective[=].type = #secondary
+* objective[+].name = "To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas."
+* objective[=].type = #secondary
+* objective[+].name = "To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment."
+* objective[=].type = #secondary
+* objective[+].name = "To assess the treatment response as a function of Apo E genotype."
+* objective[=].type = #secondary
