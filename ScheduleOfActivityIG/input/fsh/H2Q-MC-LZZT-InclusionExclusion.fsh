@@ -9,9 +9,7 @@ Usage: #example
 
 * characteristic[+].code = #inclusion
 * characteristic[=].valueCodeableConcept = #Inc01
-* characteristic[=].valueReference = Reference()
 * characteristic[=].exclude = false
-
 
 * characteristic[+].code = #inclusion
 * characteristic[=].valueCodeableConcept = #Inc02
