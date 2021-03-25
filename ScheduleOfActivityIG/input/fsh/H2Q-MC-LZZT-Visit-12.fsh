@@ -1,0 +1,32 @@
+Instance: H2Q-MC-LZZT-Study-Visit-12
+InstanceOf: SOAPlanDefinition
+Usage: #example
+Title: "Visit-12"
+Description: "Planned Visit [Visit-12]"
+* identifier[+].value = "VISIT-12"
+* extension[plannedStudyDay].valueInteger = 168
+* status = #active
+* action[+].title = "Visit"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
+* action[+].title = "Vital signs/Temperature "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+* action[+].title = "ECG "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ECG"
+* action[+].title = "Concomitant Medications "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+* action[+].title = "Laboratory (Chem/Hemat)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"
+* action[+].title = "Laboratory (Urinalysis) "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"
+* action[+].title = "Study drug record "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+* action[+].title = "ADAS-Cog "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+* action[+].title = "CIBIC+ "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+* action[+].title = "DAD "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-DAD"
+* action[+].title = "NPI-X "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+* action[+].title = "Adverse events "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
