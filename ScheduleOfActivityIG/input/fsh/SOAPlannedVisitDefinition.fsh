@@ -28,7 +28,7 @@ Description: "Planned Study Offset of Visit"
 * value[x] only Quantity
 
 Extension: StudyDesignOID
-Id: planned-visit-study-oid
+Id: study-event-oid
 Title: "Study Event OID"
 Description: "OID for Study Event in Design"
 * value[x] only string
