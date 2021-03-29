@@ -2,6 +2,7 @@ Alias: NCIT = http://ncimeta.nci.nih.gov
 Alias: SCT = http://snomed.info/sct
 Alias: PUBMED = https://pubmed.ncbi.nlm.nih.gov
 Alias: PUBCHEM = https://pubchem.ncbi.nlm.nih.gov
+Alias: MESH = https://id.nlm.nih.gov/mesh
 
 
 Instance: EliLillyAndCompany
@@ -53,7 +54,11 @@ Usage: #example
 * relatedArtifact[0].label = "Arch Neurol.1997;54(4):465-473"
 * relatedArtifact[0].display = "Arch Neurol.1997;54(4):465-473"
 * relatedArtifact[0].citation = "Bodick NC, Offen WW, Levey AI, et al. Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease. Arch Neurol. 1997;54(4):465-473. doi:10.1001/archneur.1997.00550160091022"
-// * keyword[0].
+// keywords
+* keyword[+].coding[+] = MESH#D018721
+* keyword[=].text = "Selective M1 muscarinic agonists"
+* keyword[+].coding[+] = MESH#D000544
+* keyword[=].text = "Alzheimer Disease"
 // * location[0]
 * description = """
 # Primary Objectives
