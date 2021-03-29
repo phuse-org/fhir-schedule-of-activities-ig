@@ -3,6 +3,18 @@ Alias: SCT = http://snomed.info/sct
 Alias: PUBMED = https://pubmed.ncbi.nlm.nih.gov
 Alias: PUBCHEM = https://pubchem.ncbi.nlm.nih.gov
 
+
+Instance: EliLillyAndCompany
+InstanceOf: Organization
+Title: "Eli Lilly and Company"
+* identifier[0].value = "Eli Lilly and Company"
+* identifier[0].use = #official
+* contact[+].purpose = #ADMIN
+* contact[=].telecom[+].system = #url
+* contact[=].telecom[=].value = "https://www.lilly.com"
+* type = #crs
+
+
 Instance: H2Q-MC-LZZT-ResearchStudy
 InstanceOf: ResearchStudy
 Title: "H2Q-MC-LZZT Research Study"
@@ -14,10 +26,10 @@ Usage: #example
 * identifier[1].system = "https://clinicaltrials.gov/show/"
 * identifier[2].use = #secondary
 * identifier[2].type = #PLAC
+// TODO: Update this when applicable
 * identifier[2].value = "NCTA12313212"
 * identifier[3].type = #PUBCHEM
 * identifier[3].value = "60809"
-
 * title = "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease"
 * protocol[PlanDefinition] = Reference(H2Q-MC-LZZT-ProtocolDesign)
 * status = #completed
@@ -51,3 +63,4 @@ The primary objectives of this study are:
 """
 // * inclusion/exclusion criteria
 * enrollment = Reference(H2Q-MC-LZZT-InclusionExclusion)
+* sponsor[Organization] = Reference(EliLillyAndCompany)
