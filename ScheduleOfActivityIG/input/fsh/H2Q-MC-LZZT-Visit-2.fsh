@@ -8,7 +8,8 @@ Description: "Planned Visit [Visit-2]"
 * identifier[=].use = #usual
 * identifier[+].value = "SE.AMB_ECG_VISIT"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
-* identifier[=].type = #PLAC
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
 * extension[plannedStudyDay].valueInteger = 0
 * status = #active
