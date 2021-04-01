@@ -14,4 +14,5 @@ package "H2Q-MC-LZZT" {
     [H2Q-MC-LZZT Planned Activities] <- [PlannedActivity(PlanDefinition | ActivityDefinition)]
     [H2Q-MC-LZZT Visits] ..> [H2Q-MC-LZZT Planned Activities]: refers
 }
+
 @enduml
