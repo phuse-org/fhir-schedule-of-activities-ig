@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "id": "soa-arm-status-valueset",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://ncimeta.nci.nih.gov\"><code>http://ncimeta.nci.nih.gov</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C49069</td><td>Open</td></tr><tr><td>C49070</td><td>Closed</td></tr></table></li></ul></div>"
+  },
+  "url": "http://example.org/br-and-r/soa/ValueSet/soa-arm-status-valueset",
+  "version": "0.1.0",
+  "name": "ArmStatusValueSet",
+  "title": "Arm Status Value Set",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00",
+  "description": "Set of permitted values for Arm status",
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncimeta.nci.nih.gov",
+        "concept": [
+          {
+            "code": "C49069",
+            "display": "Open"
+          },
+          {
+            "code": "C49070",
+            "display": "Closed"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "H2Q-MC-LZZT-Study-RT-15",
+  "meta": {
+    "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 0</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-RT-15</code></p><p><b>identifier</b>: id: RT-15</p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p><blockquote><p><b>action</b></p><p><b>title</b>: RT</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-RT</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 0
+    }
+  ],
+  "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-RT-15",
+  "identifier": [
+    {
+      "value": "RT-15"
+    }
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00",
+  "action": [
+    {
+      "title": "RT",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-RT"
+    },
+    {
+      "title": "Vital signs/Temperature ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+    },
+    {
+      "title": "Concomitant Medications ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+    },
+    {
+      "title": "ADAS-Cog ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+    },
+    {
+      "title": "CIBIC+ ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+    },
+    {
+      "title": "DAD ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+    },
+    {
+      "title": "NPI-X ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+    },
+    {
+      "title": "Adverse events ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+    }
+  ]
+}

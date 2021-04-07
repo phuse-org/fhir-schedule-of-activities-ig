@@ -1,0 +1,168 @@
+{
+  "package": "fhir.example.brandr.soa",
+  "version": "0.1.0",
+  "fhirVersion": "4.0.1",
+  "extensions": [
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-arm-ResearchStudy",
+      "title": "ResearchStudy Arm",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "title": "Planned Study Day of Visit",
+      "types": [
+        "integer"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-offset",
+      "title": "Planned Study Offset of Visit",
+      "types": [
+        "Quantity"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-windows",
+      "title": "Planned Study Window of Visit",
+      "types": [
+        "Range"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/plannedStudyDayWindow",
+      "title": "Planned Study Day Window",
+      "types": [
+        "Range"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/soa-arm-status",
+      "title": "Arm Status",
+      "types": [
+        "CodeableConcept",
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/soa-epoch-epochtype",
+      "title": "Epoch Type",
+      "types": [
+        "CodeableConcept",
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/soa-study-activity-milestne",
+      "title": "Study Milestone",
+      "types": [
+        "CodeableConcept",
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/study-event-oid",
+      "title": "Study Event OID",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/unplanned-visit-study-window",
+      "title": "Unplanned Study Visit Range",
+      "types": [
+        "Range"
+      ]
+    }
+  ],
+  "profiles": {
+    "Group": [
+      {
+        "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition",
+        "title": "SOA Arm Definition"
+      }
+    ],
+    "PlanDefinition": [
+      {
+        "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-visit-plan-definition",
+        "title": "SOA Visit Plan Defintion"
+      }
+    ],
+    "ActivityDefinition": [
+      {
+        "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-unplanned-visit-definition",
+        "title": "SOA Unplanned Visit Definition"
+      }
+    ],
+    "ResearchSubject": [
+      {
+        "url": "http://example.org/br-and-r/soa/StructureDefinition/Soa-Subject",
+        "title": "SOA Subject"
+      }
+    ]
+  },
+  "usage": {
+    "http://example.org/br-and-r/soa/StructureDefinition/SOA-arm-ResearchStudy": [
+      "Group"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day": [
+      "ActivityDefinition",
+      "PlanDefinition"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-windows": [
+      "ActivityDefinition",
+      "PlanDefinition"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/plannedStudyDayWindow": [
+      "PlanDefinition"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/soa-arm-status": [
+      "Group"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/soa-epoch-epochtype": [
+      "PlanDefinition"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/soa-study-activity-milestne": [
+      "ActivityDefinition"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/study-event-oid": [
+      "ActivityDefinition",
+      "PlanDefinition"
+    ],
+    "http://example.org/br-and-r/soa/StructureDefinition/unplanned-visit-study-window": [
+      "ActivityDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-category": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ]
+  }
+}

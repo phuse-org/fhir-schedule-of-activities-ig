@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="SOA-study-activity-milestone-valueset"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include codes from <a href="http://ncimeta.nci.nih.gov"><code>http://ncimeta.nci.nih.gov</code></a> where concept  is-a  C114118</li></ul></div>
+  </text>
+  <url value="http://example.org/br-and-r/soa/ValueSet/SOA-study-activity-milestone-valueset"/>
+  <version value="0.1.0"/>
+  <name value="StudyMilestoneValueset"/>
+  <title value="Study Milestone"/>
+  <status value="active"/>
+  <date value="2021-04-07T18:53:00+00:00"/>
+  <compose>
+    <include>
+      <system value="http://ncimeta.nci.nih.gov"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="C114118"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

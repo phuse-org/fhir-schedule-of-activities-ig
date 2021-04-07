@@ -1,0 +1,140 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "H2Q-MC-LZZT-Study-Visit-1",
+  "meta": {
+    "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: -14</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-1</code></p><p><b>identifier</b>: PLAC: VISIT-1 (USUAL), OID: SE.SCREENING_VISIT (SECONDARY)</p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p><blockquote><p><b>action</b></p><p><b>title</b>: Visit</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Informed Consent </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Informed-Consent</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Patient number assigned </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Hachinski 4 </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Hachinski-4</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: MMSE 10-23 </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Physical examination </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Physical-examination</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Medical History </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Medical-History</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Habits </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Habits</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Chest x-ray </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Placebo TTS test </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CT Scan</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CT-Scan</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Hemoglobin A1C </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": -14
+    }
+  ],
+  "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-1",
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "code": "PLAC"
+          }
+        ]
+      },
+      "value": "VISIT-1"
+    },
+    {
+      "use": "secondary",
+      "type": {
+        "coding": [
+          {
+            "system": "http://www.cdisc.org/ns/odm/v1.3#",
+            "display": "OID"
+          }
+        ],
+        "text": "OID"
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.SCREENING_VISIT"
+    }
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00",
+  "action": [
+    {
+      "title": "Visit",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit"
+    },
+    {
+      "title": "Informed Consent ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"
+    },
+    {
+      "title": "Patient number assigned ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned"
+    },
+    {
+      "title": "Hachinski 4 ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Hachinski-4"
+    },
+    {
+      "title": "MMSE 10-23 ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23"
+    },
+    {
+      "title": "Physical examination ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Physical-examination"
+    },
+    {
+      "title": "Medical History ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Medical-History"
+    },
+    {
+      "title": "Habits ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Habits"
+    },
+    {
+      "title": "Chest x-ray ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray"
+    },
+    {
+      "title": "Vital signs/Temperature ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+    },
+    {
+      "title": "ECG ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+    },
+    {
+      "title": "Placebo TTS test ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test"
+    },
+    {
+      "title": "CT Scan",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CT-Scan"
+    },
+    {
+      "title": "Concomitant Medications ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+    },
+    {
+      "title": "Laboratory (Chem/Hemat)",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"
+    },
+    {
+      "title": "Laboratory (Urinalysis) ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"
+    },
+    {
+      "title": "Hemoglobin A1C ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C"
+    },
+    {
+      "title": "ADAS-Cog ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+    },
+    {
+      "title": "CIBIC+ ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+    },
+    {
+      "title": "DAD ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+    },
+    {
+      "title": "NPI-X ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+    },
+    {
+      "title": "Adverse events ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+    }
+  ]
+}

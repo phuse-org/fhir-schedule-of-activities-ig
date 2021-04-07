@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Group/H2Q-MC-LZZT-ResearchStudy-Inclusion> a fhir:Group;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-ResearchStudy-Inclusion"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>type</b>: person</p><p><b>actual</b>: false</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Males and postmenopausal females at least 50 years of age.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Diagnosis of probable AD as defined by National Institute of Neurological and Communicative Disorders and Stroke (NINCDS) and the Alzheimer’s Disease and Related Disorders Association (ADRDA) guidelines</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">MMSE score of 10 to 23.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Hachinski Ischemic Scale score of ≤4</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">CNS imaging (CT scan or MRI of brain) compatible with AD within past 1 year.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Investigator has obtained informed consent signed by the patient (and/or legal representative) and by the caregiver.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Geographic proximity to investigator’s site that allows adequate follow-up.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A reliable caregiver who is in frequent or daily contact with the patient and who will accompany the patient to the office and/or be available by telephone at designated times, will monitor administration of prescribed medications, and will be responsible for the overall care of the patient at home. The caregiver and the patient must be able to communicate in English and willing to comply with 26 weeks of transdermal therapy.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote></div>"
+  ];
+  fhir:Group.type [ fhir:value "person"];
+  fhir:Group.actual [ fhir:value "false"^^xsd:boolean];
+  fhir:Group.characteristic [
+     fhir:index 0;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Males and postmenopausal females at least 50 years of age." ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 1;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Diagnosis of probable AD as defined by National Institute of Neurological and Communicative Disorders and Stroke (NINCDS) and the Alzheimer’s Disease and Related Disorders Association (ADRDA) guidelines" ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 2;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "MMSE score of 10 to 23." ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 3;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Hachinski Ischemic Scale score of ≤4" ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 4;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "CNS imaging (CT scan or MRI of brain) compatible with AD within past 1 year." ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 5;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Investigator has obtained informed consent signed by the patient (and/or legal representative) and by the caregiver." ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 6;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "Geographic proximity to investigator’s site that allows adequate follow-up." ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 7;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.text [ fhir:value "A reliable caregiver who is in frequent or daily contact with the patient and who will accompany the patient to the office and/or be available by telephone at designated times, will monitor administration of prescribed medications, and will be responsible for the overall care of the patient at home. The caregiver and the patient must be able to communicate in English and willing to comply with 26 weeks of transdermal therapy." ]
+     ];
+     fhir:Group.characteristic.valueBoolean [ fhir:value "true"^^xsd:boolean ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Group/H2Q-MC-LZZT-ResearchStudy-Inclusion.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

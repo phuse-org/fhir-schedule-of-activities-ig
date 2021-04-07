@@ -1,0 +1,86 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "H2Q-MC-LZZT-Study-Visit-9",
+  "meta": {
+    "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 84</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-9</code></p><p><b>identifier</b>: id: VISIT-9</p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p><blockquote><p><b>action</b></p><p><b>title</b>: Visit</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: TTS Acceptability Survey</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 84
+    }
+  ],
+  "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-9",
+  "identifier": [
+    {
+      "value": "VISIT-9"
+    }
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00",
+  "action": [
+    {
+      "title": "Visit",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit"
+    },
+    {
+      "title": "Vital signs/Temperature ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+    },
+    {
+      "title": "ECG ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+    },
+    {
+      "title": "Concomitant Medications ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+    },
+    {
+      "title": "Laboratory (Chem/Hemat)",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"
+    },
+    {
+      "title": "Laboratory (Urinalysis) ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"
+    },
+    {
+      "title": "Plasma Specimen ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+    },
+    {
+      "title": "Study drug record ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+    },
+    {
+      "title": "TTS Acceptability Survey",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"
+    },
+    {
+      "title": "ADAS-Cog ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+    },
+    {
+      "title": "CIBIC+ ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+    },
+    {
+      "title": "DAD ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+    },
+    {
+      "title": "NPI-X ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+    },
+    {
+      "title": "Adverse events ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "Visit1",
+  "meta": {
+    "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Study Event OID</b>: VISIT1</p><p><b>Planned Study Day of Visit</b>: -21</p><p><b>Planned Study Window of Visit</b>: -22--20</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/Visit1</code></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/study-event-oid",
+      "valueString": "VISIT1"
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": -21
+    },
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-windows",
+      "valueRange": {
+        "low": {
+          "value": -22
+        },
+        "high": {
+          "value": -20
+        }
+      }
+    }
+  ],
+  "url": "http://example.org/br-and-r/soa/ActivityDefinition/Visit1",
+  "version": "0.1.0",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00"
+}

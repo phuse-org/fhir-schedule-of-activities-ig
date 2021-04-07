@@ -1,0 +1,12 @@
+{
+  "url": "http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa",
+  "name": "ScheduleOfActivityIG",
+  "package-id": "fhir.example.brandr.soa",
+  "ig-ver": "0.1.0",
+  "date": "Wed, 07 Apr, 2021 18:53:00 +0000",
+  "errs": 62,
+  "warnings": 335,
+  "hints": 21,
+  "version": "4.0.1",
+  "tool": "4.5.0 (3)"
+}

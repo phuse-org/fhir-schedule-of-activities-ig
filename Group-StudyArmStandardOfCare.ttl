@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Group/StudyArmStandardOfCare> a fhir:Group;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "StudyArmStandardOfCare"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition";
+       fhir:index 0;
+       fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>ResearchStudy Arm</b>: <a href=\"ResearchStudy-LZZT-Research-Study.html\">Generated Summary: status: active</a></p><p><b>Arm Status</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C49069}\">Open</span></p><p><b>type</b>: person</p><p><b>actual</b>: true</p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://example.org/br-and-r/soa/StructureDefinition/SOA-arm-ResearchStudy" ];
+     fhir:Extension.valueReference [
+       fhir:link <http://example.org/br-and-r/soa/ResearchStudy/LZZT-Research-Study>;
+       fhir:Reference.reference [ fhir:value "ResearchStudy/LZZT-Research-Study" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://example.org/br-and-r/soa/StructureDefinition/soa-arm-status" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+         fhir:Coding.code [ fhir:value "C49069" ];
+         fhir:Coding.display [ fhir:value "Open" ]
+       ]
+     ]
+  ];
+  fhir:Group.type [ fhir:value "person"];
+  fhir:Group.actual [ fhir:value "true"^^xsd:boolean] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Group/StudyArmStandardOfCare.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

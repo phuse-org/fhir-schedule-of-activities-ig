@@ -1,0 +1,23 @@
+{
+  "resourceType": "Organization",
+  "id": "EliLillyAndCompany",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title=\"Codes: \">crs</span></p></div>"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "value": "Eli Lilly and Company"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "crs"
+        }
+      ]
+    }
+  ]
+}

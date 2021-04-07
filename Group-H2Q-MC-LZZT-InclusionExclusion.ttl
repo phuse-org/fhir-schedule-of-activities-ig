@@ -1,0 +1,617 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Group/H2Q-MC-LZZT-InclusionExclusion> a fhir:Group;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-InclusionExclusion"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion";
+       fhir:index 0;
+       fhir:link <http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>type</b>: person</p><p><b>actual</b>: true</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc01</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc02</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc03</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc04</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc05</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc06</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc07</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc08</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc01</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc02</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc03</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc04</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc05</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc06</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc07</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc08</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc08</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc10</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc11</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc12</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc13</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc14</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc15</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc16</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc17</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc18</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc19</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc20</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc21</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc22</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc23</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc24</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc25</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc26</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc27</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc28</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc29</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc30</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc31</span></p><p><b>exclude</b>: true</p></blockquote></div>"
+  ];
+  fhir:Group.type [ fhir:value "person"];
+  fhir:Group.actual [ fhir:value "true"^^xsd:boolean];
+  fhir:Group.characteristic [
+     fhir:index 0;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc01" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 1;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc02" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 2;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc03" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 3;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc04" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 4;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc05" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 5;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc06" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 6;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc07" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 7;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "inclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Inc08" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 8;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc01" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 9;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc02" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 10;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc03" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 11;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc04" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 12;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc05" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 13;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc06" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 14;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc07" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 15;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc08" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 16;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc08" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 17;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc10" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 18;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc11" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 19;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc12" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 20;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc13" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 21;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc14" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 22;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc15" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 23;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc16" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 24;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc17" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 25;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc18" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 26;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc19" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 27;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc20" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 28;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc21" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 29;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc22" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 30;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc23" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 31;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc24" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 32;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc25" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 33;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc26" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 34;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc27" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 35;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc28" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 36;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc29" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 37;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc30" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 38;
+     fhir:Group.characteristic.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "exclusion" ]
+       ]
+     ];
+     fhir:Group.characteristic.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "Exc31" ]
+       ]
+     ];
+     fhir:Group.characteristic.exclude [ fhir:value "true"^^xsd:boolean ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Group/H2Q-MC-LZZT-InclusionExclusion.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,15 @@
+{
+  "resourceType": "ObservationDefinition",
+  "id": "H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title=\"Codes: \">observationCode</span></p></div>"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "observationCode"
+      }
+    ]
+  }
+}

@@ -1,0 +1,680 @@
+{
+  "resourceType": "Group",
+  "id": "H2Q-MC-LZZT-InclusionExclusion",
+  "meta": {
+    "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>type</b>: person</p><p><b>actual</b>: true</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc01</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc02</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc03</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc04</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc05</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc06</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc07</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">inclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Inc08</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc01</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc02</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc03</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc04</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc05</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc06</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc07</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc08</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc08</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc10</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc11</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc12</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc13</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc14</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc15</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc16</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc17</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc18</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc19</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc20</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc21</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc22</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc23</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc24</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc25</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc26</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc27</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc28</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc29</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc30</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">exclusion</span></p><p><b>value</b>: <span title=\"Codes: \">Exc31</span></p><p><b>exclude</b>: true</p></blockquote></div>"
+  },
+  "type": "person",
+  "actual": true,
+  "characteristic": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc01"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc02"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc03"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc04"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc05"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc06"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc07"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "inclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Inc08"
+          }
+        ]
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc01"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc02"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc03"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc04"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc05"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc06"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc07"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc08"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc08"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc10"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc11"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc12"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc13"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc14"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc15"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc16"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc17"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc18"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc19"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc20"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc21"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc22"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc23"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc24"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc25"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc26"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc27"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc28"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc29"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc30"
+          }
+        ]
+      },
+      "exclude": true
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "exclusion"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Exc31"
+          }
+        ]
+      },
+      "exclude": true
+    }
+  ]
+}

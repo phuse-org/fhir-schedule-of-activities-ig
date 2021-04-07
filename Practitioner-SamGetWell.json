@@ -1,0 +1,45 @@
+{
+  "resourceType": "Practitioner",
+  "id": "SamGetWell",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: UPIN: ABC123 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Samuel Home </p><p><b>telecom</b>: ph: 555-123-5467(WORK)</p><p><b>gender</b>: male</p></div>"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "type": {
+        "coding": [
+          {
+            "code": "UPIN"
+          }
+        ]
+      },
+      "value": "ABC123"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "usual",
+      "family": "Home",
+      "given": [
+        "Samuel"
+      ],
+      "prefix": [
+        "Dr"
+      ],
+      "suffix": [
+        "M.D."
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "555-123-5467",
+      "use": "work"
+    }
+  ],
+  "gender": "male"
+}

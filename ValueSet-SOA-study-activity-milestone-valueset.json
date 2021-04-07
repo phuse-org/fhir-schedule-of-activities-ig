@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "id": "SOA-study-activity-milestone-valueset",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include codes from <a href=\"http://ncimeta.nci.nih.gov\"><code>http://ncimeta.nci.nih.gov</code></a> where concept  is-a  C114118</li></ul></div>"
+  },
+  "url": "http://example.org/br-and-r/soa/ValueSet/SOA-study-activity-milestone-valueset",
+  "version": "0.1.0",
+  "name": "StudyMilestoneValueset",
+  "title": "Study Milestone",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00",
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncimeta.nci.nih.gov",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "C114118"
+          }
+        ]
+      }
+    ]
+  }
+}

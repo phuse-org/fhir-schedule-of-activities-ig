@@ -1,0 +1,513 @@
+[
+  {
+    "id": "DIABP",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/DIABP",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-ADAS-Cog",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Adverse-events",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Adverse-events",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Ambulatory-ECG-placed",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Ambulatory-ECG-removed",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Apo-E-genotyping",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-CIBIC",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-CIBIC",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-CT-Scan",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-CT-Scan",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Chest-x-ray",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Concomitant-Medications",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-DAD",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-DAD",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-ECG",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-ECG",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Habits",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Hachinski-4",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Hachinski-4",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Hemoglobin-A1C",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Informed-Consent",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Informed-Consent",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Laboratory-Chem-Hemat",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Laboratory-Urinalysis",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-MMSE-10-23",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Medical-History",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Medical-History",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Medications-dispensed",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Medications-dispensed",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Medications-returned",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Medications-returned",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-NPI-X",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-NPI-X",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Patient-number-assigned",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Patient-randomized",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Patient-randomized",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Physical-examination",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Physical-examination",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Placebo-TTS-test",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Plasma-Specimen",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-drug-record",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Study-drug-record",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-TTS-Acceptability-Survey",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Vital-signs-Temperature",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature",
+    "version": "0.1.0"
+  },
+  {
+    "id": "PULSE",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/PULSE",
+    "version": "0.1.0"
+  },
+  {
+    "id": "SYSBP",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/SYSBP",
+    "version": "0.1.0"
+  },
+  {
+    "id": "SubjectRandomizationDate",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/SubjectRandomizationDate",
+    "version": "0.1.0"
+  },
+  {
+    "id": "Visit1",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/Visit1",
+    "version": "0.1.0"
+  },
+  {
+    "id": "Visit2",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/Visit2",
+    "version": "0.1.0"
+  },
+  {
+    "id": "Visit3",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/Visit3",
+    "version": "0.1.0"
+  },
+  {
+    "id": "fhir.example.brandr.soa",
+    "type": "ImplementationGuide",
+    "url": "http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa",
+    "version": "0.1.0",
+    "name": "ScheduleOfActivityIG"
+  },
+  {
+    "id": "H2Q-MC-LZZT-ProtocolDesign",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-ProtocolDesign",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-ET-14",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-ET-14",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-RT-15",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-RT-15",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-1",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-1",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-10",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-10",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-11",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-11",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-12",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-12",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-13",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-13",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-2",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-2",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-3",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-3",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-4",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-4",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-5",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-5",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-6",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-7",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-7",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-8",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-8",
+    "version": "0.1.0"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Study-Visit-9",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-9",
+    "version": "0.1.0"
+  },
+  {
+    "id": "LZZT-Study-Definition",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition",
+    "version": "0.1.0"
+  },
+  {
+    "id": "ScreeningEpoch",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/ScreeningEpoch",
+    "version": "0.1.0"
+  },
+  {
+    "id": "VitalSigns",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/VitalSigns",
+    "version": "0.1.0"
+  },
+  {
+    "id": "ResearchStudy-Inclusion-Exclusion",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion",
+    "version": "0.1.0",
+    "name": "ResearchStudyInclusionExclusion"
+  },
+  {
+    "id": "SOA-PlanDefinition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+    "version": "0.1.0",
+    "name": "SOAPlanDefinition"
+  },
+  {
+    "id": "SOA-arm-ResearchStudy",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-arm-ResearchStudy",
+    "version": "0.1.0",
+    "name": "ArmResearchStudy"
+  },
+  {
+    "id": "SOA-armgroup-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition",
+    "version": "0.1.0",
+    "name": "SOAArmGroupDefinition"
+  },
+  {
+    "id": "SOA-epoch-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition",
+    "version": "0.1.0",
+    "name": "SOAEpochDefinition"
+  },
+  {
+    "id": "SOA-planned-study-activity-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition",
+    "version": "0.1.0",
+    "name": "SOAStudyActivityDefinition"
+  },
+  {
+    "id": "SOA-planned-visit-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition",
+    "version": "0.1.0",
+    "name": "SOAPlannedVisitDefinition"
+  },
+  {
+    "id": "SOA-protocol-plan-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-protocol-plan-definition",
+    "version": "0.1.0",
+    "name": "SOAProtocolPlanDefinition"
+  },
+  {
+    "id": "SOA-study-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition",
+    "version": "0.1.0",
+    "name": "SOAStudyDefinition"
+  },
+  {
+    "id": "SOA-unplanned-visit-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-unplanned-visit-definition",
+    "version": "0.1.0",
+    "name": "SOAUnPlannedVisitDefinition"
+  },
+  {
+    "id": "SOA-visit-plan-definition",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-visit-plan-definition",
+    "version": "0.1.0",
+    "name": "SOAVisitPlanDefinition"
+  },
+  {
+    "id": "Soa-Subject",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/Soa-Subject",
+    "version": "0.1.0",
+    "name": "SOASubject"
+  },
+  {
+    "id": "planned-visit-study-day",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+    "version": "0.1.0",
+    "name": "PlannedStudyDay"
+  },
+  {
+    "id": "planned-visit-study-offset",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-offset",
+    "version": "0.1.0",
+    "name": "PlannedStudyOffset"
+  },
+  {
+    "id": "planned-visit-study-windows",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-windows",
+    "version": "0.1.0",
+    "name": "PlannedStudyWindow"
+  },
+  {
+    "id": "plannedStudyDayWindow",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/plannedStudyDayWindow",
+    "version": "0.1.0",
+    "name": "PlannedStudyDayWindow"
+  },
+  {
+    "id": "soa-arm-status",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/soa-arm-status",
+    "version": "0.1.0",
+    "name": "ArmStatus"
+  },
+  {
+    "id": "soa-epoch-epochtype",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/soa-epoch-epochtype",
+    "version": "0.1.0",
+    "name": "SOAEpochType"
+  },
+  {
+    "id": "soa-study-activity-milestne",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/soa-study-activity-milestne",
+    "version": "0.1.0",
+    "name": "SOAStudyMilestone"
+  },
+  {
+    "id": "study-event-oid",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/study-event-oid",
+    "version": "0.1.0",
+    "name": "StudyDesignOID"
+  },
+  {
+    "id": "unplanned-visit-study-window",
+    "type": "StructureDefinition",
+    "url": "http://example.org/br-and-r/soa/StructureDefinition/unplanned-visit-study-window",
+    "version": "0.1.0",
+    "name": "UnPlannedStudyWindow"
+  },
+  {
+    "id": "SOA-study-activity-milestone-valueset",
+    "type": "ValueSet",
+    "url": "http://example.org/br-and-r/soa/ValueSet/SOA-study-activity-milestone-valueset",
+    "version": "0.1.0",
+    "name": "StudyMilestoneValueset"
+  },
+  {
+    "id": "soa-arm-status-valueset",
+    "type": "ValueSet",
+    "url": "http://example.org/br-and-r/soa/ValueSet/soa-arm-status-valueset",
+    "version": "0.1.0",
+    "name": "ArmStatusValueSet"
+  },
+  {
+    "id": "soa-epoch-epochtype-value-set",
+    "type": "ValueSet",
+    "url": "http://example.org/br-and-r/soa/ValueSet/soa-epoch-epochtype-value-set",
+    "version": "0.1.0",
+    "name": "SOAEpochTypes"
+  }
+]

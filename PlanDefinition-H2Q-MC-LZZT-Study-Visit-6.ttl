@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-Study-Visit-6"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition";
+       fhir:index 0;
+       fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 28</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6</code></p><p><b>identifier</b>: id: VISIT-6</p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p><h3>Actions</h3><table class=\"grid\"><tr><td>-</td><td><b>Title</b></td><td><b>Definition[x]</b></td></tr><tr><td>*</td><td>Visit</td><td><code>ActivityDefinition/H2Q-MC-LZZT-Visit</code></td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day" ];
+     fhir:Extension.valueInteger [ fhir:value "28"^^xsd:integer ]
+  ];
+  fhir:PlanDefinition.url [ fhir:value "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"];
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "VISIT-6" ]
+  ];
+  fhir:PlanDefinition.version [ fhir:value "0.1.0"];
+  fhir:PlanDefinition.status [ fhir:value "active"];
+  fhir:PlanDefinition.date [ fhir:value "2021-04-07T18:53:00+00:00"^^xsd:dateTime];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "Visit" ];
+     fhir:PlanDefinition.action.definitionUri [ fhir:value "ActivityDefinition/H2Q-MC-LZZT-Visit" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

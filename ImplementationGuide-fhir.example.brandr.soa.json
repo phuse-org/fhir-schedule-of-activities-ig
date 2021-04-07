@@ -1,0 +1,1999 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "fhir.example.brandr.soa",
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ScheduleOfActivityIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa</pre></div>"
+  },
+  "url": "http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa",
+  "version": "0.1.0",
+  "name": "ScheduleOfActivityIG",
+  "status": "draft",
+  "date": "2021-04-07T18:53:00+00:00",
+  "packageId": "fhir.example.brandr.soa",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "copyrightyear"
+          },
+          {
+            "url": "value",
+            "valueString": "2020+"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "releaselabel"
+          },
+          {
+            "url": "value",
+            "valueString": "ci-build"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-liquid"
+          },
+          {
+            "url": "value",
+            "valueString": "template/liquid"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-liquid"
+          },
+          {
+            "url": "value",
+            "valueString": "input/liquid"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-qa"
+          },
+          {
+            "url": "value",
+            "valueString": "temp/qa"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-temp"
+          },
+          {
+            "url": "value",
+            "valueString": "temp/pages"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-output"
+          },
+          {
+            "url": "value",
+            "valueString": "output"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-suppressed-warnings"
+          },
+          {
+            "url": "value",
+            "valueString": "input/ignoreWarnings.txt"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-history"
+          },
+          {
+            "url": "value",
+            "valueString": "http://example.org/br-and-r/soa/history.html"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "template-html"
+          },
+          {
+            "url": "value",
+            "valueString": "template-page.html"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "template-md"
+          },
+          {
+            "url": "value",
+            "valueString": "template-page-md.html"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-contact"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-context"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-copyright"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-jurisdiction"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-license"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-publisher"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-version"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "active-tables"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      }
+    ],
+    "resource": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/ResearchStudy-Inclusion-Exclusion"
+        },
+        "name": "Research Study Inclusion Exclusion",
+        "description": "Research Study Inclusion Exclusion Criteria",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-armgroup-definition"
+        },
+        "name": "SOA Arm Definition",
+        "description": "Extension to define a Arm Group for a Research Study",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-epoch-definition"
+        },
+        "name": "SOA Epoch Defintion",
+        "description": "An example of a study epoch definition for the study.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-PlanDefinition"
+        },
+        "name": "SOA PlanDefinition",
+        "description": "Schedule of Activities PlanDefinition Extensions",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-planned-visit-definition"
+        },
+        "name": "SOA Planned Visit Definition",
+        "description": "An example of a planned visit definition for the study.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-protocol-plan-definition"
+        },
+        "name": "SOA Protocol Plan Defintion",
+        "description": "A profile on the plan definition resource to define the events in a protocol.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-planned-study-activity-definition"
+        },
+        "name": "SOA Planned Study Activity Definition",
+        "description": "Planned Study Activity Definition that allows tagging of milestones",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-study-definition"
+        },
+        "name": "SOA Study Defintion",
+        "description": "An example of the plan definition for the study.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/Soa-Subject"
+        },
+        "name": "SOA Subject",
+        "description": "A research subject example.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-unplanned-visit-definition"
+        },
+        "name": "SOA Unplanned Visit Definition",
+        "description": "An example of a unplanned visit definition for the study.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-visit-plan-definition"
+        },
+        "name": "SOA Visit Plan Defintion",
+        "description": "A profile on the plan definition resource to define the planned events for a visit.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/SOA-arm-ResearchStudy"
+        },
+        "name": "ResearchStudy Arm",
+        "description": "Reference to Study for Study Arm",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/soa-arm-status"
+        },
+        "name": "Arm Status",
+        "description": "Set of permitted values for Arm status",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/planned-visit-study-day"
+        },
+        "name": "Planned Study Day of Visit",
+        "description": "Planned Study Day of Visit, such as Day -21, Day 1, Day 52",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/plannedStudyDayWindow"
+        },
+        "name": "Planned Study Day Window",
+        "description": "Planned Study Day Window (Times)",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/planned-visit-study-offset"
+        },
+        "name": "Planned Study Offset of Visit",
+        "description": "Planned Study Offset of Visit",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/planned-visit-study-windows"
+        },
+        "name": "Planned Study Window of Visit",
+        "description": "Planned Study Window of Visit",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/soa-epoch-epochtype"
+        },
+        "name": "Epoch Type",
+        "description": "Categorization of Epoch Type",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/soa-study-activity-milestne"
+        },
+        "name": "Study Milestone",
+        "description": "Categorization of Study Milestone",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/study-event-oid"
+        },
+        "name": "Study Event OID",
+        "description": "OID for Study Event in Design",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/unplanned-visit-study-window"
+        },
+        "name": "Unplanned Study Visit Range",
+        "description": "Unplanned Study Visit Range [Day.min() to Day.max() of SoA]",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/soa-arm-status-valueset"
+        },
+        "name": "Arm Status Value Set",
+        "description": "Set of permitted values for Arm status",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/soa-epoch-epochtype-value-set"
+        },
+        "name": "Epoch Type Value Set",
+        "description": "Set of permitted values for Epoch",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/SOA-study-activity-milestone-valueset"
+        },
+        "name": "Study Milestone",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/DIABP"
+        },
+        "name": "Diastolic Blood Pressure",
+        "description": "Taking Diastolic BP",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Organization"
+          }
+        ],
+        "reference": {
+          "reference": "Organization/EliLillyAndCompany"
+        },
+        "name": "Eli Lilly and Company",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+        },
+        "name": "ADAS-Cog",
+        "description": "Planned Activity [ADAS-Cog]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-ADAS-Cog-Observations"
+        },
+        "name": "ADAS-Cog-Observations",
+        "description": "Planned Observation(s) [ADAS-Cog]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+        },
+        "name": "Adverse events",
+        "description": "Planned Activity [Adverse events]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Adverse-events-Observations"
+        },
+        "name": "Adverse events-Observations",
+        "description": "Planned Observation(s) [Adverse events]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed"
+        },
+        "name": "Ambulatory ECG placed",
+        "description": "Planned Activity [Ambulatory ECG placed]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations"
+        },
+        "name": "Ambulatory ECG placed-Observations",
+        "description": "Planned Observation(s) [Ambulatory ECG placed]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed"
+        },
+        "name": "Ambulatory ECG removed",
+        "description": "Planned Activity [Ambulatory ECG removed]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed-Observations"
+        },
+        "name": "Ambulatory ECG removed-Observations",
+        "description": "Planned Observation(s) [Ambulatory ECG removed]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping"
+        },
+        "name": "Apo E genotyping",
+        "description": "Planned Activity [Apo E genotyping]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Apo-E-genotyping-Observations"
+        },
+        "name": "Apo E genotyping-Observations",
+        "description": "Planned Observation(s) [Apo E genotyping]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-CIBIC"
+        },
+        "name": "CIBIC+",
+        "description": "Planned Activity [CIBIC+]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-CIBIC-Observations"
+        },
+        "name": "CIBIC+-Observations",
+        "description": "Planned Observation(s) [CIBIC+]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-CT-Scan"
+        },
+        "name": "CT Scan",
+        "description": "Planned Activity [CT Scan]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-CT-Scan-Observations"
+        },
+        "name": "CT Scan-Observations",
+        "description": "Planned Observation(s) [CT Scan]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray"
+        },
+        "name": "Chest x-ray",
+        "description": "Planned Activity [Chest x-ray]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Chest-x-ray-Observations"
+        },
+        "name": "Chest x-ray-Observations",
+        "description": "Planned Observation(s) [Chest x-ray]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+        },
+        "name": "Concomitant Medications",
+        "description": "Planned Activity [Concomitant Medications]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Concomitant-Medications-Observations"
+        },
+        "name": "Concomitant Medications-Observations",
+        "description": "Planned Observation(s) [Concomitant Medications]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+        },
+        "name": "DAD",
+        "description": "Planned Activity [DAD]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-DAD-Observations"
+        },
+        "name": "DAD-Observations",
+        "description": "Planned Observation(s) [DAD]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+        },
+        "name": "ECG",
+        "description": "Planned Activity [ECG]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-ECG-Observations"
+        },
+        "name": "ECG-Observations",
+        "description": "Planned Observation(s) [ECG]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Habits"
+        },
+        "name": "Habits",
+        "description": "Planned Activity [Habits]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Habits-Observations"
+        },
+        "name": "Habits-Observations",
+        "description": "Planned Observation(s) [Habits]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Hachinski-4"
+        },
+        "name": "Hachinski 4",
+        "description": "Planned Activity [Hachinski 4]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Hachinski-4-Observations"
+        },
+        "name": "Hachinski 4-Observations",
+        "description": "Planned Observation(s) [Hachinski 4]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C"
+        },
+        "name": "Hemoglobin A1C",
+        "description": "Planned Activity [Hemoglobin A1C]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Hemoglobin-A1C-Observations"
+        },
+        "name": "Hemoglobin A1C-Observations",
+        "description": "Planned Observation(s) [Hemoglobin A1C]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Group"
+          }
+        ],
+        "reference": {
+          "reference": "Group/H2Q-MC-LZZT-InclusionExclusion"
+        },
+        "name": "H2Q-MC-LZZT-InclusionExclusion",
+        "description": "H2Q-MC-LZZT Inclusion Exclusion Criteria",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"
+        },
+        "name": "Informed Consent",
+        "description": "Planned Activity [Informed Consent]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Informed-Consent-Observations"
+        },
+        "name": "Informed Consent-Observations",
+        "description": "Planned Observation(s) [Informed Consent]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat"
+        },
+        "name": "Laboratory (Chem/Hemat)",
+        "description": "Planned Activity [Laboratory (Chem/Hemat)]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations"
+        },
+        "name": "Laboratory (Chem/Hemat)-Observations",
+        "description": "Planned Observation(s) [Laboratory (Chem/Hemat)]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+        },
+        "name": "Laboratory (Urinalysis)",
+        "description": "Planned Activity [Laboratory (Urinalysis)]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis-Observations"
+        },
+        "name": "Laboratory (Urinalysis)-Observations",
+        "description": "Planned Observation(s) [Laboratory (Urinalysis)]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23"
+        },
+        "name": "MMSE 10-23",
+        "description": "Planned Activity [MMSE 10-23]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-MMSE-10-23-Observations"
+        },
+        "name": "MMSE 10-23-Observations",
+        "description": "Planned Observation(s) [MMSE 10-23]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Medical-History"
+        },
+        "name": "Medical History",
+        "description": "Planned Activity [Medical History]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Medical-History-Observations"
+        },
+        "name": "Medical History-Observations",
+        "description": "Planned Observation(s) [Medical History]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Medications-dispensed"
+        },
+        "name": "Medications dispensed",
+        "description": "Planned Activity [Medications dispensed]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Medications-dispensed-Observations"
+        },
+        "name": "Medications dispensed-Observations",
+        "description": "Planned Observation(s) [Medications dispensed]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Medications-returned"
+        },
+        "name": "Medications returned",
+        "description": "Planned Activity [Medications returned]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Medications-returned-Observations"
+        },
+        "name": "Medications returned-Observations",
+        "description": "Planned Observation(s) [Medications returned]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+        },
+        "name": "NPI-X",
+        "description": "Planned Activity [NPI-X]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-NPI-X-Observations"
+        },
+        "name": "NPI-X-Observations",
+        "description": "Planned Observation(s) [NPI-X]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned"
+        },
+        "name": "Patient number assigned",
+        "description": "Planned Activity [Patient number assigned]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Patient-number-assigned-Observations"
+        },
+        "name": "Patient number assigned-Observations",
+        "description": "Planned Observation(s) [Patient number assigned]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Patient-randomized"
+        },
+        "name": "Patient randomized",
+        "description": "Planned Activity [Patient randomized]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Patient-randomized-Observations"
+        },
+        "name": "Patient randomized-Observations",
+        "description": "Planned Observation(s) [Patient randomized]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Physical-examination"
+        },
+        "name": "Physical examination",
+        "description": "Planned Activity [Physical examination]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Physical-examination-Observations"
+        },
+        "name": "Physical examination-Observations",
+        "description": "Planned Observation(s) [Physical examination]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test"
+        },
+        "name": "Placebo TTS test",
+        "description": "Planned Activity [Placebo TTS test]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Placebo-TTS-test-Observations"
+        },
+        "name": "Placebo TTS test-Observations",
+        "description": "Planned Observation(s) [Placebo TTS test]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+        },
+        "name": "Plasma Specimen",
+        "description": "Planned Activity [Plasma Specimen]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Plasma-Specimen-Observations"
+        },
+        "name": "Plasma Specimen-Observations",
+        "description": "Planned Observation(s) [Plasma Specimen]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"
+        },
+        "name": "H2Q-MC-LZZT-ProtocolDesign",
+        "description": "H2Q-MC-LZZT-Protocol Schedule of Activities",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ResearchStudy"
+          }
+        ],
+        "reference": {
+          "reference": "ResearchStudy/H2Q-MC-LZZT-ResearchStudy"
+        },
+        "name": "H2Q-MC-LZZT Research Study",
+        "description": "# Xanomeline (LY246708)\n# Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Group"
+          }
+        ],
+        "reference": {
+          "reference": "Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"
+        },
+        "name": "H2Q-MC-LZZT Research Study Exclusion Criteria",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Group"
+          }
+        ],
+        "reference": {
+          "reference": "Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"
+        },
+        "name": "H2Q-MC-LZZT Research Study Inclusion Criteria",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-ET-14"
+        },
+        "name": "ET-14",
+        "description": "Planned Visit [ET-14]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-RT-15"
+        },
+        "name": "RT-15",
+        "description": "Planned Visit [RT-15]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"
+        },
+        "name": "Visit-1",
+        "description": "Planned Visit [Visit-1]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-10"
+        },
+        "name": "Visit-10",
+        "description": "Planned Visit [Visit-10]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-11"
+        },
+        "name": "Visit-11",
+        "description": "Planned Visit [Visit-11]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-12"
+        },
+        "name": "Visit-12",
+        "description": "Planned Visit [Visit-12]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-13"
+        },
+        "name": "Visit-13",
+        "description": "Planned Visit [Visit-13]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-2"
+        },
+        "name": "Visit-2",
+        "description": "Planned Visit [Visit-2]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-3"
+        },
+        "name": "Visit-3",
+        "description": "Planned Visit [Visit-3]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-4"
+        },
+        "name": "Visit-4",
+        "description": "Planned Visit [Visit-4]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-5"
+        },
+        "name": "Visit-5",
+        "description": "Planned Visit [Visit-5]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"
+        },
+        "name": "Visit-6",
+        "description": "Planned Visit [Visit-6]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-7"
+        },
+        "name": "Visit-7",
+        "description": "Planned Visit [Visit-7]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-8"
+        },
+        "name": "Visit-8",
+        "description": "Planned Visit [Visit-8]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"
+        },
+        "name": "Visit-9",
+        "description": "Planned Visit [Visit-9]",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+        },
+        "name": "Study drug record",
+        "description": "Planned Activity [Study drug record]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Study-drug-record-Observations"
+        },
+        "name": "Study drug record-Observations",
+        "description": "Planned Observation(s) [Study drug record]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"
+        },
+        "name": "TTS Acceptability Survey",
+        "description": "Planned Activity [TTS Acceptability Survey]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations"
+        },
+        "name": "TTS Acceptability Survey-Observations",
+        "description": "Planned Observation(s) [TTS Acceptability Survey]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature"
+        },
+        "name": "Vital signs/Temperature",
+        "description": "Planned Activity [Vital signs/Temperature]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Vital-signs-Temperature-Observations"
+        },
+        "name": "Vital signs/Temperature-Observations",
+        "description": "Planned Observation(s) [Vital signs/Temperature]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ResearchStudy"
+          }
+        ],
+        "reference": {
+          "reference": "ResearchStudy/LZZT-Research-Study"
+        },
+        "name": "H2Q-MC-LZZT",
+        "description": "Study",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/LZZT-Study-Definition"
+        },
+        "name": "Study Definition for H2Q-MC-LZZT",
+        "description": "Study",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/PULSE"
+        },
+        "name": "Pulse",
+        "description": "Taking Pulse",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/SYSBP"
+        },
+        "name": "Systolic Blood Pressure",
+        "description": "Taking Systolic BP",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Practitioner"
+          }
+        ],
+        "reference": {
+          "reference": "Practitioner/SamGetWell"
+        },
+        "name": "Samuel Home, M.D.",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/ScreeningEpoch"
+        },
+        "name": "Screening Visit",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Group"
+          }
+        ],
+        "reference": {
+          "reference": "Group/StudyArmStandardOfCare"
+        },
+        "name": "Arm: Standard of Care",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/SubjectRandomizationDate"
+        },
+        "name": "Subject Randomization",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/Visit1"
+        },
+        "name": "Screening - Day -21",
+        "description": "Screening Visit - Day -21",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/Visit2"
+        },
+        "name": "Screening - Day -1",
+        "description": "Screening Visit - Day -1",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/Visit3"
+        },
+        "name": "Treatment - Day 1",
+        "description": "Treatment Visit - Day 1",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/VitalSigns"
+        },
+        "name": "Vital Signs",
+        "description": "Vital Signs Assessment",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "cdisc-odm.html",
+          "title": "Cdisc Odm",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "deltas.html",
+          "title": "Deltas",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "path-resource",
+        "value": "input/capabilities"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/examples"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/extensions"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/models"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/operations"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/profiles"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/resources"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/vocabulary"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/maps"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/testing"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/history"
+      },
+      {
+        "code": "path-resource",
+        "value": "fsh-generated/resources"
+      },
+      {
+        "code": "path-pages",
+        "value": "template/config"
+      },
+      {
+        "code": "path-pages",
+        "value": "input/images"
+      },
+      {
+        "code": "path-tx-cache",
+        "value": "input-cache/txcache"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="fhir.example.brandr.soa"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>ScheduleOfActivityIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa</pre></div>
+  </text>
+  <url value="http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa"/>
+  <version value="0.1.0"/>
+  <name value="ScheduleOfActivityIG"/>
+  <status value="draft"/>
+  <date value="2021-04-07T18:53:00+00:00"/>
+  <packageId value="fhir.example.brandr.soa"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2020+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://example.org/br-and-r/soa/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ResearchStudy-Inclusion-Exclusion"/>
+      </reference>
+      <name value="Research Study Inclusion Exclusion"/>
+      <description value="Research Study Inclusion Exclusion Criteria"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-armgroup-definition"/>
+      </reference>
+      <name value="SOA Arm Definition"/>
+      <description value="Extension to define a Arm Group for a Research Study"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-epoch-definition"/>
+      </reference>
+      <name value="SOA Epoch Defintion"/>
+      <description value="An example of a study epoch definition for the study."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-PlanDefinition"/>
+      </reference>
+      <name value="SOA PlanDefinition"/>
+      <description value="Schedule of Activities PlanDefinition Extensions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-planned-visit-definition"/>
+      </reference>
+      <name value="SOA Planned Visit Definition"/>
+      <description value="An example of a planned visit definition for the study."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-protocol-plan-definition"/>
+      </reference>
+      <name value="SOA Protocol Plan Defintion"/>
+      <description value="A profile on the plan definition resource to define the events in a protocol."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-planned-study-activity-definition"/>
+      </reference>
+      <name value="SOA Planned Study Activity Definition"/>
+      <description value="Planned Study Activity Definition that allows tagging of milestones"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-study-definition"/>
+      </reference>
+      <name value="SOA Study Defintion"/>
+      <description value="An example of the plan definition for the study."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Soa-Subject"/>
+      </reference>
+      <name value="SOA Subject"/>
+      <description value="A research subject example."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-unplanned-visit-definition"/>
+      </reference>
+      <name value="SOA Unplanned Visit Definition"/>
+      <description value="An example of a unplanned visit definition for the study."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-visit-plan-definition"/>
+      </reference>
+      <name value="SOA Visit Plan Defintion"/>
+      <description value="A profile on the plan definition resource to define the planned events for a visit."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SOA-arm-ResearchStudy"/>
+      </reference>
+      <name value="ResearchStudy Arm"/>
+      <description value="Reference to Study for Study Arm"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/soa-arm-status"/>
+      </reference>
+      <name value="Arm Status"/>
+      <description value="Set of permitted values for Arm status"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/planned-visit-study-day"/>
+      </reference>
+      <name value="Planned Study Day of Visit"/>
+      <description value="Planned Study Day of Visit, such as Day -21, Day 1, Day 52"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/plannedStudyDayWindow"/>
+      </reference>
+      <name value="Planned Study Day Window"/>
+      <description value="Planned Study Day Window (Times)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/planned-visit-study-offset"/>
+      </reference>
+      <name value="Planned Study Offset of Visit"/>
+      <description value="Planned Study Offset of Visit"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/planned-visit-study-windows"/>
+      </reference>
+      <name value="Planned Study Window of Visit"/>
+      <description value="Planned Study Window of Visit"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/soa-epoch-epochtype"/>
+      </reference>
+      <name value="Epoch Type"/>
+      <description value="Categorization of Epoch Type"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/soa-study-activity-milestne"/>
+      </reference>
+      <name value="Study Milestone"/>
+      <description value="Categorization of Study Milestone"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/study-event-oid"/>
+      </reference>
+      <name value="Study Event OID"/>
+      <description value="OID for Study Event in Design"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/unplanned-visit-study-window"/>
+      </reference>
+      <name value="Unplanned Study Visit Range"/>
+      <description value="Unplanned Study Visit Range [Day.min() to Day.max() of SoA]"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/soa-arm-status-valueset"/>
+      </reference>
+      <name value="Arm Status Value Set"/>
+      <description value="Set of permitted values for Arm status"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/soa-epoch-epochtype-value-set"/>
+      </reference>
+      <name value="Epoch Type Value Set"/>
+      <description value="Set of permitted values for Epoch"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/SOA-study-activity-milestone-valueset"/>
+      </reference>
+      <name value="Study Milestone"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/DIABP"/>
+      </reference>
+      <name value="Diastolic Blood Pressure"/>
+      <description value="Taking Diastolic BP"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/EliLillyAndCompany"/>
+      </reference>
+      <name value="Eli Lilly and Company"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+      </reference>
+      <name value="ADAS-Cog"/>
+      <description value="Planned Activity [ADAS-Cog]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-ADAS-Cog-Observations"/>
+      </reference>
+      <name value="ADAS-Cog-Observations"/>
+      <description value="Planned Observation(s) [ADAS-Cog]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+      </reference>
+      <name value="Adverse events"/>
+      <description value="Planned Activity [Adverse events]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Adverse-events-Observations"/>
+      </reference>
+      <name value="Adverse events-Observations"/>
+      <description value="Planned Observation(s) [Adverse events]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed"/>
+      </reference>
+      <name value="Ambulatory ECG placed"/>
+      <description value="Planned Activity [Ambulatory ECG placed]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations"/>
+      </reference>
+      <name value="Ambulatory ECG placed-Observations"/>
+      <description value="Planned Observation(s) [Ambulatory ECG placed]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed"/>
+      </reference>
+      <name value="Ambulatory ECG removed"/>
+      <description value="Planned Activity [Ambulatory ECG removed]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed-Observations"/>
+      </reference>
+      <name value="Ambulatory ECG removed-Observations"/>
+      <description value="Planned Observation(s) [Ambulatory ECG removed]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping"/>
+      </reference>
+      <name value="Apo E genotyping"/>
+      <description value="Planned Activity [Apo E genotyping]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Apo-E-genotyping-Observations"/>
+      </reference>
+      <name value="Apo E genotyping-Observations"/>
+      <description value="Planned Observation(s) [Apo E genotyping]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-CIBIC"/>
+      </reference>
+      <name value="CIBIC+"/>
+      <description value="Planned Activity [CIBIC+]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-CIBIC-Observations"/>
+      </reference>
+      <name value="CIBIC+-Observations"/>
+      <description value="Planned Observation(s) [CIBIC+]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-CT-Scan"/>
+      </reference>
+      <name value="CT Scan"/>
+      <description value="Planned Activity [CT Scan]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-CT-Scan-Observations"/>
+      </reference>
+      <name value="CT Scan-Observations"/>
+      <description value="Planned Observation(s) [CT Scan]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray"/>
+      </reference>
+      <name value="Chest x-ray"/>
+      <description value="Planned Activity [Chest x-ray]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Chest-x-ray-Observations"/>
+      </reference>
+      <name value="Chest x-ray-Observations"/>
+      <description value="Planned Observation(s) [Chest x-ray]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+      </reference>
+      <name value="Concomitant Medications"/>
+      <description value="Planned Activity [Concomitant Medications]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Concomitant-Medications-Observations"/>
+      </reference>
+      <name value="Concomitant Medications-Observations"/>
+      <description value="Planned Observation(s) [Concomitant Medications]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+      </reference>
+      <name value="DAD"/>
+      <description value="Planned Activity [DAD]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-DAD-Observations"/>
+      </reference>
+      <name value="DAD-Observations"/>
+      <description value="Planned Observation(s) [DAD]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+      </reference>
+      <name value="ECG"/>
+      <description value="Planned Activity [ECG]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-ECG-Observations"/>
+      </reference>
+      <name value="ECG-Observations"/>
+      <description value="Planned Observation(s) [ECG]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Habits"/>
+      </reference>
+      <name value="Habits"/>
+      <description value="Planned Activity [Habits]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Habits-Observations"/>
+      </reference>
+      <name value="Habits-Observations"/>
+      <description value="Planned Observation(s) [Habits]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Hachinski-4"/>
+      </reference>
+      <name value="Hachinski 4"/>
+      <description value="Planned Activity [Hachinski 4]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Hachinski-4-Observations"/>
+      </reference>
+      <name value="Hachinski 4-Observations"/>
+      <description value="Planned Observation(s) [Hachinski 4]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C"/>
+      </reference>
+      <name value="Hemoglobin A1C"/>
+      <description value="Planned Activity [Hemoglobin A1C]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Hemoglobin-A1C-Observations"/>
+      </reference>
+      <name value="Hemoglobin A1C-Observations"/>
+      <description value="Planned Observation(s) [Hemoglobin A1C]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/H2Q-MC-LZZT-InclusionExclusion"/>
+      </reference>
+      <name value="H2Q-MC-LZZT-InclusionExclusion"/>
+      <description value="H2Q-MC-LZZT Inclusion Exclusion Criteria"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"/>
+      </reference>
+      <name value="Informed Consent"/>
+      <description value="Planned Activity [Informed Consent]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Informed-Consent-Observations"/>
+      </reference>
+      <name value="Informed Consent-Observations"/>
+      <description value="Planned Observation(s) [Informed Consent]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat"/>
+      </reference>
+      <name value="Laboratory (Chem/Hemat)"/>
+      <description value="Planned Activity [Laboratory (Chem/Hemat)]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations"/>
+      </reference>
+      <name value="Laboratory (Chem/Hemat)-Observations"/>
+      <description value="Planned Observation(s) [Laboratory (Chem/Hemat)]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"/>
+      </reference>
+      <name value="Laboratory (Urinalysis)"/>
+      <description value="Planned Activity [Laboratory (Urinalysis)]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis-Observations"/>
+      </reference>
+      <name value="Laboratory (Urinalysis)-Observations"/>
+      <description value="Planned Observation(s) [Laboratory (Urinalysis)]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23"/>
+      </reference>
+      <name value="MMSE 10-23"/>
+      <description value="Planned Activity [MMSE 10-23]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-MMSE-10-23-Observations"/>
+      </reference>
+      <name value="MMSE 10-23-Observations"/>
+      <description value="Planned Observation(s) [MMSE 10-23]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Medical-History"/>
+      </reference>
+      <name value="Medical History"/>
+      <description value="Planned Activity [Medical History]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Medical-History-Observations"/>
+      </reference>
+      <name value="Medical History-Observations"/>
+      <description value="Planned Observation(s) [Medical History]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Medications-dispensed"/>
+      </reference>
+      <name value="Medications dispensed"/>
+      <description value="Planned Activity [Medications dispensed]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Medications-dispensed-Observations"/>
+      </reference>
+      <name value="Medications dispensed-Observations"/>
+      <description value="Planned Observation(s) [Medications dispensed]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Medications-returned"/>
+      </reference>
+      <name value="Medications returned"/>
+      <description value="Planned Activity [Medications returned]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Medications-returned-Observations"/>
+      </reference>
+      <name value="Medications returned-Observations"/>
+      <description value="Planned Observation(s) [Medications returned]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+      </reference>
+      <name value="NPI-X"/>
+      <description value="Planned Activity [NPI-X]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-NPI-X-Observations"/>
+      </reference>
+      <name value="NPI-X-Observations"/>
+      <description value="Planned Observation(s) [NPI-X]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned"/>
+      </reference>
+      <name value="Patient number assigned"/>
+      <description value="Planned Activity [Patient number assigned]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Patient-number-assigned-Observations"/>
+      </reference>
+      <name value="Patient number assigned-Observations"/>
+      <description value="Planned Observation(s) [Patient number assigned]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Patient-randomized"/>
+      </reference>
+      <name value="Patient randomized"/>
+      <description value="Planned Activity [Patient randomized]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Patient-randomized-Observations"/>
+      </reference>
+      <name value="Patient randomized-Observations"/>
+      <description value="Planned Observation(s) [Patient randomized]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Physical-examination"/>
+      </reference>
+      <name value="Physical examination"/>
+      <description value="Planned Activity [Physical examination]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Physical-examination-Observations"/>
+      </reference>
+      <name value="Physical examination-Observations"/>
+      <description value="Planned Observation(s) [Physical examination]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test"/>
+      </reference>
+      <name value="Placebo TTS test"/>
+      <description value="Planned Activity [Placebo TTS test]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Placebo-TTS-test-Observations"/>
+      </reference>
+      <name value="Placebo TTS test-Observations"/>
+      <description value="Planned Observation(s) [Placebo TTS test]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+      </reference>
+      <name value="Plasma Specimen"/>
+      <description value="Planned Activity [Plasma Specimen]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Plasma-Specimen-Observations"/>
+      </reference>
+      <name value="Plasma Specimen-Observations"/>
+      <description value="Planned Observation(s) [Plasma Specimen]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"/>
+      </reference>
+      <name value="H2Q-MC-LZZT-ProtocolDesign"/>
+      <description value="H2Q-MC-LZZT-Protocol Schedule of Activities"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ResearchStudy"/>
+      </extension>
+      <reference>
+        <reference value="ResearchStudy/H2Q-MC-LZZT-ResearchStudy"/>
+      </reference>
+      <name value="H2Q-MC-LZZT Research Study"/>
+      <description value="# Xanomeline (LY246708)&#xA;# Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"/>
+      </reference>
+      <name value="H2Q-MC-LZZT Research Study Exclusion Criteria"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"/>
+      </reference>
+      <name value="H2Q-MC-LZZT Research Study Inclusion Criteria"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-ET-14"/>
+      </reference>
+      <name value="ET-14"/>
+      <description value="Planned Visit [ET-14]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-RT-15"/>
+      </reference>
+      <name value="RT-15"/>
+      <description value="Planned Visit [RT-15]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"/>
+      </reference>
+      <name value="Visit-1"/>
+      <description value="Planned Visit [Visit-1]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-10"/>
+      </reference>
+      <name value="Visit-10"/>
+      <description value="Planned Visit [Visit-10]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-11"/>
+      </reference>
+      <name value="Visit-11"/>
+      <description value="Planned Visit [Visit-11]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-12"/>
+      </reference>
+      <name value="Visit-12"/>
+      <description value="Planned Visit [Visit-12]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-13"/>
+      </reference>
+      <name value="Visit-13"/>
+      <description value="Planned Visit [Visit-13]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-2"/>
+      </reference>
+      <name value="Visit-2"/>
+      <description value="Planned Visit [Visit-2]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-3"/>
+      </reference>
+      <name value="Visit-3"/>
+      <description value="Planned Visit [Visit-3]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-4"/>
+      </reference>
+      <name value="Visit-4"/>
+      <description value="Planned Visit [Visit-4]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-5"/>
+      </reference>
+      <name value="Visit-5"/>
+      <description value="Planned Visit [Visit-5]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"/>
+      </reference>
+      <name value="Visit-6"/>
+      <description value="Planned Visit [Visit-6]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-7"/>
+      </reference>
+      <name value="Visit-7"/>
+      <description value="Planned Visit [Visit-7]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-8"/>
+      </reference>
+      <name value="Visit-8"/>
+      <description value="Planned Visit [Visit-8]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"/>
+      </reference>
+      <name value="Visit-9"/>
+      <description value="Planned Visit [Visit-9]"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+      </reference>
+      <name value="Study drug record"/>
+      <description value="Planned Activity [Study drug record]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Study-drug-record-Observations"/>
+      </reference>
+      <name value="Study drug record-Observations"/>
+      <description value="Planned Observation(s) [Study drug record]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"/>
+      </reference>
+      <name value="TTS Acceptability Survey"/>
+      <description value="Planned Activity [TTS Acceptability Survey]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations"/>
+      </reference>
+      <name value="TTS Acceptability Survey-Observations"/>
+      <description value="Planned Observation(s) [TTS Acceptability Survey]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature"/>
+      </reference>
+      <name value="Vital signs/Temperature"/>
+      <description value="Planned Activity [Vital signs/Temperature]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/H2Q-MC-LZZT-Vital-signs-Temperature-Observations"/>
+      </reference>
+      <name value="Vital signs/Temperature-Observations"/>
+      <description value="Planned Observation(s) [Vital signs/Temperature]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ResearchStudy"/>
+      </extension>
+      <reference>
+        <reference value="ResearchStudy/LZZT-Research-Study"/>
+      </reference>
+      <name value="H2Q-MC-LZZT"/>
+      <description value="Study"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/LZZT-Study-Definition"/>
+      </reference>
+      <name value="Study Definition for H2Q-MC-LZZT"/>
+      <description value="Study"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/PULSE"/>
+      </reference>
+      <name value="Pulse"/>
+      <description value="Taking Pulse"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/SYSBP"/>
+      </reference>
+      <name value="Systolic Blood Pressure"/>
+      <description value="Taking Systolic BP"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/SamGetWell"/>
+      </reference>
+      <name value="Samuel Home, M.D."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/ScreeningEpoch"/>
+      </reference>
+      <name value="Screening Visit"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Group"/>
+      </extension>
+      <reference>
+        <reference value="Group/StudyArmStandardOfCare"/>
+      </reference>
+      <name value="Arm: Standard of Care"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/SubjectRandomizationDate"/>
+      </reference>
+      <name value="Subject Randomization"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/Visit1"/>
+      </reference>
+      <name value="Screening - Day -21"/>
+      <description value="Screening Visit - Day -21"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/Visit2"/>
+      </reference>
+      <name value="Screening - Day -1"/>
+      <description value="Screening Visit - Day -1"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/Visit3"/>
+      </reference>
+      <name value="Treatment - Day 1"/>
+      <description value="Treatment Visit - Day 1"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/VitalSigns"/>
+      </reference>
+      <name value="Vital Signs"/>
+      <description value="Vital Signs Assessment"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="cdisc-odm.html"/>
+        <title value="Cdisc Odm"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="deltas.html"/>
+        <title value="Deltas"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

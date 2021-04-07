@@ -1,0 +1,67 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "H2Q-MC-LZZT-Study-Visit-2",
+  "meta": {
+    "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 0</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-2</code></p><p><b>identifier</b>: PLAC: VISIT-2 (USUAL), OID: SE.AMB_ECG_VISIT (SECONDARY)</p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p><blockquote><p><b>action</b></p><p><b>title</b>: Visit</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Ambulatory ECG placed </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 0
+    }
+  ],
+  "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-2",
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "code": "PLAC"
+          }
+        ]
+      },
+      "value": "VISIT-2"
+    },
+    {
+      "use": "secondary",
+      "type": {
+        "coding": [
+          {
+            "system": "http://www.cdisc.org/ns/odm/v1.3#",
+            "display": "OID"
+          }
+        ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.AMB_ECG_VISIT"
+    }
+  ],
+  "version": "0.1.0",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00",
+  "action": [
+    {
+      "title": "Visit",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit"
+    },
+    {
+      "title": "Vital signs/Temperature ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+    },
+    {
+      "title": "Ambulatory ECG placed ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed"
+    },
+    {
+      "title": "Adverse events ",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+    }
+  ]
+}

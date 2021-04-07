@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObservationDefinition xmlns="http://hl7.org/fhir">
+  <id value="H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title="Codes: ">observationCode</span></p></div>
+  </text>
+  <code>
+    <coding>
+      <code value="observationCode"/>
+    </coding>
+  </code>
+</ObservationDefinition>

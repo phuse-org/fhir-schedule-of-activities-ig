@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "id": "soa-epoch-epochtype-value-set",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include codes from <a href=\"http://ncimeta.nci.nih.gov\"><code>http://ncimeta.nci.nih.gov</code></a> where concept  is-a  C99079</li></ul></div>"
+  },
+  "url": "http://example.org/br-and-r/soa/ValueSet/soa-epoch-epochtype-value-set",
+  "version": "0.1.0",
+  "name": "SOAEpochTypes",
+  "title": "Epoch Type Value Set",
+  "status": "active",
+  "date": "2021-04-07T18:53:00+00:00",
+  "description": "Set of permitted values for Epoch",
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncimeta.nci.nih.gov",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "C99079"
+          }
+        ]
+      }
+    ]
+  }
+}

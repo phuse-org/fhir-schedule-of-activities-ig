@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ScreeningEpoch"/>
+  <meta>
+    <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Epoch Type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C48262}">SCREENING</span></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/ScreeningEpoch</code></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p></div>
+  </text>
+  <extension url="http://example.org/br-and-r/soa/StructureDefinition/soa-epoch-epochtype">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://ncimeta.nci.nih.gov"/>
+        <code value="C48262"/>
+        <display value="SCREENING"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <url value="http://example.org/br-and-r/soa/PlanDefinition/ScreeningEpoch"/>
+  <version value="0.1.0"/>
+  <status value="active"/>
+  <date value="2021-04-07T18:53:00+00:00"/>
+</PlanDefinition>

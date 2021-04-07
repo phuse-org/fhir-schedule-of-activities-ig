@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="H2Q-MC-LZZT-InclusionExclusion"/>
+  <meta>
+    <profile value="http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>type</b>: person</p><p><b>actual</b>: true</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc01</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc02</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc03</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc04</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc05</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc06</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc07</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">inclusion</span></p><p><b>value</b>: <span title="Codes: ">Inc08</span></p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc01</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc02</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc03</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc04</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc05</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc06</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc07</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc08</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc08</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc10</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc11</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc12</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc13</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc14</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc15</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc16</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc17</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc18</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc19</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc20</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc21</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc22</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc23</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc24</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc25</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc26</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc27</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc28</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc29</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc30</span></p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">exclusion</span></p><p><b>value</b>: <span title="Codes: ">Exc31</span></p><p><b>exclude</b>: true</p></blockquote></div>
+  </text>
+  <type value="person"/>
+  <actual value="true"/>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc01"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc02"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc03"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc04"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc05"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc06"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc07"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="inclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Inc08"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc01"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc02"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc03"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc04"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc05"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc06"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc07"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc08"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc08"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc10"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc11"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc12"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc13"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc14"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc15"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc16"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc17"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc18"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc19"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc20"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc21"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc22"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc23"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc24"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc25"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc26"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc27"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc28"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc29"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc30"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+  <characteristic>
+    <code>
+      <coding>
+        <code value="exclusion"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <code value="Exc31"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="true"/>
+  </characteristic>
+</Group>

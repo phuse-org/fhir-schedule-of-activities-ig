@@ -1,0 +1,222 @@
+{
+  "resourceType": "Group",
+  "id": "H2Q-MC-LZZT-ResearchStudy-Exclusion",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>type</b>: person</p><p><b>actual</b>: false</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Persons who have previously completed or withdrawn from this study or any other study investigating xanomeline TTS or the oral formulation of xanomeline.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Use of any investigational agent or approved Alzheimer’s therapeutic medication within 30 days prior to enrollment into the study.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Serious illness which required hospitalization within 3 months of screening.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Stroke or vascular dementia documented by clinical history and/or radiographic findings interpretable by the investigator as indicative of these disorders</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Seizure disorder other than simple childhood febrile seizures</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Severe head trauma resulting in protracted loss of consciousness within the last 5 years, or multiple episodes of head trauma</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Parkinson’s disease</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Multiple sclerosis</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Amyotrophic lateral sclerosis</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Myasthenia gravis</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Episode of depression meeting DSM-IV criteria within 3 months of screening.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Schizophrenia.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Bipolar Disease.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Ethanol or psychoactive drug abuse or dependence.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history of syncope within the last 5 years.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Evidence from ECG recording of Left bundle branch block.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Evidence from ECG recording of Bradycardia ≤50 beats per minute</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Evidence from ECG recording of Sinus pauses &gt;2 seconds</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Evidence from ECG recording of Second or third degree heart block unless treated with a pacemaker</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Evidence from ECG recording of Wolff-Parkinson-White syndrome</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Evidence from ECG recording of Sustained supraventricular tachyarrhythmia including SVT≥10 sec, atrial fibrillation, atrial flutter.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">Evidence from ECG recording of Ventricular tachycardia at a rate of ≥120 beats per minute lasting ≥10 seconds.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Clinically significant arrhythmia</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Symptomatic sick sinus syndrome not treated with a pacemaker</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Congestive heart failure refractory to treatment</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Angina except angina controlled with PRN nitroglycerin</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Resting heart rate &lt;50 or &gt;100 beats per minute, on physical exam</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of Uncontrolled hypertension.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of a serious gastrointestinal disorder</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title=\"Codes: \">A history within the last 5 years of a serious gastrointestinal disorder</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote></div>"
+  },
+  "type": "person",
+  "actual": false,
+  "characteristic": [
+    {
+      "code": {
+        "text": "Persons who have previously completed or withdrawn from this study or any other study investigating xanomeline TTS or the oral formulation of xanomeline."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Use of any investigational agent or approved Alzheimer’s therapeutic medication within 30 days prior to enrollment into the study."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Serious illness which required hospitalization within 3 months of screening."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Stroke or vascular dementia documented by clinical history and/or radiographic findings interpretable by the investigator as indicative of these disorders"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Seizure disorder other than simple childhood febrile seizures"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Severe head trauma resulting in protracted loss of consciousness within the last 5 years, or multiple episodes of head trauma"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Parkinson’s disease"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Multiple sclerosis"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Amyotrophic lateral sclerosis"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Myasthenia gravis"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Episode of depression meeting DSM-IV criteria within 3 months of screening."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Schizophrenia."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Bipolar Disease."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Ethanol or psychoactive drug abuse or dependence."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history of syncope within the last 5 years."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Evidence from ECG recording of Left bundle branch block."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Evidence from ECG recording of Bradycardia ≤50 beats per minute"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Evidence from ECG recording of Sinus pauses >2 seconds"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Evidence from ECG recording of Second or third degree heart block unless treated with a pacemaker"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Evidence from ECG recording of Wolff-Parkinson-White syndrome"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Evidence from ECG recording of Sustained supraventricular tachyarrhythmia including SVT≥10 sec, atrial fibrillation, atrial flutter."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "Evidence from ECG recording of Ventricular tachycardia at a rate of ≥120 beats per minute lasting ≥10 seconds."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Clinically significant arrhythmia"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Symptomatic sick sinus syndrome not treated with a pacemaker"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Congestive heart failure refractory to treatment"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Angina except angina controlled with PRN nitroglycerin"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Resting heart rate <50 or >100 beats per minute, on physical exam"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of Uncontrolled hypertension."
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of a serious gastrointestinal disorder"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    },
+    {
+      "code": {
+        "text": "A history within the last 5 years of a serious gastrointestinal disorder"
+      },
+      "valueBoolean": true,
+      "exclude": true
+    }
+  ]
+}

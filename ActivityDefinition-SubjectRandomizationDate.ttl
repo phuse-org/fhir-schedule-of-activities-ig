@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/SubjectRandomizationDate> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "SubjectRandomizationDate"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition";
+       fhir:index 0;
+       fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Study Milestone</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C114209}\">Subject is Randomized</span></p><p><b>Study Milestone</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C161417}\">Subject Entered Into Trial</span></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/SubjectRandomizationDate</code></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://example.org/br-and-r/soa/StructureDefinition/soa-study-activity-milestne" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+         fhir:Coding.code [ fhir:value "C114209" ];
+         fhir:Coding.display [ fhir:value "Subject is Randomized" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://example.org/br-and-r/soa/StructureDefinition/soa-study-activity-milestne" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+         fhir:Coding.code [ fhir:value "C161417" ];
+         fhir:Coding.display [ fhir:value "Subject Entered Into Trial" ]
+       ]
+     ]
+  ];
+  fhir:ActivityDefinition.url [ fhir:value "http://example.org/br-and-r/soa/ActivityDefinition/SubjectRandomizationDate"];
+  fhir:ActivityDefinition.version [ fhir:value "0.1.0"];
+  fhir:ActivityDefinition.status [ fhir:value "active"];
+  fhir:ActivityDefinition.date [ fhir:value "2021-04-07T18:53:00+00:00"^^xsd:dateTime] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/SubjectRandomizationDate.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
