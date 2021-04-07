@@ -28,7 +28,7 @@ jobs:
       - name: Update the image to the latest publisher
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
-          args: ./_updatePublisher.sh --force
+          args: ./_updatePublisher.sh --yes
 
       - name: Run sushi to generate the ig.ini file
         uses: docker://hl7fhir/ig-publisher-base:latest
@@ -39,11 +39,10 @@ jobs:
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
           args: ./_genonce.sh -no-sushi
-          
+      
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output    
         
-      
