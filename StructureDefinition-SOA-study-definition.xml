@@ -17,7 +17,7 @@
   <name value="SOAStudyDefinition"/>
   <title value="SOA Study Defintion"/>
   <status value="active"/>
-  <date value="2021-04-09T11:39:21+00:00"/>
+  <date value="2021-04-09T11:42:58+00:00"/>
   <description value="An example of the plan definition for the study."/>
   <fhirVersion value="4.0.1"/>
   <mapping>

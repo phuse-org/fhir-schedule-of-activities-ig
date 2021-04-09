@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 28</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6</code></p><p><b>identifier</b>: id: VISIT-6</p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 9, 2021, 11:39:21 AM</p><h3>Actions</h3><table class=\"grid\"><tr><td>-</td><td><b>Title</b></td><td><b>Definition[x]</b></td></tr><tr><td>*</td><td>Visit</td><td><code>ActivityDefinition/H2Q-MC-LZZT-Visit</code></td></tr></table></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 28</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6</code></p><p><b>identifier</b>: id: VISIT-6</p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 9, 2021, 11:42:58 AM</p><h3>Actions</h3><table class=\"grid\"><tr><td>-</td><td><b>Title</b></td><td><b>Definition[x]</b></td></tr><tr><td>*</td><td>Visit</td><td><code>ActivityDefinition/H2Q-MC-LZZT-Visit</code></td></tr></table></div>"
   },
   "extension": [
     {
@@ -24,7 +24,7 @@
   ],
   "version": "0.1.0",
   "status": "active",
-  "date": "2021-04-09T11:39:21+00:00",
+  "date": "2021-04-09T11:42:58+00:00",
   "action": [
     {
       "title": "Visit",

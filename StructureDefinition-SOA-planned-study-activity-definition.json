@@ -20,7 +20,7 @@
   "name": "SOAStudyActivityDefinition",
   "title": "SOA Planned Study Activity Definition",
   "status": "active",
-  "date": "2021-04-09T11:39:21+00:00",
+  "date": "2021-04-09T11:42:58+00:00",
   "description": "Planned Study Activity Definition that allows tagging of milestones",
   "fhirVersion": "4.0.1",
   "mapping": [

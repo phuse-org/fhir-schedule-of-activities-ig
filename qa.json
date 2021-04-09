@@ -3,7 +3,7 @@
   "name": "ScheduleOfActivityIG",
   "package-id": "fhir.example.brandr.soa",
   "ig-ver": "0.1.0",
-  "date": "Fri, 09 Apr, 2021 11:39:21 +0000",
+  "date": "Fri, 09 Apr, 2021 11:42:58 +0000",
   "errs": 62,
   "warnings": 335,
   "hints": 21,
