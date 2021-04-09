@@ -26,7 +26,7 @@
   fhir:StructureDefinition.name [ fhir:value "SOAStudyDefinition"];
   fhir:StructureDefinition.title [ fhir:value "SOA Study Defintion"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2021-04-09T11:28:52+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2021-04-09T11:39:21+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.description [ fhir:value "An example of the plan definition for the study."];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [

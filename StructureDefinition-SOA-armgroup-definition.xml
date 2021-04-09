@@ -20,7 +20,7 @@
   <name value="SOAArmGroupDefinition"/>
   <title value="SOA Arm Definition"/>
   <status value="active"/>
-  <date value="2021-04-09T11:28:52+00:00"/>
+  <date value="2021-04-09T11:39:21+00:00"/>
   <description value="Extension to define a Arm Group for a Research Study"/>
   <fhirVersion value="4.0.1"/>
   <mapping>

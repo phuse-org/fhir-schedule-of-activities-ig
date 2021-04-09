@@ -3,7 +3,7 @@
 
 err = 62, warn = 335, info = 21
 IG Publisher Version: 1.1.65
-Generated Fri Apr 09 11:29:38 UTC 2021. FHIR version 4.0.1 for fhir.example.brandr.soa#0.1.0 (canonical = http://example.org/br-and-r/soa)
+Generated Fri Apr 09 11:40:07 UTC 2021. FHIR version 4.0.1 for fhir.example.brandr.soa#0.1.0 (canonical = http://example.org/br-and-r/soa)
 
  Build Errors : 709 / 8 / 0
  /github/workspace/fsh-generated/resources/ActivityDefinition-DIABP : 0 / 1 / 1
