@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>FHIR.EXAMPLE.BRANDR.SOA\Medications returned - JSON Representation - FHIR v4.0.1</title>
+    <title>FHIR.EXAMPLE.BRANDR.SOA\Developer - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -40,8 +40,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.68"}
-    h3,h4,h5,h6{--heading-prefix:"5.68"}</style>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -97,7 +97,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Medications returned</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Developer</b></li>
         </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -107,86 +107,110 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<div style="counter-reset: section 8" class="col-12">
-  <!-- ReleaseHeader --><p id="publish-box">ScheduleOfActivityIG - Local Development build (v0.1.0). See the <a href="http://example.org/br-and-r/soa/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
-
-
-
-
-
-
-
-<ul class="nav nav-tabs">
-
-  <li>
-    <a href="ActivityDefinition-H2Q-MC-LZZT-Medications-returned.html">Narrative Content</a>
-  </li>
-
-
-  
-    <li>
-      <a href="ActivityDefinition-H2Q-MC-LZZT-Medications-returned.xml.html">XML</a>
-    </li>
-  
-
-
-  
-    <li class="active">
-      <a href="#">JSON</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="ActivityDefinition-H2Q-MC-LZZT-Medications-returned.ttl.html">TTL</a>
-    </li>
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">ScheduleOfActivityIG - Local Development build (v0.1.0). See the <a href="http://example.org/br-and-r/soa/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Developer</h2>
   
 
 
 
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+</div>
+<h1 id="setup">Setup</h1>
+
+<p><strong>NOTE</strong> This is a temporary page - it will not be included in the final IG</p>
+
+<h2 id="tutorials">Tutorials:</h2>
+<ul>
+  <li><a href="https://fshschool.org/">https://fshschool.org/</a></li>
 </ul>
 
+<h2 id="repository">Repository</h2>
+<ul>
+  <li>The repository for this project is currently <a href="https://github.com/phuse-org/fhir-schedule-of-activities-ig">fhir-schedule-of-activities-ig</a> (it will be migrated to the HL7 org at some point)</li>
+  <li>The documentation is being automatically built and is available <a href="https://phuse-org.github.io/fhir-schedule-of-activities-ig/">here</a></li>
+</ul>
 
-<a name="root"> </a>
+<h2 id="recommended-editor">Recommended Editor</h2>
+<ul>
+  <li>We <strong>strongly</strong> recommend the <a href="https://code.visualstudio.com/">Visual Studio Code</a> editor for this!</li>
+</ul>
 
+<h2 id="installation-instructions-mac-osx">Installation Instructions (Mac OSX)</h2>
+<ol>
+  <li>Install Sushi
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>brew <span class="nb">install </span>node
+ <span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> fsh-sushi 
+</code></pre></div>    </div>
+  </li>
+  <li>Install jekyll
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>brew <span class="nb">install </span>rbenv
+ <span class="nv">$ </span>rbenv <span class="nb">install </span>2.5.8
+ <span class="nv">$ </span>rbenv <span class="nb">local </span>2.5.8
+ <span class="nv">$ </span>gem <span class="nb">install</span> <span class="nt">--user-install</span> bundler jekyll
+</code></pre></div>    </div>
+  </li>
+  <li>Update the publisher
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>./_updatePublisher.sh
+</code></pre></div>    </div>
+  </li>
+  <li>Initial build (this will depend on where you have ruby installed)
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/.gem/ruby/2.5.8/bin ./_genonce.sh
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-<h2 id="root">: Medications returned - JSON Representation</h2>
+<h2 id="installation-instructions-windows">Installation Instructions (Windows)</h2>
+<ol>
+  <li>Install Node
+    <ul>
+      <li>https://nodejs.org/en/download/ - download and install the Windows Installer</li>
+    </ul>
+  </li>
+  <li>Install Visual Studio Code
+    <ul>
+      <li>https://code.visualstudio.com/download - download and install the Windows Installer</li>
+    </ul>
+  </li>
+  <li>Install Jekyll
+    <ul>
+      <li>Follow the instructions on https://jekyllrb.com/docs/installation/windows/</li>
+    </ul>
+  </li>
+  <li>Install the VS Code extension for FSH
+    <ul>
+      <li>https://marketplace.visualstudio.com/items?itemName=kmahalingam.vscode-language-fsh</li>
+    </ul>
+  </li>
+  <li>Start VS Code and open a terminal (CTRL + `) and in the terminal run the following
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> fsh-sushi 
+</code></pre></div>    </div>
+  </li>
+  <li>Update the publisher
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>./_updatePublisher.sh
+</code></pre></div>    </div>
+  </li>
+  <li>Build
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>./_genonce.sh
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-<p><a href="ActivityDefinition-H2Q-MC-LZZT-Medications-returned.json" no-download="true">Raw json</a> | <a download="null" href="ActivityDefinition-H2Q-MC-LZZT-Medications-returned.json">Download</a></p>
-
-    <!-- insert intro if present -->
-  
-
-
-
-  <pre class="json"><code class="language-json">
-{
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition">resourceType</a>" : "ActivityDefinition",
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.id">id</a>" : "H2Q-MC-LZZT-Medications-returned",
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Medications-returned&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: Apr 9, 2021, 11:28:52 AM&lt;/p&gt;&lt;p&gt;&lt;b&gt;observationRequirement&lt;/b&gt;: &lt;a href=\"Medications-returned-Observations\"&gt;Medications-returned-Observations&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;observationResultRequirement&lt;/b&gt;: &lt;a href=\"Medications-returned-Observations\"&gt;Medications-returned-Observations&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
-  },
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.url">url</a>" : "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Medications-returned",
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.version">version</a>" : "0.1.0",
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.status">status</a>" : "active",
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.date">date</a>" : "2021-04-09T11:28:52+00:00",
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.observationRequirement">observationRequirement</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Medications-returned-Observations"
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition.observationResultRequirement">observationResultRequirement</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Medications-returned-Observations"
-    }
-  ]
-}</code></pre>
-
-
-    <!-- insert notes if present -->
-  
 
 
 
@@ -209,7 +233,7 @@
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="34f3868b-e89c-41e1-8588-6cf1a674260e">​</a>
+        <p><a name="76398050-6e1e-45b7-9828-c244f118d591">​</a>
           IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 9, 2021 11:28+0000">2021-04-09</span>
           <br/>
           <span style="color: #FFFF77">

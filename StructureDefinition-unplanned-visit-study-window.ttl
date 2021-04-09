@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "UnPlannedStudyWindow"];
   fhir:StructureDefinition.title [ fhir:value "Unplanned Study Visit Range"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2021-04-07T18:53:00+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2021-04-09T11:28:52+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.description [ fhir:value "Unplanned Study Visit Range [Day.min() to Day.max() of SoA]"];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [

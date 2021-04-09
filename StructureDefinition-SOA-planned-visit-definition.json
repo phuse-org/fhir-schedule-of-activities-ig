@@ -20,7 +20,7 @@
   "name": "SOAPlannedVisitDefinition",
   "title": "SOA Planned Visit Definition",
   "status": "active",
-  "date": "2021-04-07T18:53:00+00:00",
+  "date": "2021-04-09T11:28:52+00:00",
   "description": "An example of a planned visit definition for the study.",
   "fhirVersion": "4.0.1",
   "mapping": [

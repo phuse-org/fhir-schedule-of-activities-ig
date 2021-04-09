@@ -10,12 +10,12 @@
   fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-Placebo-TTS-test"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test</code></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p><p><b>observationRequirement</b>: <a href=\"Placebo-TTS-test-Observations\">Placebo-TTS-test-Observations</a></p><p><b>observationResultRequirement</b>: <a href=\"Placebo-TTS-test-Observations\">Placebo-TTS-test-Observations</a></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test</code></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 9, 2021, 11:28:52 AM</p><p><b>observationRequirement</b>: <a href=\"Placebo-TTS-test-Observations\">Placebo-TTS-test-Observations</a></p><p><b>observationResultRequirement</b>: <a href=\"Placebo-TTS-test-Observations\">Placebo-TTS-test-Observations</a></p></div>"
   ];
   fhir:ActivityDefinition.url [ fhir:value "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test"];
   fhir:ActivityDefinition.version [ fhir:value "0.1.0"];
   fhir:ActivityDefinition.status [ fhir:value "active"];
-  fhir:ActivityDefinition.date [ fhir:value "2021-04-07T18:53:00+00:00"^^xsd:dateTime];
+  fhir:ActivityDefinition.date [ fhir:value "2021-04-09T11:28:52+00:00"^^xsd:dateTime];
   fhir:ActivityDefinition.observationRequirement [
      fhir:index 0;
      fhir:Reference.reference [ fhir:value "Placebo-TTS-test-Observations" ]

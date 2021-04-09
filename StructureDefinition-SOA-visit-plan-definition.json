@@ -20,7 +20,7 @@
   "name": "SOAVisitPlanDefinition",
   "title": "SOA Visit Plan Defintion",
   "status": "active",
-  "date": "2021-04-07T18:53:00+00:00",
+  "date": "2021-04-09T11:28:52+00:00",
   "description": "A profile on the plan definition resource to define the planned events for a visit.",
   "fhirVersion": "4.0.1",
   "mapping": [

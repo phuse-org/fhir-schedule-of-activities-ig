@@ -6,7 +6,7 @@
     <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Epoch Type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C48262}">SCREENING</span></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/ScreeningEpoch</code></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 7, 2021, 6:53:00 PM</p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Epoch Type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C48262}">SCREENING</span></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/ScreeningEpoch</code></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: active</p><p><b>date</b>: Apr 9, 2021, 11:28:52 AM</p></div>
   </text>
   <extension url="http://example.org/br-and-r/soa/StructureDefinition/soa-epoch-epochtype">
     <valueCodeableConcept>
@@ -20,5 +20,5 @@
   <url value="http://example.org/br-and-r/soa/PlanDefinition/ScreeningEpoch"/>
   <version value="0.1.0"/>
   <status value="active"/>
-  <date value="2021-04-07T18:53:00+00:00"/>
+  <date value="2021-04-09T11:28:52+00:00"/>
 </PlanDefinition>
