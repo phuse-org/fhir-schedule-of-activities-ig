@@ -180,6 +180,12 @@
     "version": "0.1.0"
   },
   {
+    "id": "H2Q-MC-LZZT-Visit-Date",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Visit-Date",
+    "version": "0.1.0"
+  },
+  {
     "id": "H2Q-MC-LZZT-Vital-signs-Temperature",
     "type": "ActivityDefinition",
     "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature",

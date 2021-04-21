@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="ScheduleOfActivityIG"/>
   <status value="draft"/>
-  <date value="2021-04-09T11:42:58+00:00"/>
+  <date value="2021-04-21T15:52:00+00:00"/>
   <packageId value="fhir.example.brandr.soa"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -558,6 +558,28 @@
       </reference>
       <name value="Apo E genotyping-Observations"/>
       <description value="Planned Observation(s) [Apo E genotyping]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/H2Q-MC-LZZT-Bundle-1"/>
+      </reference>
+      <name value="H2Q-MC-LZZT Bundle 1"/>
+      <description value="First Deliverable for the PHUSE Project"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/H2Q-MC-LZZT-Bundle-2"/>
+      </reference>
+      <name value="H2Q-MC-LZZT Bundle 2"/>
+      <description value="First Deliverable for the PHUSE Project"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1304,6 +1326,17 @@
       </reference>
       <name value="TTS Acceptability Survey-Observations"/>
       <description value="Planned Observation(s) [TTS Acceptability Survey]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+      </reference>
+      <name value="Visit Date"/>
+      <description value="Planned Activity [Record Visit Date]"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

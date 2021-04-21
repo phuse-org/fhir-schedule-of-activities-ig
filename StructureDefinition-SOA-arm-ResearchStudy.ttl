@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "ArmResearchStudy"];
   fhir:StructureDefinition.title [ fhir:value "ResearchStudy Arm"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2021-04-09T11:42:58+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2021-04-21T15:52:00+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.description [ fhir:value "Reference to Study for Study Arm"];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [

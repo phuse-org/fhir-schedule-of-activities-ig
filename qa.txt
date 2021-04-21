@@ -1,11 +1,11 @@
 ﻿ScheduleOfActivityIG : Validation Results
 =========================================
 
-err = 62, warn = 335, info = 21
-IG Publisher Version: 1.1.65
-Generated Fri Apr 09 11:43:46 UTC 2021. FHIR version 4.0.1 for fhir.example.brandr.soa#0.1.0 (canonical = http://example.org/br-and-r/soa)
+err = 81, warn = 356, info = 55
+IG Publisher Version: 1.1.66
+Generated Wed Apr 21 15:52:46 UTC 2021. FHIR version 4.0.1 for fhir.example.brandr.soa#0.1.0 (canonical = http://example.org/br-and-r/soa)
 
- Build Errors : 709 / 8 / 0
+ Build Errors : 724 / 8 / 0
  /github/workspace/fsh-generated/resources/ActivityDefinition-DIABP : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog : 2 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Adverse-events : 2 / 1 / 1
@@ -36,6 +36,7 @@ Generated Fri Apr 09 11:43:46 UTC 2021. FHIR version 4.0.1 for fhir.example.bran
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Plasma-Specimen : 2 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Study-drug-record : 2 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey : 2 / 1 / 1
+ /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Visit-Date : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Vital-signs-Temperature : 2 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-PULSE : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-SYSBP : 0 / 1 / 1
@@ -43,6 +44,8 @@ Generated Fri Apr 09 11:43:46 UTC 2021. FHIR version 4.0.1 for fhir.example.bran
  /github/workspace/fsh-generated/resources/ActivityDefinition-Visit1 : 0 / 1 / 2
  /github/workspace/fsh-generated/resources/ActivityDefinition-Visit2 : 0 / 1 / 2
  /github/workspace/fsh-generated/resources/ActivityDefinition-Visit3 : 0 / 1 / 2
+ /github/workspace/fsh-generated/resources/Bundle-H2Q-MC-LZZT-Bundle-1 : 9 / 9 / 19
+ /github/workspace/fsh-generated/resources/Bundle-H2Q-MC-LZZT-Bundle-2 : 10 / 11 / 21
  /github/workspace/fsh-generated/resources/Group-H2Q-MC-LZZT-InclusionExclusion : 0 / 78 / 1
  /github/workspace/fsh-generated/resources/Group-H2Q-MC-LZZT-ResearchStudy-Exclusion : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Group-H2Q-MC-LZZT-ResearchStudy-Inclusion : 0 / 0 / 1
@@ -343,6 +346,11 @@ ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-TTS-Acceptability
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey.json.html#/html/body/div/div/div/p/a at Line 215, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey.ttl.html#/html/body/div/div/div/p/a at Line 227, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey.xml.html#/html/body/div/div/div/p/a at Line 212, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Visit-Date.change.history.html#/html/body/div/div/div/p/a at Line 206, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Visit-Date.html#/html/body/div/div/div/p/a at Line 191, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Visit-Date.json.html#/html/body/div/div/div/p/a at Line 205, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Visit-Date.ttl.html#/html/body/div/div/div/p/a at Line 219, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Visit-Date.xml.html#/html/body/div/div/div/p/a at Line 206, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Vital-signs-Temperature.change.history.html#/html/body/div/div/div/p/a at Line 206, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Vital-signs-Temperature.html#/html/body/div/div/div/div/div/div/p/a at Line 164, column 331: The link 'Vital-signs-Temperature-Observations' for "Vital-signs-Temperature-Observations" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-Vital-signs-Temperature.html#/html/body/div/div/div/div/div/div/p/a at Line 164, column 462: The link 'Vital-signs-Temperature-Observations' for "Vital-signs-Temperature-Observations" cannot be resolved
@@ -380,6 +388,16 @@ ERROR: /github/workspace/output/ActivityDefinition-Visit3.html#/html/body/div/di
 ERROR: /github/workspace/output/ActivityDefinition-Visit3.json.html#/html/body/div/div/div/p/a at Line 220, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-Visit3.ttl.html#/html/body/div/div/div/p/a at Line 234, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-Visit3.xml.html#/html/body/div/div/div/p/a at Line 217, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-1.change.history.html#/html/body/div/div/div/p/a at Line 206, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-1.html#/html/body/div/div/div/p/a at Line 193, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-1.json.html#/html/body/div/div/div/p/a at Line 486, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-1.ttl.html#/html/body/div/div/div/p/a at Line 403, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-1.xml.html#/html/body/div/div/div/p/a at Line 431, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-2.change.history.html#/html/body/div/div/div/p/a at Line 206, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-2.html#/html/body/div/div/div/p/a at Line 193, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-2.json.html#/html/body/div/div/div/p/a at Line 580, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-2.ttl.html#/html/body/div/div/div/p/a at Line 479, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/Bundle-H2Q-MC-LZZT-Bundle-2.xml.html#/html/body/div/div/div/p/a at Line 523, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Group-H2Q-MC-LZZT-InclusionExclusion.change.history.html#/html/body/div/div/div/p/a at Line 206, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Group-H2Q-MC-LZZT-InclusionExclusion.html#/html/body/div/div/div/p/a at Line 191, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Group-H2Q-MC-LZZT-InclusionExclusion.json.html#/html/body/div/div/div/p/a at Line 873, column 28: The link '' for "" cannot be resolved
@@ -838,10 +856,10 @@ ERROR: /github/workspace/output/ValueSet-soa-epoch-epochtype-value-set.html#/htm
 ERROR: /github/workspace/output/ValueSet-soa-epoch-epochtype-value-set.json.html#/html/body/div/div/div/p/a at Line 222, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ValueSet-soa-epoch-epochtype-value-set.ttl.html#/html/body/div/div/div/p/a at Line 232, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ValueSet-soa-epoch-epochtype-value-set.xml.html#/html/body/div/div/div/p/a at Line 219, column 28: The link '' for "" cannot be resolved
-ERROR: /github/workspace/output/artifacts.html#/html/body/div/div/div/p/a at Line 1271, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/artifacts.html#/html/body/div/div/div/p/a at Line 1298, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/cdisc-odm.html#/html/body/div/div/div/p/a at Line 224, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/deltas.html#/html/body/div/div/div/p/a at Line 165, column 28: The link '' for "" cannot be resolved
-ERROR: /github/workspace/output/developer.html#/html/body/div/div/div/p/a at Line 237, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/developer.html#/html/body/div/div/div/p/a at Line 249, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/index.html#/html/body/div/div/div/p/a at Line 188, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/toc.html#/html/body/div/div/div/p/a at Line 142, column 28: The link '' for "" cannot be resolved
 == /github/workspace/fsh-generated/resources/ActivityDefinition-DIABP.json ==
@@ -992,6 +1010,9 @@ INFORMATION: ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey: ActivityDe
 WARNING: ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey: ActivityDefinition: adf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
 ERROR: ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey: ActivityDefinition.observationRequirement[0]: Unable to resolve resource 'TTS-Acceptability-Survey-Observations'
 ERROR: ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey: ActivityDefinition.observationResultRequirement[0]: Unable to resolve resource 'TTS-Acceptability-Survey-Observations'
+== /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Visit-Date.json ==
+INFORMATION: ActivityDefinition/H2Q-MC-LZZT-Visit-Date: ActivityDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ActivityDefinition
+WARNING: ActivityDefinition/H2Q-MC-LZZT-Visit-Date: ActivityDefinition: adf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
 == /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Vital-signs-Temperature.json ==
 INFORMATION: ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature: ActivityDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ActivityDefinition
 WARNING: ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature: ActivityDefinition: adf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
@@ -1023,6 +1044,87 @@ INFORMATION: ActivityDefinition/Visit2: ActivityDefinition: Validate resource ag
 INFORMATION: ActivityDefinition/Visit3: ActivityDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ActivityDefinition
 WARNING: ActivityDefinition/Visit3: ActivityDefinition: adf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
 INFORMATION: ActivityDefinition/Visit3: ActivityDefinition: Validate resource against profile http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition - listed in meta
+== /github/workspace/fsh-generated/resources/Bundle-H2Q-MC-LZZT-Bundle-1.json ==
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle: bdl-12: 'A message must have a MessageHeader as the first resource' failed
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy): Validate resource against profile http://hl7.org/fhir/StructureDefinition/ResearchStudy
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0]: Bundle entry missing fullUrl
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).protocol[0]: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).primaryPurposeType.coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).phase.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).category[0].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).category[1].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).category[2].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).category[3].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).category[4].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).focus[0].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).focus[1].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).condition[1].coding[0]: Concept not found (next char = "G", in "G30") at character 1 (from http://tx.fhir.org/r4) for 'http://snomed.info/sct#G30'
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).condition[2].coding[0]: Unable to find code 10001896 in http://snomed.info/sct (version http://snomed.info/sct/900000000000207008/version/20210131); The code "10001896" is not valid in the system http://snomed.info/sct; The code provided (http://snomed.info/sct#10001896) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r4) for 'http://snomed.info/sct#10001896'
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).keyword[0].coding[0]: Code System URI 'https://id.nlm.nih.gov/mesh' is unknown so the code cannot be validated
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).sponsor: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).principalInvestigator: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).arm[0].type.coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).arm[1].type.coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).arm[2].type.coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[0].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#primary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[1].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#primary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[2].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[3].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[3].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[4].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[4].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[5].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0].resource.ofType(ResearchStudy).objective[5].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[1].resource: The first entry in a message must be a MessageHeader
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-1: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry  
+== /github/workspace/fsh-generated/resources/Bundle-H2Q-MC-LZZT-Bundle-2.json ==
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle: bdl-12: 'A message must have a MessageHeader as the first resource' failed
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy): Validate resource against profile http://hl7.org/fhir/StructureDefinition/ResearchStudy
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0]: Bundle entry missing fullUrl
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).protocol[0]: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).primaryPurposeType.coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).phase.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).category[0].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).category[1].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).category[2].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).category[3].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).category[4].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).focus[0].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).focus[1].coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).condition[1].coding[0]: Concept not found (next char = "G", in "G30") at character 1 (from http://tx.fhir.org/r4) for 'http://snomed.info/sct#G30'
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).condition[2].coding[0]: Unable to find code 10001896 in http://snomed.info/sct (version http://snomed.info/sct/900000000000207008/version/20210131); The code "10001896" is not valid in the system http://snomed.info/sct; The code provided (http://snomed.info/sct#10001896) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r4) for 'http://snomed.info/sct#10001896'
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).keyword[0].coding[0]: Code System URI 'https://id.nlm.nih.gov/mesh' is unknown so the code cannot be validated
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).sponsor: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).principalInvestigator: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).arm[0].type.coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).arm[1].type.coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).arm[2].type.coding[0]: Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[0].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#primary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[1].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#primary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[2].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[3].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[3].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[4].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[4].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[5].type: None of the codings provided are in the value set http://hl7.org/fhir/ValueSet/research-study-objective-type (http://hl7.org/fhir/ValueSet/research-study-objective-type), and a coding is recommended to come from this value set) (codes = null#secondary)
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0].resource.ofType(ResearchStudy).objective[5].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[1].resource.ofType(PlanDefinition): Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[1].resource.ofType(PlanDefinition): pdf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+INFORMATION: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[1].resource.ofType(PlanDefinition): Validate resource against profile http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition - listed in meta
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[1].resource: The first entry in a message must be a MessageHeader
+WARNING: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[2]: Entry  isn't reachable by traversing from first Bundle entry
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry  
+ERROR: Bundle/H2Q-MC-LZZT-Bundle-2: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry  
 == /github/workspace/fsh-generated/resources/Group-H2Q-MC-LZZT-InclusionExclusion.json ==
 INFORMATION: Group/H2Q-MC-LZZT-InclusionExclusion: Group: Validate resource against profile http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion
 WARNING: Group/H2Q-MC-LZZT-InclusionExclusion: Group.characteristic[0].code.coding[0]: A code with no system has no defined meaning. A system should be provided

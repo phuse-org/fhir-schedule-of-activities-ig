@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="H2Q-MC-LZZT-Bundle-2"/>
+  <type value="message"/>
+  <entry>
+    <resource>
+      <ResearchStudy>
+        <id value="H2Q-MC-LZZT-ResearchStudy"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY)</p><p><b>title</b>: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>protocol</b>: <a href="PlanDefinition-LZZT-Study-Definition.html">Generated Summary: url: http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition; version: 0.1.0; status: active; date: Apr 21, 2021, 3:52:00 PM</a></p><p><b>status</b>: completed</p><p><b>primaryPurposeType</b>: <span title="Codes: ">treatment</span></p><p><b>phase</b>: <span title="Codes: ">phase-3</span></p><p><b>category</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C98388}">Interventional Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15417}">Randomized Clinical Trial</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15228}">Double Blind Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">Placebo Control</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C82639}">Parallel Study</span></p><p><b>focus</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C152926}">Xanomeline</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C149996}">Transdermal Patch Dosage Form</span></p><p><b>condition</b>: <span title="Codes: {http://snomed.info/sct 26929004}">Alzheimer's Disease (Disorder)</span>, <span title="Codes: {http://snomed.info/sct G30}">Alzheimer's disease</span>, <span title="Codes: {http://snomed.info/sct 10001896}">Alzheimer's disease</span></p><p><b>contact</b>: Bob James, Ph.D.: ph: 555-555-5555(WORK)</p><h3>RelatedArtifacts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>keyword</b>: <span title="Codes: {https://id.nlm.nih.gov/mesh D018721}">Selective M1 muscarinic agonists</span></p><p><b>description</b>: # Xanomeline (LY246708)
+# Protocol H2Q-MC-LZZT(c) 
+Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>sponsor</b>: <a href="Organization-EliLillyAndCompany.html">Generated Summary: id: Eli Lilly and Company (OFFICIAL); <span title="Codes: ">crs</span></a></p><p><b>principalInvestigator</b>: <a href="Practitioner-SamGetWell.html">Generated Summary: UPIN: ABC123 (OFFICIAL); active; Samuel Home ; Phone: 555-123-5467; gender: male</a></p><blockquote><p><b>arm</b></p><p><b>name</b>: Placebo</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">C49648</span></p><p><b>description</b>: Placebo arm</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: Low-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: High-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)</p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To document the safety profile of the xanomeline TTS.</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the treatment response as a function of Apo E genotype.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote></div>
+        </text>
+        <identifier>
+          <use value="usual"/>
+          <value value="H2Q-MC-LZZT"/>
+        </identifier>
+        <identifier>
+          <use value="official"/>
+          <system value="https://clinicaltrials.gov/show/"/>
+          <value value="NCTA12313212"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="NCTA12313212"/>
+        </identifier>
+        <title value="Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+        <protocol>
+          <reference value="PlanDefinition/LZZT-Study-Definition"/>
+        </protocol>
+        <status value="completed"/>
+        <primaryPurposeType>
+          <coding>
+            <code value="treatment"/>
+          </coding>
+        </primaryPurposeType>
+        <phase>
+          <coding>
+            <code value="phase-3"/>
+          </coding>
+        </phase>
+        <category>
+          <coding>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C98388"/>
+            <display value="Interventional Study"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C15417"/>
+            <display value="Randomized Clinical Trial"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C15228"/>
+            <display value="Double Blind Study"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C49648"/>
+            <display value="Placebo Control"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C82639"/>
+            <display value="Parallel Study"/>
+          </coding>
+        </category>
+        <focus>
+          <coding>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C152926"/>
+            <display value="Xanomeline"/>
+          </coding>
+        </focus>
+        <focus>
+          <coding>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C149996"/>
+            <display value="Transdermal Patch Dosage Form"/>
+          </coding>
+        </focus>
+        <condition>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="26929004"/>
+            <display value="Alzheimer&#39;s Disease (Disorder)"/>
+          </coding>
+        </condition>
+        <condition>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="G30"/>
+            <display value="Alzheimer&#39;s disease"/>
+          </coding>
+        </condition>
+        <condition>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="10001896"/>
+            <display value="Alzheimer&#39;s disease"/>
+          </coding>
+        </condition>
+        <contact>
+          <name value="Bob James, Ph.D."/>
+          <telecom>
+            <system value="phone"/>
+            <value value="555-555-5555"/>
+            <use value="work"/>
+          </telecom>
+        </contact>
+        <relatedArtifact>
+          <type value="documentation"/>
+          <label value="Protocol H2Q-MC-LZZT(c)"/>
+          <url value="https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"/>
+        </relatedArtifact>
+        <keyword>
+          <coding>
+            <system value="https://id.nlm.nih.gov/mesh"/>
+            <code value="D018721"/>
+          </coding>
+          <text value="Selective M1 muscarinic agonists"/>
+        </keyword>
+        <description value="# Xanomeline (LY246708)&#xA;# Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+        <sponsor>
+          <reference value="Organization/EliLillyAndCompany"/>
+        </sponsor>
+        <principalInvestigator>
+          <reference value="Practitioner/SamGetWell"/>
+        </principalInvestigator>
+        <arm>
+          <name value="Placebo"/>
+          <type>
+            <coding>
+              <system value="http://ncimeta.nci.nih.gov"/>
+              <code value="C49648"/>
+            </coding>
+          </type>
+          <description value="Placebo arm"/>
+        </arm>
+        <arm>
+          <name value="Low-dose xanomeline arm"/>
+          <type>
+            <coding>
+              <system value="http://ncimeta.nci.nih.gov"/>
+              <code value="C174266"/>
+            </coding>
+          </type>
+          <description value="Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"/>
+        </arm>
+        <arm>
+          <name value="High-dose xanomeline arm"/>
+          <type>
+            <coding>
+              <system value="http://ncimeta.nci.nih.gov"/>
+              <code value="C174266"/>
+            </coding>
+          </type>
+          <description value="High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"/>
+        </arm>
+        <objective>
+          <name value="To determine if there is a statistically significant relationship (overall Type 1 error rate, &#x3B1;=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."/>
+          <type>
+            <coding>
+              <code value="primary"/>
+            </coding>
+          </type>
+        </objective>
+        <objective>
+          <name value="To document the safety profile of the xanomeline TTS."/>
+          <type>
+            <coding>
+              <code value="primary"/>
+            </coding>
+          </type>
+        </objective>
+        <objective>
+          <name value="To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas."/>
+          <type>
+            <coding>
+              <code value="secondary"/>
+            </coding>
+          </type>
+        </objective>
+        <objective>
+          <name value="To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas."/>
+          <type>
+            <coding>
+              <code value="secondary"/>
+            </coding>
+          </type>
+        </objective>
+        <objective>
+          <name value="To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer&#x2019;s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment."/>
+          <type>
+            <coding>
+              <code value="secondary"/>
+            </coding>
+          </type>
+        </objective>
+        <objective>
+          <name value="To assess the treatment response as a function of Apo E genotype."/>
+          <type>
+            <coding>
+              <code value="secondary"/>
+            </coding>
+          </type>
+        </objective>
+      </ResearchStudy>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-ProtocolDesign"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>version</b>: LZZT_1</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Visit-1</p><p><b>description</b>: Planned Visit [Visit-1]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-1</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-2</p><p><b>description</b>: Planned Visit [Visit-2]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-2</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-3</p><p><b>description</b>: Planned Visit [Visit-3]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-3</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-4</p><p><b>description</b>: Planned Visit [Visit-4]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-4</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-5</p><p><b>description</b>: Planned Visit [Visit-5]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-5</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-6</p><p><b>description</b>: Planned Visit [Visit-6]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-6</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-7</p><p><b>description</b>: Planned Visit [Visit-7]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-7</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-8</p><p><b>description</b>: Planned Visit [Visit-8]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-8</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-9</p><p><b>description</b>: Planned Visit [Visit-9]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-9</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-10</p><p><b>description</b>: Planned Visit [Visit-10]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-10</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-11</p><p><b>description</b>: Planned Visit [Visit-11]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-11</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-12</p><p><b>description</b>: Planned Visit [Visit-12]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-12</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-13</p><p><b>description</b>: Planned Visit [Visit-13]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-13</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ET-14</p><p><b>description</b>: Planned Visit [ET-14]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-ET-14</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: RT-15</p><p><b>description</b>: Planned Visit [RT-15]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-RT-15</code></p></blockquote></div>
+        </text>
+        <version value="LZZT_1"/>
+        <status value="active"/>
+        <action>
+          <title value="Visit-1"/>
+          <description value="Planned Visit [Visit-1]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"/>
+        </action>
+        <action>
+          <title value="Visit-2"/>
+          <description value="Planned Visit [Visit-2]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-2"/>
+        </action>
+        <action>
+          <title value="Visit-3"/>
+          <description value="Planned Visit [Visit-3]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-3"/>
+        </action>
+        <action>
+          <title value="Visit-4"/>
+          <description value="Planned Visit [Visit-4]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-4"/>
+        </action>
+        <action>
+          <title value="Visit-5"/>
+          <description value="Planned Visit [Visit-5]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-5"/>
+        </action>
+        <action>
+          <title value="Visit-6"/>
+          <description value="Planned Visit [Visit-6]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"/>
+        </action>
+        <action>
+          <title value="Visit-7"/>
+          <description value="Planned Visit [Visit-7]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-7"/>
+        </action>
+        <action>
+          <title value="Visit-8"/>
+          <description value="Planned Visit [Visit-8]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-8"/>
+        </action>
+        <action>
+          <title value="Visit-9"/>
+          <description value="Planned Visit [Visit-9]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"/>
+        </action>
+        <action>
+          <title value="Visit-10"/>
+          <description value="Planned Visit [Visit-10]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-10"/>
+        </action>
+        <action>
+          <title value="Visit-11"/>
+          <description value="Planned Visit [Visit-11]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-11"/>
+        </action>
+        <action>
+          <title value="Visit-12"/>
+          <description value="Planned Visit [Visit-12]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-12"/>
+        </action>
+        <action>
+          <title value="Visit-13"/>
+          <description value="Planned Visit [Visit-13]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-13"/>
+        </action>
+        <action>
+          <title value="ET-14"/>
+          <description value="Planned Visit [ET-14]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-ET-14"/>
+        </action>
+        <action>
+          <title value="RT-15"/>
+          <description value="Planned Visit [RT-15]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-RT-15"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+  </entry>
+</Bundle>

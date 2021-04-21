@@ -10,7 +10,7 @@
   "name": "SOAEpochTypes",
   "title": "Epoch Type Value Set",
   "status": "active",
-  "date": "2021-04-09T11:42:58+00:00",
+  "date": "2021-04-21T15:52:00+00:00",
   "description": "Set of permitted values for Epoch",
   "compose": {
     "include": [

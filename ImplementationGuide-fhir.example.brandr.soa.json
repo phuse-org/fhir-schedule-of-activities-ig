@@ -9,7 +9,7 @@
   "version": "0.1.0",
   "name": "ScheduleOfActivityIG",
   "status": "draft",
-  "date": "2021-04-09T11:42:58+00:00",
+  "date": "2021-04-21T15:52:00+00:00",
   "packageId": "fhir.example.brandr.soa",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -766,6 +766,34 @@
         },
         "name": "Apo E genotyping-Observations",
         "description": "Planned Observation(s) [Apo E genotyping]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/H2Q-MC-LZZT-Bundle-1"
+        },
+        "name": "H2Q-MC-LZZT Bundle 1",
+        "description": "First Deliverable for the PHUSE Project",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/H2Q-MC-LZZT-Bundle-2"
+        },
+        "name": "H2Q-MC-LZZT Bundle 2",
+        "description": "First Deliverable for the PHUSE Project",
         "exampleBoolean": true
       },
       {
@@ -1716,6 +1744,20 @@
         },
         "name": "TTS Acceptability Survey-Observations",
         "description": "Planned Observation(s) [TTS Acceptability Survey]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+        },
+        "name": "Visit Date",
+        "description": "Planned Activity [Record Visit Date]",
         "exampleBoolean": true
       },
       {

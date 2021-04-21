@@ -16,7 +16,7 @@
   fhir:ImplementationGuide.version [ fhir:value "0.1.0"];
   fhir:ImplementationGuide.name [ fhir:value "ScheduleOfActivityIG"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-04-09T11:42:58+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-04-21T15:52:00+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.packageId [ fhir:value "fhir.example.brandr.soa"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [
@@ -760,6 +760,34 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/br-and-r/soa/Bundle/H2Q-MC-LZZT-Bundle-1>;
+         fhir:Reference.reference [ fhir:value "Bundle/H2Q-MC-LZZT-Bundle-1" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "H2Q-MC-LZZT Bundle 1" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "First Deliverable for the PHUSE Project" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 37;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/br-and-r/soa/Bundle/H2Q-MC-LZZT-Bundle-2>;
+         fhir:Reference.reference [ fhir:value "Bundle/H2Q-MC-LZZT-Bundle-2" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "H2Q-MC-LZZT Bundle 2" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "First Deliverable for the PHUSE Project" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 38;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "ActivityDefinition" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
@@ -770,7 +798,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [CIBIC+]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 37;
+       fhir:index 39;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -784,7 +812,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [CIBIC+]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 38;
+       fhir:index 40;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -798,7 +826,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [CT Scan]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 39;
+       fhir:index 41;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -812,7 +840,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [CT Scan]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 40;
+       fhir:index 42;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -826,7 +854,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Chest x-ray]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 41;
+       fhir:index 43;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -840,7 +868,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Chest x-ray]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 42;
+       fhir:index 44;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -854,7 +882,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Concomitant Medications]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 43;
+       fhir:index 45;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -868,7 +896,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Concomitant Medications]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 44;
+       fhir:index 46;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -882,7 +910,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [DAD]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 45;
+       fhir:index 47;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -896,7 +924,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [DAD]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 46;
+       fhir:index 48;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -910,7 +938,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [ECG]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 47;
+       fhir:index 49;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -924,7 +952,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [ECG]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 48;
+       fhir:index 50;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -938,7 +966,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Habits]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 49;
+       fhir:index 51;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -952,7 +980,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Habits]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 50;
+       fhir:index 52;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -966,7 +994,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Hachinski 4]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 51;
+       fhir:index 53;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -980,7 +1008,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Hachinski 4]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 52;
+       fhir:index 54;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -994,7 +1022,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Hemoglobin A1C]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 53;
+       fhir:index 55;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1008,7 +1036,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Hemoglobin A1C]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 54;
+       fhir:index 56;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1025,7 +1053,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion>
        ]
      ], [
-       fhir:index 55;
+       fhir:index 57;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1039,7 +1067,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Informed Consent]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 56;
+       fhir:index 58;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1053,7 +1081,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Informed Consent]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 57;
+       fhir:index 59;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1067,7 +1095,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Laboratory (Chem/Hemat)]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 58;
+       fhir:index 60;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1081,7 +1109,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Laboratory (Chem/Hemat)]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 59;
+       fhir:index 61;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1095,7 +1123,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Laboratory (Urinalysis)]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 60;
+       fhir:index 62;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1109,7 +1137,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Laboratory (Urinalysis)]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 61;
+       fhir:index 63;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1123,7 +1151,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [MMSE 10-23]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 62;
+       fhir:index 64;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1137,7 +1165,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [MMSE 10-23]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 63;
+       fhir:index 65;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1151,7 +1179,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Medical History]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 64;
+       fhir:index 66;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1165,7 +1193,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Medical History]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 65;
+       fhir:index 67;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1179,7 +1207,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Medications dispensed]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 66;
+       fhir:index 68;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1193,7 +1221,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Medications dispensed]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 67;
+       fhir:index 69;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1207,7 +1235,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Medications returned]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 68;
+       fhir:index 70;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1221,7 +1249,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Medications returned]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 69;
+       fhir:index 71;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1235,7 +1263,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [NPI-X]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 70;
+       fhir:index 72;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1249,7 +1277,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [NPI-X]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 71;
+       fhir:index 73;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1263,7 +1291,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Patient number assigned]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 72;
+       fhir:index 74;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1277,7 +1305,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Patient number assigned]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 73;
+       fhir:index 75;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1291,7 +1319,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Patient randomized]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 74;
+       fhir:index 76;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1305,7 +1333,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Patient randomized]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 75;
+       fhir:index 77;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1319,7 +1347,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Physical examination]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 76;
+       fhir:index 78;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1333,7 +1361,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Physical examination]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 77;
+       fhir:index 79;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1347,7 +1375,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Placebo TTS test]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 78;
+       fhir:index 80;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1361,7 +1389,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Placebo TTS test]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 79;
+       fhir:index 81;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1375,7 +1403,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Plasma Specimen]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 80;
+       fhir:index 82;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1389,7 +1417,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Plasma Specimen]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 81;
+       fhir:index 83;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1406,7 +1434,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 82;
+       fhir:index 84;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1420,7 +1448,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "# Xanomeline (LY246708)\n# Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 83;
+       fhir:index 85;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1433,7 +1461,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "H2Q-MC-LZZT Research Study Exclusion Criteria" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 84;
+       fhir:index 86;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1446,7 +1474,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "H2Q-MC-LZZT Research Study Inclusion Criteria" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 85;
+       fhir:index 87;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1463,7 +1491,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 86;
+       fhir:index 88;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1480,7 +1508,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 87;
+       fhir:index 89;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1497,7 +1525,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 88;
+       fhir:index 90;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1514,7 +1542,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 89;
+       fhir:index 91;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1531,7 +1559,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 90;
+       fhir:index 92;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1548,7 +1576,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 91;
+       fhir:index 93;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1565,7 +1593,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 92;
+       fhir:index 94;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1582,7 +1610,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 93;
+       fhir:index 95;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1599,7 +1627,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 94;
+       fhir:index 96;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1616,7 +1644,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 95;
+       fhir:index 97;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1633,7 +1661,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 96;
+       fhir:index 98;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1650,7 +1678,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 97;
+       fhir:index 99;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1667,7 +1695,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 98;
+       fhir:index 100;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1684,7 +1712,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 99;
+       fhir:index 101;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1701,7 +1729,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition>
        ]
      ], [
-       fhir:index 100;
+       fhir:index 102;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1715,7 +1743,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Study drug record]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 101;
+       fhir:index 103;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1729,7 +1757,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Study drug record]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 102;
+       fhir:index 104;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1743,7 +1771,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [TTS Acceptability Survey]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 103;
+       fhir:index 105;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1757,7 +1785,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [TTS Acceptability Survey]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 104;
+       fhir:index 106;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ActivityDefinition" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Visit-Date>;
+         fhir:Reference.reference [ fhir:value "ActivityDefinition/H2Q-MC-LZZT-Visit-Date" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Visit Date" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Record Visit Date]" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 107;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1771,7 +1813,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Activity [Vital signs/Temperature]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 105;
+       fhir:index 108;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1785,7 +1827,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Planned Observation(s) [Vital signs/Temperature]" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 106;
+       fhir:index 109;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1799,7 +1841,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Study" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 107;
+       fhir:index 110;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1816,7 +1858,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition>
        ]
      ], [
-       fhir:index 108;
+       fhir:index 111;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1830,7 +1872,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Taking Pulse" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 109;
+       fhir:index 112;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1844,7 +1886,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Taking Systolic BP" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 110;
+       fhir:index 113;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1857,7 +1899,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Samuel Home, M.D." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 111;
+       fhir:index 114;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1873,7 +1915,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition>
        ]
      ], [
-       fhir:index 112;
+       fhir:index 115;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1889,7 +1931,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition>
        ]
      ], [
-       fhir:index 113;
+       fhir:index 116;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1905,7 +1947,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition>
        ]
      ], [
-       fhir:index 114;
+       fhir:index 117;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1922,7 +1964,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition>
        ]
      ], [
-       fhir:index 115;
+       fhir:index 118;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1939,7 +1981,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition>
        ]
      ], [
-       fhir:index 116;
+       fhir:index 119;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1956,7 +1998,7 @@
          fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition>
        ]
      ], [
-       fhir:index 117;
+       fhir:index 120;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];

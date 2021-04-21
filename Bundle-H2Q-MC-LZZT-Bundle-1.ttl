@@ -1,0 +1,279 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Bundle/H2Q-MC-LZZT-Bundle-1> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-Bundle-1"];
+  fhir:Bundle.type [ fhir:value "message"];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.resource [
+       a fhir:ResearchStudy;
+       fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-ResearchStudy" ];
+       fhir:DomainResource.text [
+         fhir:Narrative.status [ fhir:value "generated" ];
+         fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY)</p><p><b>title</b>: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>protocol</b>: <a href=\"PlanDefinition-LZZT-Study-Definition.html\">Generated Summary: url: http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition; version: 0.1.0; status: active; date: Apr 21, 2021, 3:52:00 PM</a></p><p><b>status</b>: completed</p><p><b>primaryPurposeType</b>: <span title=\"Codes: \">treatment</span></p><p><b>phase</b>: <span title=\"Codes: \">phase-3</span></p><p><b>category</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C98388}\">Interventional Study</span>, <span title=\"Codes: {http://ncimeta.nci.nih.gov C15417}\">Randomized Clinical Trial</span>, <span title=\"Codes: {http://ncimeta.nci.nih.gov C15228}\">Double Blind Study</span>, <span title=\"Codes: {http://ncimeta.nci.nih.gov C49648}\">Placebo Control</span>, <span title=\"Codes: {http://ncimeta.nci.nih.gov C82639}\">Parallel Study</span></p><p><b>focus</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C152926}\">Xanomeline</span>, <span title=\"Codes: {http://ncimeta.nci.nih.gov C149996}\">Transdermal Patch Dosage Form</span></p><p><b>condition</b>: <span title=\"Codes: {http://snomed.info/sct 26929004}\">Alzheimer's Disease (Disorder)</span>, <span title=\"Codes: {http://snomed.info/sct G30}\">Alzheimer's disease</span>, <span title=\"Codes: {http://snomed.info/sct 10001896}\">Alzheimer's disease</span></p><p><b>contact</b>: Bob James, Ph.D.: ph: 555-555-5555(WORK)</p><h3>RelatedArtifacts</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>keyword</b>: <span title=\"Codes: {https://id.nlm.nih.gov/mesh D018721}\">Selective M1 muscarinic agonists</span></p><p><b>description</b>: # Xanomeline (LY246708)\n# Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>sponsor</b>: <a href=\"Organization-EliLillyAndCompany.html\">Generated Summary: id: Eli Lilly and Company (OFFICIAL); <span title=\"Codes: \">crs</span></a></p><p><b>principalInvestigator</b>: <a href=\"Practitioner-SamGetWell.html\">Generated Summary: UPIN: ABC123 (OFFICIAL); active; Samuel Home ; Phone: 555-123-5467; gender: male</a></p><blockquote><p><b>arm</b></p><p><b>name</b>: Placebo</p><p><b>type</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C49648}\">C49648</span></p><p><b>description</b>: Placebo arm</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: Low-dose xanomeline arm</p><p><b>type</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C174266}\">C174266</span></p><p><b>description</b>: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: High-dose xanomeline arm</p><p><b>type</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C174266}\">C174266</span></p><p><b>description</b>: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)</p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).</p><p><b>type</b>: <span title=\"Codes: \">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To document the safety profile of the xanomeline TTS.</p><p><b>type</b>: <span title=\"Codes: \">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.</p><p><b>type</b>: <span title=\"Codes: \">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.</p><p><b>type</b>: <span title=\"Codes: \">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.</p><p><b>type</b>: <span title=\"Codes: \">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the treatment response as a function of Apo E genotype.</p><p><b>type</b>: <span title=\"Codes: \">secondary</span></p></blockquote></div>"
+       ];
+       fhir:ResearchStudy.identifier [
+         fhir:index 0;
+         fhir:Identifier.use [ fhir:value "usual" ];
+         fhir:Identifier.value [ fhir:value "H2Q-MC-LZZT" ]
+       ], [
+         fhir:index 1;
+         fhir:Identifier.use [ fhir:value "official" ];
+         fhir:Identifier.system [ fhir:value "https://clinicaltrials.gov/show/" ];
+         fhir:Identifier.value [ fhir:value "NCTA12313212" ]
+       ], [
+         fhir:index 2;
+         fhir:Identifier.use [ fhir:value "secondary" ];
+         fhir:Identifier.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "PLAC" ]
+           ]
+         ];
+         fhir:Identifier.value [ fhir:value "NCTA12313212" ]
+       ];
+       fhir:ResearchStudy.title [ fhir:value "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease" ];
+       fhir:ResearchStudy.protocol [
+         fhir:index 0;
+         fhir:link <http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition>;
+         fhir:Reference.reference [ fhir:value "PlanDefinition/LZZT-Study-Definition" ]
+       ];
+       fhir:ResearchStudy.status [ fhir:value "completed" ];
+       fhir:ResearchStudy.primaryPurposeType [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "treatment" ]
+         ]
+       ];
+       fhir:ResearchStudy.phase [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.code [ fhir:value "phase-3" ]
+         ]
+       ];
+       fhir:ResearchStudy.category [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+           fhir:Coding.code [ fhir:value "C98388" ];
+           fhir:Coding.display [ fhir:value "Interventional Study" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+           fhir:Coding.code [ fhir:value "C15417" ];
+           fhir:Coding.display [ fhir:value "Randomized Clinical Trial" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+           fhir:Coding.code [ fhir:value "C15228" ];
+           fhir:Coding.display [ fhir:value "Double Blind Study" ]
+         ]
+       ], [
+         fhir:index 3;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+           fhir:Coding.code [ fhir:value "C49648" ];
+           fhir:Coding.display [ fhir:value "Placebo Control" ]
+         ]
+       ], [
+         fhir:index 4;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+           fhir:Coding.code [ fhir:value "C82639" ];
+           fhir:Coding.display [ fhir:value "Parallel Study" ]
+         ]
+       ];
+       fhir:ResearchStudy.focus [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+           fhir:Coding.code [ fhir:value "C152926" ];
+           fhir:Coding.display [ fhir:value "Xanomeline" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+           fhir:Coding.code [ fhir:value "C149996" ];
+           fhir:Coding.display [ fhir:value "Transdermal Patch Dosage Form" ]
+         ]
+       ];
+       fhir:ResearchStudy.condition [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:26929004;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "26929004" ];
+           fhir:Coding.display [ fhir:value "Alzheimer's Disease (Disorder)" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:G30;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "G30" ];
+           fhir:Coding.display [ fhir:value "Alzheimer's disease" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:10001896;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "10001896" ];
+           fhir:Coding.display [ fhir:value "Alzheimer's disease" ]
+         ]
+       ];
+       fhir:ResearchStudy.contact [
+         fhir:index 0;
+         fhir:ContactDetail.name [ fhir:value "Bob James, Ph.D." ];
+         fhir:ContactDetail.telecom [
+           fhir:index 0;
+           fhir:ContactPoint.system [ fhir:value "phone" ];
+           fhir:ContactPoint.value [ fhir:value "555-555-5555" ];
+           fhir:ContactPoint.use [ fhir:value "work" ]
+         ]
+       ];
+       fhir:ResearchStudy.relatedArtifact [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Protocol H2Q-MC-LZZT(c)" ];
+         fhir:RelatedArtifact.url [ fhir:value "https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf" ]
+       ];
+       fhir:ResearchStudy.keyword [
+         fhir:index 0;
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://id.nlm.nih.gov/mesh" ];
+           fhir:Coding.code [ fhir:value "D018721" ]
+         ];
+         fhir:CodeableConcept.text [ fhir:value "Selective M1 muscarinic agonists" ]
+       ];
+       fhir:ResearchStudy.description [ fhir:value "# Xanomeline (LY246708)\n# Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease" ];
+       fhir:ResearchStudy.sponsor [
+         fhir:link <http://example.org/br-and-r/soa/Organization/EliLillyAndCompany>;
+         fhir:Reference.reference [ fhir:value "Organization/EliLillyAndCompany" ]
+       ];
+       fhir:ResearchStudy.principalInvestigator [
+         fhir:link <http://example.org/br-and-r/soa/Practitioner/SamGetWell>;
+         fhir:Reference.reference [ fhir:value "Practitioner/SamGetWell" ]
+       ];
+       fhir:ResearchStudy.arm [
+         fhir:index 0;
+         fhir:ResearchStudy.arm.name [ fhir:value "Placebo" ];
+         fhir:ResearchStudy.arm.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+             fhir:Coding.code [ fhir:value "C49648" ]
+           ]
+         ];
+         fhir:ResearchStudy.arm.description [ fhir:value "Placebo arm" ]
+       ], [
+         fhir:index 1;
+         fhir:ResearchStudy.arm.name [ fhir:value "Low-dose xanomeline arm" ];
+         fhir:ResearchStudy.arm.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+             fhir:Coding.code [ fhir:value "C174266" ]
+           ]
+         ];
+         fhir:ResearchStudy.arm.description [ fhir:value "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)" ]
+       ], [
+         fhir:index 2;
+         fhir:ResearchStudy.arm.name [ fhir:value "High-dose xanomeline arm" ];
+         fhir:ResearchStudy.arm.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://ncimeta.nci.nih.gov" ];
+             fhir:Coding.code [ fhir:value "C174266" ]
+           ]
+         ];
+         fhir:ResearchStudy.arm.description [ fhir:value "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)" ]
+       ];
+       fhir:ResearchStudy.objective [
+         fhir:index 0;
+         fhir:ResearchStudy.objective.name [ fhir:value "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])." ];
+         fhir:ResearchStudy.objective.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "primary" ]
+           ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:ResearchStudy.objective.name [ fhir:value "To document the safety profile of the xanomeline TTS." ];
+         fhir:ResearchStudy.objective.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "primary" ]
+           ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:ResearchStudy.objective.name [ fhir:value "To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas." ];
+         fhir:ResearchStudy.objective.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "secondary" ]
+           ]
+         ]
+       ], [
+         fhir:index 3;
+         fhir:ResearchStudy.objective.name [ fhir:value "To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas." ];
+         fhir:ResearchStudy.objective.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "secondary" ]
+           ]
+         ]
+       ], [
+         fhir:index 4;
+         fhir:ResearchStudy.objective.name [ fhir:value "To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment." ];
+         fhir:ResearchStudy.objective.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "secondary" ]
+           ]
+         ]
+       ], [
+         fhir:index 5;
+         fhir:ResearchStudy.objective.name [ fhir:value "To assess the treatment response as a function of Apo E genotype." ];
+         fhir:ResearchStudy.objective.type [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.code [ fhir:value "secondary" ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/Bundle/H2Q-MC-LZZT-Bundle-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
