@@ -14,8 +14,8 @@ Description: "Planned Visit [Visit-1]"
 * identifier[=].use = #secondary
 * extension[plannedStudyDay].valueInteger = -14
 * status = #active
-* action[+].title = "Visit"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
+* action[+].title = "Record Visit Date"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[+].title = "Informed Consent "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"
 * action[+].title = "Patient number assigned "

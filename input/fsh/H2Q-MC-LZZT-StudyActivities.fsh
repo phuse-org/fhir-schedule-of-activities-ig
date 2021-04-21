@@ -142,6 +142,13 @@ Title: "TTS Acceptability Survey"
 * observationRequirement = Reference(TTS-Acceptability-Survey-Observations)
 * observationResultRequirement = Reference(TTS-Acceptability-Survey-Observations)
 
+Instance: H2Q-MC-LZZT-Visit-Date
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Record Visit Date]"
+Usage: #example
+Title: "Visit Date"
+* status = #active
+
 Instance: H2Q-MC-LZZT-Plasma-Specimen
 InstanceOf: ActivityDefinition
 Description: "Planned Activity [Plasma Specimen]"
