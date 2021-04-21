@@ -56,6 +56,17 @@
     ```shell
     $ ./_genonce.sh
     ```
-
+## Development process
+1. Identify a small manageable task
+2. Create a new branch from `main` using a 'sensible' name eg 'feature/bundle_one'
+3. Make your changes
+4. Run sushi
+5. Run `_genonce.sh`
+6. Commit your code
+7. Push your changes to the remote
+8. Raise a PR
+9. Merge the PR
+10. Change back to the `main` branch
+11. Pull the changes from the remote
 
 
