@@ -4,6 +4,13 @@ Usage: #example
 Title: "Visit-13"
 Description: "Planned Visit [Visit-13]"
 * identifier[+].value = "VISIT-13"
+* identifier[=].type = #PLAC
+* identifier[=].use = #usual
+* identifier[+].value = "SE.TRT_VISIT_10"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * extension[plannedStudyDay].valueInteger = 182
 * status = #active
 * action[+].title = "Visit"

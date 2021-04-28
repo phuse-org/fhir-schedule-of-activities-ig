@@ -5,6 +5,11 @@ Title: "Visit-7"
 Description: "Planned Visit [Visit-7]"
 * identifier[+].value = "VISIT-7"
 * extension[plannedStudyDay].valueInteger = 42
+* identifier[+].value = "SE.TRT_VISIT_04"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * status = #active
 * action[+].title = "Visit"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
