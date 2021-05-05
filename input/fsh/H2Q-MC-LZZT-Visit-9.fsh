@@ -2,12 +2,18 @@ Instance: H2Q-MC-LZZT-Study-Visit-9
 InstanceOf: SOAPlanDefinition
 Usage: #example
 Title: "Visit-9"
-Description: "Planned Visit [Visit-9]"
+Description: "Planned Visit [Visit-9] - removed in Protocol Amendment"
 * identifier[+].value = "VISIT-9"
 * extension[plannedStudyDay].valueInteger = 84
-* status = #active
-* action[+].title = "Visit"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
+* identifier[+].value = "SE.TRT_VISIT_06"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+* status = #retired
+* type = #clinical-protocol
+* action[+].title = "Record Visit Date"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[+].title = "Vital signs/Temperature "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
 * action[+].title = "ECG "

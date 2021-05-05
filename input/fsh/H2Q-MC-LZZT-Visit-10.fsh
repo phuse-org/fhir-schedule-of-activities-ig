@@ -4,10 +4,15 @@ Usage: #example
 Title: "Visit-10"
 Description: "Planned Visit [Visit-10]"
 * identifier[+].value = "VISIT-10"
+* identifier[+].value = "SE.TRT_VISIT_07"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * extension[plannedStudyDay].valueInteger = 112
 * status = #active
-* action[+].title = "Visit"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
+* action[+].title = "Record Visit Date"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[+].title = "Vital signs/Temperature "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
 * action[+].title = "ECG "
