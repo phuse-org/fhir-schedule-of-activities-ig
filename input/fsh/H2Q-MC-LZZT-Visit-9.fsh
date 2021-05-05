@@ -12,8 +12,8 @@ Description: "Planned Visit [Visit-9] - removed in Protocol Amendment"
 * identifier[=].use = #secondary
 * status = #retired
 * type = #clinical-protocol
-* action[+].title = "Visit"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
+* action[+].title = "Record Visit Date"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[+].title = "Vital signs/Temperature "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
 * action[+].title = "ECG "

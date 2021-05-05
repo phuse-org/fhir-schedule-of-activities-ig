@@ -11,5 +11,5 @@ Description: "Planned Visit [Visit-6]"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
 * status = #active
-* action[+].title = "Visit"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
+* action[+].title = "Record Visit Date"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"

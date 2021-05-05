@@ -13,8 +13,8 @@ Description: "Planned Visit [Visit-5]"
 * identifier[=].use = #secondary
 * extension[plannedStudyDay].valueInteger = 21
 * status = #active
-* action[+].title = "Visit"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit"
+* action[+].title = "Record Visit Date"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[+].title = "Vital signs/Temperature "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
 * action[+].title = "ECG "
