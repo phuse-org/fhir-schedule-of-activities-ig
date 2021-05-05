@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="ScheduleOfActivityIG"/>
   <status value="draft"/>
-  <date value="2021-04-21T15:52:00+00:00"/>
+  <date value="2021-05-05T15:48:47+00:00"/>
   <packageId value="fhir.example.brandr.soa"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -1281,7 +1281,7 @@
         <reference value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"/>
       </reference>
       <name value="Visit-9"/>
-      <description value="Planned Visit [Visit-9]"/>
+      <description value="Planned Visit [Visit-9] - removed in Protocol Amendment"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
     </resource>
     <resource>
@@ -1511,6 +1511,11 @@
       <page>
         <nameUrl value="developer.html"/>
         <title value="Developer"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="h2q-mc-lzzt.html"/>
+        <title value="H 2 Q Mc Lzzt"/>
         <generation value="markdown"/>
       </page>
     </page>

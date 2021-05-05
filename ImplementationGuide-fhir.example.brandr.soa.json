@@ -9,7 +9,7 @@
   "version": "0.1.0",
   "name": "ScheduleOfActivityIG",
   "status": "draft",
-  "date": "2021-04-21T15:52:00+00:00",
+  "date": "2021-05-05T15:48:47+00:00",
   "packageId": "fhir.example.brandr.soa",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -1687,7 +1687,7 @@
           "reference": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"
         },
         "name": "Visit-9",
-        "description": "Planned Visit [Visit-9]",
+        "description": "Planned Visit [Visit-9] - removed in Protocol Amendment",
         "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
       },
       {
@@ -1976,6 +1976,11 @@
         {
           "nameUrl": "developer.html",
           "title": "Developer",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "h2q-mc-lzzt.html",
+          "title": "H 2 Q Mc Lzzt",
           "generation": "markdown"
         }
       ]

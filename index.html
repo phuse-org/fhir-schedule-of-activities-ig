@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="fhir.css"/>
 
       <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
       <!-- Project extras -->
@@ -36,7 +35,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body onload="document.body.style.opacity='1'">
+  <body>
 
 	  <script src="assets/js/prism.js"></script>
 
@@ -102,7 +101,7 @@
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
 
-    <div id="segment-content">    <!-- segment-content -->
+    <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
@@ -138,6 +137,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>This IG is intended to provide a roadmap for adopters looking to use FHIR resources in order to support the planning and implementing Clinical Research designs.  This is intended to primarily facilitate high level components.</p>
 
 <p>As it is used commonly, part of the design of this IG will illustrate patterns and examples for reusing design concepts from the <a href="cdisc-odm.html">CDISC ODM</a>.</p>
+
+<p>The ODM used is available in the <a href="h2q-mc-lzzt.html">H2Q-MC-LZZT Study Design</a> file.</p>
 
 <h2 id="design">Design</h2>
 <p>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;<svg contentStyleType="text/css" viewBox="0 0 733 649" zoomAndPan="magnify" preserveAspectRatio="none" width="733px" style="width:733px;height:649px;" contentScriptType="application/ecmascript" version="1.1" height="649px"><defs><filter width="300%" x="-1" y="-1" id="f1s49vveurdab4" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4.0" dy="4.0" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g>  <!-- MD5=[e9b04ffdef2e75091ec3b7db913ccb26]
@@ -184,8 +185,8 @@ link H2Q-MC-LZZT Visits to H2Q-MC-LZZT Planned Activities --><path d="M170,449.0
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="1654f447-3bce-4ae0-9062-d6a8f9d2ca62">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 21, 2021 15:52+0000">2021-04-21</span>
+        <p><a name="6e85fcd6-0d90-4bbe-9dea-9e67896af103">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 5, 2021 15:48+0000">2021-05-05</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

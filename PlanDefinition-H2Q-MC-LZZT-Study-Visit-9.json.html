@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="fhir.css"/>
 
       <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
       <!-- Project extras -->
@@ -36,12 +35,12 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body onload="document.body.style.opacity='1'">
+  <body>
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.102"}
-    h3,h4,h5,h6{--heading-prefix:"5.102"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.102"}
+    h3,h4,h5,h6{--heading-prefix:"6.102"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -102,7 +101,7 @@
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
 
-    <div id="segment-content">    <!-- segment-content -->
+    <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
@@ -171,7 +170,7 @@
   },
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Planned Study Day of Visit&lt;/b&gt;: 84&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-9&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: VISIT-9&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: Apr 21, 2021, 3:52:00 PM&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Visit&lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Visit&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Vital signs/Temperature &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: ECG &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-ECG&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Concomitant Medications &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Laboratory (Chem/Hemat)&lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Laboratory (Urinalysis) &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Plasma Specimen &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Study drug record &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Study-drug-record&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: TTS Acceptability Survey&lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: ADAS-Cog &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: CIBIC+ &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-CIBIC+&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: DAD &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-DAD&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: NPI-X &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-NPI-X&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Adverse events &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Adverse-events&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Planned Study Day of Visit&lt;/b&gt;: 84&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-9&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: VISIT-9, OID: SE.TRT_VISIT_06 (SECONDARY)&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;clinical-protocol&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: retired&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: May 5, 2021, 3:48:47 PM&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Record Visit Date&lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Visit-Date&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Vital signs/Temperature &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: ECG &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-ECG&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Concomitant Medications &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Laboratory (Chem/Hemat)&lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Laboratory (Urinalysis) &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Plasma Specimen &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Study drug record &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Study-drug-record&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: TTS Acceptability Survey&lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: ADAS-Cog &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: CIBIC+ &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-CIBIC+&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: DAD &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-DAD&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: NPI-X &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-NPI-X&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Adverse events &lt;/p&gt;&lt;p&gt;&lt;b&gt;definition&lt;/b&gt;: &lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Adverse-events&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.extension">extension</a>" : [
     {
@@ -183,15 +182,35 @@
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.identifier">identifier</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "VISIT-9"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a>" : "secondary",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://www.cdisc.org/ns/odm/v1.3#",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "OID"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "SE.TRT_VISIT_06"
     }
   ],
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.version">version</a>" : "0.1.0",
-  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.status">status</a>" : "active",
-  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.date">date</a>" : "2021-04-21T15:52:00+00:00",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.type">type</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "clinical-protocol"
+      }
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.status">status</a>" : "retired",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.date">date</a>" : "2021-05-05T15:48:47+00:00",
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action">action</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.title">title</a>" : "Visit",
-      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.definition[x]">definitionUri</a>" : "ActivityDefinition/H2Q-MC-LZZT-Visit"
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.title">title</a>" : "Record Visit Date",
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.definition[x]">definitionUri</a>" : "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
     },
     {
       "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.title">title</a>" : "Vital signs/Temperature ",
@@ -273,8 +292,8 @@
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="14144d51-7e7d-426a-86f3-be3cb5b8e40d">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 21, 2021 15:52+0000">2021-04-21</span>
+        <p><a name="6c734173-5e9f-4010-aa04-4a8f4f05f402">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 5, 2021 15:48+0000">2021-05-05</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

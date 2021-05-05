@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="fhir.css"/>
 
       <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
       <!-- Project extras -->
@@ -36,12 +35,12 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body onload="document.body.style.opacity='1'">
+  <body>
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.99"}
-    h3,h4,h5,h6{--heading-prefix:"5.99"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.99"}
+    h3,h4,h5,h6{--heading-prefix:"6.99"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -102,7 +101,7 @@
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
 
-    <div id="segment-content">    <!-- segment-content -->
+    <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
@@ -171,7 +170,7 @@
   },
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Planned Study Day of Visit&lt;/b&gt;: 28&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: VISIT-6&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: Apr 21, 2021, 3:52:00 PM&lt;/p&gt;&lt;h3&gt;Actions&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Title&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition[x]&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Visit&lt;/td&gt;&lt;td&gt;&lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Visit&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Planned Study Day of Visit&lt;/b&gt;: 28&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: VISIT-6, OID: SE.TRT_VISIT_03 (SECONDARY)&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: May 5, 2021, 3:48:47 PM&lt;/p&gt;&lt;h3&gt;Actions&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Title&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition[x]&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Record Visit Date&lt;/td&gt;&lt;td&gt;&lt;code&gt;ActivityDefinition/H2Q-MC-LZZT-Visit-Date&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.extension">extension</a>" : [
     {
@@ -183,15 +182,28 @@
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.identifier">identifier</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "VISIT-6"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a>" : "secondary",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://www.cdisc.org/ns/odm/v1.3#",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "OID"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "SE.TRT_VISIT_03"
     }
   ],
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.version">version</a>" : "0.1.0",
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.status">status</a>" : "active",
-  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.date">date</a>" : "2021-04-21T15:52:00+00:00",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.date">date</a>" : "2021-05-05T15:48:47+00:00",
   "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action">action</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.title">title</a>" : "Visit",
-      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.definition[x]">definitionUri</a>" : "ActivityDefinition/H2Q-MC-LZZT-Visit"
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.title">title</a>" : "Record Visit Date",
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.definition[x]">definitionUri</a>" : "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
     }
   ]
 }</code></pre>
@@ -221,8 +233,8 @@
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="f2b345ce-383e-4109-a421-98c9d754c2f9">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 21, 2021 15:52+0000">2021-04-21</span>
+        <p><a name="47c942f1-6429-4d1d-b299-924f28e6ff9e">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 5, 2021 15:48+0000">2021-05-05</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
