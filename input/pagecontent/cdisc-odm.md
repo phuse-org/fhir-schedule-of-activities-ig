@@ -158,7 +158,7 @@ The Item represents an individual data collection element on a Form.
 ```
 As can be seen from the examples, the attributes on the Item element are aimed at the characterisation of the datapoints on the form - in traditional data capture the data is constrained according to the attributes, e.g. the field will be restricted to values matching the declared `DataType` and `Length`.  Data transfers to these fields will need to conform.
 
-The ItemDef can have two data related child elements; the `CodeListRef` and `MeasurementUnitRef`.  These are links to CodeList and MeasurementUnit elements
+The ItemDef can have two data related child elements; the `CodeListRef` and `MeasurementUnitRef`.  These are links to CodeList and MeasurementUnit elements.
 
 ### CodeList
 The CodeList element represents a Value Domain with Permissible Values.  A codelist is used to constrain the permitted values for a field.  Each CodeListItem represents a permissible value for the field; these have a `CodedValue` and a `Decode`: the `CodedValue` is the value intended to be written to the backing store and the `Decode` is the representation of the `CodedValue` that is shown to the user. 
@@ -178,7 +178,7 @@ The CodeList element represents a Value Domain with Permissible Values.  A codel
 ```
 
 ### MeasurementUnit
-The MeasurementUnit is used to qualify a physical quantity with a Unit
+The MeasurementUnit is used to qualify a physical quantity with a Unit; the Unit can be reused across many elements.
 ```xml
 <MeasurementUnit OID="mmHg" Name="mmHg">
   <Symbol>
