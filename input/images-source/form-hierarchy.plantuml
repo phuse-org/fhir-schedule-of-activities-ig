@@ -1,4 +1,5 @@
-@startuml
+@startuml "Definition and Data in the ODM"
+
 package "Definition"{
     class Protocol
 

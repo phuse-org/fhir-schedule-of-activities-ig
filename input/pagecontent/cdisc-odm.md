@@ -1,7 +1,12 @@
 # CDISC Operational Data Model (ODM)
+This document is a light touch overview of the ODM - the CDISC repository for the ODM found [here](https://bitbucket.cdisc.org/projects/XML/repos/odm/browse).  We recommend checking out the official docs in that repository.
+
+Note: the CDISC ODM is owned by [CDISC](https://cdisc.org), accessing the release package requires a current CDISC membership.
 
 ## TLDR: Show me the schema!
+
 The ODM Schema is available at: [ODM Schema](https://bitbucket.cdisc.org/projects/XML/repos/odm/browse/schema)
+
 
 ## What is the ODM
 The CDISC Operational Data Model (ODM) is a XML-based model defined for the transport and archival of Clinical Trials Data; it is broadly made up of the following top-level elements
@@ -10,9 +15,9 @@ The CDISC Operational Data Model (ODM) is a XML-based model defined for the tran
 * Administrative Data - information regarding the collection of data (sites, personnel, etc)
 * Reference Data - common data needed to interpret the collected data
 
-Structures within the ODM have little semantic meaning; it is a format focused on the representation of planned and performed activities so captures relationships between elements moreso than the actual actual definition of the element itself; for example - there is no characterisation of a participant (in contrast to the Patient resource); there is a `SubjectData` element used to collect captured datapoints for an individual participant.  The `SubjectData` element includes attributes such as an OID as an identifier, but there is no information model that says the OID is an external identifier (eg Subject ID) or some other internal identifier (eg Primary Key from a Subjects table, as an example). 
+Structures within the ODM have little semantic meaning; it is a format focused on the representation of planned and performed activities so captures relationships between elements moreso than the actual actual definition of the element itself; for example - there is no characterisation of a participant (in contrast to the Patient resource); there is a **SubjectData** element used to collect captured datapoints for an individual participant.  The **SubjectData** element includes attributes such as an OID as an identifier, but there is no information model that says the OID is an external identifier (eg Subject ID) or some other internal identifier (eg Primary Key from a Subjects table, as an example). 
 
-Data collection is driven by Forms; forms group activities by type (ie all the Vital Signs observations for a single visit are usually grouped in a single form, irrespective of multiple planned timepoints for the elements).  Individual fields on a form are classed as Items in ODM parlance and have associated metadata pertaining to the allowable content (eg datatype, length, constrained values or allowable units for a value)
+Data collection is driven by Forms; forms group activities by type (ie all the Vital Signs observations for a single visit are usually grouped in a single form, irrespective of multiple planned timepoints for the elements).  Individual fields on a form are Items in ODM parlance and have associated metadata pertaining to the allowable content (eg datatype, length, constrained values or allowable units for a value)
 
 
 ## Structural Overview
@@ -21,11 +26,12 @@ Broadly the structure is as follows (for ODM 1.3.2):
 * ODM
   * Study
     * MetaDataVersion
-      * StudyEvent
-        * Form
-          * ItemGroup
-            * Item
-  * Study Data
+      * Protocol
+        * StudyEvent
+          * Form
+            * ItemGroup
+              * Item
+  * ClinicalData
     * SubjectData
       * StudyEventData
         * FormData
@@ -55,17 +61,34 @@ The implementation of the Study Metadata follows a DEF-REF pattern.  We define a
 	<ItemGroupRef ItemGroupOID="IG.DOV" Mandatory="Yes" OrderNumber="1"/>
 </FormDef>
 ```
-The OID is the key here; it serves as the unique id (for a given --Def element type); the Reference to this --Def in the --Ref element is usually qualified with the Element type; eg
+The *OID* is the key here; it serves as the unique id (for a given --Def element type); the Reference to this --Def in the --Ref element is usually qualified with the Element type; eg
 
 {%include def-ref.svg%}
 
+*OID* are the best key to share data with clinical research systems.
+
 ## How the schedule of activities implemented in ODM 
-The entry point for the defined activities in the ODM is through the ODM>Study>MetaDataVersion; a MetaDataVersion is a defined set of study configuration; 
+The linking of Data Elements (outcomes of Observations) and Definitions is illustrated here:
 
 {%include form-hierarchy.svg%}
 
+The top-level element for the definitions for the Study are contained within the **MetaDataVersion** element
+
+### MetaDataVersion
+The **MetaDataVersion** is a set of study definition configuration; studies can have multiple versions of a study definition (sometimes in parallel); the version is identified by the *OID*
+
+```xml
+<MetaDataVersion Description="LZZT study design version 1" Name="LZZT study design version 1" OID="LZZT_1">
+  <Protocol>
+    <Description>
+      <TranslatedText xml:lang="en">A randomized, double-blind, parallel (3 arm), placebo-controlled trial of 26 weeks duration.</TranslatedText>
+    </Description>
+...
+</MetaDataVersion>
+```
+
 ### Protocol
-The Protocol lists the study events that can occur within a version of a Study. All clinical data must occur within one of these study events.
+The **Protocol** lists the study events that can occur within a Study. 
 ```xml
 <Protocol>
 	<Description>
@@ -78,7 +101,7 @@ The Protocol lists the study events that can occur within a version of a Study. 
 This is mostly a container element.
 
 ### StudyEvent
-The StudyEvent is the archetype for a Planned Encounter (usually based on a single day with an ascribed Visit Date) - the encounter is made up of a series of Forms.  Study Events are either Scheduled (ie as planned in the Protocol), Unscheduled (usually driven by an event such as an Adverse Event) or Common (for Events that can encompass multiple days/epochs).
+The StudyEvent is the archetype for a Encounters or Study Visits.  
 ```xml
 <StudyEventDef OID="SE.SCREENING_VISIT" Name="Screening Visit (Visit 1)" Repeating="No" Type="Scheduled">
   <Description>
@@ -91,9 +114,8 @@ The StudyEvent is the archetype for a Planned Encounter (usually based on a sing
 ```
 
 ### Form
-The Form is an archetype for activities.  
+The Form is an archetype for activities within a Visit.  
 
-In general there is one form per type of observation (eg a single vital signs form, a single blood draw form, etc).  
 
 ```xml
 <FormDef OID="F.DM_1" Name="Demographics" Repeating="No">
@@ -110,12 +132,12 @@ In general there is one form per type of observation (eg a single vital signs fo
   <ItemGroupRef ItemGroupOID="IG.IE_EX" OrderNumber="2" Mandatory="Yes"/>
 </FormDef>
 ```
-Form designs are often driven by other business considerations that are not aligned with data domains.
+Form designs are often driven by other business considerations that are not necessariy aligned with data domains.  As such a single **Form** may match to multiple resources in the source system.
 
 ### ItemGroup
-ItemGroup should be considered a stuctural concept; it links fields to the form.  Rather than attaching directly to the form, the ItemGroup is used to group fields within the form. In the current iteration it is primarily used to represent both repeating and non-repeating sets of fields in a CRF.  
+**ItemGroup** could be considered as primarily a stuctural concept; it links fields to the form.  Rather than attaching directly to the form, the **ItemGroup** is used to group fields within the form. In the current iteration it is primarily used to represent both repeating and non-repeating sets of fields in a CRF.  
 
-An example of this would be a series of assessments done around a dosing event (eg Vitals Pre-dose, 1h Post-Dose, 2h Post-Dose, etc); the observations are repeated using an ItemGroup with the `Repeating` attribute set to `Yes`
+An example of this would be a series of assessments done around a dosing event (eg Vitals Pre-dose, 1h Post-Dose, 2h Post-Dose, etc); the observations are repeated using an ItemGroup with the *Repeating* attribute set to `Yes`
 ```xml
 <ItemGroupDef OID="IG.DM_1" Name="Demographics" SASDatasetName="DMSUBJ" Repeating="No">
   <ItemRef ItemOID="I.BRTHDAT" Mandatory="No" OrderNumber="1"/>
@@ -126,7 +148,7 @@ An example of this would be a series of assessments done around a dosing event (
 ```
 
 ### Item
-The Item represents an individual data collection element on a Form.
+The **Item** represents an individual data collection element on a Form.
 ```xml
 <ItemDef OID="I.BRTHDAT" SASFieldName="BRTHDAT" Name="Birth Date" DataType="date">
   <Description>
@@ -156,12 +178,12 @@ The Item represents an individual data collection element on a Form.
   </Question>
 </ItemDef>
 ```
-As can be seen from the examples, the attributes on the Item element are aimed at the characterisation of the datapoints on the form - in traditional data capture the data is constrained according to the attributes, e.g. the field will be restricted to values matching the declared `DataType` and `Length`.  Data transfers to these fields will need to conform.
+As can be seen from the examples, the attributes on the Item element are aimed at the characterisation of the datapoints on the form - in traditional data capture the data is constrained according to the attributes, e.g. the field will be restricted to values matching the declared *DataType* and *Length*.  Data transfers to these fields will need to conform.
 
-The ItemDef can have two data related child elements; the `CodeListRef` and `MeasurementUnitRef`.  These are links to CodeList and MeasurementUnit elements.
+The **ItemDef** can have two data related child elements; the *CodeListRef* (zero or one) and *MeasurementUnitRef* (zero or more).  These are links to **CodeList** and **MeasurementUnit** elements.
 
 ### CodeList
-The CodeList element represents a Value Domain with Permissible Values.  A codelist is used to constrain the permitted values for a field.  Each CodeListItem represents a permissible value for the field; these have a `CodedValue` and a `Decode`: the `CodedValue` is the value intended to be written to the backing store and the `Decode` is the representation of the `CodedValue` that is shown to the user. 
+A **CodeList** is used to constrain the permitted values for a field.  Each **CodeListItem** represents a permissible value for the field; these have a *CodedValue* and a *Decode*: the *CodedValue* is the value intended to be written to the backing store and the *Decode* is the representation of the *CodedValue* that is shown to the user. 
 ```xml
 <CodeList OID="CL.SEX" Name="Sex" DataType="text">
   <CodeListItem CodedValue="F" OrderNumber="1">
@@ -178,7 +200,7 @@ The CodeList element represents a Value Domain with Permissible Values.  A codel
 ```
 
 ### MeasurementUnit
-The MeasurementUnit is used to qualify a physical quantity with a Unit; the Unit can be reused across many elements.
+The **MeasurementUnit** is used to represent the possible units for a physical quantity with a Unit; the Unit can be reused across many elements.
 ```xml
 <MeasurementUnit OID="mmHg" Name="mmHg">
   <Symbol>
@@ -187,3 +209,4 @@ The MeasurementUnit is used to qualify a physical quantity with a Unit; the Unit
   </Symbol>
 </MeasurementUnit>
 ```
+The *Symbol* is used for the representation of the Unit; the *OID* is used as the persisting value
