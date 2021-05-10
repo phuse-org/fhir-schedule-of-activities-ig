@@ -209,4 +209,5 @@ The **MeasurementUnit** is used to represent the possible units for a physical q
   </Symbol>
 </MeasurementUnit>
 ```
-The *Symbol* is used for the representation of the Unit; the *OID* is used as the persisting value
+The *Symbol* is used for the representation of the Unit; the *OID* is used as the persisted value.
+
