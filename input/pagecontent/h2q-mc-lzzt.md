@@ -1,7 +1,14 @@
 # H2Q-MC-LZZT Study Design
+
+Herein is the ODM for the study design for the H2Q-MC-LZZT study.
+
+A couple of notes:
+* the `sdm` namespace is for the study design model.  It has not been a primary focus for the team up to now
+* the `cdash` namespace is an extension for accomodating CDASH elements.  It can be ignored for the moment
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:sdm="http://www.cdisc.org/ns/studydesign/v1.0" CreationDateTime="2010-12-08T14:31:28+01:00" Description="LZZT Study Design, CDISC ODM version 1.3 format" FileOID="LZZT_STUDY" FileType="Snapshot" Granularity="Metadata" ODMVersion="1.3" SourceSystem="XML4Pharma CDISC ODM Study Designer" SourceSystemVersion="2010-R2">
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:sdm="http://www.cdisc.org/ns/studydesign/v1.0" xmlns:cdash="http://www.cdisc.org/ns/cdash/v1.1" CreationDateTime="2010-12-08T14:31:28+01:00" Description="LZZT Study Design, CDISC ODM version 1.3 format" FileOID="LZZT_STUDY" FileType="Snapshot" Granularity="Metadata" ODMVersion="1.3" SourceSystem="XML4Pharma CDISC ODM Study Designer" SourceSystemVersion="2010-R2">
 	<Study OID="LZZT">
 		<GlobalVariables>
 			<StudyName>Xanomeline (LY246708)</StudyName>
