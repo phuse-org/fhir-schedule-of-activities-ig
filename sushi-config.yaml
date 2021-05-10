@@ -6,7 +6,7 @@ id: fhir.example.brandr.soa
 canonical: http://example.org/br-and-r/soa
 name: ScheduleOfActivityIG
 status: draft
-version: 0.1.0
+version: 0.1.1  
 fhirVersion: 4.0.1
 copyrightYear: 2020+
 releaseLabel: ci-build
@@ -17,6 +17,17 @@ releaseLabel: ci-build
 menu:
   Home: index.html
   Artifacts: artifacts.html
-  CDISC ODM: cdisc-odm.html
-  Changes for CR: deltas.html
-  Developer Guidance: developer.html
+  CDISC Operational Model (ODM): cdisc-odm.html
+  Clinical Research Profile Backlog: deltas.html
+  Developer Setup: developer.html
+pages:
+  index.md:
+    title: Home
+  cdisc-odm.md:
+    title: CDISC Operational Model (ODM)
+  developer.md:
+    title: Developer Setup
+  h2q-mc-lzzt.md:
+    title: Study Design for H2Q-MC-LZZT
+  deltas.md:
+    title: Clinical Research Profile Backlog

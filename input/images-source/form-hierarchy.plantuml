@@ -1,4 +1,4 @@
-@startuml "Definition and Data in the ODM"
+@startuml "form-hierarchy"
 
 package "Definition"{
     class Protocol
