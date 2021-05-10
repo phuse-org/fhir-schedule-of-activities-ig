@@ -16,11 +16,11 @@
     }
   ],
   "url": "http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "ResearchStudyInclusionExclusion",
   "title": "Research Study Inclusion Exclusion",
   "status": "active",
-  "date": "2021-05-05T15:48:47+00:00",
+  "date": "2021-05-10T09:41:40+00:00",
   "description": "Research Study Inclusion Exclusion Criteria",
   "fhirVersion": "4.0.1",
   "mapping": [

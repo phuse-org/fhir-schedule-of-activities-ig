@@ -13,10 +13,10 @@
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ScheduleOfActivityIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa</pre></div>"
   ];
   fhir:ImplementationGuide.url [ fhir:value "http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa"];
-  fhir:ImplementationGuide.version [ fhir:value "0.1.0"];
+  fhir:ImplementationGuide.version [ fhir:value "0.1.1"];
   fhir:ImplementationGuide.name [ fhir:value "ScheduleOfActivityIG"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-05-05T15:48:47+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-05-10T09:41:40+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.packageId [ fhir:value "fhir.example.brandr.soa"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [
@@ -2024,22 +2024,22 @@
        ], [
          fhir:index 1;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "cdisc-odm.html" ];
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Cdisc Odm" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "CDISC Operational Model (ODM)" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 2;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "deltas.html" ];
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Deltas" ];
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "developer.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Developer Setup" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 3;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "developer.html" ];
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Developer" ];
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "h2q-mc-lzzt.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Study Design for H2Q-MC-LZZT" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 4;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "h2q-mc-lzzt.html" ];
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "H 2 Q Mc Lzzt" ];
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "deltas.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Clinical Research Profile Backlog" ];
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ]
      ];

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>FHIR.EXAMPLE.BRANDR.SOA\Cdisc Odm - FHIR v4.0.1</title>
+    <title>FHIR.EXAMPLE.BRANDR.SOA\CDISC Operational Model (ODM) - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -35,7 +35,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body>
+  <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
@@ -47,7 +47,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold"></span><br/>0.1.0 - ci-build</p>
+          <p><span style="font-size:12pt;font-weight:bold"></span><br/>0.1.1 - ci-build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -77,13 +77,13 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="cdisc-odm.html">CDISC ODM</a>
+    <a href="cdisc-odm.html">CDISC Operational Model (ODM)</a>
   </li>
   <li>
-    <a href="deltas.html">Changes for CR</a>
+    <a href="deltas.html">Clinical Research Profile Backlog</a>
   </li>
   <li>
-    <a href="developer.html">Developer Guidance</a>
+    <a href="developer.html">Developer Setup</a>
   </li>
 </ul>
             </div>    <!-- /.nav-collapse -->
@@ -96,7 +96,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Cdisc Odm</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>CDISC Operational Model (ODM)</b></li>
         </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -114,8 +114,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">ScheduleOfActivityIG - Local Development build (v0.1.0). See the <a href="http://example.org/br-and-r/soa/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
-  <h2>Cdisc Odm</h2>
+    <!-- ReleaseHeader --><p id="publish-box">ScheduleOfActivityIG - Local Development build (v0.1.1). See the <a href="http://example.org/br-and-r/soa/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>CDISC Operational Model (ODM)</h2>
   
 
 
@@ -127,12 +127,35 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#cdisc-operational-data-model-odm" id="markdown-toc-cdisc-operational-data-model-odm">CDISC Operational Data Model (ODM)</a>    <ul>
+      <li><a href="#tldr-show-me-the-schema" id="markdown-toc-tldr-show-me-the-schema">TLDR: Show me the schema!</a></li>
+      <li><a href="#what-is-the-odm" id="markdown-toc-what-is-the-odm">What is the ODM</a></li>
+      <li><a href="#structural-overview" id="markdown-toc-structural-overview">Structural Overview</a></li>
+      <li><a href="#how-the-schedule-of-activities-implemented-in-odm" id="markdown-toc-how-the-schedule-of-activities-implemented-in-odm">How the schedule of activities implemented in ODM</a>        <ul>
+          <li><a href="#metadataversion" id="markdown-toc-metadataversion">MetaDataVersion</a></li>
+          <li><a href="#protocol" id="markdown-toc-protocol">Protocol</a></li>
+          <li><a href="#studyevent" id="markdown-toc-studyevent">StudyEvent</a></li>
+          <li><a href="#form" id="markdown-toc-form">Form</a></li>
+          <li><a href="#itemgroup" id="markdown-toc-itemgroup">ItemGroup</a></li>
+          <li><a href="#item" id="markdown-toc-item">Item</a></li>
+          <li><a href="#codelist" id="markdown-toc-codelist">CodeList</a></li>
+          <li><a href="#measurementunit" id="markdown-toc-measurementunit">MeasurementUnit</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 </div>
 <h1 id="cdisc-operational-data-model-odm">CDISC Operational Data Model (ODM)</h1>
+<p>This document is a light touch overview of the ODM - the CDISC repository for the ODM found <a href="https://bitbucket.cdisc.org/projects/XML/repos/odm/browse">here</a>.  We recommend checking out the official docs in that repository.</p>
+
+<p>Note: the CDISC ODM is owned by <a href="https://cdisc.org">CDISC</a>, accessing the release package requires a current CDISC membership.</p>
 
 <h2 id="tldr-show-me-the-schema">TLDR: Show me the schema!</h2>
+
 <p>The ODM Schema is available at: <a href="https://bitbucket.cdisc.org/projects/XML/repos/odm/browse/schema">ODM Schema</a></p>
 
 <h2 id="what-is-the-odm">What is the ODM</h2>
@@ -144,12 +167,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Reference Data - common data needed to interpret the collected data</li>
 </ul>
 
-<p>Structures within the ODM have little semantic meaning; it is a format focused on the representation of planned and performed activities so captures relationships between elements moreso than the actual actual definition of the element itself; for example - there is no characterisation of a participant (in contrast to the Patient resource); there is a <code class="language-plaintext highlighter-rouge">SubjectData</code> element used to collect captured datapoints for an individual participant.  The <code class="language-plaintext highlighter-rouge">SubjectData</code> element includes attributes such as an OID as an identifier, but there is no information model that says the OID is an external identifier (eg Subject ID) or some other internal identifier (eg Primary Key from a Subjects table, as an example).</p>
+<p>Structures within the ODM have little semantic meaning; it is a format focused on the representation of planned and performed activities so captures relationships between elements moreso than the actual actual definition of the element itself; for example - there is no characterisation of a participant (in contrast to the Patient resource); there is a <strong>SubjectData</strong> element used to collect captured datapoints for an individual participant.  The <strong>SubjectData</strong> element includes attributes such as an OID as an identifier, but there is no information model that says the OID is an external identifier (eg Subject ID) or some other internal identifier (eg Primary Key from a Subjects table, as an example).</p>
 
-<p>Data collection is driven by Forms; forms group activities by type (ie all the Vital Signs observations for a single visit are usually grouped in a single form, irrespective of multiple planned timepoints for the elements).  Individual fields on a form are classed as Items in ODM parlance and have associated metadata pertaining to the allowable content (eg datatype, length, constrained values or allowable units for a value)</p>
+<p>Data collection is driven by Forms; forms group activities by type (ie all the Vital Signs observations for a single visit are usually grouped in a single form, irrespective of multiple planned timepoints for the elements).  Individual fields on a form are Items in ODM parlance and have associated metadata pertaining to the allowable content (eg datatype, length, constrained values or allowable units for a value)</p>
 
-<p>## 
-Broadly the structure is as follows (for ODM 1.3.2):</p>
+<h2 id="structural-overview">Structural Overview</h2>
+
+<p>Broadly the structure is as follows (for ODM 1.3.2):</p>
 <ul>
   <li>ODM
     <ul>
@@ -157,13 +181,17 @@ Broadly the structure is as follows (for ODM 1.3.2):</p>
         <ul>
           <li>MetaDataVersion
             <ul>
-              <li>StudyEvent
+              <li>Protocol
                 <ul>
-                  <li>Form
+                  <li>StudyEvent
                     <ul>
-                      <li>ItemGroup
+                      <li>Form
                         <ul>
-                          <li>Item</li>
+                          <li>ItemGroup
+                            <ul>
+                              <li>Item</li>
+                            </ul>
+                          </li>
                         </ul>
                       </li>
                     </ul>
@@ -174,7 +202,7 @@ Broadly the structure is as follows (for ODM 1.3.2):</p>
           </li>
         </ul>
       </li>
-      <li>Study Data
+      <li>ClinicalData
         <ul>
           <li>SubjectData
             <ul>
@@ -223,12 +251,178 @@ Broadly the structure is as follows (for ODM 1.3.2):</p>
 	<span class="nt">&lt;ItemGroupRef</span> <span class="na">ItemGroupOID=</span><span class="s">"IG.DOV"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">OrderNumber=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/FormDef&gt;</span>
 </code></pre></div></div>
+<p>The <em>OID</em> is the key here; it serves as the unique id (for a given –Def element type); the Reference to this –Def in the –Ref element is usually qualified with the Element type; eg</p>
+
+<p>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;<svg contentStyleType="text/css" viewBox="0 0 101 219" zoomAndPan="magnify" preserveAspectRatio="none" width="101px" style="width:101px;height:219px;" contentScriptType="application/ecmascript" version="1.1" height="219px"><defs><filter width="300%" x="-1" y="-1" id="fotxwu7c24cg7" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4.0" dy="4.0" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g>  <!-- MD5=[e495f34c8a9c3328d76bf1695859aea7]
+class ItemDef --><rect filter="url(#fotxwu7c24cg7)" codeLine="2" width="80" x="7" y="145" style="stroke:#A80036;stroke-width:1.5;" id="ItemDef" fill="#FEFECE" height="60.8047"></rect><ellipse cx="22" cy="161" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M24.9688,166.6406 Q24.3906,166.9375 23.75,167.0781 Q23.1094,167.2344 22.4063,167.2344 Q19.9063,167.2344 18.5781,165.5938 Q17.2656,163.9375 17.2656,160.8125 Q17.2656,157.6875 18.5781,156.0313 Q19.9063,154.375 22.4063,154.375 Q23.1094,154.375 23.75,154.5313 Q24.4063,154.6875 24.9688,154.9844 L24.9688,157.7031 Q24.3438,157.125 23.75,156.8594 Q23.1563,156.5781 22.5313,156.5781 Q21.1875,156.5781 20.5,157.6563 Q19.8125,158.7188 19.8125,160.8125 Q19.8125,162.9063 20.5,163.9844 Q21.1875,165.0469 22.5313,165.0469 Q23.1563,165.0469 23.75,164.7813 Q24.3438,164.5 24.9688,163.9219 L24.9688,166.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="36" font-size="12" textLength="48" y="165.1543" font-family="sans-serif" fill="#000000">ItemDef</text><line y1="177" x1="8" y2="177" style="stroke:#A80036;stroke-width:1.5;" x2="86"></line><text lengthAdjust="spacing" x="13" font-size="11" textLength="20" y="191.2104" font-family="sans-serif" fill="#000000">OID</text><line y1="197.8047" x1="8" y2="197.8047" style="stroke:#A80036;stroke-width:1.5;" x2="86"></line>  <!-- MD5=[9658e2e046829b44679095011d21bee2]
+class ItemRef --><rect filter="url(#fotxwu7c24cg7)" codeLine="6" width="79" x="7.5" y="7" style="stroke:#A80036;stroke-width:1.5;" id="ItemRef" fill="#FEFECE" height="60.8047"></rect><ellipse cx="22.5" cy="23" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M25.4688,28.6406 Q24.8906,28.9375 24.25,29.0781 Q23.6094,29.2344 22.9063,29.2344 Q20.4063,29.2344 19.0781,27.5938 Q17.7656,25.9375 17.7656,22.8125 Q17.7656,19.6875 19.0781,18.0313 Q20.4063,16.375 22.9063,16.375 Q23.6094,16.375 24.25,16.5313 Q24.9063,16.6875 25.4688,16.9844 L25.4688,19.7031 Q24.8438,19.125 24.25,18.8594 Q23.6563,18.5781 23.0313,18.5781 Q21.6875,18.5781 21,19.6563 Q20.3125,20.7188 20.3125,22.8125 Q20.3125,24.9063 21,25.9844 Q21.6875,27.0469 23.0313,27.0469 Q23.6563,27.0469 24.25,26.7813 Q24.8438,26.5 25.4688,25.9219 L25.4688,28.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="36.5" font-size="12" textLength="47" y="27.1543" font-family="sans-serif" fill="#000000">ItemRef</text><line y1="39" x1="8.5" y2="39" style="stroke:#A80036;stroke-width:1.5;" x2="85.5"></line><text lengthAdjust="spacing" x="13.5" font-size="11" textLength="45" y="53.2104" font-family="sans-serif" fill="#000000">ItemOID</text><line y1="59.8047" x1="8.5" y2="59.8047" style="stroke:#A80036;stroke-width:1.5;" x2="85.5"></line>  <!-- MD5=[eb488f3f5f647d589899031d84ce9922]
+link ItemRef to ItemDef --><path codeLine="10" d="M47,68.1267 C47,89.2983 47,117.5374 47,139.7418 " style="stroke:#A80036;stroke-width:1.0;" id="ItemRef-to-ItemDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="47,144.9589,51,135.9589,47,139.9589,43,135.9589,47,144.9589"></polygon><text lengthAdjust="spacing" x="48" font-size="13" textLength="23" y="111.0669" font-family="sans-serif" fill="#000000">OID</text></g></svg></p>
+
+<p><em>OID</em> are the best key to share data with clinical research systems.</p>
 
 <h2 id="how-the-schedule-of-activities-implemented-in-odm">How the schedule of activities implemented in ODM</h2>
-<p>The entry point for the defined activities in the ODM is through the ODM&gt;Study&gt;MetaDataVersion; a MetaDataVersion is a defined set of study configuration; from this point</p>
+<p>The linking of Data Elements (outcomes of Observations) and Definitions is illustrated here:</p>
+
+<p>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;<svg contentStyleType="text/css" viewBox="0 0 346 1393" zoomAndPan="magnify" preserveAspectRatio="none" width="346px" style="width:346px;height:1393px;" contentScriptType="application/ecmascript" version="1.1" height="1393px"><defs><filter width="300%" x="-1" y="-1" id="ff2ql5svdfot2" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4.0" dy="4.0" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g>  <!-- MD5=[96d617f820666dfc3d27fbc4293ad63a]
+cluster Definition --><polygon filter="url(#ff2ql5svdfot2)" style="stroke:#000000;stroke-width:1.5;" fill="#FFFFFF" points="173,136,254,136,261,158.2969,329,158.2969,329,1386,173,1386,173,136"></polygon><line y1="158.2969" x1="173" y2="158.2969" style="stroke:#000000;stroke-width:1.5;" x2="261"></line><text font-weight="bold" lengthAdjust="spacing" x="177" font-size="14" textLength="75" y="150.9951" font-family="sans-serif" fill="#000000">Definition</text>  <!-- MD5=[f21b1f164e99c6b37934f23ad048ad54]
+cluster Data --><polygon filter="url(#ff2ql5svdfot2)" style="stroke:#000000;stroke-width:1.5;" fill="#FFFFFF" points="16,6,57,6,64,28.2969,164,28.2969,164,1261,16,1261,16,6"></polygon><line y1="28.2969" x1="16" y2="28.2969" style="stroke:#000000;stroke-width:1.5;" x2="64"></line><text font-weight="bold" lengthAdjust="spacing" x="20" font-size="14" textLength="35" y="20.9951" font-family="sans-serif" fill="#000000">Data</text>  <!-- MD5=[a0c27cfb527bdb20a6436baa93834728]
+class Protocol --><rect filter="url(#ff2ql5svdfot2)" codeLine="3" width="84" x="196" y="394" style="stroke:#A80036;stroke-width:1.5;" id="Protocol" fill="#FEFECE" height="48"></rect><ellipse cx="211" cy="410" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M213.9688,415.6406 Q213.3906,415.9375 212.75,416.0781 Q212.1094,416.2344 211.4063,416.2344 Q208.9063,416.2344 207.5781,414.5938 Q206.2656,412.9375 206.2656,409.8125 Q206.2656,406.6875 207.5781,405.0313 Q208.9063,403.375 211.4063,403.375 Q212.1094,403.375 212.75,403.5313 Q213.4063,403.6875 213.9688,403.9844 L213.9688,406.7031 Q213.3438,406.125 212.75,405.8594 Q212.1563,405.5781 211.5313,405.5781 Q210.1875,405.5781 209.5,406.6563 Q208.8125,407.7188 208.8125,409.8125 Q208.8125,411.9063 209.5,412.9844 Q210.1875,414.0469 211.5313,414.0469 Q212.1563,414.0469 212.75,413.7813 Q213.3438,413.5 213.9688,412.9219 L213.9688,415.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="225" font-size="12" textLength="52" y="414.1543" font-family="sans-serif" fill="#000000">Protocol</text><line y1="426" x1="197" y2="426" style="stroke:#A80036;stroke-width:1.5;" x2="279"></line><line y1="434" x1="197" y2="434" style="stroke:#A80036;stroke-width:1.5;" x2="279"></line>  <!-- MD5=[ff6347f0119c5ec0ef1e4adb3c1be9dc]
+class MetaDataVersion --><rect filter="url(#ff2ql5svdfot2)" codeLine="5" width="140" x="181" y="163" style="stroke:#A80036;stroke-width:1.5;" id="MetaDataVersion" fill="#FEFECE" height="60.8047"></rect><ellipse cx="196" cy="179" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M198.9688,184.6406 Q198.3906,184.9375 197.75,185.0781 Q197.1094,185.2344 196.4063,185.2344 Q193.9063,185.2344 192.5781,183.5938 Q191.2656,181.9375 191.2656,178.8125 Q191.2656,175.6875 192.5781,174.0313 Q193.9063,172.375 196.4063,172.375 Q197.1094,172.375 197.75,172.5313 Q198.4063,172.6875 198.9688,172.9844 L198.9688,175.7031 Q198.3438,175.125 197.75,174.8594 Q197.1563,174.5781 196.5313,174.5781 Q195.1875,174.5781 194.5,175.6563 Q193.8125,176.7188 193.8125,178.8125 Q193.8125,180.9063 194.5,181.9844 Q195.1875,183.0469 196.5313,183.0469 Q197.1563,183.0469 197.75,182.7813 Q198.3438,182.5 198.9688,181.9219 L198.9688,184.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="210" font-size="12" textLength="108" y="183.1543" font-family="sans-serif" fill="#000000">MetaDataVersion</text><line y1="195" x1="182" y2="195" style="stroke:#A80036;stroke-width:1.5;" x2="320"></line><text lengthAdjust="spacing" x="187" font-size="11" textLength="116" y="209.2104" font-family="sans-serif" fill="#000000">MetaDataVersionOID</text><line y1="215.8047" x1="182" y2="215.8047" style="stroke:#A80036;stroke-width:1.5;" x2="320"></line>  <!-- MD5=[dc496f6f0dba25cd901de697d9146ea2]
+class StudyEventDef --><rect filter="url(#ff2ql5svdfot2)" codeLine="9" width="123" x="181.5" y="628" style="stroke:#A80036;stroke-width:1.5;" id="StudyEventDef" fill="#FEFECE" height="48"></rect><ellipse cx="196.5" cy="644" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M199.4688,649.6406 Q198.8906,649.9375 198.25,650.0781 Q197.6094,650.2344 196.9063,650.2344 Q194.4063,650.2344 193.0781,648.5938 Q191.7656,646.9375 191.7656,643.8125 Q191.7656,640.6875 193.0781,639.0313 Q194.4063,637.375 196.9063,637.375 Q197.6094,637.375 198.25,637.5313 Q198.9063,637.6875 199.4688,637.9844 L199.4688,640.7031 Q198.8438,640.125 198.25,639.8594 Q197.6563,639.5781 197.0313,639.5781 Q195.6875,639.5781 195,640.6563 Q194.3125,641.7188 194.3125,643.8125 Q194.3125,645.9063 195,646.9844 Q195.6875,648.0469 197.0313,648.0469 Q197.6563,648.0469 198.25,647.7813 Q198.8438,647.5 199.4688,646.9219 L199.4688,649.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="210.5" font-size="12" textLength="91" y="648.1543" font-family="sans-serif" fill="#000000">StudyEventDef</text><line y1="660" x1="182.5" y2="660" style="stroke:#A80036;stroke-width:1.5;" x2="303.5"></line><line y1="668" x1="182.5" y2="668" style="stroke:#A80036;stroke-width:1.5;" x2="303.5"></line>  <!-- MD5=[f4343c06c078b386cd984b76aadd894f]
+class FormDef --><rect filter="url(#ff2ql5svdfot2)" codeLine="11" width="84" x="189" y="862" style="stroke:#A80036;stroke-width:1.5;" id="FormDef" fill="#FEFECE" height="48"></rect><ellipse cx="204" cy="878" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M206.9688,883.6406 Q206.3906,883.9375 205.75,884.0781 Q205.1094,884.2344 204.4063,884.2344 Q201.9063,884.2344 200.5781,882.5938 Q199.2656,880.9375 199.2656,877.8125 Q199.2656,874.6875 200.5781,873.0313 Q201.9063,871.375 204.4063,871.375 Q205.1094,871.375 205.75,871.5313 Q206.4063,871.6875 206.9688,871.9844 L206.9688,874.7031 Q206.3438,874.125 205.75,873.8594 Q205.1563,873.5781 204.5313,873.5781 Q203.1875,873.5781 202.5,874.6563 Q201.8125,875.7188 201.8125,877.8125 Q201.8125,879.9063 202.5,880.9844 Q203.1875,882.0469 204.5313,882.0469 Q205.1563,882.0469 205.75,881.7813 Q206.3438,881.5 206.9688,880.9219 L206.9688,883.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="218" font-size="12" textLength="52" y="882.1543" font-family="sans-serif" fill="#000000">FormDef</text><line y1="894" x1="190" y2="894" style="stroke:#A80036;stroke-width:1.5;" x2="272"></line><line y1="902" x1="190" y2="902" style="stroke:#A80036;stroke-width:1.5;" x2="272"></line>  <!-- MD5=[0c95b86f1e6c89a59ee3a62c3c074bf7]
+class ItemGroupDef --><rect filter="url(#ff2ql5svdfot2)" codeLine="13" width="118" x="181" y="1096" style="stroke:#A80036;stroke-width:1.5;" id="ItemGroupDef" fill="#FEFECE" height="48"></rect><ellipse cx="196" cy="1112" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M198.9688,1117.6406 Q198.3906,1117.9375 197.75,1118.0781 Q197.1094,1118.2344 196.4063,1118.2344 Q193.9063,1118.2344 192.5781,1116.5938 Q191.2656,1114.9375 191.2656,1111.8125 Q191.2656,1108.6875 192.5781,1107.0313 Q193.9063,1105.375 196.4063,1105.375 Q197.1094,1105.375 197.75,1105.5313 Q198.4063,1105.6875 198.9688,1105.9844 L198.9688,1108.7031 Q198.3438,1108.125 197.75,1107.8594 Q197.1563,1107.5781 196.5313,1107.5781 Q195.1875,1107.5781 194.5,1108.6563 Q193.8125,1109.7188 193.8125,1111.8125 Q193.8125,1113.9063 194.5,1114.9844 Q195.1875,1116.0469 196.5313,1116.0469 Q197.1563,1116.0469 197.75,1115.7813 Q198.3438,1115.5 198.9688,1114.9219 L198.9688,1117.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="210" font-size="12" textLength="86" y="1116.1543" font-family="sans-serif" fill="#000000">ItemGroupDef</text><line y1="1128" x1="182" y2="1128" style="stroke:#A80036;stroke-width:1.5;" x2="298"></line><line y1="1136" x1="182" y2="1136" style="stroke:#A80036;stroke-width:1.5;" x2="298"></line>  <!-- MD5=[e495f34c8a9c3328d76bf1695859aea7]
+class ItemDef --><rect filter="url(#ff2ql5svdfot2)" codeLine="15" width="80" x="190" y="1330" style="stroke:#A80036;stroke-width:1.5;" id="ItemDef" fill="#FEFECE" height="48"></rect><ellipse cx="205" cy="1346" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M207.9688,1351.6406 Q207.3906,1351.9375 206.75,1352.0781 Q206.1094,1352.2344 205.4063,1352.2344 Q202.9063,1352.2344 201.5781,1350.5938 Q200.2656,1348.9375 200.2656,1345.8125 Q200.2656,1342.6875 201.5781,1341.0313 Q202.9063,1339.375 205.4063,1339.375 Q206.1094,1339.375 206.75,1339.5313 Q207.4063,1339.6875 207.9688,1339.9844 L207.9688,1342.7031 Q207.3438,1342.125 206.75,1341.8594 Q206.1563,1341.5781 205.5313,1341.5781 Q204.1875,1341.5781 203.5,1342.6563 Q202.8125,1343.7188 202.8125,1345.8125 Q202.8125,1347.9063 203.5,1348.9844 Q204.1875,1350.0469 205.5313,1350.0469 Q206.1563,1350.0469 206.75,1349.7813 Q207.3438,1349.5 207.9688,1348.9219 L207.9688,1351.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="219" font-size="12" textLength="48" y="1350.1543" font-family="sans-serif" fill="#000000">ItemDef</text><line y1="1362" x1="191" y2="1362" style="stroke:#A80036;stroke-width:1.5;" x2="269"></line><line y1="1370" x1="191" y2="1370" style="stroke:#A80036;stroke-width:1.5;" x2="269"></line>  <!-- MD5=[ae038848adfb1515c963b59d0bcca970]
+class ClinicalData --><rect filter="url(#ff2ql5svdfot2)" codeLine="25" width="105" x="44.5" y="33" style="stroke:#A80036;stroke-width:1.5;" id="ClinicalData" fill="#FEFECE" height="48"></rect><ellipse cx="59.5" cy="49" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M62.4688,54.6406 Q61.8906,54.9375 61.25,55.0781 Q60.6094,55.2344 59.9063,55.2344 Q57.4063,55.2344 56.0781,53.5938 Q54.7656,51.9375 54.7656,48.8125 Q54.7656,45.6875 56.0781,44.0313 Q57.4063,42.375 59.9063,42.375 Q60.6094,42.375 61.25,42.5313 Q61.9063,42.6875 62.4688,42.9844 L62.4688,45.7031 Q61.8438,45.125 61.25,44.8594 Q60.6563,44.5781 60.0313,44.5781 Q58.6875,44.5781 58,45.6563 Q57.3125,46.7188 57.3125,48.8125 Q57.3125,50.9063 58,51.9844 Q58.6875,53.0469 60.0313,53.0469 Q60.6563,53.0469 61.25,52.7813 Q61.8438,52.5 62.4688,51.9219 L62.4688,54.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="73.5" font-size="12" textLength="73" y="53.1543" font-family="sans-serif" fill="#000000">ClinicalData</text><line y1="65" x1="45.5" y2="65" style="stroke:#A80036;stroke-width:1.5;" x2="148.5"></line><line y1="73" x1="45.5" y2="73" style="stroke:#A80036;stroke-width:1.5;" x2="148.5"></line>  <!-- MD5=[cc8f861e4649fe426448dc67a5306306]
+class SubjectData --><rect filter="url(#ff2ql5svdfot2)" codeLine="26" width="109" x="40.5" y="285" style="stroke:#A80036;stroke-width:1.5;" id="SubjectData" fill="#FEFECE" height="48"></rect><ellipse cx="55.5" cy="301" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M58.4688,306.6406 Q57.8906,306.9375 57.25,307.0781 Q56.6094,307.2344 55.9063,307.2344 Q53.4063,307.2344 52.0781,305.5938 Q50.7656,303.9375 50.7656,300.8125 Q50.7656,297.6875 52.0781,296.0313 Q53.4063,294.375 55.9063,294.375 Q56.6094,294.375 57.25,294.5313 Q57.9063,294.6875 58.4688,294.9844 L58.4688,297.7031 Q57.8438,297.125 57.25,296.8594 Q56.6563,296.5781 56.0313,296.5781 Q54.6875,296.5781 54,297.6563 Q53.3125,298.7188 53.3125,300.8125 Q53.3125,302.9063 54,303.9844 Q54.6875,305.0469 56.0313,305.0469 Q56.6563,305.0469 57.25,304.7813 Q57.8438,304.5 58.4688,303.9219 L58.4688,306.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="69.5" font-size="12" textLength="77" y="305.1543" font-family="sans-serif" fill="#000000">SubjectData</text><line y1="317" x1="41.5" y2="317" style="stroke:#A80036;stroke-width:1.5;" x2="148.5"></line><line y1="325" x1="41.5" y2="325" style="stroke:#A80036;stroke-width:1.5;" x2="148.5"></line>  <!-- MD5=[d66c7ff4a30f7caefc3ebc703f1a1257]
+class StudyEventData --><rect filter="url(#ff2ql5svdfot2)" codeLine="27" width="132" x="24" y="503" style="stroke:#A80036;stroke-width:1.5;" id="StudyEventData" fill="#FEFECE" height="48"></rect><ellipse cx="39" cy="519" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M41.9688,524.6406 Q41.3906,524.9375 40.75,525.0781 Q40.1094,525.2344 39.4063,525.2344 Q36.9063,525.2344 35.5781,523.5938 Q34.2656,521.9375 34.2656,518.8125 Q34.2656,515.6875 35.5781,514.0313 Q36.9063,512.375 39.4063,512.375 Q40.1094,512.375 40.75,512.5313 Q41.4063,512.6875 41.9688,512.9844 L41.9688,515.7031 Q41.3438,515.125 40.75,514.8594 Q40.1563,514.5781 39.5313,514.5781 Q38.1875,514.5781 37.5,515.6563 Q36.8125,516.7188 36.8125,518.8125 Q36.8125,520.9063 37.5,521.9844 Q38.1875,523.0469 39.5313,523.0469 Q40.1563,523.0469 40.75,522.7813 Q41.3438,522.5 41.9688,521.9219 L41.9688,524.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="53" font-size="12" textLength="100" y="523.1543" font-family="sans-serif" fill="#000000">StudyEventData</text><line y1="535" x1="25" y2="535" style="stroke:#A80036;stroke-width:1.5;" x2="155"></line><line y1="543" x1="25" y2="543" style="stroke:#A80036;stroke-width:1.5;" x2="155"></line>  <!-- MD5=[89a5f36b4c1e8c5590227b9b05e48989]
+class FormData --><rect filter="url(#ff2ql5svdfot2)" codeLine="28" width="93" x="44.5" y="737" style="stroke:#A80036;stroke-width:1.5;" id="FormData" fill="#FEFECE" height="48"></rect><ellipse cx="59.5" cy="753" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M62.4688,758.6406 Q61.8906,758.9375 61.25,759.0781 Q60.6094,759.2344 59.9063,759.2344 Q57.4063,759.2344 56.0781,757.5938 Q54.7656,755.9375 54.7656,752.8125 Q54.7656,749.6875 56.0781,748.0313 Q57.4063,746.375 59.9063,746.375 Q60.6094,746.375 61.25,746.5313 Q61.9063,746.6875 62.4688,746.9844 L62.4688,749.7031 Q61.8438,749.125 61.25,748.8594 Q60.6563,748.5781 60.0313,748.5781 Q58.6875,748.5781 58,749.6563 Q57.3125,750.7188 57.3125,752.8125 Q57.3125,754.9063 58,755.9844 Q58.6875,757.0469 60.0313,757.0469 Q60.6563,757.0469 61.25,756.7813 Q61.8438,756.5 62.4688,755.9219 L62.4688,758.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="73.5" font-size="12" textLength="61" y="757.1543" font-family="sans-serif" fill="#000000">FormData</text><line y1="769" x1="45.5" y2="769" style="stroke:#A80036;stroke-width:1.5;" x2="136.5"></line><line y1="777" x1="45.5" y2="777" style="stroke:#A80036;stroke-width:1.5;" x2="136.5"></line>  <!-- MD5=[f1e4a662c3ad13e8202bf4b64631262d]
+class ItemGroupData --><rect filter="url(#ff2ql5svdfot2)" codeLine="29" width="127" x="27.5" y="971" style="stroke:#A80036;stroke-width:1.5;" id="ItemGroupData" fill="#FEFECE" height="48"></rect><ellipse cx="42.5" cy="987" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M45.4688,992.6406 Q44.8906,992.9375 44.25,993.0781 Q43.6094,993.2344 42.9063,993.2344 Q40.4063,993.2344 39.0781,991.5938 Q37.7656,989.9375 37.7656,986.8125 Q37.7656,983.6875 39.0781,982.0313 Q40.4063,980.375 42.9063,980.375 Q43.6094,980.375 44.25,980.5313 Q44.9063,980.6875 45.4688,980.9844 L45.4688,983.7031 Q44.8438,983.125 44.25,982.8594 Q43.6563,982.5781 43.0313,982.5781 Q41.6875,982.5781 41,983.6563 Q40.3125,984.7188 40.3125,986.8125 Q40.3125,988.9063 41,989.9844 Q41.6875,991.0469 43.0313,991.0469 Q43.6563,991.0469 44.25,990.7813 Q44.8438,990.5 45.4688,989.9219 L45.4688,992.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="56.5" font-size="12" textLength="95" y="991.1543" font-family="sans-serif" fill="#000000">ItemGroupData</text><line y1="1003" x1="28.5" y2="1003" style="stroke:#A80036;stroke-width:1.5;" x2="153.5"></line><line y1="1011" x1="28.5" y2="1011" style="stroke:#A80036;stroke-width:1.5;" x2="153.5"></line>  <!-- MD5=[9f3fcd8bc4efc713d6f54d260476c26d]
+class ItemData --><rect filter="url(#ff2ql5svdfot2)" codeLine="30" width="89" x="56.5" y="1205" style="stroke:#A80036;stroke-width:1.5;" id="ItemData" fill="#FEFECE" height="48"></rect><ellipse cx="71.5" cy="1221" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M74.4688,1226.6406 Q73.8906,1226.9375 73.25,1227.0781 Q72.6094,1227.2344 71.9063,1227.2344 Q69.4063,1227.2344 68.0781,1225.5938 Q66.7656,1223.9375 66.7656,1220.8125 Q66.7656,1217.6875 68.0781,1216.0313 Q69.4063,1214.375 71.9063,1214.375 Q72.6094,1214.375 73.25,1214.5313 Q73.9063,1214.6875 74.4688,1214.9844 L74.4688,1217.7031 Q73.8438,1217.125 73.25,1216.8594 Q72.6563,1216.5781 72.0313,1216.5781 Q70.6875,1216.5781 70,1217.6563 Q69.3125,1218.7188 69.3125,1220.8125 Q69.3125,1222.9063 70,1223.9844 Q70.6875,1225.0469 72.0313,1225.0469 Q72.6563,1225.0469 73.25,1224.7813 Q73.8438,1224.5 74.4688,1223.9219 L74.4688,1226.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="85.5" font-size="12" textLength="57" y="1225.1543" font-family="sans-serif" fill="#000000">ItemData</text><line y1="1237" x1="57.5" y2="1237" style="stroke:#A80036;stroke-width:1.5;" x2="144.5"></line><line y1="1245" x1="57.5" y2="1245" style="stroke:#A80036;stroke-width:1.5;" x2="144.5"></line>  <!-- MD5=[ea49771107ed01c688623d49f41a8c7f]
+link MetaDataVersion to Protocol --><path codeLine="17" d="M249.2197,224.245 C246.605,269.398 241.7798,352.7259 239.4009,393.808 " style="stroke:#A80036;stroke-width:1.0;" id="MetaDataVersion-Protocol" fill="none"></path>  <!-- MD5=[aefc58471ac686e39dcacb050088c47d]
+reverse link Protocol to StudyEventDef --><path codeLine="18" d="M238.8,455.4399 C239.8366,503.954 241.6142,587.1438 242.4866,627.9707 " style="stroke:#A80036;stroke-width:1.0;" id="Protocol-backto-StudyEventDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="238.5163,442.1608,234.6454,448.2449,238.7727,454.1581,242.6436,448.074,238.5163,442.1608"></polygon><text lengthAdjust="spacing" x="241" font-size="13" textLength="93" y="531.5669" font-family="sans-serif" fill="#000000">StudyEventRef</text>  <!-- MD5=[72db8fc30b6ca5160ebb8f39c226f436]
+reverse link StudyEventDef to FormDef --><path codeLine="19" d="M241.08,689.4399 C238.5921,737.954 234.326,821.1438 232.2323,861.9707 " style="stroke:#A80036;stroke-width:1.0;" id="StudyEventDef-backto-FormDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="241.761,676.1608,237.4589,681.948,241.1462,688.145,245.4484,682.3578,241.761,676.1608"></polygon><text lengthAdjust="spacing" x="239" font-size="13" textLength="53" y="765.5669" font-family="sans-serif" fill="#000000">FormRef</text>  <!-- MD5=[ca5e850ee4071c1cb5fa3bd332083333]
+reverse link FormDef to ItemGroupDef --><path codeLine="20" d="M232.44,923.4399 C234.3059,971.954 237.5055,1055.1438 239.0758,1095.9707 " style="stroke:#A80036;stroke-width:1.0;" id="FormDef-backto-ItemGroupDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="231.9293,910.1608,228.163,916.3102,232.3907,922.1519,236.157,916.0026,231.9293,910.1608"></polygon><text lengthAdjust="spacing" x="237" font-size="13" textLength="88" y="999.5669" font-family="sans-serif" fill="#000000">ItemGroupRef</text>  <!-- MD5=[59cf3a62d9ba82ada25bf638eb813143]
+reverse link ItemGroupDef to ItemDef --><path codeLine="21" d="M238.4,1157.4399 C236.3268,1205.954 232.7716,1289.1438 231.0269,1329.9707 " style="stroke:#A80036;stroke-width:1.0;" id="ItemGroupDef-backto-ItemDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="238.9675,1144.1608,234.7149,1149.9845,238.4551,1156.1499,242.7076,1150.3261,238.9675,1144.1608"></polygon><text lengthAdjust="spacing" x="237" font-size="13" textLength="49" y="1233.5669" font-family="sans-serif" fill="#000000">ItemRef</text>  <!-- MD5=[dc5981bd79a3d4bf7965593c09a53b55]
+reverse link ClinicalData to SubjectData --><path codeLine="32" d="M96.7025,94.4834 C96.286,146.9636 95.5409,240.8432 95.1912,284.9103 " style="stroke:#A80036;stroke-width:1.0;" id="ClinicalData-backto-SubjectData" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="96.8082,81.1628,92.7607,87.1308,96.7129,93.1624,100.7604,87.1944,96.8082,81.1628"></polygon>  <!-- MD5=[8c53e74985871c95eb04cf26aa69bf1d]
+reverse link SubjectData to StudyEventData --><path codeLine="33" d="M94.144,346.32 C93.1177,391.0668 91.4274,464.7672 90.5567,502.729 " style="stroke:#A80036;stroke-width:1.0;" id="SubjectData-backto-StudyEventData" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="94.4458,333.1627,90.3092,339.0694,94.1706,345.1595,98.3071,339.2529,94.4458,333.1627"></polygon>  <!-- MD5=[118e1bb66c3eda71df42412f6d178397]
+reverse link StudyEventData to FormData --><path codeLine="34" d="M90.16,564.4399 C90.3673,612.954 90.7228,696.1438 90.8973,736.9707 " style="stroke:#A80036;stroke-width:1.0;" id="StudyEventData-backto-FormData" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="90.1033,551.1608,86.129,557.1778,90.1546,563.1607,94.1289,557.1436,90.1033,551.1608"></polygon>  <!-- MD5=[4746c0cbfab28b143571452b50f6fe69]
+reverse link FormData to ItemGroupData --><path codeLine="35" d="M91,798.4399 C91,846.954 91,930.1438 91,970.9707 " style="stroke:#A80036;stroke-width:1.0;" id="FormData-backto-ItemGroupData" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="91,785.1608,87,791.1608,91,797.1608,95,791.1608,91,785.1608"></polygon>  <!-- MD5=[74f03b71ec40f858391da3ba23a94fd6]
+reverse link ItemGroupData to ItemData --><path codeLine="36" d="M92.6,1032.4399 C94.6732,1080.954 98.2284,1164.1438 99.9731,1204.9707 " style="stroke:#A80036;stroke-width:1.0;" id="ItemGroupData-backto-ItemData" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="92.0325,1019.1608,88.2924,1025.3261,92.5449,1031.1499,96.2851,1024.9845,92.0325,1019.1608"></polygon>  <!-- MD5=[0f0d77e8e3668ad836f0a787de84e466]
+link ClinicalData to MetaDataVersion --><path codeLine="38" d="M124.1776,81.0892 C148.7032,102.8279 185.0468,135.0415 212.5487,159.4182 " style="stroke:#A80036;stroke-width:1.0;" id="ClinicalData-to-MetaDataVersion" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="216.5398,162.9557,212.4578,153.9926,212.798,159.6392,207.1514,159.9794,216.5398,162.9557"></polygon><text lengthAdjust="spacing" x="175" font-size="13" textLength="134" y="124.0669" font-family="sans-serif" fill="#000000">MetaDataVersionOID</text>  <!-- MD5=[28d814bb8d8bce720221473d89ff32bf]
+link StudyEventData to StudyEventDef --><path codeLine="39" d="M94.9845,551.3118 C99.1683,566.3849 106.5293,585.2398 119,598 C127.9623,607.1704 151.8476,618.3449 176.2912,628.1443 " style="stroke:#A80036;stroke-width:1.0;" id="StudyEventData-to-StudyEventDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="181.1831,630.0849,174.2923,623.0481,176.5354,628.2412,171.3423,630.4844,181.1831,630.0849"></polygon><text lengthAdjust="spacing" x="120" font-size="13" textLength="96" y="594.0669" font-family="sans-serif" fill="#000000">StudyEventOID</text>  <!-- MD5=[614c76c58e7026443ea67fa8e2a349b7]
+link FormData to FormDef --><path codeLine="40" d="M117.6495,785.0409 C132.9438,798.8155 152.5229,816.411 170,832 C179.6908,840.6439 190.2766,850.0334 199.869,858.5218 " style="stroke:#A80036;stroke-width:1.0;" id="FormData-to-FormDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="203.6321,861.8507,199.5414,852.8916,199.8871,858.5378,194.2408,858.8836,203.6321,861.8507"></polygon><text lengthAdjust="spacing" x="171" font-size="13" textLength="56" y="828.0669" font-family="sans-serif" fill="#000000">FormOID</text>  <!-- MD5=[10189a10d20c6a9b536f07dddc5c5c8f]
+link ItemGroupData to ItemGroupDef --><path codeLine="41" d="M99.4666,1019.156 C105.7208,1034.167 115.4994,1053.0112 129,1066 C142.4104,1078.902 159.4946,1089.2644 176.2173,1097.3255 " style="stroke:#A80036;stroke-width:1.0;" id="ItemGroupData-to-ItemGroupDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="180.9211,1099.5384,174.4801,1092.0876,176.3968,1097.4099,171.0745,1099.3265,180.9211,1099.5384"></polygon><text lengthAdjust="spacing" x="130" font-size="13" textLength="91" y="1062.0669" font-family="sans-serif" fill="#000000">ItemGroupOID</text>  <!-- MD5=[d1c3c9136954c864fd1e95f0a0241f9e]
+link ItemData to ItemDef --><path codeLine="42" d="M124.78,1253.2057 C138.4704,1267.0336 156.0686,1284.6274 172,1300 C180.9228,1308.6099 190.7516,1317.8502 199.7425,1326.2101 " style="stroke:#A80036;stroke-width:1.0;" id="ItemData-to-ItemDef" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="203.5394,1329.7346,199.6646,1320.68,199.8749,1326.3329,194.2219,1326.5432,203.5394,1329.7346"></polygon><text lengthAdjust="spacing" x="173" font-size="13" textLength="52" y="1296.0669" font-family="sans-serif" fill="#000000">ItemOID</text></g></svg></p>
+
+<p>The top-level element for the definitions for the Study are contained within the <strong>MetaDataVersion</strong> element</p>
+
+<h3 id="metadataversion">MetaDataVersion</h3>
+<p>The <strong>MetaDataVersion</strong> is a set of study definition configuration; studies can have multiple versions of a study definition (sometimes in parallel); the version is identified by the <em>OID</em></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;MetaDataVersion</span> <span class="na">Description=</span><span class="s">"LZZT study design version 1"</span> <span class="na">Name=</span><span class="s">"LZZT study design version 1"</span> <span class="na">OID=</span><span class="s">"LZZT_1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Protocol&gt;</span>
+    <span class="nt">&lt;Description&gt;</span>
+      <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>A randomized, double-blind, parallel (3 arm), placebo-controlled trial of 26 weeks duration.<span class="nt">&lt;/TranslatedText&gt;</span>
+    <span class="nt">&lt;/Description&gt;</span>
+...
+<span class="nt">&lt;/MetaDataVersion&gt;</span>
+</code></pre></div></div>
 
 <h3 id="protocol">Protocol</h3>
-<p>The Protocol lists the kinds of study events that can occur within a specific version of a Study. All clinical data must occur within one of these study events.</p>
+<p>The <strong>Protocol</strong> lists the study events that can occur within a Study.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Protocol&gt;</span>
+	<span class="nt">&lt;Description&gt;</span>
+		<span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>A randomized, double-blind, parallel (3 arm), placebo-controlled trial of 26 weeks duration.<span class="nt">&lt;/TranslatedText&gt;</span>
+	<span class="nt">&lt;/Description&gt;</span>
+	<span class="nt">&lt;StudyEventRef</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">StudyEventOID=</span><span class="s">"SE.SCREENING_VISIT"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;StudyEventRef</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">StudyEventOID=</span><span class="s">"SE.AMB_ECG_VISIT"</span><span class="nt">/&gt;</span>
+...
+</code></pre></div></div>
+<p>This is mostly a container element.</p>
+
+<h3 id="studyevent">StudyEvent</h3>
+<p>The StudyEvent is the archetype for a Encounters or Study Visits.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;StudyEventDef</span> <span class="na">OID=</span><span class="s">"SE.SCREENING_VISIT"</span> <span class="na">Name=</span><span class="s">"Screening Visit (Visit 1)"</span> <span class="na">Repeating=</span><span class="s">"No"</span> <span class="na">Type=</span><span class="s">"Scheduled"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Description&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>Screening Visit at day -14<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Description&gt;</span>
+  <span class="nt">&lt;FormRef</span> <span class="na">FormOID=</span><span class="s">"F.DOV"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">OrderNumber=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+  ...
+<span class="nt">&lt;/StudyEventDef&gt;</span>
+...
+</code></pre></div></div>
+
+<h3 id="form">Form</h3>
+<p>The Form is an archetype for activities within a Visit.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;FormDef</span> <span class="na">OID=</span><span class="s">"F.DM_1"</span> <span class="na">Name=</span><span class="s">"Demographics"</span> <span class="na">Repeating=</span><span class="s">"No"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Description&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>Definition of the variables needed to support the collection of a subject's date of birth, gender, race and ethnicity.<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Description&gt;</span>
+  <span class="nt">&lt;ItemGroupRef</span> <span class="na">ItemGroupOID=</span><span class="s">"IG.DM_1"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">OrderNumber=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/FormDef&gt;</span>
+<span class="nt">&lt;FormDef</span> <span class="na">OID=</span><span class="s">"F.IE"</span> <span class="na">Name=</span><span class="s">"Inclusion / Exclusion Criteria"</span> <span class="na">Repeating=</span><span class="s">"No"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Description&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>Inclusion / Exclusion Criteria<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Description&gt;</span>
+  <span class="nt">&lt;ItemGroupRef</span> <span class="na">ItemGroupOID=</span><span class="s">"IG.IE_IN"</span> <span class="na">OrderNumber=</span><span class="s">"1"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;ItemGroupRef</span> <span class="na">ItemGroupOID=</span><span class="s">"IG.IE_EX"</span> <span class="na">OrderNumber=</span><span class="s">"2"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/FormDef&gt;</span>
+</code></pre></div></div>
+<p>Form designs are often driven by other business considerations that are not necessariy aligned with data domains.  As such a single <strong>Form</strong> may match to multiple resources in the source system.</p>
+
+<h3 id="itemgroup">ItemGroup</h3>
+<p><strong>ItemGroup</strong> could be considered as primarily a stuctural concept; it links fields to the form.  Rather than attaching directly to the form, the <strong>ItemGroup</strong> is used to group fields within the form. In the current iteration it is primarily used to represent both repeating and non-repeating sets of fields in a CRF.</p>
+
+<p>An example of this would be a series of assessments done around a dosing event (eg Vitals Pre-dose, 1h Post-Dose, 2h Post-Dose, etc); the observations are repeated using an ItemGroup with the <em>Repeating</em> attribute set to <code class="language-plaintext highlighter-rouge">Yes</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ItemGroupDef</span> <span class="na">OID=</span><span class="s">"IG.DM_1"</span> <span class="na">Name=</span><span class="s">"Demographics"</span> <span class="na">SASDatasetName=</span><span class="s">"DMSUBJ"</span> <span class="na">Repeating=</span><span class="s">"No"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ItemRef</span> <span class="na">ItemOID=</span><span class="s">"I.BRTHDAT"</span> <span class="na">Mandatory=</span><span class="s">"No"</span> <span class="na">OrderNumber=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;ItemRef</span> <span class="na">ItemOID=</span><span class="s">"I.SEX"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">OrderNumber=</span><span class="s">"2"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;ItemRef</span> <span class="na">ItemOID=</span><span class="s">"I.ETHNIC"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">OrderNumber=</span><span class="s">"3"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;ItemRef</span> <span class="na">ItemOID=</span><span class="s">"I.RACE"</span> <span class="na">Mandatory=</span><span class="s">"Yes"</span> <span class="na">OrderNumber=</span><span class="s">"4"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/ItemGroupDef&gt;</span>
+</code></pre></div></div>
+
+<h3 id="item">Item</h3>
+<p>The <strong>Item</strong> represents an individual data collection element on a Form.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ItemDef</span> <span class="na">OID=</span><span class="s">"I.BRTHDAT"</span> <span class="na">SASFieldName=</span><span class="s">"BRTHDAT"</span> <span class="na">Name=</span><span class="s">"Birth Date"</span> <span class="na">DataType=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Description&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>A subject's date of birth. The complete Date of Birth is made from the temporal components of Birth Year, Birth Month, and Birth Day.<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Description&gt;</span>
+  <span class="nt">&lt;Question&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>What is the subject's date of birth?<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Question&gt;</span>
+<span class="nt">&lt;/ItemDef&gt;</span>
+...
+<span class="nt">&lt;ItemDef</span> <span class="na">OID=</span><span class="s">"I.SEX"</span> <span class="na">SASFieldName=</span><span class="s">"SEX"</span> <span class="na">Name=</span><span class="s">"Sex"</span> <span class="na">DataType=</span><span class="s">"text"</span> <span class="na">Origin=</span><span class="s">"CRF"</span> <span class="na">Length=</span><span class="s">"50"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Description&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>Sex captures a subject's or non-subject's chromosomal characteristic.<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Description&gt;</span>
+  <span class="nt">&lt;Question&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>What is the sex of the subject?<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Question&gt;</span>
+  <span class="nt">&lt;CodeListRef</span> <span class="na">CodeListOID=</span><span class="s">"CL.SEX"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/ItemDef&gt;</span>
+...
+<span class="nt">&lt;ItemDef</span> <span class="na">OID=</span><span class="s">"I.SUDOSE_BEER"</span> <span class="na">DataType=</span><span class="s">"float"</span> <span class="na">Origin=</span><span class="s">"CRF"</span> <span class="na">Length=</span><span class="s">"6"</span> <span class="na">Name=</span><span class="s">"Beer Amount"</span> <span class="na">SASFieldName=</span><span class="s">"SUDOSBER"</span> <span class="na">SignificantDigits=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Description&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>Beer consumption amount.<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Description&gt;</span>
+  <span class="nt">&lt;Question&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>What was the amount of beer consumed?<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Question&gt;</span>
+<span class="nt">&lt;/ItemDef&gt;</span>
+</code></pre></div></div>
+<p>As can be seen from the examples, the attributes on the Item element are aimed at the characterisation of the datapoints on the form - in traditional data capture the data is constrained according to the attributes, e.g. the field will be restricted to values matching the declared <em>DataType</em> and <em>Length</em>.  Data transfers to these fields will need to conform.</p>
+
+<p>The <strong>ItemDef</strong> can have two data related child elements; the <em>CodeListRef</em> (zero or one) and <em>MeasurementUnitRef</em> (zero or more).  These are links to <strong>CodeList</strong> and <strong>MeasurementUnit</strong> elements.</p>
+
+<h3 id="codelist">CodeList</h3>
+<p>A <strong>CodeList</strong> is used to constrain the permitted values for a field.  Each <strong>CodeListItem</strong> represents a permissible value for the field; these have a <em>CodedValue</em> and a <em>Decode</em>: the <em>CodedValue</em> is the value intended to be written to the backing store and the <em>Decode</em> is the representation of the <em>CodedValue</em> that is shown to the user.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;CodeList</span> <span class="na">OID=</span><span class="s">"CL.SEX"</span> <span class="na">Name=</span><span class="s">"Sex"</span> <span class="na">DataType=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;CodeListItem</span> <span class="na">CodedValue=</span><span class="s">"F"</span> <span class="na">OrderNumber=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Decode&gt;</span>
+      <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>Female<span class="nt">&lt;/TranslatedText&gt;</span>
+    <span class="nt">&lt;/Decode&gt;</span>
+  <span class="nt">&lt;/CodeListItem&gt;</span>
+  <span class="nt">&lt;CodeListItem</span> <span class="na">CodedValue=</span><span class="s">"M"</span> <span class="na">OrderNumber=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Decode&gt;</span>
+      <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>Male<span class="nt">&lt;/TranslatedText&gt;</span>
+    <span class="nt">&lt;/Decode&gt;</span>
+  <span class="nt">&lt;/CodeListItem&gt;</span>
+<span class="nt">&lt;/CodeList&gt;</span>
+</code></pre></div></div>
+
+<h3 id="measurementunit">MeasurementUnit</h3>
+<p>The <strong>MeasurementUnit</strong> is used to represent the possible units for a physical quantity with a Unit; the Unit can be reused across many elements.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;MeasurementUnit</span> <span class="na">OID=</span><span class="s">"mmHg"</span> <span class="na">Name=</span><span class="s">"mmHg"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Symbol&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>mmHg<span class="nt">&lt;/TranslatedText&gt;</span>
+    <span class="nt">&lt;TranslatedText</span> <span class="na">xml:lang=</span><span class="s">"ja"</span><span class="nt">&gt;</span>mmHg<span class="nt">&lt;/TranslatedText&gt;</span>
+  <span class="nt">&lt;/Symbol&gt;</span>
+<span class="nt">&lt;/MeasurementUnit&gt;</span>
+</code></pre></div></div>
+<p>The <em>Symbol</em> is used for the representation of the Unit; the <em>OID</em> is used as the persisted value.</p>
 
 
 
@@ -252,8 +446,8 @@ Broadly the structure is as follows (for ODM 1.3.2):</p>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="2fc0d92c-decd-42e1-81f8-a508b7889ecb">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 5, 2021 15:48+0000">2021-05-05</span>
+        <p><a name="044d5f93-2e52-4f3c-a5ee-b0b5620f94d8">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 10, 2021 09:41+0000">2021-05-10</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

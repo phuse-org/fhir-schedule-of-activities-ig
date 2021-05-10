@@ -16,11 +16,11 @@
     }
   ],
   "url": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "SOAPlannedVisitDefinition",
   "title": "SOA Planned Visit Definition",
   "status": "active",
-  "date": "2021-05-05T15:48:47+00:00",
+  "date": "2021-05-10T09:41:40+00:00",
   "description": "An example of a planned visit definition for the study.",
   "fhirVersion": "4.0.1",
   "mapping": [

@@ -6,11 +6,11 @@
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include codes from <a href="http://ncimeta.nci.nih.gov"><code>http://ncimeta.nci.nih.gov</code></a> where concept  is-a  C99079</li></ul></div>
   </text>
   <url value="http://example.org/br-and-r/soa/ValueSet/soa-epoch-epochtype-value-set"/>
-  <version value="0.1.0"/>
+  <version value="0.1.1"/>
   <name value="SOAEpochTypes"/>
   <title value="Epoch Type Value Set"/>
   <status value="active"/>
-  <date value="2021-05-05T15:48:47+00:00"/>
+  <date value="2021-05-10T09:41:40+00:00"/>
   <description value="Set of permitted values for Epoch"/>
   <compose>
     <include>

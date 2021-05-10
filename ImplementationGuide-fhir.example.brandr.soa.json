@@ -6,10 +6,10 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ScheduleOfActivityIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa</pre></div>"
   },
   "url": "http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "ScheduleOfActivityIG",
   "status": "draft",
-  "date": "2021-05-05T15:48:47+00:00",
+  "date": "2021-05-10T09:41:40+00:00",
   "packageId": "fhir.example.brandr.soa",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -1965,22 +1965,22 @@
         },
         {
           "nameUrl": "cdisc-odm.html",
-          "title": "Cdisc Odm",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "deltas.html",
-          "title": "Deltas",
+          "title": "CDISC Operational Model (ODM)",
           "generation": "markdown"
         },
         {
           "nameUrl": "developer.html",
-          "title": "Developer",
+          "title": "Developer Setup",
           "generation": "markdown"
         },
         {
           "nameUrl": "h2q-mc-lzzt.html",
-          "title": "H 2 Q Mc Lzzt",
+          "title": "Study Design for H2Q-MC-LZZT",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "deltas.html",
+          "title": "Clinical Research Profile Backlog",
           "generation": "markdown"
         }
       ]

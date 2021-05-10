@@ -13,11 +13,11 @@
     <valueCode value="patient"/>
   </extension>
   <url value="http://example.org/br-and-r/soa/StructureDefinition/Soa-Subject"/>
-  <version value="0.1.0"/>
+  <version value="0.1.1"/>
   <name value="SOASubject"/>
   <title value="SOA Subject"/>
   <status value="active"/>
-  <date value="2021-05-05T15:48:47+00:00"/>
+  <date value="2021-05-10T09:41:40+00:00"/>
   <description value="A research subject example."/>
   <fhirVersion value="4.0.1"/>
   <mapping>

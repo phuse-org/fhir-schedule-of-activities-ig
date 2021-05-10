@@ -6,10 +6,10 @@
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>ScheduleOfActivityIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa</pre></div>
   </text>
   <url value="http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa"/>
-  <version value="0.1.0"/>
+  <version value="0.1.1"/>
   <name value="ScheduleOfActivityIG"/>
   <status value="draft"/>
-  <date value="2021-05-05T15:48:47+00:00"/>
+  <date value="2021-05-10T09:41:40+00:00"/>
   <packageId value="fhir.example.brandr.soa"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -1500,22 +1500,22 @@
       </page>
       <page>
         <nameUrl value="cdisc-odm.html"/>
-        <title value="Cdisc Odm"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="deltas.html"/>
-        <title value="Deltas"/>
+        <title value="CDISC Operational Model (ODM)"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="developer.html"/>
-        <title value="Developer"/>
+        <title value="Developer Setup"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="h2q-mc-lzzt.html"/>
-        <title value="H 2 Q Mc Lzzt"/>
+        <title value="Study Design for H2Q-MC-LZZT"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="deltas.html"/>
+        <title value="Clinical Research Profile Backlog"/>
         <generation value="markdown"/>
       </page>
     </page>

@@ -35,7 +35,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body>
+  <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
@@ -47,7 +47,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold"></span><br/>0.1.0 - ci-build</p>
+          <p><span style="font-size:12pt;font-weight:bold"></span><br/>0.1.1 - ci-build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -77,13 +77,13 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="cdisc-odm.html">CDISC ODM</a>
+    <a href="cdisc-odm.html">CDISC Operational Model (ODM)</a>
   </li>
   <li>
-    <a href="deltas.html">Changes for CR</a>
+    <a href="deltas.html">Clinical Research Profile Backlog</a>
   </li>
   <li>
-    <a href="developer.html">Developer Guidance</a>
+    <a href="developer.html">Developer Setup</a>
   </li>
 </ul>
             </div>    <!-- /.nav-collapse -->
@@ -107,7 +107,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-  <!-- ReleaseHeader --><p id="publish-box">ScheduleOfActivityIG - Local Development build (v0.1.0). See the <a href="http://example.org/br-and-r/soa/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <!-- ReleaseHeader --><p id="publish-box">ScheduleOfActivityIG - Local Development build (v0.1.1). See the <a href="http://example.org/br-and-r/soa/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
 
 
 
@@ -169,13 +169,13 @@
   &lt;/meta&gt;
   &lt;<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="generated"/&gt;
-    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: May 5, 2021, 3:48:47 PM&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.1&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: May 10, 2021, 9:41:40 AM&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="0.1.0"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="0.1.1"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="active"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2021-05-05T15:48:47+00:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2021-05-10T09:41:40+00:00"/&gt;
 &lt;/PlanDefinition&gt;</code></pre>
 
 
@@ -203,8 +203,8 @@
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="c78e6519-b3e0-4bfb-9cc3-3073b03808ae">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 5, 2021 15:48+0000">2021-05-05</span>
+        <p><a name="82775f8c-c5b5-42ab-9d08-dbd753da7a2d">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 10, 2021 09:41+0000">2021-05-10</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

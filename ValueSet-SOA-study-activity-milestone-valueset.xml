@@ -6,11 +6,11 @@
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include codes from <a href="http://ncimeta.nci.nih.gov"><code>http://ncimeta.nci.nih.gov</code></a> where concept  is-a  C114118</li></ul></div>
   </text>
   <url value="http://example.org/br-and-r/soa/ValueSet/SOA-study-activity-milestone-valueset"/>
-  <version value="0.1.0"/>
+  <version value="0.1.1"/>
   <name value="StudyMilestoneValueset"/>
   <title value="Study Milestone"/>
   <status value="active"/>
-  <date value="2021-05-05T15:48:47+00:00"/>
+  <date value="2021-05-10T09:41:40+00:00"/>
   <compose>
     <include>
       <system value="http://ncimeta.nci.nih.gov"/>

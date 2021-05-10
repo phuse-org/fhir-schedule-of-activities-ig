@@ -10,11 +10,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day"/>
-  <version value="0.1.0"/>
+  <version value="0.1.1"/>
   <name value="PlannedStudyDay"/>
   <title value="Planned Study Day of Visit"/>
   <status value="active"/>
-  <date value="2021-05-05T15:48:47+00:00"/>
+  <date value="2021-05-10T09:41:40+00:00"/>
   <description value="Planned Study Day of Visit, such as Day -21, Day 1, Day 52"/>
   <fhirVersion value="4.0.1"/>
   <mapping>

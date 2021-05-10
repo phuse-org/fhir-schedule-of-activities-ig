@@ -16,11 +16,11 @@
     <valueCode value="anonymous"/>
   </extension>
   <url value="http://example.org/br-and-r/soa/StructureDefinition/SOA-unplanned-visit-definition"/>
-  <version value="0.1.0"/>
+  <version value="0.1.1"/>
   <name value="SOAUnPlannedVisitDefinition"/>
   <title value="SOA Unplanned Visit Definition"/>
   <status value="active"/>
-  <date value="2021-05-05T15:48:47+00:00"/>
+  <date value="2021-05-10T09:41:40+00:00"/>
   <description value="An example of a unplanned visit definition for the study."/>
   <fhirVersion value="4.0.1"/>
   <mapping>

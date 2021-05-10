@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "fhirVersion": "[4.0.1]",
-  "date": "20210505154821",
+  "date": "20210510094104",
   "name": "fhir.example.brandr.soa"
 }

@@ -13,11 +13,11 @@
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include codes from <a href=\"http://ncimeta.nci.nih.gov\"><code>http://ncimeta.nci.nih.gov</code></a> where concept  is-a  C99079</li></ul></div>"
   ];
   fhir:ValueSet.url [ fhir:value "http://example.org/br-and-r/soa/ValueSet/soa-epoch-epochtype-value-set"];
-  fhir:ValueSet.version [ fhir:value "0.1.0"];
+  fhir:ValueSet.version [ fhir:value "0.1.1"];
   fhir:ValueSet.name [ fhir:value "SOAEpochTypes"];
   fhir:ValueSet.title [ fhir:value "Epoch Type Value Set"];
   fhir:ValueSet.status [ fhir:value "active"];
-  fhir:ValueSet.date [ fhir:value "2021-05-05T15:48:47+00:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2021-05-10T09:41:40+00:00"^^xsd:dateTime];
   fhir:ValueSet.description [ fhir:value "Set of permitted values for Epoch"];
   fhir:ValueSet.compose [
      fhir:ValueSet.compose.include [

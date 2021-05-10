@@ -22,11 +22,11 @@
      fhir:Extension.valueCode [ fhir:value "business" ]
   ];
   fhir:StructureDefinition.url [ fhir:value "http://example.org/br-and-r/soa/StructureDefinition/SOA-visit-plan-definition"];
-  fhir:StructureDefinition.version [ fhir:value "0.1.0"];
+  fhir:StructureDefinition.version [ fhir:value "0.1.1"];
   fhir:StructureDefinition.name [ fhir:value "SOAVisitPlanDefinition"];
   fhir:StructureDefinition.title [ fhir:value "SOA Visit Plan Defintion"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2021-05-05T15:48:47+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2021-05-10T09:41:40+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.description [ fhir:value "A profile on the plan definition resource to define the planned events for a visit."];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [

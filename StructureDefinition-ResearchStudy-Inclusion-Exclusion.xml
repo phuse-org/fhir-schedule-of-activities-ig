@@ -13,11 +13,11 @@
     <valueCode value="business"/>
   </extension>
   <url value="http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion"/>
-  <version value="0.1.0"/>
+  <version value="0.1.1"/>
   <name value="ResearchStudyInclusionExclusion"/>
   <title value="Research Study Inclusion Exclusion"/>
   <status value="active"/>
-  <date value="2021-05-05T15:48:47+00:00"/>
+  <date value="2021-05-10T09:41:40+00:00"/>
   <description value="Research Study Inclusion Exclusion Criteria"/>
   <fhirVersion value="4.0.1"/>
   <mapping>
