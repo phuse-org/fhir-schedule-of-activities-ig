@@ -1,7 +1,7 @@
 # CDISC Operational Data Model (ODM)
 This document is a light touch overview of the ODM - the CDISC repository for the ODM found [here](https://bitbucket.cdisc.org/projects/XML/repos/odm/browse).  We recommend checking out the official docs in that repository.
 
-Note: the CDISC ODM is owned by [CDISC](https://cdisc.org), accessing the release package requires a current CDISC membership.
+Note: the CDISC ODM is owned by [CDISC](https://cdisc.org).  A free CDISC website account is required to access the material - [create an account here](https://www.cdisc.org/user/registration).
 
 ## TLDR: Show me the schema!
 
