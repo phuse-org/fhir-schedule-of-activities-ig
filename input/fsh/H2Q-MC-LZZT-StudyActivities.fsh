@@ -4,6 +4,11 @@ Description: "Planned Activity [DAD]"
 Usage: #example
 Title: "DAD"
 * status = #active
+* identifier[+].value = "F.DAD"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(DAD-Observations)
 * observationResultRequirement = Reference(DAD-Observations)
 
@@ -22,6 +27,11 @@ Description: "Planned Activity [Medications dispensed]"
 Usage: #example
 Title: "Medications dispensed"
 * status = #active
+* identifier[+].value = "F.EX_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Medications-dispensed-Observations)
 * observationResultRequirement = Reference(Medications-dispensed-Observations)
 
@@ -31,6 +41,11 @@ Description: "Planned Activity [Ambulatory ECG removed]"
 Usage: #example
 Title: "Ambulatory ECG removed"
 * status = #active
+* identifier[+].value = "F.PR_ECG_2"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Ambulatory-ECG-removed-Observations)
 * observationResultRequirement = Reference(Ambulatory-ECG-removed-Observations)
 
@@ -40,6 +55,11 @@ Description: "Planned Activity [Laboratory (Urinalysis)]"
 Usage: #example
 Title: "Laboratory (Urinalysis)"
 * status = #active
+* identifier[+].value = "F.LB_URINE"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Laboratory-Urinalysis-Observations)
 * observationResultRequirement = Reference(Laboratory-Urinalysis-Observations)
 
@@ -58,6 +78,11 @@ Description: "Planned Activity [Adverse events]"
 Usage: #example
 Title: "Adverse events"
 * status = #active
+* identifier[+].value = "F.AE_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Adverse-events-Observations)
 * observationResultRequirement = Reference(Adverse-events-Observations)
 
@@ -67,6 +92,11 @@ Description: "Planned Activity [Patient number assigned]"
 Usage: #example
 Title: "Patient number assigned"
 * status = #active
+* identifier[+].value = "F.DM_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Patient-number-assigned-Observations)
 * observationResultRequirement = Reference(Patient-number-assigned-Observations)
 
@@ -76,6 +106,11 @@ Description: "Planned Activity [Vital signs/Temperature]"
 Usage: #example
 Title: "Vital signs/Temperature"
 * status = #active
+* identifier[+].value = "F.VS_3"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Vital-signs-Temperature-Observations)
 * observationResultRequirement = Reference(Vital-signs-Temperature-Observations)
 
@@ -85,6 +120,11 @@ Description: "Planned Activity [Medical History]"
 Usage: #example
 Title: "Medical History"
 * status = #active
+* identifier[+].value = "F.MH_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Medical-History-Observations)
 * observationResultRequirement = Reference(Medical-History-Observations)
 
@@ -94,6 +134,11 @@ Description: "Planned Activity [Chest x-ray]"
 Usage: #example
 Title: "Chest x-ray"
 * status = #active
+* identifier[+].value = "F.PR_CHESTXRAY"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(Chest-x-ray-Observations)
 * observationResultRequirement = Reference(Chest-x-ray-Observations)
 
@@ -112,17 +157,42 @@ Description: "Planned Activity [CIBIC+]"
 Usage: #example
 Title: "CIBIC+"
 * status = #active
+* identifier[+].value = "F.CIBC+"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(CIBIC-Observations)
 * observationResultRequirement = Reference(CIBIC-Observations)
 
-Instance: H2Q-MC-LZZT-Laboratory-Chem-Hemat
+Instance: H2Q-MC-LZZT-Laboratory-Chem
 InstanceOf: ActivityDefinition
-Description: "Planned Activity [Laboratory (Chem/Hemat)]"
+Description: "Planned Activity [Laboratory (Chem)]"
 Usage: #example
-Title: "Laboratory (Chem/Hemat)"
+Title: "Laboratory (Chem)"
 * status = #active
-* observationRequirement = Reference(Laboratory-Chem-Hemat-Observations)
-* observationResultRequirement = Reference(Laboratory-Chem-Hemat-Observations)
+* identifier[+].value = "F.LB_CHEM"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+* observationRequirement = Reference(Laboratory-Chem-Observations)
+* observationResultRequirement = Reference(Laboratory-Chem-Observations)
+
+Instance: H2Q-MC-LZZT-Laboratory-Hemat
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Laboratory (Hemat)]"
+Usage: #example
+Title: "Laboratory (Hemat)"
+* status = #active
+* identifier[+].value = "F.LB_HEM"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+// TODO
+* observationRequirement = Reference(Laboratory-Hemat-Observations)
+* observationResultRequirement = Reference(Laboratory-Hemat-Observations)
 
 Instance: H2Q-MC-LZZT-Apo-E-genotyping
 InstanceOf: ActivityDefinition
@@ -139,6 +209,11 @@ Description: "Planned Activity [TTS Acceptability Survey]"
 Usage: #example
 Title: "TTS Acceptability Survey"
 * status = #active
+* identifier[+].value = "F.TTSACC"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
 * observationRequirement = Reference(TTS-Acceptability-Survey-Observations)
 * observationResultRequirement = Reference(TTS-Acceptability-Survey-Observations)
 
@@ -148,6 +223,12 @@ Description: "Planned Activity [Record Visit Date]"
 Usage: #example
 Title: "Visit Date"
 * status = #active
+* identifier[+].value = "F.DOV"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
 
 Instance: H2Q-MC-LZZT-Plasma-Specimen
 InstanceOf: ActivityDefinition
@@ -158,14 +239,44 @@ Title: "Plasma Specimen"
 * observationRequirement = Reference(Plasma-Specimen-Observations)
 * observationResultRequirement = Reference(Plasma-Specimen-Observations)
 
-Instance: H2Q-MC-LZZT-Habits
+Instance: H2Q-MC-LZZT-Habits-Alcohol
 InstanceOf: ActivityDefinition
-Description: "Planned Activity [Habits]"
+Description: "Planned Activity [Habits - Alcohol]"
 Usage: #example
-Title: "Habits"
+Title: "Habits - Alcohol"
 * status = #active
-* observationRequirement = Reference(Habits-Observations)
-* observationResultRequirement = Reference(Habits-Observations)
+* identifier[+].value = "F.SU_ALCOHOL"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* observationRequirement = Reference(Habits-Observations-Alcohol)
+* observationResultRequirement = Reference(Habits-Observations-Alcohol)
+
+Instance: H2Q-MC-LZZT-Habits-Caffeine
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Habits - Caffeine]"
+Usage: #example
+Title: "Habits - Caffeine"
+* status = #active
+* identifier[+].value = "F.SU_CAFFEINE"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* observationRequirement = Reference(Habits-Observations-Caffeine)
+* observationResultRequirement = Reference(Habits-Observations-Caffeine)
+
+Instance: H2Q-MC-LZZT-Habits-Smoking
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Habits - Smoking]"
+Usage: #example
+Title: "Habits - Smoking"
+* status = #active
+* identifier[+].value = "F.SU_SMOKING"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* observationRequirement = Reference(Habits-Observations-Smoking)
+* observationResultRequirement = Reference(Habits-Observations-Smoking)
 
 Instance: H2Q-MC-LZZT-Hemoglobin-A1C
 InstanceOf: ActivityDefinition
@@ -173,6 +284,7 @@ Description: "Planned Activity [Hemoglobin A1C]"
 Usage: #example
 Title: "Hemoglobin A1C"
 * status = #active
+// TODO: separate out
 * observationRequirement = Reference(Hemoglobin-A1C-Observations)
 * observationResultRequirement = Reference(Hemoglobin-A1C-Observations)
 
@@ -182,6 +294,10 @@ Description: "Planned Activity [Study drug record]"
 Usage: #example
 Title: "Study drug record"
 * status = #active
+* identifier[+].value = "F.EX_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(Study-drug-record-Observations)
 * observationResultRequirement = Reference(Study-drug-record-Observations)
 
@@ -191,6 +307,10 @@ Description: "Planned Activity [ADAS-Cog]"
 Usage: #example
 Title: "ADAS-Cog"
 * status = #active
+* identifier[+].value = "F.ADAS-COG"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(ADAS-Cog-Observations)
 * observationResultRequirement = Reference(ADAS-Cog-Observations)
 
@@ -200,6 +320,10 @@ Description: "Planned Activity [CT Scan]"
 Usage: #example
 Title: "CT Scan"
 * status = #active
+* identifier[+].value = "F.PR_CTSCAN"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(CT-Scan-Observations)
 * observationResultRequirement = Reference(CT-Scan-Observations)
 
@@ -209,6 +333,10 @@ Description: "Planned Activity [Hachinski 4]"
 Usage: #example
 Title: "Hachinski 4"
 * status = #active
+* identifier[+].value = "F.MHIS-NACC"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(Hachinski-4-Observations)
 * observationResultRequirement = Reference(Hachinski-4-Observations)
 
@@ -227,6 +355,10 @@ Description: "Planned Activity [Ambulatory ECG placed]"
 Usage: #example
 Title: "Ambulatory ECG placed"
 * status = #active
+* identifier[+].value = "F.PR_ECG_2"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(Ambulatory-ECG-placed-Observations)
 * observationResultRequirement = Reference(Ambulatory-ECG-placed-Observations)
 
@@ -236,6 +368,10 @@ Description: "Planned Activity [Informed Consent]"
 Usage: #example
 Title: "Informed Consent"
 * status = #active
+* identifier[+].value = "F.DS_IC"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(Informed-Consent-Observations)
 * observationResultRequirement = Reference(Informed-Consent-Observations)
 
@@ -245,6 +381,10 @@ Description: "Planned Activity [MMSE 10-23]"
 Usage: #example
 Title: "MMSE 10-23"
 * status = #active
+* identifier[+].value = "F.MMSE"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(MMSE-10-23-Observations)
 * observationResultRequirement = Reference(MMSE-10-23-Observations)
 
@@ -254,6 +394,10 @@ Description: "Planned Activity [Concomitant Medications]"
 Usage: #example
 Title: "Concomitant Medications"
 * status = #active
+* identifier[+].value = "F.CM_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(Concomitant-Medications-Observations)
 * observationResultRequirement = Reference(Concomitant-Medications-Observations)
 
@@ -263,6 +407,10 @@ Description: "Planned Activity [ECG]"
 Usage: #example
 Title: "ECG"
 * status = #active
+* identifier[+].value = "F.ECG_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(ECG-Observations)
 * observationResultRequirement = Reference(ECG-Observations)
 
@@ -272,6 +420,10 @@ Description: "Planned Activity [NPI-X]"
 Usage: #example
 Title: "NPI-X"
 * status = #active
+* identifier[+].value = "F.NPI-X"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
 * observationRequirement = Reference(NPI-X-Observations)
 * observationResultRequirement = Reference(NPI-X-Observations)
 
