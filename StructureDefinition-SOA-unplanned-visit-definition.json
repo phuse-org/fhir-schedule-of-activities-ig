@@ -20,7 +20,7 @@
   "name": "SOAUnPlannedVisitDefinition",
   "title": "SOA Unplanned Visit Definition",
   "status": "active",
-  "date": "2021-05-17T14:10:57+00:00",
+  "date": "2021-05-17T21:11:23+00:00",
   "description": "An example of a unplanned visit definition for the study.",
   "fhirVersion": "4.0.1",
   "mapping": [

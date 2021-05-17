@@ -16,7 +16,7 @@
   fhir:ImplementationGuide.version [ fhir:value "0.1.1"];
   fhir:ImplementationGuide.name [ fhir:value "ScheduleOfActivityIG"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-05-17T14:10:57+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-05-17T21:11:23+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.packageId [ fhir:value "fhir.example.brandr.soa"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [

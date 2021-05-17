@@ -14,7 +14,7 @@
   <name value="PlannedStudyDay"/>
   <title value="Planned Study Day of Visit"/>
   <status value="active"/>
-  <date value="2021-05-17T14:10:57+00:00"/>
+  <date value="2021-05-17T21:11:23+00:00"/>
   <description value="Planned Study Day of Visit, such as Day -21, Day 1, Day 52"/>
   <fhirVersion value="4.0.1"/>
   <mapping>

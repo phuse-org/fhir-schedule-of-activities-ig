@@ -9,7 +9,7 @@
   <version value="0.1.1"/>
   <name value="ScheduleOfActivityIG"/>
   <status value="draft"/>
-  <date value="2021-05-17T14:10:57+00:00"/>
+  <date value="2021-05-17T21:11:23+00:00"/>
   <packageId value="fhir.example.brandr.soa"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>

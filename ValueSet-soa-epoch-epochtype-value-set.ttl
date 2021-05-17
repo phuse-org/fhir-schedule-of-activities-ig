@@ -17,7 +17,7 @@
   fhir:ValueSet.name [ fhir:value "SOAEpochTypes"];
   fhir:ValueSet.title [ fhir:value "Epoch Type Value Set"];
   fhir:ValueSet.status [ fhir:value "active"];
-  fhir:ValueSet.date [ fhir:value "2021-05-17T14:10:57+00:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2021-05-17T21:11:23+00:00"^^xsd:dateTime];
   fhir:ValueSet.description [ fhir:value "Set of permitted values for Epoch"];
   fhir:ValueSet.compose [
      fhir:ValueSet.compose.include [

@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "PlannedStudyDayWindow"];
   fhir:StructureDefinition.title [ fhir:value "Planned Study Day Window"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2021-05-17T14:10:57+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2021-05-17T21:11:23+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.description [ fhir:value "Planned Study Day Window (Times)"];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [

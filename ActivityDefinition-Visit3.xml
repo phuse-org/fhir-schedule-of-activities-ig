@@ -6,7 +6,7 @@
     <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 1</p><p><b>Study Event OID</b>: VISIT3</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/Visit3</code></p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 17, 2021, 2:10:57 PM</p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 1</p><p><b>Study Event OID</b>: VISIT3</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/Visit3</code></p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 17, 2021, 9:11:23 PM</p></div>
   </text>
   <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
     <valueInteger value="1"/>
@@ -17,5 +17,5 @@
   <url value="http://example.org/br-and-r/soa/ActivityDefinition/Visit3"/>
   <version value="0.1.1"/>
   <status value="active"/>
-  <date value="2021-05-17T14:10:57+00:00"/>
+  <date value="2021-05-17T21:11:23+00:00"/>
 </ActivityDefinition>
