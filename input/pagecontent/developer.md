@@ -42,17 +42,19 @@
     * https://code.visualstudio.com/download - download and install the Windows Installer
 3. Install Jekyll 
     * Follow the instructions on https://jekyllrb.com/docs/installation/windows/
-4. Install the VS Code extension for FSH
+4. Install Jekyll plugin - PlantUml
+    * In a command prompt type in 'gem install jekyll-plantuml' (Jekyll needs to be installed for this step)
+5. Install the VS Code extension for FSH
     * https://marketplace.visualstudio.com/items?itemName=kmahalingam.vscode-language-fsh 
-5. Start VS Code and open a terminal (CTRL + `) and in the terminal run the following
+6. Start VS Code and open a terminal (CTRL + `) and in the terminal run the following
     ```shell
     $ npm install -g fsh-sushi 
     ```
-6. Update the publisher
+7. Update the publisher
     ```shell
     $ ./_updatePublisher.sh
     ```
-7. Build
+8. Build
     ```shell
     $ ./_genonce.sh
     ```
