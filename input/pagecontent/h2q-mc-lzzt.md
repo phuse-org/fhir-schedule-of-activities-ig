@@ -916,20 +916,20 @@ A couple of notes:
 				<ItemGroupRef ItemGroupOID="IG.VS_4_3" Mandatory="Yes" OrderNumber="3"/>
 			</FormDef>
 			<ItemGroupDef OID="IG.ADAS-COG" Name="Alzheimer's Disease Assessment Scale - Cognitive" Repeating="No" SASDatasetName="ADASCOG">
-				<ItemRef ItemOID="I.ACITM01" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM02" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM03" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM04" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM05" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM06" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM07" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM08" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM09" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM10" OrderNumber="10" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM11" OrderNumber="11" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM12" OrderNumber="12" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM13" OrderNumber="13" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ACITM14" OrderNumber="14" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.ACITM01" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM02" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM03" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM04" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM05" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM06" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM07" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM08" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM09" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM10" OrderNumber="10" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM11" OrderNumber="11" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM12" OrderNumber="12" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM13" OrderNumber="13" Mandatory="No"/>
+				<ItemRef ItemOID="I.ACITM14" OrderNumber="14" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.AE_1_1" Name="Adverse Events Present" SASDatasetName="AEYN" Repeating="No">
 				<ItemRef ItemOID="I.AEYN" Mandatory="Yes" OrderNumber="1"/>
@@ -958,59 +958,59 @@ A couple of notes:
 				<ItemRef ItemOID="I.AEOUT" Mandatory="Yes" OrderNumber="19"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.CIBIC+" Name="Clinician's Interview-Based Impression of Change" Repeating="No" SASDatasetName="CIBIC">
-				<ItemRef ItemOID="I.CIBIC" OrderNumber="1" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.CIBIC" OrderNumber="1" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.CM_1" Name="Concomitant Medications" Repeating="No" SASDatasetName="CM">
-				<ItemRef ItemOID="I.CMSPID" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CMTRT" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CMSTDAT" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CMINDC" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CMDOSE" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CMDOSU" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CMDOSFRQ" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CMROUTE" OrderNumber="8" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.CMSPID" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.CMTRT" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.CMSTDAT" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.CMINDC" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.CMDOSE" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.CMDOSU" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.CMDOSFRQ" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.CMROUTE" OrderNumber="8" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.DAD" Name="Disability Assessment for Dementia" Repeating="No" SASDatasetName="DAD">
-				<ItemRef ItemOID="I.DAITM01" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM02" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM03" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM04" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM05" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM06" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM07" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM08" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM09" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM10" OrderNumber="10" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM11" OrderNumber="11" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM12" OrderNumber="12" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM13" OrderNumber="13" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM14" OrderNumber="14" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM15" OrderNumber="15" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM16" OrderNumber="16" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM17" OrderNumber="17" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM18" OrderNumber="18" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM19" OrderNumber="19" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM20" OrderNumber="20" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM21" OrderNumber="21" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM22" OrderNumber="22" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM23" OrderNumber="23" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM24" OrderNumber="24" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM25" OrderNumber="25" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM26" OrderNumber="26" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM27" OrderNumber="27" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM28" OrderNumber="28" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM29" OrderNumber="29" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM30" OrderNumber="30" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM31" OrderNumber="31" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM32" OrderNumber="32" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM33" OrderNumber="33" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM34" OrderNumber="34" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM35" OrderNumber="35" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM36" OrderNumber="36" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM37" OrderNumber="37" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM38" OrderNumber="38" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM39" OrderNumber="39" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DAITM40" OrderNumber="40" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.DAITM01" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM02" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM03" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM04" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM05" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM06" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM07" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM08" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM09" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM10" OrderNumber="10" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM11" OrderNumber="11" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM12" OrderNumber="12" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM13" OrderNumber="13" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM14" OrderNumber="14" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM15" OrderNumber="15" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM16" OrderNumber="16" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM17" OrderNumber="17" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM18" OrderNumber="18" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM19" OrderNumber="19" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM20" OrderNumber="20" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM21" OrderNumber="21" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM22" OrderNumber="22" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM23" OrderNumber="23" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM24" OrderNumber="24" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM25" OrderNumber="25" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM26" OrderNumber="26" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM27" OrderNumber="27" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM28" OrderNumber="28" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM29" OrderNumber="29" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM30" OrderNumber="30" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM31" OrderNumber="31" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM32" OrderNumber="32" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM33" OrderNumber="33" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM34" OrderNumber="34" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM35" OrderNumber="35" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM36" OrderNumber="36" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM37" OrderNumber="37" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM38" OrderNumber="38" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM39" OrderNumber="39" Mandatory="No"/>
+				<ItemRef ItemOID="I.DAITM40" OrderNumber="40" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.DM_1" Name="Demographics" SASDatasetName="DMSUBJ" Repeating="No">
 				<ItemRef ItemOID="I.BRTHDAT" Mandatory="No" OrderNumber="1"/>
@@ -1040,231 +1040,231 @@ A couple of notes:
 				<ItemRef ItemOID="I.DSSTDAT_IC" Mandatory="No" OrderNumber="1"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.EDUCATION" Name="Education" Repeating="No" SASDatasetName="SCEDUC">
-				<ItemRef ItemOID="I.EDUYRNUM" OrderNumber="1" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.EDUYRNUM" OrderNumber="1" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.EX_1" Name="Study Drug Exposure" Repeating="No" SASDatasetName="EX">
-				<ItemRef ItemOID="I.EXTRT" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EXSTDAT" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EXDOSE" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EXDOSU" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EXDOSFRM" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EXDOSFRQ" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EXROUTE" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EXENDAT" OrderNumber="8" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.EXTRT" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.EXSTDAT" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.EXDOSE" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.EXDOSU" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.EXDOSFRM" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.EXDOSFRQ" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.EXROUTE" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.EXENDAT" OrderNumber="8" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.IE_EX" Name="Exclusion Criteria" Repeating="No" SASDatasetName="IEEX">
-				<ItemRef ItemOID="I.IECAN" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IECARDI" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IECOMM" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEDEPRESS" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEDISEAS" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEECG" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEENDO" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEEXP" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEGASTRO" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEGU" OrderNumber="10" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEHIV" OrderNumber="11" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEHOSP" OrderNumber="12" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEID" OrderNumber="13" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IELAB1" OrderNumber="14" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IELAB2" OrderNumber="15" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IELAB3" OrderNumber="16" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IELAB4" OrderNumber="17" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IELAB5" OrderNumber="18" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IELAB6" OrderNumber="19" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEMEDHIST" OrderNumber="20" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IENEURO" OrderNumber="21" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IERESP" OrderNumber="22" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IERHEU" OrderNumber="23" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IESYNC" OrderNumber="24" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.IECAN" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.IECARDI" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.IECOMM" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEDEPRESS" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEDISEAS" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEECG" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEENDO" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEEXP" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEGASTRO" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEGU" OrderNumber="10" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEHIV" OrderNumber="11" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEHOSP" OrderNumber="12" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEID" OrderNumber="13" Mandatory="No"/>
+				<ItemRef ItemOID="I.IELAB1" OrderNumber="14" Mandatory="No"/>
+				<ItemRef ItemOID="I.IELAB2" OrderNumber="15" Mandatory="No"/>
+				<ItemRef ItemOID="I.IELAB3" OrderNumber="16" Mandatory="No"/>
+				<ItemRef ItemOID="I.IELAB4" OrderNumber="17" Mandatory="No"/>
+				<ItemRef ItemOID="I.IELAB5" OrderNumber="18" Mandatory="No"/>
+				<ItemRef ItemOID="I.IELAB6" OrderNumber="19" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEMEDHIST" OrderNumber="20" Mandatory="No"/>
+				<ItemRef ItemOID="I.IENEURO" OrderNumber="21" Mandatory="No"/>
+				<ItemRef ItemOID="I.IERESP" OrderNumber="22" Mandatory="No"/>
+				<ItemRef ItemOID="I.IERHEU" OrderNumber="23" Mandatory="No"/>
+				<ItemRef ItemOID="I.IESYNC" OrderNumber="24" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.IE_IN" Name="Inclusion Criteria" Repeating="No" SASDatasetName="IEIN">
-				<ItemRef ItemOID="I.IEADDIAG" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IECARE1" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IECARE2" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IECARE3" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IECTMRI" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEGEO" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEIC" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEMMSE1" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IEMMSE2" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.IESEXAGE" OrderNumber="10" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.IEADDIAG" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.IECARE1" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.IECARE2" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.IECARE3" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.IECTMRI" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEGEO" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEIC" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEMMSE1" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.IEMMSE2" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.IESEXAGE" OrderNumber="10" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.LB_CHEM" Name="Laboratory: Chemistry" Repeating="No" SASDatasetName="LBCHEM">
-				<ItemRef ItemOID="I.ALB" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ALP" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ALT" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.AST" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.BILI" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.BUN" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CA" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CHOL" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CK" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CL" OrderNumber="10" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CREAT" OrderNumber="11" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.GGT" OrderNumber="12" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.GLUC" OrderNumber="13" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.K" OrderNumber="15" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NA" OrderNumber="16" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.PHOS" OrderNumber="17" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.PROT" OrderNumber="18" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.URATE" OrderNumber="19" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.ALB" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.ALP" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.ALT" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.AST" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.BILI" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.BUN" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.CA" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.CHOL" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.CK" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.CL" OrderNumber="10" Mandatory="No"/>
+				<ItemRef ItemOID="I.CREAT" OrderNumber="11" Mandatory="No"/>
+				<ItemRef ItemOID="I.GGT" OrderNumber="12" Mandatory="No"/>
+				<ItemRef ItemOID="I.GLUC" OrderNumber="13" Mandatory="No"/>
+				<ItemRef ItemOID="I.K" OrderNumber="15" Mandatory="No"/>
+				<ItemRef ItemOID="I.NA" OrderNumber="16" Mandatory="No"/>
+				<ItemRef ItemOID="I.PHOS" OrderNumber="17" Mandatory="No"/>
+				<ItemRef ItemOID="I.PROT" OrderNumber="18" Mandatory="No"/>
+				<ItemRef ItemOID="I.URATE" OrderNumber="19" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.LB_HEM" Name="Laboratory: Hematology" Repeating="No" SASDatasetName="LBHEM">
-				<ItemRef ItemOID="I.ANISO" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.BASO" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.EOS" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.HCT" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.HGB" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.LYM" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MACROCY" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MCH" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MCHC" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MCV" OrderNumber="10" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MICROCY" OrderNumber="11" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MONO" OrderNumber="12" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.PLAT" OrderNumber="13" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.POIKILO" OrderNumber="14" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.POLYCHR" OrderNumber="15" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.RBC" OrderNumber="16" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.WBC" OrderNumber="17" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.ANISO" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.BASO" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.EOS" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.HCT" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.HGB" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.LYM" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.MACROCY" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.MCH" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.MCHC" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.MCV" OrderNumber="10" Mandatory="No"/>
+				<ItemRef ItemOID="I.MICROCY" OrderNumber="11" Mandatory="No"/>
+				<ItemRef ItemOID="I.MONO" OrderNumber="12" Mandatory="No"/>
+				<ItemRef ItemOID="I.PLAT" OrderNumber="13" Mandatory="No"/>
+				<ItemRef ItemOID="I.POIKILO" OrderNumber="14" Mandatory="No"/>
+				<ItemRef ItemOID="I.POLYCHR" OrderNumber="15" Mandatory="No"/>
+				<ItemRef ItemOID="I.RBC" OrderNumber="16" Mandatory="No"/>
+				<ItemRef ItemOID="I.WBC" OrderNumber="17" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.LB_OTHER" Name="Laboratory: Other" Repeating="No" SASDatasetName="LBOTHER">
-				<ItemRef ItemOID="I.TSH" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.VITB12" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.HBA1C" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.HBA1C" OrderNumber="14" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.TSH" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.VITB12" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.HBA1C" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.HBA1C" OrderNumber="14" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.LB_URINE" Name="Laboratory: Urinalysis" Repeating="No" SASDatasetName="LBURING">
-				<ItemRef ItemOID="I.COLOR" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.KETONES" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.PH" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.SPGRAV" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.UROBIL" OrderNumber="5" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.COLOR" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.KETONES" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.PH" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.SPGRAV" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.UROBIL" OrderNumber="5" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.MH_1" Name="Significant Historical Diagnosis" Repeating="No" SASDatasetName="MH">
-				<ItemRef ItemOID="I.MHYN" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHSPID" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHTERM" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHSTDAT" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHENDAT" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHSEV" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHDAT" OrderNumber="7" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.MHYN" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHSPID" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHTERM" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHSTDAT" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHENDAT" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHSEV" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHDAT" OrderNumber="7" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.MHIS-NACC" Name="Modified Hachinski Ischemic Scale" Repeating="No" SASDatasetName="MHISNACC">
-				<ItemRef ItemOID="I.MHITM01" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM02" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM03" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM04" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM05" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM06" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM07" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM08" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM09" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM10" OrderNumber="10" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM11" OrderNumber="11" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM12" OrderNumber="12" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MHITM13" OrderNumber="13" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.MHITM01" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM02" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM03" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM04" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM05" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM06" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM07" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM08" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM09" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM10" OrderNumber="10" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM11" OrderNumber="11" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM12" OrderNumber="12" Mandatory="No"/>
+				<ItemRef ItemOID="I.MHITM13" OrderNumber="13" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.MMSE" Name="Mini-Mental State Examination" Repeating="No" SASDatasetName="MMSE">
-				<ItemRef ItemOID="I.MMITM01" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MMITM02" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MMITM03" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MMITM04" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MMITM05" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MMITM06" OrderNumber="6" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.MMITM01" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.MMITM02" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.MMITM03" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.MMITM04" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.MMITM05" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.MMITM06" OrderNumber="6" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.NPI-X" Name="Neuropsychiatric Inventory Questionnaire - Revised" Repeating="No" SASDatasetName="NPI-X">
-				<ItemRef ItemOID="I.NPITM01P" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM01F" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM01S" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM01D" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM01" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM02P" OrderNumber="6" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM02F" OrderNumber="7" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM02S" OrderNumber="8" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM02D" OrderNumber="9" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM02" OrderNumber="10" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM03P" OrderNumber="11" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM03F" OrderNumber="12" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM03S" OrderNumber="13" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM03D" OrderNumber="14" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM03" OrderNumber="15" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM04P" OrderNumber="16" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM04F" OrderNumber="17" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM04S" OrderNumber="18" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM04D" OrderNumber="19" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM04" OrderNumber="20" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM05P" OrderNumber="21" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM05F" OrderNumber="22" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM05S" OrderNumber="23" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM05D" OrderNumber="24" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM05" OrderNumber="25" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM06P" OrderNumber="26" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM06F" OrderNumber="27" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM06S" OrderNumber="28" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM06D" OrderNumber="29" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM06" OrderNumber="30" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM07P" OrderNumber="31" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM07F" OrderNumber="32" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM07S" OrderNumber="33" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM07D" OrderNumber="34" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM07" OrderNumber="35" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM08P" OrderNumber="36" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM08F" OrderNumber="37" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM08S" OrderNumber="38" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM08D" OrderNumber="39" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM08" OrderNumber="40" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM09P" OrderNumber="41" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM09F" OrderNumber="42" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM09S" OrderNumber="43" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM09D" OrderNumber="44" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM09" OrderNumber="45" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM10P" OrderNumber="46" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM10F" OrderNumber="47" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM10S" OrderNumber="48" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM10D" OrderNumber="49" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM10" OrderNumber="50" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM11P" OrderNumber="51" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM11F" OrderNumber="52" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM11S" OrderNumber="53" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM11D" OrderNumber="54" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM11" OrderNumber="55" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM12P" OrderNumber="56" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM12F" OrderNumber="57" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM12S" OrderNumber="58" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM12D" OrderNumber="59" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPITM12" OrderNumber="60" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.NPTOT" OrderNumber="61" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.NPITM01P" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM01F" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM01S" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM01D" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM01" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM02P" OrderNumber="6" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM02F" OrderNumber="7" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM02S" OrderNumber="8" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM02D" OrderNumber="9" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM02" OrderNumber="10" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM03P" OrderNumber="11" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM03F" OrderNumber="12" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM03S" OrderNumber="13" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM03D" OrderNumber="14" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM03" OrderNumber="15" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM04P" OrderNumber="16" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM04F" OrderNumber="17" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM04S" OrderNumber="18" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM04D" OrderNumber="19" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM04" OrderNumber="20" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM05P" OrderNumber="21" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM05F" OrderNumber="22" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM05S" OrderNumber="23" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM05D" OrderNumber="24" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM05" OrderNumber="25" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM06P" OrderNumber="26" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM06F" OrderNumber="27" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM06S" OrderNumber="28" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM06D" OrderNumber="29" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM06" OrderNumber="30" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM07P" OrderNumber="31" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM07F" OrderNumber="32" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM07S" OrderNumber="33" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM07D" OrderNumber="34" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM07" OrderNumber="35" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM08P" OrderNumber="36" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM08F" OrderNumber="37" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM08S" OrderNumber="38" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM08D" OrderNumber="39" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM08" OrderNumber="40" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM09P" OrderNumber="41" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM09F" OrderNumber="42" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM09S" OrderNumber="43" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM09D" OrderNumber="44" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM09" OrderNumber="45" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM10P" OrderNumber="46" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM10F" OrderNumber="47" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM10S" OrderNumber="48" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM10D" OrderNumber="49" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM10" OrderNumber="50" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM11P" OrderNumber="51" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM11F" OrderNumber="52" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM11S" OrderNumber="53" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM11D" OrderNumber="54" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM11" OrderNumber="55" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM12P" OrderNumber="56" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM12F" OrderNumber="57" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM12S" OrderNumber="58" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM12D" OrderNumber="59" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPITM12" OrderNumber="60" Mandatory="No"/>
+				<ItemRef ItemOID="I.NPTOT" OrderNumber="61" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.PR_CHESTXRAY" Name="Procedure: Chest X-RAY" Repeating="No" SASDatasetName="CHSTXRAY">
-				<ItemRef ItemOID="I.CHESTXRAY_PROCCUR" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CHESTXRAY_PRTRT" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CHESTXRAY_PRSTDAT" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CHESTXRAY_PRCEVINT" OrderNumber="4" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.CHESTXRAY_PROCCUR" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.CHESTXRAY_PRTRT" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.CHESTXRAY_PRSTDAT" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.CHESTXRAY_PRCEVINT" OrderNumber="4" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.PR_CTSCAN" Name="Procedure: CT Scan" Repeating="No" SASDatasetName="CTSCAN">
-				<ItemRef ItemOID="I.CT SCAN_PROCCUR" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CT SCAN_PRTRT" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CT SCAN_PRSTDAT" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.CT SCAN_PRCEVINT" OrderNumber="4" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.CT SCAN_PROCCUR" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.CT SCAN_PRTRT" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.CT SCAN_PRSTDAT" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.CT SCAN_PRCEVINT" OrderNumber="4" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.PR_ECG_1" Name="Procedure: ECG" Repeating="No" SASDatasetName="ECG">
-				<ItemRef ItemOID="I.ECG_PROCCUR" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ECG_PROCCUR" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ECG_PRTRT" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ECG_PRSTDAT" OrderNumber="3" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.ECG_PROCCUR" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.ECG_PROCCUR" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.ECG_PRTRT" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.ECG_PRSTDAT" OrderNumber="3" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.PR_ECG_2" Name="Procedure: Ambulatory ECG" Repeating="No" SASDatasetName="ECGAMB">
-				<ItemRef ItemOID="I.ECG_PRTRT" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ECG_PRSTDAT" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.ECG_INTP" OrderNumber="4" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.ECG_PRTRT" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.ECG_PRSTDAT" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.ECG_INTP" OrderNumber="4" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.PR_MRI" Name="Procedure: ECG" Repeating="No" SASDatasetName="MRI">
-				<ItemRef ItemOID="I.MRI_PROCCUR" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MRI_PRTRT" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MRI_PRSTDAT" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.MRI_PRCEVINT" OrderNumber="4" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.MRI_PROCCUR" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.MRI_PRTRT" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.MRI_PRSTDAT" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.MRI_PRCEVINT" OrderNumber="4" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.SU_ALCOHOL" Name="Substance Use - Alcohol" SASDatasetName="SUALC" Repeating="No">
 				<ItemRef ItemOID="I.SUNCF_ALCOHOL" Mandatory="Yes" OrderNumber="1"/>
@@ -1300,27 +1300,27 @@ A couple of notes:
 				<ItemRef ItemOID="I.SUDOSFRQ_PIPES" Mandatory="No" OrderNumber="9"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.TTSACC" Name="TTS Acceptability Survey" Repeating="No" SASDatasetName="TTSACC">
-				<ItemRef ItemOID="I.TTSACC01" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.TTSACC02" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.TTSACC03" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.TTSACC04" OrderNumber="4" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.TTSACC01" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.TTSACC02" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.TTSACC03" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.TTSACC04" OrderNumber="4" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.VS_1" Name="Vital Signs: Height" Repeating="No" SASDatasetName="VSHEIGHT">
-				<ItemRef ItemOID="I.HEIGHT" OrderNumber="1" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.HEIGHT" OrderNumber="1" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.VS_2" Name="Vital Signs: Weight" Repeating="No" SASDatasetName="VSWEIGHT">
-				<ItemRef ItemOID="I.WEIGHT" OrderNumber="1" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.WEIGHT" OrderNumber="1" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.VS_3" Name="Vital Signs: Temperature" Repeating="No" SASDatasetName="VSTEMP">
-				<ItemRef ItemOID="I.TEMP" OrderNumber="1" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.TEMP" OrderNumber="1" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemGroupDef OID="IG.VS_4_1" Name="Vital Signs: Heart Rate and Blood Pressure" Repeating="Yes" SASDatasetName="VSHRBP">
-				<ItemRef ItemOID="I.PULSE_SUPINE" OrderNumber="1" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.SYSBP_SUPINE" OrderNumber="2" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DIABP_SUPINE" OrderNumber="3" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.PULSE_STANDING" OrderNumber="4" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.SYSBP_STANDING" OrderNumber="5" Mandatory="No">	</ItemRef>
-				<ItemRef ItemOID="I.DIABP_STANDING" OrderNumber="5" Mandatory="No">	</ItemRef>
+				<ItemRef ItemOID="I.PULSE_SUPINE" OrderNumber="1" Mandatory="No"/>
+				<ItemRef ItemOID="I.SYSBP_SUPINE" OrderNumber="2" Mandatory="No"/>
+				<ItemRef ItemOID="I.DIABP_SUPINE" OrderNumber="3" Mandatory="No"/>
+				<ItemRef ItemOID="I.PULSE_STANDING" OrderNumber="4" Mandatory="No"/>
+				<ItemRef ItemOID="I.SYSBP_STANDING" OrderNumber="5" Mandatory="No"/>
+				<ItemRef ItemOID="I.DIABP_STANDING" OrderNumber="5" Mandatory="No"/>
 			</ItemGroupDef>
 			<ItemDef OID="I.ACITM01" Name="WORD RECALL TASK" DataType="integer" Origin="CRF" SASFieldName="ACITM01">
 				<Description>

@@ -17,7 +17,7 @@ releaseLabel: ci-build
 menu:
   Home: index.html
   Artifacts: artifacts.html
-  CDISC Operational Model (ODM): cdisc-odm.html
+  CDISC Operational Data Model (ODM): cdisc-odm.html
   Clinical Research Profile Backlog: deltas.html
   Developer Setup: developer.html
 pages:
@@ -31,3 +31,130 @@ pages:
     title: Study Design for H2Q-MC-LZZT
   deltas.md:
     title: Clinical Research Profile Backlog
+
+# filter draft resources
+resources:
+  SOAPlannedVisitDefinition/Visit1: omit
+  SOAPlannedVisitDefinition/Visit2: omit
+  SOAPlannedVisitDefinition/Visit3: omit
+  ActivityDefinition/Visit1: omit
+  ActivityDefinition/Visit2: omit
+  ActivityDefinition/Visit3: omit
+  PlanDefinition/VitalSigns: omit
+  ActivityDefinition/SYSBP: omit
+  ActivityDefinition/DIABP: omit
+  ActivityDefinition/PULSE: omit
+  PlanDefinition/LZZT-Study-Definition: omit
+  ResearchStudy/LZZT-Research-Study: omit
+  Group/StudyArmStandardOfCare: omit
+  ActivityDefinition/SubjectRandomizationDate: omit
+  Group/H2Q-MC-LZZT-InclusionExclusion: omit
+  PlanDefinition/ScreeningEpoch: omit
+groups:
+  H2Q-MC-LZZT-Design:
+    name: H2Q-MC-LZZT Study Design Resources
+    description: Example Design Instances for H2Q-MC-LZZT
+    resources:
+    - ResearchStudy/H2Q-MC-LZZT-ResearchStudy
+    - PlanDefinition/H2Q-MC-LZZT-ProtocolDesign
+    - Group/H2Q-MC-LZZT-ResearchStudy-Inclusion
+    - Group/H2Q-MC-LZZT-ResearchStudy-Exclusion
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-1
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-2
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-3
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-4
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-5
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-6
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-7
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-8
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-9
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-10
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-11
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-12
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-13
+    - PlanDefinition/H2Q-MC-LZZT-Study-ET-14
+    - PlanDefinition/H2Q-MC-LZZT-Study-RT-15
+  H2Q-MC-LZZT-Actors:
+    name: H2Q-MC-LZZT Study Actors
+    description: Study Actors
+    resources:
+    - Practitioner/SamGetWell
+    - Organization/EliLillyAndCompany
+  H2Q-MC-LZZT-Activities:
+    name: H2Q-MC-LZZT Study Activities
+    description: Study Activities
+    resources:
+    - ActivityDefinition/H2Q-MC-LZZT-DAD
+    - ActivityDefinition/H2Q-MC-LZZT-Medications-returned
+    - ActivityDefinition/H2Q-MC-LZZT-Medications-dispensed
+    - ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed
+    - ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis
+    - ActivityDefinition/H2Q-MC-LZZT-Physical-examination
+    - ActivityDefinition/H2Q-MC-LZZT-Adverse-events
+    - ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned
+    - ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature
+    - ActivityDefinition/H2Q-MC-LZZT-Medical-History
+    - ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray
+    - ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test
+    - ActivityDefinition/H2Q-MC-LZZT-CIBIC
+    - ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem
+    - ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat
+    - ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping
+    - ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey
+    - ActivityDefinition/H2Q-MC-LZZT-Visit-Date
+    - ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen
+    - ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol
+    - ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine
+    - ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking
+    - ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C
+    - ActivityDefinition/H2Q-MC-LZZT-Study-drug-record
+    - ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog
+    - ActivityDefinition/H2Q-MC-LZZT-CT-Scan
+    - ActivityDefinition/H2Q-MC-LZZT-Hachinski-4
+    - ActivityDefinition/H2Q-MC-LZZT-Patient-randomized
+    - ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed
+    - ActivityDefinition/H2Q-MC-LZZT-Informed-Consent
+    - ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23
+    - ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications
+    - ActivityDefinition/H2Q-MC-LZZT-ECG
+    - ActivityDefinition/H2Q-MC-LZZT-NPI-X
+  H2Q-MC-LZZT-Observations:
+    name: H2Q-MC-LZZT Study Observations
+    description: Study Observations
+    resources:
+    - ObservationDefinition/H2Q-MC-LZZT-DAD-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Medications-returned-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Medications-dispensed-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Physical-examination-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Adverse-events-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Patient-number-assigned-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Vital-signs-Temperature-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Medical-History-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Chest-x-ray-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Placebo-TTS-test-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-CIBIC-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Apo-E-genotyping-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Plasma-Specimen-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Habits-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Hemoglobin-A1C-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Study-drug-record-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-ADAS-Cog-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-CT-Scan-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Hachinski-4-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Patient-randomized-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Informed-Consent-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-MMSE-10-23-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-Concomitant-Medications-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-ECG-Observations
+    - ObservationDefinition/H2Q-MC-LZZT-NPI-X-Observations
+  Deliverables:
+    name: Deliverables
+    description: Deliverables for H2Q-MC-LZZT
+    resources:
+    - Bundle/H2Q-MC-LZZT-Bundle-1
+    - Bundle/H2Q-MC-LZZT-Bundle-2
