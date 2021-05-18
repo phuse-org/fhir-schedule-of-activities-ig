@@ -17,7 +17,7 @@ releaseLabel: ci-build
 menu:
   Home: index.html
   Artifacts: artifacts.html
-  CDISC Operational Model (ODM): cdisc-odm.html
+  CDISC Operational Data Model (ODM): cdisc-odm.html
   Clinical Research Profile Backlog: deltas.html
   Developer Setup: developer.html
 pages:
@@ -31,3 +31,34 @@ pages:
     title: Study Design for H2Q-MC-LZZT
   deltas.md:
     title: Clinical Research Profile Backlog
+
+groups:
+  H2Q-MC-LZZT-Design:
+    name: H2Q-MC-LZZT Study Design Resources
+    description: Example Design Instances for H2Q-MC-LZZT
+    resources:
+    - ResearchStudy/H2Q-MC-LZZT-ResearchStudy
+    - PlanDefinition/H2Q-MC-LZZT-ProtocolDesign
+    - Group/H2Q-MC-LZZT-ResearchStudy-Inclusion
+    - Group/H2Q-MC-LZZT-ResearchStudy-Exclusion
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-1
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-2
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-3
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-4
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-5
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-6
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-7
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-8
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-9
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-10
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-11
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-12
+    - PlanDefinition/H2Q-MC-LZZT-Study-Visit-13
+    - PlanDefinition/H2Q-MC-LZZT-Study-ET-14
+    - PlanDefinition/H2Q-MC-LZZT-Study-RT-15
+  Deliverables:
+    name: Deliverables
+    description: Deliverables for H2Q-MC-LZZT
+    resources:
+    - Bundle/H2Q-MC-LZZT-Bundle-1
+    - Bundle/H2Q-MC-LZZT-Bundle-2
