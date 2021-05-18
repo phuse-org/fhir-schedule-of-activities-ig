@@ -4,92 +4,14 @@
   <id value="H2Q-MC-LZZT-Bundle-1"/>
   <type value="transaction"/>
   <entry>
-    <resource>
-      <Organization>
-        <id value="EliLillyAndCompany"/>
-        <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title="Codes: ">crs</span></p></div>
-        </text>
-        <identifier>
-          <use value="official"/>
-          <value value="Eli Lilly and Company"/>
-        </identifier>
-        <type>
-          <coding>
-            <code value="crs"/>
-          </coding>
-        </type>
-      </Organization>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="Organization"/>
-    </request>
-  </entry>
-  <entry>
-    <resource>
-      <Practitioner>
-        <id value="SamGetWell"/>
-        <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: UPIN: ABC123 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Samuel Home </p><p><b>telecom</b>: ph: 555-123-5467(WORK)</p><p><b>gender</b>: male</p></div>
-        </text>
-        <identifier>
-          <use value="official"/>
-          <type>
-            <coding>
-              <code value="UPIN"/>
-            </coding>
-          </type>
-          <value value="ABC123"/>
-        </identifier>
-        <active value="true"/>
-        <name>
-          <use value="usual"/>
-          <family value="Home"/>
-          <given value="Samuel"/>
-          <prefix value="Dr"/>
-          <suffix value="M.D."/>
-        </name>
-        <telecom>
-          <system value="phone"/>
-          <value value="555-123-5467"/>
-          <use value="work"/>
-        </telecom>
-        <gender value="male"/>
-      </Practitioner>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="Practitioner"/>
-    </request>
-  </entry>
-  <entry>
-    <resource>
-      <PlanDefinition>
-        <id value="LZZT-Study-Definition"/>
-        <meta>
-          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition"/>
-        </meta>
-        <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>version</b>: 1.0</p><p><b>status</b>: active</p></div>
-        </text>
-        <version value="1.0"/>
-        <status value="active"/>
-      </PlanDefinition>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="SOAPlanDefinition"/>
-    </request>
-  </entry>
-  <entry>
+    <fullUrl value="ResearchStudy/H2Q-MC-LZZT-ResearchStudy"/>
     <resource>
       <ResearchStudy>
         <id value="H2Q-MC-LZZT-ResearchStudy"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY)</p><p><b>title</b>: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>protocol</b>: <a href="#PlanDefinition_LZZT-Study-Definition">See above (PlanDefinition/LZZT-Study-Definition)</a></p><p><b>status</b>: completed</p><p><b>primaryPurposeType</b>: <span title="Codes: ">treatment</span></p><p><b>phase</b>: <span title="Codes: ">phase-3</span></p><p><b>category</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C98388}">Interventional Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15417}">Randomized Clinical Trial</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15228}">Double Blind Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">Placebo Control</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C82639}">Parallel Study</span></p><p><b>focus</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C152926}">Xanomeline</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C149996}">Transdermal Patch Dosage Form</span></p><p><b>condition</b>: <span title="Codes: {http://snomed.info/sct 26929004}">Alzheimer's Disease (Disorder)</span>, <span title="Codes: {http://snomed.info/sct G30}">Alzheimer's disease</span>, <span title="Codes: {http://snomed.info/sct 10001896}">Alzheimer's disease</span></p><p><b>contact</b>: Bob James, Ph.D.: ph: 555-555-5555(WORK)</p><h3>RelatedArtifacts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>keyword</b>: <span title="Codes: {https://id.nlm.nih.gov/mesh D018721}">Selective M1 muscarinic agonists</span></p><p><b>description</b>: # Xanomeline (LY246708)
-# Protocol H2Q-MC-LZZT(c) 
-Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>sponsor</b>: <a href="#Organization_EliLillyAndCompany">See above (Organization/EliLillyAndCompany)</a></p><p><b>principalInvestigator</b>: <a href="#Practitioner_SamGetWell">See above (Practitioner/SamGetWell)</a></p><blockquote><p><b>arm</b></p><p><b>name</b>: Placebo</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">C49648</span></p><p><b>description</b>: Placebo arm</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: Low-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: High-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)</p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To document the safety profile of the xanomeline TTS.</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the treatment response as a function of Apo E genotype.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY), PUBCHEM: 60809</p><p><b>title</b>: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>protocol</b>: <a href="PlanDefinition-H2Q-MC-LZZT-ProtocolDesign.html">Generated Summary: url: http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-ProtocolDesign; version: 0.1.1; status: active; date: May 18, 2021, 1:05:31 PM</a></p><p><b>status</b>: completed</p><p><b>primaryPurposeType</b>: <span title="Codes: ">treatment</span></p><p><b>phase</b>: <span title="Codes: ">phase-3</span></p><p><b>category</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C98388}">Interventional Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15417}">Randomized Clinical Trial</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15228}">Double Blind Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">Placebo Control</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C82639}">Parallel Study</span></p><p><b>focus</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C152926}">Xanomeline</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C149996}">Transdermal Patch Dosage Form</span>, <span title="Codes: {https://pubmed.ncbi.nlm.nih.gov 9109749}">Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease</span></p><p><b>condition</b>: <span title="Codes: ">Alzheimer's Disease (Disorder)</span></p><p><b>contact</b>: Bob James, Ph.D.: ph: 555-555-5555(WORK)</p><h3>RelatedArtifacts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table><p><b>keyword</b>: <span title="Codes: {https://id.nlm.nih.gov/mesh D018721}">Selective M1 muscarinic agonists</span>, <span title="Codes: {https://id.nlm.nih.gov/mesh D000544}">Alzheimer Disease</span>, <span title="Codes: {https://id.nlm.nih.gov/mesh D018721}">Selective M1 muscarinic agonists</span></p><p><b>description</b>: ## Xanomeline (LY246708)
+### Protocol H2Q-MC-LZZT(c) 
+Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>enrollment</b>: </p><ul><li><a href="Group-H2Q-MC-LZZT-ResearchStudy-Inclusion.html">Generated Summary: type: person; </a></li><li><a href="Group-H2Q-MC-LZZT-ResearchStudy-Exclusion.html">Generated Summary: type: person; </a></li></ul><p><b>sponsor</b>: <a href="Organization-EliLillyAndCompany.html">Generated Summary: id: Eli Lilly and Company (OFFICIAL); <span title="Codes: ">crs</span></a></p><p><b>principalInvestigator</b>: <a href="Practitioner-SamGetWell.html">Generated Summary: UPIN: ABC123 (OFFICIAL); active; Samuel Home ; Phone: 555-123-5467; gender: male</a></p><p><b>reasonStopped</b>: <span title="Codes: ">accrual-goal-met</span></p><blockquote><p><b>arm</b></p><p><b>name</b>: Placebo</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">C49648</span></p><p><b>description</b>: Placebo arm</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: Low-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: High-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)</p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To document the safety profile of the xanomeline TTS.</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the treatment response as a function of Apo E genotype.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote></div>
         </text>
         <identifier>
           <use value="usual"/>
@@ -109,9 +31,17 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
           </type>
           <value value="NCTA12313212"/>
         </identifier>
+        <identifier>
+          <type>
+            <coding>
+              <code value="PUBCHEM"/>
+            </coding>
+          </type>
+          <value value="60809"/>
+        </identifier>
         <title value="Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
         <protocol>
-          <reference value="PlanDefinition/LZZT-Study-Definition"/>
+          <reference value="PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"/>
         </protocol>
         <status value="completed"/>
         <primaryPurposeType>
@@ -173,25 +103,17 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
             <display value="Transdermal Patch Dosage Form"/>
           </coding>
         </focus>
+        <focus>
+          <coding>
+            <system value="https://pubmed.ncbi.nlm.nih.gov"/>
+            <code value="9109749"/>
+            <display value="Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"/>
+          </coding>
+        </focus>
         <condition>
           <coding>
-            <system value="http://snomed.info/sct"/>
             <code value="26929004"/>
             <display value="Alzheimer&#39;s Disease (Disorder)"/>
-          </coding>
-        </condition>
-        <condition>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="G30"/>
-            <display value="Alzheimer&#39;s disease"/>
-          </coding>
-        </condition>
-        <condition>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="10001896"/>
-            <display value="Alzheimer&#39;s disease"/>
           </coding>
         </condition>
         <contact>
@@ -204,6 +126,12 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
         </contact>
         <relatedArtifact>
           <type value="documentation"/>
+          <label value="Arch Neurol.1997;54(4):465-473"/>
+          <display value="Arch Neurol.1997;54(4):465-473"/>
+          <citation value="Bodick NC, Offen WW, Levey AI, et al. Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease. Arch Neurol. 1997;54(4):465-473. doi:10.1001/archneur.1997.00550160091022"/>
+        </relatedArtifact>
+        <relatedArtifact>
+          <type value="documentation"/>
           <label value="Protocol H2Q-MC-LZZT(c)"/>
           <url value="https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"/>
         </relatedArtifact>
@@ -214,13 +142,38 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
           </coding>
           <text value="Selective M1 muscarinic agonists"/>
         </keyword>
-        <description value="# Xanomeline (LY246708)&#xA;# Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+        <keyword>
+          <coding>
+            <system value="https://id.nlm.nih.gov/mesh"/>
+            <code value="D000544"/>
+          </coding>
+          <text value="Alzheimer Disease"/>
+        </keyword>
+        <keyword>
+          <coding>
+            <system value="https://id.nlm.nih.gov/mesh"/>
+            <code value="D018721"/>
+          </coding>
+          <text value="Selective M1 muscarinic agonists"/>
+        </keyword>
+        <description value="## Xanomeline (LY246708)&#xA;### Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+        <enrollment>
+          <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"/>
+        </enrollment>
+        <enrollment>
+          <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"/>
+        </enrollment>
         <sponsor>
           <reference value="Organization/EliLillyAndCompany"/>
         </sponsor>
         <principalInvestigator>
           <reference value="Practitioner/SamGetWell"/>
         </principalInvestigator>
+        <reasonStopped>
+          <coding>
+            <code value="accrual-goal-met"/>
+          </coding>
+        </reasonStopped>
         <arm>
           <name value="Placebo"/>
           <type>

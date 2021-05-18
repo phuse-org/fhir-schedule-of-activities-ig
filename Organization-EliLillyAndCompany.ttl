@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "EliLillyAndCompany"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title=\"Codes: \">crs</span></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title=\"Codes: \">crs</span></p><h3>Contacts</h3><table class=\"grid\"><tr><td>-</td><td><b>Purpose</b></td><td><b>Telecom</b></td></tr><tr><td>*</td><td><span title=\"Codes: \">ADMIN</span></td><td><a href=\"https://www.lilly.com\">https://www.lilly.com</a></td></tr></table></div>"
   ];
   fhir:Organization.identifier [
      fhir:index 0;
@@ -22,6 +22,20 @@
      fhir:CodeableConcept.coding [
        fhir:index 0;
        fhir:Coding.code [ fhir:value "crs" ]
+     ]
+  ];
+  fhir:Organization.contact [
+     fhir:index 0;
+     fhir:Organization.contact.purpose [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "ADMIN" ]
+       ]
+     ];
+     fhir:Organization.contact.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.lilly.com" ]
      ]
   ] .
 

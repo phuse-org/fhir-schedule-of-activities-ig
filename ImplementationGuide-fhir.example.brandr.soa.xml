@@ -9,7 +9,7 @@
   <version value="0.1.1"/>
   <name value="ScheduleOfActivityIG"/>
   <status value="draft"/>
-  <date value="2021-05-17T21:11:23+00:00"/>
+  <date value="2021-05-18T13:05:31+00:00"/>
   <packageId value="fhir.example.brandr.soa"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -166,6 +166,26 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <grouping id="H2Q-MC-LZZT-Design">
+      <name value="H2Q-MC-LZZT Study Design Resources"/>
+      <description value="Example Design Instances for H2Q-MC-LZZT"/>
+    </grouping>
+    <grouping id="H2Q-MC-LZZT-Actors">
+      <name value="H2Q-MC-LZZT Study Actors"/>
+      <description value="Study Actors"/>
+    </grouping>
+    <grouping id="H2Q-MC-LZZT-Activities">
+      <name value="H2Q-MC-LZZT Study Activities"/>
+      <description value="Study Activities"/>
+    </grouping>
+    <grouping id="H2Q-MC-LZZT-Observations">
+      <name value="H2Q-MC-LZZT Study Observations"/>
+      <description value="Study Observations"/>
+    </grouping>
+    <grouping id="Deliverables">
+      <name value="Deliverables"/>
+      <description value="Deliverables for H2Q-MC-LZZT"/>
+    </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
@@ -431,17 +451,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ActivityDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ActivityDefinition/DIABP"/>
-      </reference>
-      <name value="Diastolic Blood Pressure"/>
-      <description value="Taking Diastolic BP"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Organization"/>
       </extension>
       <reference>
@@ -449,6 +458,7 @@
       </reference>
       <name value="Eli Lilly and Company"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Actors"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -460,6 +470,7 @@
       <name value="ADAS-Cog"/>
       <description value="Planned Activity [ADAS-Cog]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -471,6 +482,7 @@
       <name value="ADAS-Cog-Observations"/>
       <description value="Planned Observation(s) [ADAS-Cog]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -482,6 +494,7 @@
       <name value="Adverse events"/>
       <description value="Planned Activity [Adverse events]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -493,6 +506,7 @@
       <name value="Adverse events-Observations"/>
       <description value="Planned Observation(s) [Adverse events]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -504,6 +518,7 @@
       <name value="Ambulatory ECG placed"/>
       <description value="Planned Activity [Ambulatory ECG placed]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -515,6 +530,7 @@
       <name value="Ambulatory ECG placed-Observations"/>
       <description value="Planned Observation(s) [Ambulatory ECG placed]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -526,6 +542,7 @@
       <name value="Ambulatory ECG removed"/>
       <description value="Planned Activity [Ambulatory ECG removed]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -537,6 +554,7 @@
       <name value="Ambulatory ECG removed-Observations"/>
       <description value="Planned Observation(s) [Ambulatory ECG removed]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -548,6 +566,7 @@
       <name value="Apo E genotyping"/>
       <description value="Planned Activity [Apo E genotyping]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -559,6 +578,7 @@
       <name value="Apo E genotyping-Observations"/>
       <description value="Planned Observation(s) [Apo E genotyping]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -570,6 +590,7 @@
       <name value="H2Q-MC-LZZT Bundle 1"/>
       <description value="First Deliverable for the PHUSE Project"/>
       <exampleBoolean value="true"/>
+      <groupingId value="Deliverables"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -579,8 +600,9 @@
         <reference value="Bundle/H2Q-MC-LZZT-Bundle-2"/>
       </reference>
       <name value="H2Q-MC-LZZT Bundle 2"/>
-      <description value="First Deliverable for the PHUSE Project"/>
+      <description value="Second Deliverable for the PHUSE Project"/>
       <exampleBoolean value="true"/>
+      <groupingId value="Deliverables"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -592,6 +614,7 @@
       <name value="CIBIC+"/>
       <description value="Planned Activity [CIBIC+]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -603,6 +626,7 @@
       <name value="CIBIC+-Observations"/>
       <description value="Planned Observation(s) [CIBIC+]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -614,6 +638,7 @@
       <name value="CT Scan"/>
       <description value="Planned Activity [CT Scan]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -625,6 +650,7 @@
       <name value="CT Scan-Observations"/>
       <description value="Planned Observation(s) [CT Scan]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -636,6 +662,7 @@
       <name value="Chest x-ray"/>
       <description value="Planned Activity [Chest x-ray]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -647,6 +674,7 @@
       <name value="Chest x-ray-Observations"/>
       <description value="Planned Observation(s) [Chest x-ray]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -658,6 +686,7 @@
       <name value="Concomitant Medications"/>
       <description value="Planned Activity [Concomitant Medications]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -669,6 +698,7 @@
       <name value="Concomitant Medications-Observations"/>
       <description value="Planned Observation(s) [Concomitant Medications]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -680,6 +710,7 @@
       <name value="DAD"/>
       <description value="Planned Activity [DAD]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -691,6 +722,7 @@
       <name value="DAD-Observations"/>
       <description value="Planned Observation(s) [DAD]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -702,6 +734,7 @@
       <name value="ECG"/>
       <description value="Planned Activity [ECG]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -713,17 +746,31 @@
       <name value="ECG-Observations"/>
       <description value="Planned Observation(s) [ECG]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ActivityDefinition"/>
       </extension>
       <reference>
-        <reference value="ActivityDefinition/H2Q-MC-LZZT-Habits"/>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol"/>
       </reference>
-      <name value="Habits"/>
-      <description value="Planned Activity [Habits]"/>
+      <name value="Habits - Alcohol"/>
+      <description value="Planned Activity [Habits - Alcohol]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine"/>
+      </reference>
+      <name value="Habits - Caffeine"/>
+      <description value="Planned Activity [Habits - Caffeine]"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -735,6 +782,19 @@
       <name value="Habits-Observations"/>
       <description value="Planned Observation(s) [Habits]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking"/>
+      </reference>
+      <name value="Habits - Smoking"/>
+      <description value="Planned Activity [Habits - Smoking]"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -746,6 +806,7 @@
       <name value="Hachinski 4"/>
       <description value="Planned Activity [Hachinski 4]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -757,6 +818,7 @@
       <name value="Hachinski 4-Observations"/>
       <description value="Planned Observation(s) [Hachinski 4]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -768,6 +830,7 @@
       <name value="Hemoglobin A1C"/>
       <description value="Planned Activity [Hemoglobin A1C]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -779,17 +842,7 @@
       <name value="Hemoglobin A1C-Observations"/>
       <description value="Planned Observation(s) [Hemoglobin A1C]"/>
       <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Group"/>
-      </extension>
-      <reference>
-        <reference value="Group/H2Q-MC-LZZT-InclusionExclusion"/>
-      </reference>
-      <name value="H2Q-MC-LZZT-InclusionExclusion"/>
-      <description value="H2Q-MC-LZZT Inclusion Exclusion Criteria"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -801,6 +854,7 @@
       <name value="Informed Consent"/>
       <description value="Planned Activity [Informed Consent]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -812,17 +866,19 @@
       <name value="Informed Consent-Observations"/>
       <description value="Planned Observation(s) [Informed Consent]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ActivityDefinition"/>
       </extension>
       <reference>
-        <reference value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat"/>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"/>
       </reference>
-      <name value="Laboratory (Chem/Hemat)"/>
-      <description value="Planned Activity [Laboratory (Chem/Hemat)]"/>
+      <name value="Laboratory (Chem)"/>
+      <description value="Planned Activity [Laboratory (Chem)]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -834,6 +890,19 @@
       <name value="Laboratory (Chem/Hemat)-Observations"/>
       <description value="Planned Observation(s) [Laboratory (Chem/Hemat)]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"/>
+      </reference>
+      <name value="Laboratory (Hemat)"/>
+      <description value="Planned Activity [Laboratory (Hemat)]"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -845,6 +914,7 @@
       <name value="Laboratory (Urinalysis)"/>
       <description value="Planned Activity [Laboratory (Urinalysis)]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -856,6 +926,7 @@
       <name value="Laboratory (Urinalysis)-Observations"/>
       <description value="Planned Observation(s) [Laboratory (Urinalysis)]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -867,6 +938,7 @@
       <name value="MMSE 10-23"/>
       <description value="Planned Activity [MMSE 10-23]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -878,6 +950,7 @@
       <name value="MMSE 10-23-Observations"/>
       <description value="Planned Observation(s) [MMSE 10-23]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -889,6 +962,7 @@
       <name value="Medical History"/>
       <description value="Planned Activity [Medical History]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -900,6 +974,7 @@
       <name value="Medical History-Observations"/>
       <description value="Planned Observation(s) [Medical History]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -911,6 +986,7 @@
       <name value="Medications dispensed"/>
       <description value="Planned Activity [Medications dispensed]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -922,6 +998,7 @@
       <name value="Medications dispensed-Observations"/>
       <description value="Planned Observation(s) [Medications dispensed]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -933,6 +1010,7 @@
       <name value="Medications returned"/>
       <description value="Planned Activity [Medications returned]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -944,6 +1022,7 @@
       <name value="Medications returned-Observations"/>
       <description value="Planned Observation(s) [Medications returned]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -955,6 +1034,7 @@
       <name value="NPI-X"/>
       <description value="Planned Activity [NPI-X]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -966,6 +1046,7 @@
       <name value="NPI-X-Observations"/>
       <description value="Planned Observation(s) [NPI-X]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -977,6 +1058,7 @@
       <name value="Patient number assigned"/>
       <description value="Planned Activity [Patient number assigned]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -988,6 +1070,7 @@
       <name value="Patient number assigned-Observations"/>
       <description value="Planned Observation(s) [Patient number assigned]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -999,6 +1082,7 @@
       <name value="Patient randomized"/>
       <description value="Planned Activity [Patient randomized]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1010,6 +1094,7 @@
       <name value="Patient randomized-Observations"/>
       <description value="Planned Observation(s) [Patient randomized]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1021,6 +1106,7 @@
       <name value="Physical examination"/>
       <description value="Planned Activity [Physical examination]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1032,6 +1118,7 @@
       <name value="Physical examination-Observations"/>
       <description value="Planned Observation(s) [Physical examination]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1043,6 +1130,7 @@
       <name value="Placebo TTS test"/>
       <description value="Planned Activity [Placebo TTS test]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1054,6 +1142,7 @@
       <name value="Placebo TTS test-Observations"/>
       <description value="Planned Observation(s) [Placebo TTS test]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1065,6 +1154,7 @@
       <name value="Plasma Specimen"/>
       <description value="Planned Activity [Plasma Specimen]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1076,6 +1166,7 @@
       <name value="Plasma Specimen-Observations"/>
       <description value="Planned Observation(s) [Plasma Specimen]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1087,6 +1178,7 @@
       <name value="H2Q-MC-LZZT-ProtocolDesign"/>
       <description value="H2Q-MC-LZZT-Protocol Schedule of Activities"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1096,8 +1188,9 @@
         <reference value="ResearchStudy/H2Q-MC-LZZT-ResearchStudy"/>
       </reference>
       <name value="H2Q-MC-LZZT Research Study"/>
-      <description value="# Xanomeline (LY246708)&#xA;# Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+      <description value="## Xanomeline (LY246708)&#xA;### Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1106,8 +1199,10 @@
       <reference>
         <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"/>
       </reference>
-      <name value="H2Q-MC-LZZT Research Study Exclusion Criteria"/>
+      <name value="H2Q-MC-LZZT Exclusion Criteria"/>
+      <description value="H2Q-MC-LZZT Exclusion Criteria"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1116,8 +1211,10 @@
       <reference>
         <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"/>
       </reference>
-      <name value="H2Q-MC-LZZT Research Study Inclusion Criteria"/>
+      <name value="H2Q-MC-LZZT Inclusion Criteria"/>
+      <description value="H2Q-MC-LZZT Inclusion Criteria"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1129,6 +1226,7 @@
       <name value="ET-14"/>
       <description value="Planned Visit [ET-14]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1140,6 +1238,7 @@
       <name value="RT-15"/>
       <description value="Planned Visit [RT-15]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1151,6 +1250,7 @@
       <name value="Visit-1"/>
       <description value="Planned Visit [Visit-1]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1162,6 +1262,7 @@
       <name value="Visit-10"/>
       <description value="Planned Visit [Visit-10]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1173,6 +1274,7 @@
       <name value="Visit-11"/>
       <description value="Planned Visit [Visit-11]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1184,6 +1286,7 @@
       <name value="Visit-12"/>
       <description value="Planned Visit [Visit-12]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1195,6 +1298,7 @@
       <name value="Visit-13"/>
       <description value="Planned Visit [Visit-13]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1206,6 +1310,7 @@
       <name value="Visit-2"/>
       <description value="Planned Visit [Visit-2]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1217,6 +1322,7 @@
       <name value="Visit-3"/>
       <description value="Planned Visit [Visit-3]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1228,6 +1334,7 @@
       <name value="Visit-4"/>
       <description value="Planned Visit [Visit-4]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1239,6 +1346,7 @@
       <name value="Visit-5"/>
       <description value="Planned Visit [Visit-5]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1250,6 +1358,7 @@
       <name value="Visit-6"/>
       <description value="Planned Visit [Visit-6]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1261,6 +1370,7 @@
       <name value="Visit-7"/>
       <description value="Planned Visit [Visit-7]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1272,6 +1382,7 @@
       <name value="Visit-8"/>
       <description value="Planned Visit [Visit-8]"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1283,6 +1394,7 @@
       <name value="Visit-9"/>
       <description value="Planned Visit [Visit-9] - removed in Protocol Amendment"/>
       <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+      <groupingId value="H2Q-MC-LZZT-Design"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1294,6 +1406,7 @@
       <name value="Study drug record"/>
       <description value="Planned Activity [Study drug record]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1305,6 +1418,7 @@
       <name value="Study drug record-Observations"/>
       <description value="Planned Observation(s) [Study drug record]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1316,6 +1430,7 @@
       <name value="TTS Acceptability Survey"/>
       <description value="Planned Activity [TTS Acceptability Survey]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1327,6 +1442,7 @@
       <name value="TTS Acceptability Survey-Observations"/>
       <description value="Planned Observation(s) [TTS Acceptability Survey]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1338,6 +1454,7 @@
       <name value="Visit Date"/>
       <description value="Planned Activity [Record Visit Date]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1349,6 +1466,7 @@
       <name value="Vital signs/Temperature"/>
       <description value="Planned Activity [Vital signs/Temperature]"/>
       <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Activities"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1360,50 +1478,7 @@
       <name value="Vital signs/Temperature-Observations"/>
       <description value="Planned Observation(s) [Vital signs/Temperature]"/>
       <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ResearchStudy"/>
-      </extension>
-      <reference>
-        <reference value="ResearchStudy/LZZT-Research-Study"/>
-      </reference>
-      <name value="H2Q-MC-LZZT"/>
-      <description value="Study"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="PlanDefinition"/>
-      </extension>
-      <reference>
-        <reference value="PlanDefinition/LZZT-Study-Definition"/>
-      </reference>
-      <name value="Study Definition for H2Q-MC-LZZT"/>
-      <description value="Study"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ActivityDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ActivityDefinition/PULSE"/>
-      </reference>
-      <name value="Pulse"/>
-      <description value="Taking Pulse"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ActivityDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ActivityDefinition/SYSBP"/>
-      </reference>
-      <name value="Systolic Blood Pressure"/>
-      <description value="Taking Systolic BP"/>
-      <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Observations"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1414,80 +1489,7 @@
       </reference>
       <name value="Samuel Home, M.D."/>
       <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="PlanDefinition"/>
-      </extension>
-      <reference>
-        <reference value="PlanDefinition/ScreeningEpoch"/>
-      </reference>
-      <name value="Screening Visit"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Group"/>
-      </extension>
-      <reference>
-        <reference value="Group/StudyArmStandardOfCare"/>
-      </reference>
-      <name value="Arm: Standard of Care"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ActivityDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ActivityDefinition/SubjectRandomizationDate"/>
-      </reference>
-      <name value="Subject Randomization"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ActivityDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ActivityDefinition/Visit1"/>
-      </reference>
-      <name value="Screening - Day -21"/>
-      <description value="Screening Visit - Day -21"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ActivityDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ActivityDefinition/Visit2"/>
-      </reference>
-      <name value="Screening - Day -1"/>
-      <description value="Screening Visit - Day -1"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ActivityDefinition"/>
-      </extension>
-      <reference>
-        <reference value="ActivityDefinition/Visit3"/>
-      </reference>
-      <name value="Treatment - Day 1"/>
-      <description value="Treatment Visit - Day 1"/>
-      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="PlanDefinition"/>
-      </extension>
-      <reference>
-        <reference value="PlanDefinition/VitalSigns"/>
-      </reference>
-      <name value="Vital Signs"/>
-      <description value="Vital Signs Assessment"/>
-      <exampleBoolean value="true"/>
+      <groupingId value="H2Q-MC-LZZT-Actors"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

@@ -77,7 +77,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="cdisc-odm.html">CDISC Operational Model (ODM)</a>
+    <a href="cdisc-odm.html">CDISC Operational Data Model (ODM)</a>
   </li>
   <li>
     <a href="deltas.html">Clinical Research Profile Backlog</a>
@@ -103,7 +103,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="StructureDefinition-ResearchStudy-Inclusion-Exclusion.html">next&gt;</a>
+          | <a href="PlanDefinition-H2Q-MC-LZZT-ProtocolDesign.html">next&gt;</a>
 
           </span>
         </ul>
@@ -131,714 +131,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Structures: Resource Profiles</a>
+         <a href="#1">H2Q-MC-LZZT Study Design Resources</a>
       </li>
       <li>
-         <a href="#2">Structures: Extension Definitions</a>
+         <a href="#2">H2Q-MC-LZZT Study Actors</a>
       </li>
       <li>
-         <a href="#3">Terminology: Value Sets</a>
+         <a href="#3">H2Q-MC-LZZT Study Activities</a>
       </li>
       <li>
-         <a href="#4">Example: Example Instances</a>
+         <a href="#4">H2Q-MC-LZZT Study Observations</a>
+      </li>
+      <li>
+         <a href="#5">Deliverables</a>
+      </li>
+      <li>
+         <a href="#6">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#7">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#8">Terminology: Value Sets</a>
       </li>
    </ul>
 </div>
 <div>
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
-   <h3>Structures: Resource Profiles </h3>
+   <h3>H2Q-MC-LZZT Study Design Resources </h3>
    <p>
-    <p>These define constraints on FHIR resources for systems conforming to this implementation guide</p>
+    <p>Example Design Instances for H2Q-MC-LZZT</p>
 </p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-ResearchStudy-Inclusion-Exclusion.html" title="StructureDefinition/ResearchStudy-Inclusion-Exclusion">Research Study Inclusion Exclusion</a>
-               </td>
-               <td>
-<p>Research Study Inclusion Exclusion Criteria</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-armgroup-definition.html" title="StructureDefinition/SOA-armgroup-definition">SOA Arm Definition</a>
-               </td>
-               <td>
-<p>Extension to define a Arm Group for a Research Study</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-epoch-definition.html" title="StructureDefinition/SOA-epoch-definition">SOA Epoch Defintion</a>
-               </td>
-               <td>
-<p>An example of a study epoch definition for the study.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-PlanDefinition.html" title="StructureDefinition/SOA-PlanDefinition">SOA PlanDefinition</a>
-               </td>
-               <td>
-<p>Schedule of Activities PlanDefinition Extensions</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-planned-visit-definition.html" title="StructureDefinition/SOA-planned-visit-definition">SOA Planned Visit Definition</a>
-               </td>
-               <td>
-<p>An example of a planned visit definition for the study.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-protocol-plan-definition.html" title="StructureDefinition/SOA-protocol-plan-definition">SOA Protocol Plan Defintion</a>
-               </td>
-               <td>
-<p>A profile on the plan definition resource to define the events in a protocol.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-planned-study-activity-definition.html" title="StructureDefinition/SOA-planned-study-activity-definition">SOA Planned Study Activity Definition</a>
-               </td>
-               <td>
-<p>Planned Study Activity Definition that allows tagging of milestones</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-study-definition.html" title="StructureDefinition/SOA-study-definition">SOA Study Defintion</a>
-               </td>
-               <td>
-<p>An example of the plan definition for the study.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-Soa-Subject.html" title="StructureDefinition/Soa-Subject">SOA Subject</a>
-               </td>
-               <td>
-<p>A research subject example.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-unplanned-visit-definition.html" title="StructureDefinition/SOA-unplanned-visit-definition">SOA Unplanned Visit Definition</a>
-               </td>
-               <td>
-<p>An example of a unplanned visit definition for the study.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-visit-plan-definition.html" title="StructureDefinition/SOA-visit-plan-definition">SOA Visit Plan Defintion</a>
-               </td>
-               <td>
-<p>A profile on the plan definition resource to define the planned events for a visit.</p>
-</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="2"> </a>
-   <h3>Structures: Extension Definitions </h3>
-   <p>
-    <p>These define constraints on FHIR data types for systems conforming to this implementation guide</p>
-</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SOA-arm-ResearchStudy.html" title="StructureDefinition/SOA-arm-ResearchStudy">ResearchStudy Arm</a>
-               </td>
-               <td>
-<p>Reference to Study for Study Arm</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-soa-arm-status.html" title="StructureDefinition/soa-arm-status">Arm Status</a>
-               </td>
-               <td>
-<p>Set of permitted values for Arm status</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-planned-visit-study-day.html" title="StructureDefinition/planned-visit-study-day">Planned Study Day of Visit</a>
-               </td>
-               <td>
-<p>Planned Study Day of Visit, such as Day -21, Day 1, Day 52</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-plannedStudyDayWindow.html" title="StructureDefinition/plannedStudyDayWindow">Planned Study Day Window</a>
-               </td>
-               <td>
-<p>Planned Study Day Window (Times)</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-planned-visit-study-offset.html" title="StructureDefinition/planned-visit-study-offset">Planned Study Offset of Visit</a>
-               </td>
-               <td>
-<p>Planned Study Offset of Visit</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-planned-visit-study-windows.html" title="StructureDefinition/planned-visit-study-windows">Planned Study Window of Visit</a>
-               </td>
-               <td>
-<p>Planned Study Window of Visit</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-soa-epoch-epochtype.html" title="StructureDefinition/soa-epoch-epochtype">Epoch Type</a>
-               </td>
-               <td>
-<p>Categorization of Epoch Type</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-soa-study-activity-milestne.html" title="StructureDefinition/soa-study-activity-milestne">Study Milestone</a>
-               </td>
-               <td>
-<p>Categorization of Study Milestone</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-study-event-oid.html" title="StructureDefinition/study-event-oid">Study Event OID</a>
-               </td>
-               <td>
-<p>OID for Study Event in Design</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-unplanned-visit-study-window.html" title="StructureDefinition/unplanned-visit-study-window">Unplanned Study Visit Range</a>
-               </td>
-               <td>
-<p>Unplanned Study Visit Range [Day.min() to Day.max() of SoA]</p>
-</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="3"> </a>
-   <h3>Terminology: Value Sets </h3>
-   <p>
-    <p>These define sets of codes used by systems conforming to this implementation guide</p>
-</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ValueSet-soa-arm-status-valueset.html" title="ValueSet/soa-arm-status-valueset">Arm Status Value Set</a>
-               </td>
-               <td>
-<p>Set of permitted values for Arm status</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ValueSet-soa-epoch-epochtype-value-set.html" title="ValueSet/soa-epoch-epochtype-value-set">Epoch Type Value Set</a>
-               </td>
-               <td>
-<p>Set of permitted values for Epoch</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ValueSet-SOA-study-activity-milestone-valueset.html" title="ValueSet/SOA-study-activity-milestone-valueset">Study Milestone</a>
-               </td>
-               <td>
-
-</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="4"> </a>
-   <h3>Example: Example Instances </h3>
-   <p>
-    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like</p>
-</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-DIABP.html" title="ActivityDefinition/DIABP">Diastolic Blood Pressure</a>
-               </td>
-               <td>
-<p>Taking Diastolic BP</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Organization-EliLillyAndCompany.html" title="Organization/EliLillyAndCompany">Eli Lilly and Company</a>
-               </td>
-               <td>
-
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog.html" title="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog">ADAS-Cog</a>
-               </td>
-               <td>
-<p>Planned Activity [ADAS-Cog]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-ADAS-Cog-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-ADAS-Cog-Observations">ADAS-Cog-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [ADAS-Cog]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Adverse-events.html" title="ActivityDefinition/H2Q-MC-LZZT-Adverse-events">Adverse events</a>
-               </td>
-               <td>
-<p>Planned Activity [Adverse events]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Adverse-events-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Adverse-events-Observations">Adverse events-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Adverse events]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Ambulatory-ECG-placed.html" title="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed">Ambulatory ECG placed</a>
-               </td>
-               <td>
-<p>Planned Activity [Ambulatory ECG placed]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations">Ambulatory ECG placed-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Ambulatory ECG placed]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Ambulatory-ECG-removed.html" title="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed">Ambulatory ECG removed</a>
-               </td>
-               <td>
-<p>Planned Activity [Ambulatory ECG removed]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Ambulatory-ECG-removed-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed-Observations">Ambulatory ECG removed-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Ambulatory ECG removed]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Apo-E-genotyping.html" title="ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping">Apo E genotyping</a>
-               </td>
-               <td>
-<p>Planned Activity [Apo E genotyping]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Apo-E-genotyping-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Apo-E-genotyping-Observations">Apo E genotyping-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Apo E genotyping]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-CIBIC.html" title="ActivityDefinition/H2Q-MC-LZZT-CIBIC">CIBIC+</a>
-               </td>
-               <td>
-<p>Planned Activity [CIBIC+]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-CIBIC-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-CIBIC-Observations">CIBIC+-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [CIBIC+]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-CT-Scan.html" title="ActivityDefinition/H2Q-MC-LZZT-CT-Scan">CT Scan</a>
-               </td>
-               <td>
-<p>Planned Activity [CT Scan]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-CT-Scan-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-CT-Scan-Observations">CT Scan-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [CT Scan]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Chest-x-ray.html" title="ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray">Chest x-ray</a>
-               </td>
-               <td>
-<p>Planned Activity [Chest x-ray]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Chest-x-ray-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Chest-x-ray-Observations">Chest x-ray-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Chest x-ray]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Concomitant-Medications.html" title="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications">Concomitant Medications</a>
-               </td>
-               <td>
-<p>Planned Activity [Concomitant Medications]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Concomitant-Medications-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Concomitant-Medications-Observations">Concomitant Medications-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Concomitant Medications]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-DAD.html" title="ActivityDefinition/H2Q-MC-LZZT-DAD">DAD</a>
-               </td>
-               <td>
-<p>Planned Activity [DAD]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-DAD-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-DAD-Observations">DAD-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [DAD]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-ECG.html" title="ActivityDefinition/H2Q-MC-LZZT-ECG">ECG</a>
-               </td>
-               <td>
-<p>Planned Activity [ECG]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-ECG-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-ECG-Observations">ECG-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [ECG]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Habits.html" title="ActivityDefinition/H2Q-MC-LZZT-Habits">Habits</a>
-               </td>
-               <td>
-<p>Planned Activity [Habits]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Habits-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Habits-Observations">Habits-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Habits]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Hachinski-4.html" title="ActivityDefinition/H2Q-MC-LZZT-Hachinski-4">Hachinski 4</a>
-               </td>
-               <td>
-<p>Planned Activity [Hachinski 4]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Hachinski-4-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Hachinski-4-Observations">Hachinski 4-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Hachinski 4]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Hemoglobin-A1C.html" title="ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C">Hemoglobin A1C</a>
-               </td>
-               <td>
-<p>Planned Activity [Hemoglobin A1C]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Hemoglobin-A1C-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Hemoglobin-A1C-Observations">Hemoglobin A1C-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Hemoglobin A1C]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Group-H2Q-MC-LZZT-InclusionExclusion.html" title="Group/H2Q-MC-LZZT-InclusionExclusion">H2Q-MC-LZZT-InclusionExclusion</a>
-               </td>
-               <td>
-<p>H2Q-MC-LZZT Inclusion Exclusion Criteria</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Informed-Consent.html" title="ActivityDefinition/H2Q-MC-LZZT-Informed-Consent">Informed Consent</a>
-               </td>
-               <td>
-<p>Planned Activity [Informed Consent]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Informed-Consent-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Informed-Consent-Observations">Informed Consent-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Informed Consent]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Laboratory-Chem-Hemat.html" title="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat">Laboratory (Chem/Hemat)</a>
-               </td>
-               <td>
-<p>Planned Activity [Laboratory (Chem/Hemat)]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations">Laboratory (Chem/Hemat)-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Laboratory (Chem/Hemat)]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Laboratory-Urinalysis.html" title="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis">Laboratory (Urinalysis)</a>
-               </td>
-               <td>
-<p>Planned Activity [Laboratory (Urinalysis)]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Laboratory-Urinalysis-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis-Observations">Laboratory (Urinalysis)-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Laboratory (Urinalysis)]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-MMSE-10-23.html" title="ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23">MMSE 10-23</a>
-               </td>
-               <td>
-<p>Planned Activity [MMSE 10-23]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-MMSE-10-23-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-MMSE-10-23-Observations">MMSE 10-23-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [MMSE 10-23]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Medical-History.html" title="ActivityDefinition/H2Q-MC-LZZT-Medical-History">Medical History</a>
-               </td>
-               <td>
-<p>Planned Activity [Medical History]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Medical-History-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Medical-History-Observations">Medical History-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Medical History]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Medications-dispensed.html" title="ActivityDefinition/H2Q-MC-LZZT-Medications-dispensed">Medications dispensed</a>
-               </td>
-               <td>
-<p>Planned Activity [Medications dispensed]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Medications-dispensed-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Medications-dispensed-Observations">Medications dispensed-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Medications dispensed]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Medications-returned.html" title="ActivityDefinition/H2Q-MC-LZZT-Medications-returned">Medications returned</a>
-               </td>
-               <td>
-<p>Planned Activity [Medications returned]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Medications-returned-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Medications-returned-Observations">Medications returned-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Medications returned]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-NPI-X.html" title="ActivityDefinition/H2Q-MC-LZZT-NPI-X">NPI-X</a>
-               </td>
-               <td>
-<p>Planned Activity [NPI-X]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-NPI-X-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-NPI-X-Observations">NPI-X-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [NPI-X]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Patient-number-assigned.html" title="ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned">Patient number assigned</a>
-               </td>
-               <td>
-<p>Planned Activity [Patient number assigned]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Patient-number-assigned-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Patient-number-assigned-Observations">Patient number assigned-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Patient number assigned]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Patient-randomized.html" title="ActivityDefinition/H2Q-MC-LZZT-Patient-randomized">Patient randomized</a>
-               </td>
-               <td>
-<p>Planned Activity [Patient randomized]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Patient-randomized-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Patient-randomized-Observations">Patient randomized-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Patient randomized]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Physical-examination.html" title="ActivityDefinition/H2Q-MC-LZZT-Physical-examination">Physical examination</a>
-               </td>
-               <td>
-<p>Planned Activity [Physical examination]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Physical-examination-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Physical-examination-Observations">Physical examination-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Physical examination]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Placebo-TTS-test.html" title="ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test">Placebo TTS test</a>
-               </td>
-               <td>
-<p>Planned Activity [Placebo TTS test]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Placebo-TTS-test-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Placebo-TTS-test-Observations">Placebo TTS test-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Placebo TTS test]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-H2Q-MC-LZZT-Plasma-Specimen.html" title="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen">Plasma Specimen</a>
-               </td>
-               <td>
-<p>Planned Activity [Plasma Specimen]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Plasma-Specimen-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Plasma-Specimen-Observations">Plasma Specimen-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Plasma Specimen]</p>
-</td>
-            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="PlanDefinition-H2Q-MC-LZZT-ProtocolDesign.html" title="PlanDefinition/H2Q-MC-LZZT-ProtocolDesign">H2Q-MC-LZZT-ProtocolDesign</a>
@@ -852,25 +180,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   <a href="ResearchStudy-H2Q-MC-LZZT-ResearchStudy.html" title="ResearchStudy/H2Q-MC-LZZT-ResearchStudy">H2Q-MC-LZZT Research Study</a>
                </td>
                <td>
-<h1 id="xanomeline-ly246708">Xanomeline (LY246708)</h1>
-<h1 id="protocol-h2q-mc-lzztc">Protocol H2Q-MC-LZZT(c)</h1>
+<h2 id="xanomeline-ly246708">Xanomeline (LY246708)</h2>
+<h3 id="protocol-h2q-mc-lzztc">Protocol H2Q-MC-LZZT(c)</h3>
 <p>Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Group-H2Q-MC-LZZT-ResearchStudy-Exclusion.html" title="Group/H2Q-MC-LZZT-ResearchStudy-Exclusion">H2Q-MC-LZZT Research Study Exclusion Criteria</a>
+                  <a href="Group-H2Q-MC-LZZT-ResearchStudy-Exclusion.html" title="Group/H2Q-MC-LZZT-ResearchStudy-Exclusion">H2Q-MC-LZZT Exclusion Criteria</a>
                </td>
                <td>
-
+<p>H2Q-MC-LZZT Exclusion Criteria</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Group-H2Q-MC-LZZT-ResearchStudy-Inclusion.html" title="Group/H2Q-MC-LZZT-ResearchStudy-Inclusion">H2Q-MC-LZZT Research Study Inclusion Criteria</a>
+                  <a href="Group-H2Q-MC-LZZT-ResearchStudy-Inclusion.html" title="Group/H2Q-MC-LZZT-ResearchStudy-Inclusion">H2Q-MC-LZZT Inclusion Criteria</a>
                </td>
                <td>
-
+<p>H2Q-MC-LZZT Inclusion Criteria</p>
 </td>
             </tr>
             <tr>
@@ -993,6 +321,280 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Planned Visit [Visit-9] - removed in Protocol Amendment</p>
 </td>
             </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="2"> </a>
+   <h3>H2Q-MC-LZZT Study Actors </h3>
+   <p>
+    <p>Study Actors</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-EliLillyAndCompany.html" title="Organization/EliLillyAndCompany">Eli Lilly and Company</a>
+               </td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-SamGetWell.html" title="Practitioner/SamGetWell">Samuel Home, M.D.</a>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="3"> </a>
+   <h3>H2Q-MC-LZZT Study Activities </h3>
+   <p>
+    <p>Study Activities</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog.html" title="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog">ADAS-Cog</a>
+               </td>
+               <td>
+<p>Planned Activity [ADAS-Cog]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Adverse-events.html" title="ActivityDefinition/H2Q-MC-LZZT-Adverse-events">Adverse events</a>
+               </td>
+               <td>
+<p>Planned Activity [Adverse events]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Ambulatory-ECG-placed.html" title="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed">Ambulatory ECG placed</a>
+               </td>
+               <td>
+<p>Planned Activity [Ambulatory ECG placed]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Ambulatory-ECG-removed.html" title="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed">Ambulatory ECG removed</a>
+               </td>
+               <td>
+<p>Planned Activity [Ambulatory ECG removed]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Apo-E-genotyping.html" title="ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping">Apo E genotyping</a>
+               </td>
+               <td>
+<p>Planned Activity [Apo E genotyping]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-CIBIC.html" title="ActivityDefinition/H2Q-MC-LZZT-CIBIC">CIBIC+</a>
+               </td>
+               <td>
+<p>Planned Activity [CIBIC+]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-CT-Scan.html" title="ActivityDefinition/H2Q-MC-LZZT-CT-Scan">CT Scan</a>
+               </td>
+               <td>
+<p>Planned Activity [CT Scan]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Chest-x-ray.html" title="ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray">Chest x-ray</a>
+               </td>
+               <td>
+<p>Planned Activity [Chest x-ray]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Concomitant-Medications.html" title="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications">Concomitant Medications</a>
+               </td>
+               <td>
+<p>Planned Activity [Concomitant Medications]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-DAD.html" title="ActivityDefinition/H2Q-MC-LZZT-DAD">DAD</a>
+               </td>
+               <td>
+<p>Planned Activity [DAD]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-ECG.html" title="ActivityDefinition/H2Q-MC-LZZT-ECG">ECG</a>
+               </td>
+               <td>
+<p>Planned Activity [ECG]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Habits-Alcohol.html" title="ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol">Habits - Alcohol</a>
+               </td>
+               <td>
+<p>Planned Activity [Habits - Alcohol]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Habits-Caffeine.html" title="ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine">Habits - Caffeine</a>
+               </td>
+               <td>
+<p>Planned Activity [Habits - Caffeine]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Habits-Smoking.html" title="ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking">Habits - Smoking</a>
+               </td>
+               <td>
+<p>Planned Activity [Habits - Smoking]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Hachinski-4.html" title="ActivityDefinition/H2Q-MC-LZZT-Hachinski-4">Hachinski 4</a>
+               </td>
+               <td>
+<p>Planned Activity [Hachinski 4]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Hemoglobin-A1C.html" title="ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C">Hemoglobin A1C</a>
+               </td>
+               <td>
+<p>Planned Activity [Hemoglobin A1C]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Informed-Consent.html" title="ActivityDefinition/H2Q-MC-LZZT-Informed-Consent">Informed Consent</a>
+               </td>
+               <td>
+<p>Planned Activity [Informed Consent]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Laboratory-Chem.html" title="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem">Laboratory (Chem)</a>
+               </td>
+               <td>
+<p>Planned Activity [Laboratory (Chem)]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Laboratory-Hemat.html" title="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat">Laboratory (Hemat)</a>
+               </td>
+               <td>
+<p>Planned Activity [Laboratory (Hemat)]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Laboratory-Urinalysis.html" title="ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis">Laboratory (Urinalysis)</a>
+               </td>
+               <td>
+<p>Planned Activity [Laboratory (Urinalysis)]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-MMSE-10-23.html" title="ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23">MMSE 10-23</a>
+               </td>
+               <td>
+<p>Planned Activity [MMSE 10-23]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Medical-History.html" title="ActivityDefinition/H2Q-MC-LZZT-Medical-History">Medical History</a>
+               </td>
+               <td>
+<p>Planned Activity [Medical History]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Medications-dispensed.html" title="ActivityDefinition/H2Q-MC-LZZT-Medications-dispensed">Medications dispensed</a>
+               </td>
+               <td>
+<p>Planned Activity [Medications dispensed]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Medications-returned.html" title="ActivityDefinition/H2Q-MC-LZZT-Medications-returned">Medications returned</a>
+               </td>
+               <td>
+<p>Planned Activity [Medications returned]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-NPI-X.html" title="ActivityDefinition/H2Q-MC-LZZT-NPI-X">NPI-X</a>
+               </td>
+               <td>
+<p>Planned Activity [NPI-X]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Patient-number-assigned.html" title="ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned">Patient number assigned</a>
+               </td>
+               <td>
+<p>Planned Activity [Patient number assigned]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Patient-randomized.html" title="ActivityDefinition/H2Q-MC-LZZT-Patient-randomized">Patient randomized</a>
+               </td>
+               <td>
+<p>Planned Activity [Patient randomized]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Physical-examination.html" title="ActivityDefinition/H2Q-MC-LZZT-Physical-examination">Physical examination</a>
+               </td>
+               <td>
+<p>Planned Activity [Physical examination]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Placebo-TTS-test.html" title="ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test">Placebo TTS test</a>
+               </td>
+               <td>
+<p>Planned Activity [Placebo TTS test]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ActivityDefinition-H2Q-MC-LZZT-Plasma-Specimen.html" title="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen">Plasma Specimen</a>
+               </td>
+               <td>
+<p>Planned Activity [Plasma Specimen]</p>
+</td>
+            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="ActivityDefinition-H2Q-MC-LZZT-Study-drug-record.html" title="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record">Study drug record</a>
@@ -1003,26 +605,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-Study-drug-record-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Study-drug-record-Observations">Study drug record-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [Study drug record]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
                   <a href="ActivityDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey.html" title="ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey">TTS Acceptability Survey</a>
                </td>
                <td>
 <p>Planned Activity [TTS Acceptability Survey]</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ObservationDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations">TTS Acceptability Survey-Observations</a>
-               </td>
-               <td>
-<p>Planned Observation(s) [TTS Acceptability Survey]</p>
 </td>
             </tr>
             <tr>
@@ -1041,6 +627,250 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Planned Activity [Vital signs/Temperature]</p>
 </td>
             </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="4"> </a>
+   <h3>H2Q-MC-LZZT Study Observations </h3>
+   <p>
+    <p>Study Observations</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-ADAS-Cog-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-ADAS-Cog-Observations">ADAS-Cog-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [ADAS-Cog]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Adverse-events-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Adverse-events-Observations">Adverse events-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Adverse events]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed-Observations">Ambulatory ECG placed-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Ambulatory ECG placed]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Ambulatory-ECG-removed-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed-Observations">Ambulatory ECG removed-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Ambulatory ECG removed]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Apo-E-genotyping-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Apo-E-genotyping-Observations">Apo E genotyping-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Apo E genotyping]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-CIBIC-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-CIBIC-Observations">CIBIC+-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [CIBIC+]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-CT-Scan-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-CT-Scan-Observations">CT Scan-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [CT Scan]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Chest-x-ray-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Chest-x-ray-Observations">Chest x-ray-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Chest x-ray]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Concomitant-Medications-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Concomitant-Medications-Observations">Concomitant Medications-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Concomitant Medications]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-DAD-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-DAD-Observations">DAD-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [DAD]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-ECG-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-ECG-Observations">ECG-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [ECG]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Habits-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Habits-Observations">Habits-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Habits]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Hachinski-4-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Hachinski-4-Observations">Hachinski 4-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Hachinski 4]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Hemoglobin-A1C-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Hemoglobin-A1C-Observations">Hemoglobin A1C-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Hemoglobin A1C]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Informed-Consent-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Informed-Consent-Observations">Informed Consent-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Informed Consent]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations">Laboratory (Chem/Hemat)-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Laboratory (Chem/Hemat)]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Laboratory-Urinalysis-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis-Observations">Laboratory (Urinalysis)-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Laboratory (Urinalysis)]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-MMSE-10-23-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-MMSE-10-23-Observations">MMSE 10-23-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [MMSE 10-23]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Medical-History-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Medical-History-Observations">Medical History-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Medical History]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Medications-dispensed-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Medications-dispensed-Observations">Medications dispensed-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Medications dispensed]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Medications-returned-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Medications-returned-Observations">Medications returned-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Medications returned]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-NPI-X-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-NPI-X-Observations">NPI-X-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [NPI-X]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Patient-number-assigned-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Patient-number-assigned-Observations">Patient number assigned-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Patient number assigned]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Patient-randomized-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Patient-randomized-Observations">Patient randomized-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Patient randomized]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Physical-examination-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Physical-examination-Observations">Physical examination-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Physical examination]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Placebo-TTS-test-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Placebo-TTS-test-Observations">Placebo TTS test-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Placebo TTS test]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Plasma-Specimen-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Plasma-Specimen-Observations">Plasma Specimen-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Plasma Specimen]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-Study-drug-record-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Study-drug-record-Observations">Study drug record-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [Study drug record]</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ObservationDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations">TTS Acceptability Survey-Observations</a>
+               </td>
+               <td>
+<p>Planned Observation(s) [TTS Acceptability Survey]</p>
+</td>
+            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="ObservationDefinition-H2Q-MC-LZZT-Vital-signs-Temperature-Observations.html" title="ObservationDefinition/H2Q-MC-LZZT-Vital-signs-Temperature-Observations">Vital signs/Temperature-Observations</a>
@@ -1049,100 +879,260 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Planned Observation(s) [Vital signs/Temperature]</p>
 </td>
             </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="5"> </a>
+   <h3>Deliverables </h3>
+   <p>
+    <p>Deliverables for H2Q-MC-LZZT</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
             <tr>
-               <td style="column-width:30%">
-                  <a href="ResearchStudy-LZZT-Research-Study.html" title="ResearchStudy/LZZT-Research-Study">H2Q-MC-LZZT</a>
+               <td style="column-width:30%"><a name="8c1f83c8-ec65-4024-a94c-ac01096caff9">​</a>
+                  <a href="null" title="Bundle/H2Q-MC-LZZT-Bundle-1">H2Q-MC-LZZT Bundle 1</a>
                </td>
                <td>
-<p>Study</p>
+<p>First Deliverable for the PHUSE Project</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%"><a name="632cc655-f781-4a66-96fc-a73106fa7c85">​</a>
+                  <a href="null" title="Bundle/H2Q-MC-LZZT-Bundle-2">H2Q-MC-LZZT Bundle 2</a>
+               </td>
+               <td>
+<p>Second Deliverable for the PHUSE Project</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="6"> </a>
+   <h3>Structures: Resource Profiles </h3>
+   <p>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-ResearchStudy-Inclusion-Exclusion.html" title="StructureDefinition/ResearchStudy-Inclusion-Exclusion">Research Study Inclusion Exclusion</a>
+               </td>
+               <td>
+<p>Research Study Inclusion Exclusion Criteria</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="PlanDefinition-LZZT-Study-Definition.html" title="PlanDefinition/LZZT-Study-Definition">Study Definition for H2Q-MC-LZZT</a>
+                  <a href="StructureDefinition-SOA-armgroup-definition.html" title="StructureDefinition/SOA-armgroup-definition">SOA Arm Definition</a>
                </td>
                <td>
-<p>Study</p>
+<p>Extension to define a Arm Group for a Research Study</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ActivityDefinition-PULSE.html" title="ActivityDefinition/PULSE">Pulse</a>
+                  <a href="StructureDefinition-SOA-epoch-definition.html" title="StructureDefinition/SOA-epoch-definition">SOA Epoch Defintion</a>
                </td>
                <td>
-<p>Taking Pulse</p>
+<p>An example of a study epoch definition for the study.</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ActivityDefinition-SYSBP.html" title="ActivityDefinition/SYSBP">Systolic Blood Pressure</a>
+                  <a href="StructureDefinition-SOA-PlanDefinition.html" title="StructureDefinition/SOA-PlanDefinition">SOA PlanDefinition</a>
                </td>
                <td>
-<p>Taking Systolic BP</p>
+<p>Schedule of Activities PlanDefinition Extensions</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Practitioner-SamGetWell.html" title="Practitioner/SamGetWell">Samuel Home, M.D.</a>
+                  <a href="StructureDefinition-SOA-planned-visit-definition.html" title="StructureDefinition/SOA-planned-visit-definition">SOA Planned Visit Definition</a>
+               </td>
+               <td>
+<p>An example of a planned visit definition for the study.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-SOA-protocol-plan-definition.html" title="StructureDefinition/SOA-protocol-plan-definition">SOA Protocol Plan Defintion</a>
+               </td>
+               <td>
+<p>A profile on the plan definition resource to define the events in a protocol.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-SOA-planned-study-activity-definition.html" title="StructureDefinition/SOA-planned-study-activity-definition">SOA Planned Study Activity Definition</a>
+               </td>
+               <td>
+<p>Planned Study Activity Definition that allows tagging of milestones</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-SOA-study-definition.html" title="StructureDefinition/SOA-study-definition">SOA Study Defintion</a>
+               </td>
+               <td>
+<p>An example of the plan definition for the study.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-Soa-Subject.html" title="StructureDefinition/Soa-Subject">SOA Subject</a>
+               </td>
+               <td>
+<p>A research subject example.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-SOA-unplanned-visit-definition.html" title="StructureDefinition/SOA-unplanned-visit-definition">SOA Unplanned Visit Definition</a>
+               </td>
+               <td>
+<p>An example of a unplanned visit definition for the study.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-SOA-visit-plan-definition.html" title="StructureDefinition/SOA-visit-plan-definition">SOA Visit Plan Defintion</a>
+               </td>
+               <td>
+<p>A profile on the plan definition resource to define the planned events for a visit.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="7"> </a>
+   <h3>Structures: Extension Definitions </h3>
+   <p>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-SOA-arm-ResearchStudy.html" title="StructureDefinition/SOA-arm-ResearchStudy">ResearchStudy Arm</a>
+               </td>
+               <td>
+<p>Reference to Study for Study Arm</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-soa-arm-status.html" title="StructureDefinition/soa-arm-status">Arm Status</a>
+               </td>
+               <td>
+<p>Set of permitted values for Arm status</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-planned-visit-study-day.html" title="StructureDefinition/planned-visit-study-day">Planned Study Day of Visit</a>
+               </td>
+               <td>
+<p>Planned Study Day of Visit, such as Day -21, Day 1, Day 52</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-plannedStudyDayWindow.html" title="StructureDefinition/plannedStudyDayWindow">Planned Study Day Window</a>
+               </td>
+               <td>
+<p>Planned Study Day Window (Times)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-planned-visit-study-offset.html" title="StructureDefinition/planned-visit-study-offset">Planned Study Offset of Visit</a>
+               </td>
+               <td>
+<p>Planned Study Offset of Visit</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-planned-visit-study-windows.html" title="StructureDefinition/planned-visit-study-windows">Planned Study Window of Visit</a>
+               </td>
+               <td>
+<p>Planned Study Window of Visit</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-soa-epoch-epochtype.html" title="StructureDefinition/soa-epoch-epochtype">Epoch Type</a>
+               </td>
+               <td>
+<p>Categorization of Epoch Type</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-soa-study-activity-milestne.html" title="StructureDefinition/soa-study-activity-milestne">Study Milestone</a>
+               </td>
+               <td>
+<p>Categorization of Study Milestone</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-study-event-oid.html" title="StructureDefinition/study-event-oid">Study Event OID</a>
+               </td>
+               <td>
+<p>OID for Study Event in Design</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-unplanned-visit-study-window.html" title="StructureDefinition/unplanned-visit-study-window">Unplanned Study Visit Range</a>
+               </td>
+               <td>
+<p>Unplanned Study Visit Range [Day.min() to Day.max() of SoA]</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="8"> </a>
+   <h3>Terminology: Value Sets </h3>
+   <p>
+    <p>These define sets of codes used by systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-soa-arm-status-valueset.html" title="ValueSet/soa-arm-status-valueset">Arm Status Value Set</a>
+               </td>
+               <td>
+<p>Set of permitted values for Arm status</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-soa-epoch-epochtype-value-set.html" title="ValueSet/soa-epoch-epochtype-value-set">Epoch Type Value Set</a>
+               </td>
+               <td>
+<p>Set of permitted values for Epoch</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-SOA-study-activity-milestone-valueset.html" title="ValueSet/SOA-study-activity-milestone-valueset">Study Milestone</a>
                </td>
                <td>
 
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="PlanDefinition-ScreeningEpoch.html" title="PlanDefinition/ScreeningEpoch">Screening Visit</a>
-               </td>
-               <td>
-
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Group-StudyArmStandardOfCare.html" title="Group/StudyArmStandardOfCare">Arm: Standard of Care</a>
-               </td>
-               <td>
-
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-SubjectRandomizationDate.html" title="ActivityDefinition/SubjectRandomizationDate">Subject Randomization</a>
-               </td>
-               <td>
-
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-Visit1.html" title="ActivityDefinition/Visit1">Screening - Day -21</a>
-               </td>
-               <td>
-<p>Screening Visit - Day -21</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-Visit2.html" title="ActivityDefinition/Visit2">Screening - Day -1</a>
-               </td>
-               <td>
-<p>Screening Visit - Day -1</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ActivityDefinition-Visit3.html" title="ActivityDefinition/Visit3">Treatment - Day 1</a>
-               </td>
-               <td>
-<p>Treatment Visit - Day 1</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="PlanDefinition-VitalSigns.html" title="PlanDefinition/VitalSigns">Vital Signs</a>
-               </td>
-               <td>
-<p>Vital Signs Assessment</p>
 </td>
             </tr>
          </tbody>
@@ -1183,7 +1173,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&nbsp;
 
-                <a href="StructureDefinition-ResearchStudy-Inclusion-Exclusion.html">next&gt;</a>
+                <a href="PlanDefinition-H2Q-MC-LZZT-ProtocolDesign.html">next&gt;</a>
 
               </td>
             </tr>
@@ -1191,8 +1181,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </table>
       </div>
       <div class="inner-wrapper">
-        <p><a name="68af2d0b-6d09-4f75-a150-bb9709ae35f7">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 17, 2021 21:11+0000">2021-05-17</span>
+        <p><a name="bf5b35ed-0fee-40cd-affc-412e4f608c36">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 18, 2021 13:05+0000">2021-05-18</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

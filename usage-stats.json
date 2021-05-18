@@ -109,6 +109,7 @@
     ],
     "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day": [
       "ActivityDefinition",
+      "Bundle.entry.resource",
       "PlanDefinition"
     ],
     "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-windows": [

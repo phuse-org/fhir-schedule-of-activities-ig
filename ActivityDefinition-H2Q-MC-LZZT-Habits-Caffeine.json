@@ -1,0 +1,36 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "H2Q-MC-LZZT-Habits-Caffeine",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine</code></p><p><b>identifier</b>: OID: F.SU_CAFFEINE</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 18, 2021, 1:05:31 PM</p><p><b>observationRequirement</b>: <a href=\"Habits-Observations-Caffeine\">Habits-Observations-Caffeine</a></p><p><b>observationResultRequirement</b>: <a href=\"Habits-Observations-Caffeine\">Habits-Observations-Caffeine</a></p></div>"
+  },
+  "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine",
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://www.cdisc.org/ns/odm/v1.3#",
+            "display": "OID"
+          }
+        ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/FormDef#",
+      "value": "F.SU_CAFFEINE"
+    }
+  ],
+  "version": "0.1.1",
+  "status": "active",
+  "date": "2021-05-18T13:05:31+00:00",
+  "observationRequirement": [
+    {
+      "reference": "Habits-Observations-Caffeine"
+    }
+  ],
+  "observationResultRequirement": [
+    {
+      "reference": "Habits-Observations-Caffeine"
+    }
+  ]
+}

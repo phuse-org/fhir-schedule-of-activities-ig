@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.26"}
-    h3,h4,h5,h6{--heading-prefix:"6.26"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.20"}
+    h3,h4,h5,h6{--heading-prefix:"6.20"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -77,7 +77,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="cdisc-odm.html">CDISC Operational Model (ODM)</a>
+    <a href="cdisc-odm.html">CDISC Operational Data Model (ODM)</a>
   </li>
   <li>
     <a href="deltas.html">Clinical Research Profile Backlog</a>
@@ -175,7 +175,7 @@
   "<a href="http://hl7.org/fhir/R4/organization.html#Organization.id">id</a>" : "EliLillyAndCompany",
   "<a href="http://hl7.org/fhir/R4/organization.html#Organization.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: Eli Lilly and Company (OFFICIAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;crs&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: Eli Lilly and Company (OFFICIAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;crs&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;Contacts&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Purpose&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Telecom&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;span title=\"Codes: \"&gt;ADMIN&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=\"https://www.lilly.com\"&gt;https://www.lilly.com&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>" : [
     {
@@ -188,6 +188,23 @@
       "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
         {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "crs"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/organization.html#Organization.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/organization.html#Organization.contact.purpose">purpose</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "ADMIN"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/organization.html#Organization.contact.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.lilly.com"
         }
       ]
     }
@@ -241,8 +258,8 @@
         </table>
       </div>
       <div class="inner-wrapper">
-        <p><a name="83101eea-1ee9-40c2-9ce0-5c92b3a77ef7">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 17, 2021 21:11+0000">2021-05-17</span>
+        <p><a name="f746f363-3afd-43e7-b49b-eaaa471d1783">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 18, 2021 13:05+0000">2021-05-18</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

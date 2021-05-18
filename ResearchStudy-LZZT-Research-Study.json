@@ -1,9 +1,0 @@
-{
-  "resourceType": "ResearchStudy",
-  "id": "LZZT-Research-Study",
-  "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>status</b>: active</p></div>"
-  },
-  "status": "active"
-}

@@ -1,11 +1,5 @@
 [
   {
-    "id": "DIABP",
-    "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/DIABP",
-    "version": "0.1.1"
-  },
-  {
     "id": "H2Q-MC-LZZT-ADAS-Cog",
     "type": "ActivityDefinition",
     "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog",
@@ -72,9 +66,21 @@
     "version": "0.1.1"
   },
   {
-    "id": "H2Q-MC-LZZT-Habits",
+    "id": "H2Q-MC-LZZT-Habits-Alcohol",
     "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol",
+    "version": "0.1.1"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Habits-Caffeine",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine",
+    "version": "0.1.1"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Habits-Smoking",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking",
     "version": "0.1.1"
   },
   {
@@ -96,9 +102,15 @@
     "version": "0.1.1"
   },
   {
-    "id": "H2Q-MC-LZZT-Laboratory-Chem-Hemat",
+    "id": "H2Q-MC-LZZT-Laboratory-Chem",
     "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem",
+    "version": "0.1.1"
+  },
+  {
+    "id": "H2Q-MC-LZZT-Laboratory-Hemat",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat",
     "version": "0.1.1"
   },
   {
@@ -189,42 +201,6 @@
     "id": "H2Q-MC-LZZT-Vital-signs-Temperature",
     "type": "ActivityDefinition",
     "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature",
-    "version": "0.1.1"
-  },
-  {
-    "id": "PULSE",
-    "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/PULSE",
-    "version": "0.1.1"
-  },
-  {
-    "id": "SYSBP",
-    "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/SYSBP",
-    "version": "0.1.1"
-  },
-  {
-    "id": "SubjectRandomizationDate",
-    "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/SubjectRandomizationDate",
-    "version": "0.1.1"
-  },
-  {
-    "id": "Visit1",
-    "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/Visit1",
-    "version": "0.1.1"
-  },
-  {
-    "id": "Visit2",
-    "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/Visit2",
-    "version": "0.1.1"
-  },
-  {
-    "id": "Visit3",
-    "type": "ActivityDefinition",
-    "url": "http://example.org/br-and-r/soa/ActivityDefinition/Visit3",
     "version": "0.1.1"
   },
   {
@@ -328,24 +304,6 @@
     "id": "H2Q-MC-LZZT-Study-Visit-9",
     "type": "PlanDefinition",
     "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-9",
-    "version": "0.1.1"
-  },
-  {
-    "id": "LZZT-Study-Definition",
-    "type": "PlanDefinition",
-    "url": "http://example.org/br-and-r/soa/PlanDefinition/LZZT-Study-Definition",
-    "version": "0.1.1"
-  },
-  {
-    "id": "ScreeningEpoch",
-    "type": "PlanDefinition",
-    "url": "http://example.org/br-and-r/soa/PlanDefinition/ScreeningEpoch",
-    "version": "0.1.1"
-  },
-  {
-    "id": "VitalSigns",
-    "type": "PlanDefinition",
-    "url": "http://example.org/br-and-r/soa/PlanDefinition/VitalSigns",
     "version": "0.1.1"
   },
   {

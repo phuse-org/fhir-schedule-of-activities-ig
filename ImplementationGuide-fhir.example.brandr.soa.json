@@ -9,7 +9,7 @@
   "version": "0.1.1",
   "name": "ScheduleOfActivityIG",
   "status": "draft",
-  "date": "2021-05-17T21:11:23+00:00",
+  "date": "2021-05-18T13:05:31+00:00",
   "packageId": "fhir.example.brandr.soa",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -263,6 +263,33 @@
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      }
+    ],
+    "grouping": [
+      {
+        "id": "H2Q-MC-LZZT-Design",
+        "name": "H2Q-MC-LZZT Study Design Resources",
+        "description": "Example Design Instances for H2Q-MC-LZZT"
+      },
+      {
+        "id": "H2Q-MC-LZZT-Actors",
+        "name": "H2Q-MC-LZZT Study Actors",
+        "description": "Study Actors"
+      },
+      {
+        "id": "H2Q-MC-LZZT-Activities",
+        "name": "H2Q-MC-LZZT Study Activities",
+        "description": "Study Activities"
+      },
+      {
+        "id": "H2Q-MC-LZZT-Observations",
+        "name": "H2Q-MC-LZZT Study Observations",
+        "description": "Study Observations"
+      },
+      {
+        "id": "Deliverables",
+        "name": "Deliverables",
+        "description": "Deliverables for H2Q-MC-LZZT"
       }
     ],
     "resource": [
@@ -605,20 +632,6 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ActivityDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "ActivityDefinition/DIABP"
-        },
-        "name": "Diastolic Blood Pressure",
-        "description": "Taking Diastolic BP",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "Organization"
           }
         ],
@@ -626,7 +639,8 @@
           "reference": "Organization/EliLillyAndCompany"
         },
         "name": "Eli Lilly and Company",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Actors"
       },
       {
         "extension": [
@@ -640,7 +654,8 @@
         },
         "name": "ADAS-Cog",
         "description": "Planned Activity [ADAS-Cog]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -654,7 +669,8 @@
         },
         "name": "ADAS-Cog-Observations",
         "description": "Planned Observation(s) [ADAS-Cog]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -668,7 +684,8 @@
         },
         "name": "Adverse events",
         "description": "Planned Activity [Adverse events]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -682,7 +699,8 @@
         },
         "name": "Adverse events-Observations",
         "description": "Planned Observation(s) [Adverse events]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -696,7 +714,8 @@
         },
         "name": "Ambulatory ECG placed",
         "description": "Planned Activity [Ambulatory ECG placed]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -710,7 +729,8 @@
         },
         "name": "Ambulatory ECG placed-Observations",
         "description": "Planned Observation(s) [Ambulatory ECG placed]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -724,7 +744,8 @@
         },
         "name": "Ambulatory ECG removed",
         "description": "Planned Activity [Ambulatory ECG removed]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -738,7 +759,8 @@
         },
         "name": "Ambulatory ECG removed-Observations",
         "description": "Planned Observation(s) [Ambulatory ECG removed]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -752,7 +774,8 @@
         },
         "name": "Apo E genotyping",
         "description": "Planned Activity [Apo E genotyping]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -766,7 +789,8 @@
         },
         "name": "Apo E genotyping-Observations",
         "description": "Planned Observation(s) [Apo E genotyping]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -780,7 +804,8 @@
         },
         "name": "H2Q-MC-LZZT Bundle 1",
         "description": "First Deliverable for the PHUSE Project",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "Deliverables"
       },
       {
         "extension": [
@@ -793,8 +818,9 @@
           "reference": "Bundle/H2Q-MC-LZZT-Bundle-2"
         },
         "name": "H2Q-MC-LZZT Bundle 2",
-        "description": "First Deliverable for the PHUSE Project",
-        "exampleBoolean": true
+        "description": "Second Deliverable for the PHUSE Project",
+        "exampleBoolean": true,
+        "groupingId": "Deliverables"
       },
       {
         "extension": [
@@ -808,7 +834,8 @@
         },
         "name": "CIBIC+",
         "description": "Planned Activity [CIBIC+]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -822,7 +849,8 @@
         },
         "name": "CIBIC+-Observations",
         "description": "Planned Observation(s) [CIBIC+]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -836,7 +864,8 @@
         },
         "name": "CT Scan",
         "description": "Planned Activity [CT Scan]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -850,7 +879,8 @@
         },
         "name": "CT Scan-Observations",
         "description": "Planned Observation(s) [CT Scan]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -864,7 +894,8 @@
         },
         "name": "Chest x-ray",
         "description": "Planned Activity [Chest x-ray]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -878,7 +909,8 @@
         },
         "name": "Chest x-ray-Observations",
         "description": "Planned Observation(s) [Chest x-ray]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -892,7 +924,8 @@
         },
         "name": "Concomitant Medications",
         "description": "Planned Activity [Concomitant Medications]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -906,7 +939,8 @@
         },
         "name": "Concomitant Medications-Observations",
         "description": "Planned Observation(s) [Concomitant Medications]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -920,7 +954,8 @@
         },
         "name": "DAD",
         "description": "Planned Activity [DAD]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -934,7 +969,8 @@
         },
         "name": "DAD-Observations",
         "description": "Planned Observation(s) [DAD]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -948,7 +984,8 @@
         },
         "name": "ECG",
         "description": "Planned Activity [ECG]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -962,7 +999,8 @@
         },
         "name": "ECG-Observations",
         "description": "Planned Observation(s) [ECG]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -972,11 +1010,27 @@
           }
         ],
         "reference": {
-          "reference": "ActivityDefinition/H2Q-MC-LZZT-Habits"
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol"
         },
-        "name": "Habits",
-        "description": "Planned Activity [Habits]",
-        "exampleBoolean": true
+        "name": "Habits - Alcohol",
+        "description": "Planned Activity [Habits - Alcohol]",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine"
+        },
+        "name": "Habits - Caffeine",
+        "description": "Planned Activity [Habits - Caffeine]",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -990,7 +1044,23 @@
         },
         "name": "Habits-Observations",
         "description": "Planned Observation(s) [Habits]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking"
+        },
+        "name": "Habits - Smoking",
+        "description": "Planned Activity [Habits - Smoking]",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1004,7 +1074,8 @@
         },
         "name": "Hachinski 4",
         "description": "Planned Activity [Hachinski 4]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1018,7 +1089,8 @@
         },
         "name": "Hachinski 4-Observations",
         "description": "Planned Observation(s) [Hachinski 4]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1032,7 +1104,8 @@
         },
         "name": "Hemoglobin A1C",
         "description": "Planned Activity [Hemoglobin A1C]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1046,21 +1119,8 @@
         },
         "name": "Hemoglobin A1C-Observations",
         "description": "Planned Observation(s) [Hemoglobin A1C]",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Group"
-          }
-        ],
-        "reference": {
-          "reference": "Group/H2Q-MC-LZZT-InclusionExclusion"
-        },
-        "name": "H2Q-MC-LZZT-InclusionExclusion",
-        "description": "H2Q-MC-LZZT Inclusion Exclusion Criteria",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/ResearchStudy-Inclusion-Exclusion"
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1074,7 +1134,8 @@
         },
         "name": "Informed Consent",
         "description": "Planned Activity [Informed Consent]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1088,7 +1149,8 @@
         },
         "name": "Informed Consent-Observations",
         "description": "Planned Observation(s) [Informed Consent]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1098,11 +1160,12 @@
           }
         ],
         "reference": {
-          "reference": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem-Hemat"
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
         },
-        "name": "Laboratory (Chem/Hemat)",
-        "description": "Planned Activity [Laboratory (Chem/Hemat)]",
-        "exampleBoolean": true
+        "name": "Laboratory (Chem)",
+        "description": "Planned Activity [Laboratory (Chem)]",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1116,7 +1179,23 @@
         },
         "name": "Laboratory (Chem/Hemat)-Observations",
         "description": "Planned Observation(s) [Laboratory (Chem/Hemat)]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+        },
+        "name": "Laboratory (Hemat)",
+        "description": "Planned Activity [Laboratory (Hemat)]",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1130,7 +1209,8 @@
         },
         "name": "Laboratory (Urinalysis)",
         "description": "Planned Activity [Laboratory (Urinalysis)]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1144,7 +1224,8 @@
         },
         "name": "Laboratory (Urinalysis)-Observations",
         "description": "Planned Observation(s) [Laboratory (Urinalysis)]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1158,7 +1239,8 @@
         },
         "name": "MMSE 10-23",
         "description": "Planned Activity [MMSE 10-23]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1172,7 +1254,8 @@
         },
         "name": "MMSE 10-23-Observations",
         "description": "Planned Observation(s) [MMSE 10-23]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1186,7 +1269,8 @@
         },
         "name": "Medical History",
         "description": "Planned Activity [Medical History]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1200,7 +1284,8 @@
         },
         "name": "Medical History-Observations",
         "description": "Planned Observation(s) [Medical History]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1214,7 +1299,8 @@
         },
         "name": "Medications dispensed",
         "description": "Planned Activity [Medications dispensed]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1228,7 +1314,8 @@
         },
         "name": "Medications dispensed-Observations",
         "description": "Planned Observation(s) [Medications dispensed]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1242,7 +1329,8 @@
         },
         "name": "Medications returned",
         "description": "Planned Activity [Medications returned]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1256,7 +1344,8 @@
         },
         "name": "Medications returned-Observations",
         "description": "Planned Observation(s) [Medications returned]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1270,7 +1359,8 @@
         },
         "name": "NPI-X",
         "description": "Planned Activity [NPI-X]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1284,7 +1374,8 @@
         },
         "name": "NPI-X-Observations",
         "description": "Planned Observation(s) [NPI-X]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1298,7 +1389,8 @@
         },
         "name": "Patient number assigned",
         "description": "Planned Activity [Patient number assigned]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1312,7 +1404,8 @@
         },
         "name": "Patient number assigned-Observations",
         "description": "Planned Observation(s) [Patient number assigned]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1326,7 +1419,8 @@
         },
         "name": "Patient randomized",
         "description": "Planned Activity [Patient randomized]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1340,7 +1434,8 @@
         },
         "name": "Patient randomized-Observations",
         "description": "Planned Observation(s) [Patient randomized]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1354,7 +1449,8 @@
         },
         "name": "Physical examination",
         "description": "Planned Activity [Physical examination]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1368,7 +1464,8 @@
         },
         "name": "Physical examination-Observations",
         "description": "Planned Observation(s) [Physical examination]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1382,7 +1479,8 @@
         },
         "name": "Placebo TTS test",
         "description": "Planned Activity [Placebo TTS test]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1396,7 +1494,8 @@
         },
         "name": "Placebo TTS test-Observations",
         "description": "Planned Observation(s) [Placebo TTS test]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1410,7 +1509,8 @@
         },
         "name": "Plasma Specimen",
         "description": "Planned Activity [Plasma Specimen]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1424,7 +1524,8 @@
         },
         "name": "Plasma Specimen-Observations",
         "description": "Planned Observation(s) [Plasma Specimen]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1438,7 +1539,8 @@
         },
         "name": "H2Q-MC-LZZT-ProtocolDesign",
         "description": "H2Q-MC-LZZT-Protocol Schedule of Activities",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1451,8 +1553,9 @@
           "reference": "ResearchStudy/H2Q-MC-LZZT-ResearchStudy"
         },
         "name": "H2Q-MC-LZZT Research Study",
-        "description": "# Xanomeline (LY246708)\n# Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease",
-        "exampleBoolean": true
+        "description": "## Xanomeline (LY246708)\n### Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1464,8 +1567,10 @@
         "reference": {
           "reference": "Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"
         },
-        "name": "H2Q-MC-LZZT Research Study Exclusion Criteria",
-        "exampleBoolean": true
+        "name": "H2Q-MC-LZZT Exclusion Criteria",
+        "description": "H2Q-MC-LZZT Exclusion Criteria",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1477,8 +1582,10 @@
         "reference": {
           "reference": "Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"
         },
-        "name": "H2Q-MC-LZZT Research Study Inclusion Criteria",
-        "exampleBoolean": true
+        "name": "H2Q-MC-LZZT Inclusion Criteria",
+        "description": "H2Q-MC-LZZT Inclusion Criteria",
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1492,7 +1599,8 @@
         },
         "name": "ET-14",
         "description": "Planned Visit [ET-14]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1506,7 +1614,8 @@
         },
         "name": "RT-15",
         "description": "Planned Visit [RT-15]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1520,7 +1629,8 @@
         },
         "name": "Visit-1",
         "description": "Planned Visit [Visit-1]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1534,7 +1644,8 @@
         },
         "name": "Visit-10",
         "description": "Planned Visit [Visit-10]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1548,7 +1659,8 @@
         },
         "name": "Visit-11",
         "description": "Planned Visit [Visit-11]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1562,7 +1674,8 @@
         },
         "name": "Visit-12",
         "description": "Planned Visit [Visit-12]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1576,7 +1689,8 @@
         },
         "name": "Visit-13",
         "description": "Planned Visit [Visit-13]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1590,7 +1704,8 @@
         },
         "name": "Visit-2",
         "description": "Planned Visit [Visit-2]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1604,7 +1719,8 @@
         },
         "name": "Visit-3",
         "description": "Planned Visit [Visit-3]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1618,7 +1734,8 @@
         },
         "name": "Visit-4",
         "description": "Planned Visit [Visit-4]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1632,7 +1749,8 @@
         },
         "name": "Visit-5",
         "description": "Planned Visit [Visit-5]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1646,7 +1764,8 @@
         },
         "name": "Visit-6",
         "description": "Planned Visit [Visit-6]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1660,7 +1779,8 @@
         },
         "name": "Visit-7",
         "description": "Planned Visit [Visit-7]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1674,7 +1794,8 @@
         },
         "name": "Visit-8",
         "description": "Planned Visit [Visit-8]",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1688,7 +1809,8 @@
         },
         "name": "Visit-9",
         "description": "Planned Visit [Visit-9] - removed in Protocol Amendment",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition",
+        "groupingId": "H2Q-MC-LZZT-Design"
       },
       {
         "extension": [
@@ -1702,7 +1824,8 @@
         },
         "name": "Study drug record",
         "description": "Planned Activity [Study drug record]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1716,7 +1839,8 @@
         },
         "name": "Study drug record-Observations",
         "description": "Planned Observation(s) [Study drug record]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1730,7 +1854,8 @@
         },
         "name": "TTS Acceptability Survey",
         "description": "Planned Activity [TTS Acceptability Survey]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1744,7 +1869,8 @@
         },
         "name": "TTS Acceptability Survey-Observations",
         "description": "Planned Observation(s) [TTS Acceptability Survey]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1758,7 +1884,8 @@
         },
         "name": "Visit Date",
         "description": "Planned Activity [Record Visit Date]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1772,7 +1899,8 @@
         },
         "name": "Vital signs/Temperature",
         "description": "Planned Activity [Vital signs/Temperature]",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Activities"
       },
       {
         "extension": [
@@ -1786,63 +1914,8 @@
         },
         "name": "Vital signs/Temperature-Observations",
         "description": "Planned Observation(s) [Vital signs/Temperature]",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ResearchStudy"
-          }
-        ],
-        "reference": {
-          "reference": "ResearchStudy/LZZT-Research-Study"
-        },
-        "name": "H2Q-MC-LZZT",
-        "description": "Study",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "PlanDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "PlanDefinition/LZZT-Study-Definition"
-        },
-        "name": "Study Definition for H2Q-MC-LZZT",
-        "description": "Study",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ActivityDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "ActivityDefinition/PULSE"
-        },
-        "name": "Pulse",
-        "description": "Taking Pulse",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ActivityDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "ActivityDefinition/SYSBP"
-        },
-        "name": "Systolic Blood Pressure",
-        "description": "Taking Systolic BP",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Observations"
       },
       {
         "extension": [
@@ -1855,102 +1928,8 @@
           "reference": "Practitioner/SamGetWell"
         },
         "name": "Samuel Home, M.D.",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "PlanDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "PlanDefinition/ScreeningEpoch"
-        },
-        "name": "Screening Visit",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-epoch-definition"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Group"
-          }
-        ],
-        "reference": {
-          "reference": "Group/StudyArmStandardOfCare"
-        },
-        "name": "Arm: Standard of Care",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-armgroup-definition"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ActivityDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "ActivityDefinition/SubjectRandomizationDate"
-        },
-        "name": "Subject Randomization",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ActivityDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "ActivityDefinition/Visit1"
-        },
-        "name": "Screening - Day -21",
-        "description": "Screening Visit - Day -21",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ActivityDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "ActivityDefinition/Visit2"
-        },
-        "name": "Screening - Day -1",
-        "description": "Screening Visit - Day -1",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ActivityDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "ActivityDefinition/Visit3"
-        },
-        "name": "Treatment - Day 1",
-        "description": "Treatment Visit - Day 1",
-        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-visit-definition"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "PlanDefinition"
-          }
-        ],
-        "reference": {
-          "reference": "PlanDefinition/VitalSigns"
-        },
-        "name": "Vital Signs",
-        "description": "Vital Signs Assessment",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "H2Q-MC-LZZT-Actors"
       }
     ],
     "page": {

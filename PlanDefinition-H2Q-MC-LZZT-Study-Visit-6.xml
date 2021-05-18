@@ -6,7 +6,7 @@
     <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 28</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6</code></p><p><b>identifier</b>: id: VISIT-6, OID: SE.TRT_VISIT_03 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 17, 2021, 9:11:23 PM</p><h3>Actions</h3><table class="grid"><tr><td>-</td><td><b>Title</b></td><td><b>Definition[x]</b></td></tr><tr><td>*</td><td>Record Visit Date</td><td><code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></td></tr></table></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 28</p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-6</code></p><p><b>identifier</b>: id: VISIT-6, OID: SE.TRT_VISIT_03 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 18, 2021, 1:05:31 PM</p><h3>Actions</h3><table class="grid"><tr><td>-</td><td><b>Title</b></td><td><b>Definition[x]</b></td></tr><tr><td>*</td><td>Record Visit Date</td><td><code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></td></tr></table></div>
   </text>
   <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
     <valueInteger value="28"/>
@@ -28,7 +28,7 @@
   </identifier>
   <version value="0.1.1"/>
   <status value="active"/>
-  <date value="2021-05-17T21:11:23+00:00"/>
+  <date value="2021-05-18T13:05:31+00:00"/>
   <action>
     <title value="Record Visit Date"/>
     <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>

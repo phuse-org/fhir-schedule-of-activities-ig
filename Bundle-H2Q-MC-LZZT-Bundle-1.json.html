@@ -77,7 +77,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="cdisc-odm.html">CDISC Operational Model (ODM)</a>
+    <a href="cdisc-odm.html">CDISC Operational Data Model (ODM)</a>
   </li>
   <li>
     <a href="deltas.html">Clinical Research Profile Backlog</a>
@@ -172,113 +172,13 @@
   "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "transaction",
   "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/organization.html#Organization">resource</a>" : {
-        "<a href="http://hl7.org/fhir/R4/organization.html">resourceType</a>" : "Organization",
-        "<a href="http://hl7.org/fhir/R4/organization.html#Organization.id">id</a>" : "EliLillyAndCompany",
-        "<a href="http://hl7.org/fhir/R4/organization.html#Organization.text">text</a>" : {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: Eli Lilly and Company (OFFICIAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;crs&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
-        },
-        "<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a>" : "official",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "Eli Lilly and Company"
-          }
-        ],
-        "<a href="http://hl7.org/fhir/R4/organization.html#Organization.type">type</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-              {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "crs"
-              }
-            ]
-          }
-        ]
-      },
-      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request">request</a>" : {
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.method">method</a>" : "POST",
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.url">url</a>" : "Organization"
-      }
-    },
-    {
-      "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">resource</a>" : {
-        "<a href="http://hl7.org/fhir/R4/practitioner.html">resourceType</a>" : "Practitioner",
-        "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a>" : "SamGetWell",
-        "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.text">text</a>" : {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: UPIN: ABC123 (OFFICIAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Samuel Home &lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: ph: 555-123-5467(WORK)&lt;/p&gt;&lt;p&gt;&lt;b&gt;gender&lt;/b&gt;: male&lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
-        },
-        "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a>" : "official",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "UPIN"
-                }
-              ]
-            },
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "ABC123"
-          }
-        ],
-        "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.active">active</a>" : true,
-        "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">name</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.use">use</a>" : "usual",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a>" : "Home",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">given</a>" : [
-              "Samuel"
-            ],
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.prefix">prefix</a>" : [
-              "Dr"
-            ],
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.suffix">suffix</a>" : [
-              "M.D."
-            ]
-          }
-        ],
-        "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.telecom">telecom</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "phone",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "555-123-5467",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a>" : "work"
-          }
-        ],
-        "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.gender">gender</a>" : "male"
-      },
-      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request">request</a>" : {
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.method">method</a>" : "POST",
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.url">url</a>" : "Practitioner"
-      }
-    },
-    {
-      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition">resource</a>" : {
-        "<a href="http://hl7.org/fhir/R4/plandefinition.html">resourceType</a>" : "PlanDefinition",
-        "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.id">id</a>" : "LZZT-Study-Definition",
-        "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.meta">meta</a>" : {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
-            "http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition"
-          ]
-        },
-        "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.text">text</a>" : {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
-        },
-        "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.version">version</a>" : "1.0",
-        "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.status">status</a>" : "active"
-      },
-      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request">request</a>" : {
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.method">method</a>" : "POST",
-        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.request.url">url</a>" : "SOAPlanDefinition"
-      }
-    },
-    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "ResearchStudy/H2Q-MC-LZZT-ResearchStudy",
       "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy">resource</a>" : {
         "<a href="http://hl7.org/fhir/R4/researchstudy.html">resourceType</a>" : "ResearchStudy",
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.id">id</a>" : "H2Q-MC-LZZT-ResearchStudy",
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.text">text</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY)&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease&lt;/p&gt;&lt;p&gt;&lt;b&gt;protocol&lt;/b&gt;: &lt;a href=\"#PlanDefinition_LZZT-Study-Definition\"&gt;See above (PlanDefinition/LZZT-Study-Definition)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: completed&lt;/p&gt;&lt;p&gt;&lt;b&gt;primaryPurposeType&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;treatment&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;phase&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;phase-3&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C98388}\"&gt;Interventional Study&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C15417}\"&gt;Randomized Clinical Trial&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C15228}\"&gt;Double Blind Study&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C49648}\"&gt;Placebo Control&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C82639}\"&gt;Parallel Study&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;focus&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C152926}\"&gt;Xanomeline&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C149996}\"&gt;Transdermal Patch Dosage Form&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;condition&lt;/b&gt;: &lt;span title=\"Codes: {http://snomed.info/sct 26929004}\"&gt;Alzheimer's Disease (Disorder)&lt;/span&gt;, &lt;span title=\"Codes: {http://snomed.info/sct G30}\"&gt;Alzheimer's disease&lt;/span&gt;, &lt;span title=\"Codes: {http://snomed.info/sct 10001896}\"&gt;Alzheimer's disease&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;contact&lt;/b&gt;: Bob James, Ph.D.: ph: 555-555-5555(WORK)&lt;/p&gt;&lt;h3&gt;RelatedArtifacts&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;keyword&lt;/b&gt;: &lt;span title=\"Codes: {https://id.nlm.nih.gov/mesh D018721}\"&gt;Selective M1 muscarinic agonists&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: # Xanomeline (LY246708)\n# Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease&lt;/p&gt;&lt;p&gt;&lt;b&gt;sponsor&lt;/b&gt;: &lt;a href=\"#Organization_EliLillyAndCompany\"&gt;See above (Organization/EliLillyAndCompany)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;principalInvestigator&lt;/b&gt;: &lt;a href=\"#Practitioner_SamGetWell\"&gt;See above (Practitioner/SamGetWell)&lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;arm&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Placebo&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C49648}\"&gt;C49648&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Placebo arm&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;arm&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Low-dose xanomeline arm&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C174266}\"&gt;C174266&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;arm&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: High-dose xanomeline arm&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C174266}\"&gt;C174266&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;primary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To document the safety profile of the xanomeline TTS.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;primary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the treatment response as a function of Apo E genotype.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY), PUBCHEM: 60809&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease&lt;/p&gt;&lt;p&gt;&lt;b&gt;protocol&lt;/b&gt;: &lt;a href=\"PlanDefinition-H2Q-MC-LZZT-ProtocolDesign.html\"&gt;Generated Summary: url: http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-ProtocolDesign; version: 0.1.1; status: active; date: May 18, 2021, 1:05:31 PM&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: completed&lt;/p&gt;&lt;p&gt;&lt;b&gt;primaryPurposeType&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;treatment&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;phase&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;phase-3&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C98388}\"&gt;Interventional Study&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C15417}\"&gt;Randomized Clinical Trial&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C15228}\"&gt;Double Blind Study&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C49648}\"&gt;Placebo Control&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C82639}\"&gt;Parallel Study&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;focus&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C152926}\"&gt;Xanomeline&lt;/span&gt;, &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C149996}\"&gt;Transdermal Patch Dosage Form&lt;/span&gt;, &lt;span title=\"Codes: {https://pubmed.ncbi.nlm.nih.gov 9109749}\"&gt;Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;condition&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;Alzheimer's Disease (Disorder)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;contact&lt;/b&gt;: Bob James, Ph.D.: ph: 555-555-5555(WORK)&lt;/p&gt;&lt;h3&gt;RelatedArtifacts&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;keyword&lt;/b&gt;: &lt;span title=\"Codes: {https://id.nlm.nih.gov/mesh D018721}\"&gt;Selective M1 muscarinic agonists&lt;/span&gt;, &lt;span title=\"Codes: {https://id.nlm.nih.gov/mesh D000544}\"&gt;Alzheimer Disease&lt;/span&gt;, &lt;span title=\"Codes: {https://id.nlm.nih.gov/mesh D018721}\"&gt;Selective M1 muscarinic agonists&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: ## Xanomeline (LY246708)\n### Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease&lt;/p&gt;&lt;p&gt;&lt;b&gt;enrollment&lt;/b&gt;: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\"Group-H2Q-MC-LZZT-ResearchStudy-Inclusion.html\"&gt;Generated Summary: type: person; &lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=\"Group-H2Q-MC-LZZT-ResearchStudy-Exclusion.html\"&gt;Generated Summary: type: person; &lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;b&gt;sponsor&lt;/b&gt;: &lt;a href=\"Organization-EliLillyAndCompany.html\"&gt;Generated Summary: id: Eli Lilly and Company (OFFICIAL); &lt;span title=\"Codes: \"&gt;crs&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;principalInvestigator&lt;/b&gt;: &lt;a href=\"Practitioner-SamGetWell.html\"&gt;Generated Summary: UPIN: ABC123 (OFFICIAL); active; Samuel Home ; Phone: 555-123-5467; gender: male&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;reasonStopped&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;accrual-goal-met&lt;/span&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;arm&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Placebo&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C49648}\"&gt;C49648&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Placebo arm&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;arm&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Low-dose xanomeline arm&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C174266}\"&gt;C174266&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;arm&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: High-dose xanomeline arm&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: {http://ncimeta.nci.nih.gov C174266}\"&gt;C174266&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;primary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To document the safety profile of the xanomeline TTS.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;primary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;objective&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: To assess the treatment response as a function of Apo E genotype.&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes: \"&gt;secondary&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
         },
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.identifier">identifier</a>" : [
           {
@@ -300,12 +200,22 @@
               ]
             },
             "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "NCTA12313212"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "PUBCHEM"
+                }
+              ]
+            },
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "60809"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.title">title</a>" : "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease",
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.protocol">protocol</a>" : [
           {
-            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "PlanDefinition/LZZT-Study-Definition"
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.status">status</a>" : "completed",
@@ -388,33 +298,23 @@
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Transdermal Patch Dosage Form"
               }
             ]
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://pubmed.ncbi.nlm.nih.gov",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "9109749",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"
+              }
+            ]
           }
         ],
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.condition">condition</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
               {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "26929004",
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Alzheimer's Disease (Disorder)"
-              }
-            ]
-          },
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-              {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "G30",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Alzheimer's disease"
-              }
-            ]
-          },
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-              {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "10001896",
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Alzheimer's disease"
               }
             ]
           }
@@ -434,6 +334,12 @@
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.relatedArtifact">relatedArtifact</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "documentation",
+            "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.label">label</a>" : "Arch Neurol.1997;54(4):465-473",
+            "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>" : "Arch Neurol.1997;54(4):465-473",
+            "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.citation">citation</a>" : "Bodick NC, Offen WW, Levey AI, et al. Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease. Arch Neurol. 1997;54(4):465-473. doi:10.1001/archneur.1997.00550160091022"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "documentation",
             "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.label">label</a>" : "Protocol H2Q-MC-LZZT(c)",
             "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.url">url</a>" : "https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"
           }
@@ -447,14 +353,47 @@
               }
             ],
             "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Selective M1 muscarinic agonists"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://id.nlm.nih.gov/mesh",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "D000544"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Alzheimer Disease"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://id.nlm.nih.gov/mesh",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "D018721"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Selective M1 muscarinic agonists"
           }
         ],
-        "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.description">description</a>" : "# Xanomeline (LY246708)\n# Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease",
+        "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.description">description</a>" : "## Xanomeline (LY246708)\n### Protocol H2Q-MC-LZZT(c) \nSafety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease",
+        "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.enrollment">enrollment</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"
+          }
+        ],
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.sponsor">sponsor</a>" : {
           "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Organization/EliLillyAndCompany"
         },
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.principalInvestigator">principalInvestigator</a>" : {
           "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/SamGetWell"
+        },
+        "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.reasonStopped">reasonStopped</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "accrual-goal-met"
+            }
+          ]
         },
         "<a href="http://hl7.org/fhir/R4/researchstudy.html#ResearchStudy.arm">arm</a>" : [
           {
@@ -612,8 +551,8 @@
         </table>
       </div>
       <div class="inner-wrapper">
-        <p><a name="2a4f249d-41d0-4526-a0f6-a198b1d02f67">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 17, 2021 21:11+0000">2021-05-17</span>
+        <p><a name="be6f5999-4b91-4f7a-bf7a-bbbc8dd685b3">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="null"></a>.  Package fhir.example.brandr.soa#0.1.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 18, 2021 13:05+0000">2021-05-18</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

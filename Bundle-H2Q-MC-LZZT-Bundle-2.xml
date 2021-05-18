@@ -5,91 +5,1650 @@
   <type value="transaction"/>
   <entry>
     <resource>
-      <Organization>
-        <id value="EliLillyAndCompany"/>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-1"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title="Codes: ">crs</span></p></div>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: -14</p><p><b>identifier</b>: PLAC: VISIT-1 (USUAL), OID: SE.SCREENING_VISIT (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Informed Consent </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Informed-Consent</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Patient number assigned </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Hachinski 4 </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Hachinski-4</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: MMSE 10-23 </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Physical examination </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Physical-examination</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Medical History </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Medical-History</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Habits - Alcohol</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Habits - Caffeine</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Habits - Smoking</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Chest x-ray </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Placebo TTS test </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CT Scan</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CT-Scan</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Hemoglobin A1C </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
         </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="-14"/>
+        </extension>
         <identifier>
-          <use value="official"/>
-          <value value="Eli Lilly and Company"/>
-        </identifier>
-        <type>
-          <coding>
-            <code value="crs"/>
-          </coding>
-        </type>
-      </Organization>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="Organization"/>
-    </request>
-  </entry>
-  <entry>
-    <resource>
-      <Practitioner>
-        <id value="SamGetWell"/>
-        <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: UPIN: ABC123 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Samuel Home </p><p><b>telecom</b>: ph: 555-123-5467(WORK)</p><p><b>gender</b>: male</p></div>
-        </text>
-        <identifier>
-          <use value="official"/>
+          <use value="usual"/>
           <type>
             <coding>
-              <code value="UPIN"/>
+              <code value="PLAC"/>
             </coding>
           </type>
-          <value value="ABC123"/>
+          <value value="VISIT-1"/>
         </identifier>
-        <active value="true"/>
-        <name>
-          <use value="usual"/>
-          <family value="Home"/>
-          <given value="Samuel"/>
-          <prefix value="Dr"/>
-          <suffix value="M.D."/>
-        </name>
-        <telecom>
-          <system value="phone"/>
-          <value value="555-123-5467"/>
-          <use value="work"/>
-        </telecom>
-        <gender value="male"/>
-      </Practitioner>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+            <text value="OID"/>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.SCREENING_VISIT"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Informed Consent "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"/>
+        </action>
+        <action>
+          <title value="Patient number assigned "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned"/>
+        </action>
+        <action>
+          <title value="Hachinski 4 "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Hachinski-4"/>
+        </action>
+        <action>
+          <title value="MMSE 10-23 "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23"/>
+        </action>
+        <action>
+          <title value="Physical examination "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Physical-examination"/>
+        </action>
+        <action>
+          <title value="Medical History "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Medical-History"/>
+        </action>
+        <action>
+          <title value="Habits - Alcohol"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol"/>
+        </action>
+        <action>
+          <title value="Habits - Caffeine"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine"/>
+        </action>
+        <action>
+          <title value="Habits - Smoking"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking"/>
+        </action>
+        <action>
+          <title value="Chest x-ray "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Placebo TTS test "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test"/>
+        </action>
+        <action>
+          <title value="CT Scan"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CT-Scan"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Laboratory (Urinalysis) "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"/>
+        </action>
+        <action>
+          <title value="Hemoglobin A1C "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
     </resource>
     <request>
       <method value="POST"/>
-      <url value="Practitioner"/>
+      <url value="PlanDefinition"/>
     </request>
   </entry>
   <entry>
     <resource>
       <PlanDefinition>
-        <id value="LZZT-Study-Definition"/>
+        <id value="H2Q-MC-LZZT-Study-Visit-2"/>
         <meta>
-          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-study-definition"/>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>version</b>: 1.0</p><p><b>status</b>: active</p></div>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 0</p><p><b>identifier</b>: PLAC: VISIT-2 (USUAL), OID: SE.AMB_ECG_VISIT (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Ambulatory ECG placed </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
         </text>
-        <version value="1.0"/>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="0"/>
+        </extension>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="VISIT-2"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.AMB_ECG_VISIT"/>
+        </identifier>
         <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="Ambulatory ECG placed "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
       </PlanDefinition>
     </resource>
     <request>
       <method value="POST"/>
-      <url value="SOAPlanDefinition"/>
+      <url value="PlanDefinition"/>
     </request>
   </entry>
   <entry>
     <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-3"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 0</p><p><b>identifier</b>: PLAC: VISIT-3 (USUAL), OID: SE.RANDOMIZATION_VISIT (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Patient randomized </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Patient-randomized</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Ambulatory ECG removed </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="0"/>
+        </extension>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="VISIT-3"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.RANDOMIZATION_VISIT"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Patient randomized "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Patient-randomized"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="Ambulatory ECG removed "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Urinalysis) "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"/>
+        </action>
+        <action>
+          <title value="Plasma Specimen "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-4"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 14</p><p><b>identifier</b>: PLAC: VISIT-4 (USUAL), OID: SE.TRT_VISIT_01 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Apo E genotyping </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="14"/>
+        </extension>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="VISIT-4"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_01"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Apo E genotyping "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Plasma Specimen "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-5"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 21</p><p><b>identifier</b>: PLAC: VISIT-5 (USUAL), OID: SE.TRT_VISIT_02 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="21"/>
+        </extension>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="VISIT-5"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_02"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Plasma Specimen "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-6"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 28</p><p><b>identifier</b>: id: VISIT-6, OID: SE.TRT_VISIT_03 (SECONDARY)</p><p><b>status</b>: active</p><h3>Actions</h3><table class="grid"><tr><td>-</td><td><b>Title</b></td><td><b>Definition[x]</b></td></tr><tr><td>*</td><td>Record Visit Date</td><td><code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></td></tr></table></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="28"/>
+        </extension>
+        <identifier>
+          <value value="VISIT-6"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_03"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-7"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 42</p><p><b>identifier</b>: id: VISIT-7, OID: SE.TRT_VISIT_04 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="42"/>
+        </extension>
+        <identifier>
+          <value value="VISIT-7"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_04"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Plasma Specimen "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-8"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 56</p><p><b>identifier</b>: id: VISIT-8, OID: SE.TRT_VISIT_05 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="56"/>
+        </extension>
+        <identifier>
+          <value value="VISIT-8"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_05"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-9"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 84</p><p><b>identifier</b>: id: VISIT-9, OID: SE.TRT_VISIT_06 (SECONDARY)</p><p><b>type</b>: <span title="Codes: ">clinical-protocol</span></p><p><b>status</b>: retired</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: TTS Acceptability Survey</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="84"/>
+        </extension>
+        <identifier>
+          <value value="VISIT-9"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_06"/>
+        </identifier>
+        <type>
+          <coding>
+            <code value="clinical-protocol"/>
+          </coding>
+        </type>
+        <status value="retired"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Laboratory (Urinalysis) "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"/>
+        </action>
+        <action>
+          <title value="Plasma Specimen "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="TTS Acceptability Survey"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-10"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 112</p><p><b>identifier</b>: id: VISIT-10, OID: SE.TRT_VISIT_07 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: TTS Acceptability Survey</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="112"/>
+        </extension>
+        <identifier>
+          <value value="VISIT-10"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_07"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Laboratory (Urinalysis) "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"/>
+        </action>
+        <action>
+          <title value="Plasma Specimen "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="TTS Acceptability Survey"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-11"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 140</p><p><b>identifier</b>: id: VISIT-11, OID: SE.TRT_VISIT_08 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Plasma Specimen </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="140"/>
+        </extension>
+        <identifier>
+          <value value="VISIT-11"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_08"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Laboratory (Urinalysis) "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"/>
+        </action>
+        <action>
+          <title value="Plasma Specimen "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-12"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 168</p><p><b>identifier</b>: id: VISIT-12, OID: SE.TRT_VISIT_09 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="168"/>
+        </extension>
+        <identifier>
+          <value value="VISIT-12"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_09"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Laboratory (Urinalysis) "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-Visit-13"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 182</p><p><b>identifier</b>: PLAC: VISIT-13 (USUAL), OID: SE.TRT_VISIT_10 (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Physical examination </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Physical-examination</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: TTS Acceptability Survey</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="182"/>
+        </extension>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="VISIT-13"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.TRT_VISIT_10"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="Physical examination "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Physical-examination"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="TTS Acceptability Survey"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-ET-14"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 0</p><p><b>identifier</b>: PLAC: ET-14 (USUAL), OID: SE.EARLY_TERM_VISIT (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ET</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ET</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Physical examination </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Physical-examination</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ECG </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ECG</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Chem/Hemat)</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Laboratory (Urinalysis) </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Study drug record </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Study-drug-record</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: TTS Acceptability Survey</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="0"/>
+        </extension>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="ET-14"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.EARLY_TERM_VISIT"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="ET"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ET"/>
+        </action>
+        <action>
+          <title value="Physical examination "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Physical-examination"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="ECG "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ECG"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="Laboratory (Chem/Hemat)"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"/>
+        </action>
+        <action>
+          <title value="Laboratory (Urinalysis) "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"/>
+        </action>
+        <action>
+          <title value="Study drug record "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"/>
+        </action>
+        <action>
+          <title value="TTS Acceptability Survey"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-Study-RT-15"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Planned Study Day of Visit</b>: 0</p><p><b>identifier</b>: PLAC: RT-15 (USUAL), OID: SE.RETRIEVAL_TERM_VISIT (SECONDARY)</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Record Visit Date</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Visit-Date</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: RT</p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-RT</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital signs/Temperature </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Concomitant Medications </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ADAS-Cog </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: CIBIC+ </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-CIBIC+</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: DAD </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-DAD</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: NPI-X </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-NPI-X</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Adverse events </p><p><b>definition</b>: <code>ActivityDefinition/H2Q-MC-LZZT-Adverse-events</code></p></blockquote></div>
+        </text>
+        <extension url="http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day">
+          <valueInteger value="0"/>
+        </extension>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <code value="PLAC"/>
+            </coding>
+          </type>
+          <value value="RT-15"/>
+        </identifier>
+        <identifier>
+          <use value="secondary"/>
+          <type>
+            <coding>
+              <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+              <display value="OID"/>
+            </coding>
+          </type>
+          <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+          <value value="SE.RETRIEVAL_TERM_VISIT"/>
+        </identifier>
+        <status value="active"/>
+        <action>
+          <title value="Record Visit Date"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Visit-Date"/>
+        </action>
+        <action>
+          <title value="RT"/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-RT"/>
+        </action>
+        <action>
+          <title value="Vital signs/Temperature "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"/>
+        </action>
+        <action>
+          <title value="Concomitant Medications "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"/>
+        </action>
+        <action>
+          <title value="ADAS-Cog "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"/>
+        </action>
+        <action>
+          <title value="CIBIC+ "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-CIBIC+"/>
+        </action>
+        <action>
+          <title value="DAD "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-DAD"/>
+        </action>
+        <action>
+          <title value="NPI-X "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-NPI-X"/>
+        </action>
+        <action>
+          <title value="Adverse events "/>
+          <definitionUri value="ActivityDefinition/H2Q-MC-LZZT-Adverse-events"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <Group>
+        <id value="H2Q-MC-LZZT-ResearchStudy-Inclusion"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>type</b>: person</p><p><b>actual</b>: false</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Males and postmenopausal females at least 50 years of age.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Diagnosis of probable AD as defined by National Institute of Neurological and Communicative Disorders and Stroke (NINCDS) and the Alzheimer’s Disease and Related Disorders Association (ADRDA) guidelines</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">MMSE score of 10 to 23.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Hachinski Ischemic Scale score of ≤4</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">CNS imaging (CT scan or MRI of brain) compatible with AD within past 1 year.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Investigator has obtained informed consent signed by the patient (and/or legal representative) and by the caregiver.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Geographic proximity to investigator’s site that allows adequate follow-up.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A reliable caregiver who is in frequent or daily contact with the patient and who will accompany the patient to the office and/or be available by telephone at designated times, will monitor administration of prescribed medications, and will be responsible for the overall care of the patient at home. The caregiver and the patient must be able to communicate in English and willing to comply with 26 weeks of transdermal therapy.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: false</p></blockquote></div>
+        </text>
+        <type value="person"/>
+        <actual value="false"/>
+        <characteristic>
+          <code>
+            <text value="Males and postmenopausal females at least 50 years of age."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Diagnosis of probable AD as defined by National Institute of Neurological and Communicative Disorders and Stroke (NINCDS) and the Alzheimer&#x2019;s Disease and Related Disorders Association (ADRDA) guidelines"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="MMSE score of 10 to 23."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Hachinski Ischemic Scale score of &#x2264;4"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="CNS imaging (CT scan or MRI of brain) compatible with AD within past 1 year."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Investigator has obtained informed consent signed by the patient (and/or legal representative) and by the caregiver."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Geographic proximity to investigator&#x2019;s site that allows adequate follow-up."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A reliable caregiver who is in frequent or daily contact with the patient and who will accompany the patient to the office and/or be available by telephone at designated times, will monitor administration of prescribed medications, and will be responsible for the overall care of the patient at home. The caregiver and the patient must be able to communicate in English and willing to comply with 26 weeks of transdermal therapy."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="false"/>
+        </characteristic>
+      </Group>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Group"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <Group>
+        <id value="H2Q-MC-LZZT-ResearchStudy-Exclusion"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>type</b>: person</p><p><b>actual</b>: false</p><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Persons who have previously completed or withdrawn from this study or any other study investigating xanomeline TTS or the oral formulation of xanomeline.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Use of any investigational agent or approved Alzheimer’s therapeutic medication within 30 days prior to enrollment into the study.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Serious illness which required hospitalization within 3 months of screening.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Stroke or vascular dementia documented by clinical history and/or radiographic findings interpretable by the investigator as indicative of these disorders</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Seizure disorder other than simple childhood febrile seizures</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Severe head trauma resulting in protracted loss of consciousness within the last 5 years, or multiple episodes of head trauma</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Parkinson’s disease</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Multiple sclerosis</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Amyotrophic lateral sclerosis</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Myasthenia gravis</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Episode of depression meeting DSM-IV criteria within 3 months of screening.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Schizophrenia.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Bipolar Disease.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Ethanol or psychoactive drug abuse or dependence.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history of syncope within the last 5 years.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Evidence from ECG recording of Left bundle branch block.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Evidence from ECG recording of Bradycardia ≤50 beats per minute</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Evidence from ECG recording of Sinus pauses &gt;2 seconds</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Evidence from ECG recording of Second or third degree heart block unless treated with a pacemaker</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Evidence from ECG recording of Wolff-Parkinson-White syndrome</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Evidence from ECG recording of Sustained supraventricular tachyarrhythmia including SVT≥10 sec, atrial fibrillation, atrial flutter.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">Evidence from ECG recording of Ventricular tachycardia at a rate of ≥120 beats per minute lasting ≥10 seconds.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Clinically significant arrhythmia</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Symptomatic sick sinus syndrome not treated with a pacemaker</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Congestive heart failure refractory to treatment</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Angina except angina controlled with PRN nitroglycerin</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Resting heart rate &lt;50 or &gt;100 beats per minute, on physical exam</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of Uncontrolled hypertension.</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote><blockquote><p><b>characteristic</b></p><p><b>code</b>: <span title="Codes: ">A history within the last 5 years of a serious gastrointestinal disorder</span></p><p><b>value</b>: true</p><p><b>exclude</b>: true</p></blockquote></div>
+        </text>
+        <type value="person"/>
+        <actual value="false"/>
+        <characteristic>
+          <code>
+            <text value="Persons who have previously completed or withdrawn from this study or any other study investigating xanomeline TTS or the oral formulation of xanomeline."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Use of any investigational agent or approved Alzheimer&#x2019;s therapeutic medication within 30 days prior to enrollment into the study."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Serious illness which required hospitalization within 3 months of screening."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Stroke or vascular dementia documented by clinical history and/or radiographic findings interpretable by the investigator as indicative of these disorders"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Seizure disorder other than simple childhood febrile seizures"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Severe head trauma resulting in protracted loss of consciousness within the last 5 years, or multiple episodes of head trauma"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Parkinson&#x2019;s disease"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Multiple sclerosis"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Amyotrophic lateral sclerosis"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Myasthenia gravis"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Episode of depression meeting DSM-IV criteria within 3 months of screening."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Schizophrenia."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Bipolar Disease."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Ethanol or psychoactive drug abuse or dependence."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history of syncope within the last 5 years."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Evidence from ECG recording of Left bundle branch block."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Evidence from ECG recording of Bradycardia &#x2264;50 beats per minute"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Evidence from ECG recording of Sinus pauses &gt;2 seconds"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Evidence from ECG recording of Second or third degree heart block unless treated with a pacemaker"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Evidence from ECG recording of Wolff-Parkinson-White syndrome"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Evidence from ECG recording of Sustained supraventricular tachyarrhythmia including SVT&#x2265;10 sec, atrial fibrillation, atrial flutter."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="Evidence from ECG recording of Ventricular tachycardia at a rate of &#x2265;120 beats per minute lasting &#x2265;10 seconds."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Clinically significant arrhythmia"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Symptomatic sick sinus syndrome not treated with a pacemaker"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Congestive heart failure refractory to treatment"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Angina except angina controlled with PRN nitroglycerin"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Resting heart rate &lt;50 or &gt;100 beats per minute, on physical exam"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of Uncontrolled hypertension."/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+        <characteristic>
+          <code>
+            <text value="A history within the last 5 years of a serious gastrointestinal disorder"/>
+          </code>
+          <valueBoolean value="true"/>
+          <exclude value="true"/>
+        </characteristic>
+      </Group>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Group"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"/>
+    <resource>
+      <PlanDefinition>
+        <id value="H2Q-MC-LZZT-ProtocolDesign"/>
+        <meta>
+          <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>version</b>: LZZT_1</p><p><b>status</b>: active</p><blockquote><p><b>action</b></p><p><b>title</b>: Visit-1</p><p><b>description</b>: Planned Visit [Visit-1]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-1</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-2</p><p><b>description</b>: Planned Visit [Visit-2]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-2</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-3</p><p><b>description</b>: Planned Visit [Visit-3]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-3</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-4</p><p><b>description</b>: Planned Visit [Visit-4]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-4</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-5</p><p><b>description</b>: Planned Visit [Visit-5]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-5</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-6</p><p><b>description</b>: Planned Visit [Visit-6]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-6</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-7</p><p><b>description</b>: Planned Visit [Visit-7]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-7</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-8</p><p><b>description</b>: Planned Visit [Visit-8]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-8</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-9</p><p><b>description</b>: Planned Visit [Visit-9]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-9</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-10</p><p><b>description</b>: Planned Visit [Visit-10]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-10</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-11</p><p><b>description</b>: Planned Visit [Visit-11]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-11</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-12</p><p><b>description</b>: Planned Visit [Visit-12]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-12</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Visit-13</p><p><b>description</b>: Planned Visit [Visit-13]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-Visit-13</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: ET-14</p><p><b>description</b>: Planned Visit [ET-14]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-ET-14</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: RT-15</p><p><b>description</b>: Planned Visit [RT-15]</p><p><b>definition</b>: <code>PlanDefinition/H2Q-MC-LZZT-Study-RT-15</code></p></blockquote></div>
+        </text>
+        <version value="LZZT_1"/>
+        <status value="active"/>
+        <action>
+          <title value="Visit-1"/>
+          <description value="Planned Visit [Visit-1]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"/>
+        </action>
+        <action>
+          <title value="Visit-2"/>
+          <description value="Planned Visit [Visit-2]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-2"/>
+        </action>
+        <action>
+          <title value="Visit-3"/>
+          <description value="Planned Visit [Visit-3]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-3"/>
+        </action>
+        <action>
+          <title value="Visit-4"/>
+          <description value="Planned Visit [Visit-4]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-4"/>
+        </action>
+        <action>
+          <title value="Visit-5"/>
+          <description value="Planned Visit [Visit-5]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-5"/>
+        </action>
+        <action>
+          <title value="Visit-6"/>
+          <description value="Planned Visit [Visit-6]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"/>
+        </action>
+        <action>
+          <title value="Visit-7"/>
+          <description value="Planned Visit [Visit-7]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-7"/>
+        </action>
+        <action>
+          <title value="Visit-8"/>
+          <description value="Planned Visit [Visit-8]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-8"/>
+        </action>
+        <action>
+          <title value="Visit-9"/>
+          <description value="Planned Visit [Visit-9]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"/>
+        </action>
+        <action>
+          <title value="Visit-10"/>
+          <description value="Planned Visit [Visit-10]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-10"/>
+        </action>
+        <action>
+          <title value="Visit-11"/>
+          <description value="Planned Visit [Visit-11]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-11"/>
+        </action>
+        <action>
+          <title value="Visit-12"/>
+          <description value="Planned Visit [Visit-12]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-12"/>
+        </action>
+        <action>
+          <title value="Visit-13"/>
+          <description value="Planned Visit [Visit-13]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-Visit-13"/>
+        </action>
+        <action>
+          <title value="ET-14"/>
+          <description value="Planned Visit [ET-14]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-ET-14"/>
+        </action>
+        <action>
+          <title value="RT-15"/>
+          <description value="Planned Visit [RT-15]"/>
+          <definitionUri value="PlanDefinition/H2Q-MC-LZZT-Study-RT-15"/>
+        </action>
+      </PlanDefinition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="PlanDefinition"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="ResearchStudy/H2Q-MC-LZZT-ResearchStudy"/>
+    <resource>
       <ResearchStudy>
         <id value="H2Q-MC-LZZT-ResearchStudy"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY)</p><p><b>title</b>: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>protocol</b>: <a href="#PlanDefinition_LZZT-Study-Definition">See above (PlanDefinition/LZZT-Study-Definition)</a></p><p><b>status</b>: completed</p><p><b>primaryPurposeType</b>: <span title="Codes: ">treatment</span></p><p><b>phase</b>: <span title="Codes: ">phase-3</span></p><p><b>category</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C98388}">Interventional Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15417}">Randomized Clinical Trial</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15228}">Double Blind Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">Placebo Control</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C82639}">Parallel Study</span></p><p><b>focus</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C152926}">Xanomeline</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C149996}">Transdermal Patch Dosage Form</span></p><p><b>condition</b>: <span title="Codes: {http://snomed.info/sct 26929004}">Alzheimer's Disease (Disorder)</span>, <span title="Codes: {http://snomed.info/sct G30}">Alzheimer's disease</span>, <span title="Codes: {http://snomed.info/sct 10001896}">Alzheimer's disease</span></p><p><b>contact</b>: Bob James, Ph.D.: ph: 555-555-5555(WORK)</p><h3>RelatedArtifacts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>keyword</b>: <span title="Codes: {https://id.nlm.nih.gov/mesh D018721}">Selective M1 muscarinic agonists</span></p><p><b>description</b>: # Xanomeline (LY246708)
-# Protocol H2Q-MC-LZZT(c) 
-Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>sponsor</b>: <a href="#Organization_EliLillyAndCompany">See above (Organization/EliLillyAndCompany)</a></p><p><b>principalInvestigator</b>: <a href="#Practitioner_SamGetWell">See above (Practitioner/SamGetWell)</a></p><blockquote><p><b>arm</b></p><p><b>name</b>: Placebo</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">C49648</span></p><p><b>description</b>: Placebo arm</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: Low-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: High-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)</p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To document the safety profile of the xanomeline TTS.</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the treatment response as a function of Apo E genotype.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: H2Q-MC-LZZT (USUAL), id: NCTA12313212 (OFFICIAL), PLAC: NCTA12313212 (SECONDARY), PUBCHEM: 60809</p><p><b>title</b>: Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>protocol</b>: <a href="#PlanDefinition_H2Q-MC-LZZT-ProtocolDesign">See above (PlanDefinition/H2Q-MC-LZZT-ProtocolDesign)</a></p><p><b>status</b>: completed</p><p><b>primaryPurposeType</b>: <span title="Codes: ">treatment</span></p><p><b>phase</b>: <span title="Codes: ">phase-3</span></p><p><b>category</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C98388}">Interventional Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15417}">Randomized Clinical Trial</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C15228}">Double Blind Study</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">Placebo Control</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C82639}">Parallel Study</span></p><p><b>focus</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C152926}">Xanomeline</span>, <span title="Codes: {http://ncimeta.nci.nih.gov C149996}">Transdermal Patch Dosage Form</span>, <span title="Codes: {https://pubmed.ncbi.nlm.nih.gov 9109749}">Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease</span></p><p><b>condition</b>: <span title="Codes: ">Alzheimer's Disease (Disorder)</span></p><p><b>contact</b>: Bob James, Ph.D.: ph: 555-555-5555(WORK)</p><h3>RelatedArtifacts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr><tr><td>*</td></tr></table><p><b>keyword</b>: <span title="Codes: {https://id.nlm.nih.gov/mesh D018721}">Selective M1 muscarinic agonists</span>, <span title="Codes: {https://id.nlm.nih.gov/mesh D000544}">Alzheimer Disease</span>, <span title="Codes: {https://id.nlm.nih.gov/mesh D018721}">Selective M1 muscarinic agonists</span></p><p><b>description</b>: ## Xanomeline (LY246708)
+### Protocol H2Q-MC-LZZT(c) 
+Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease</p><p><b>enrollment</b>: </p><ul><li><a href="#Group_H2Q-MC-LZZT-ResearchStudy-Inclusion">See above (Group/H2Q-MC-LZZT-ResearchStudy-Inclusion)</a></li><li><a href="#Group_H2Q-MC-LZZT-ResearchStudy-Exclusion">See above (Group/H2Q-MC-LZZT-ResearchStudy-Exclusion)</a></li></ul><p><b>sponsor</b>: <a href="Organization-EliLillyAndCompany.html">Generated Summary: id: Eli Lilly and Company (OFFICIAL); <span title="Codes: ">crs</span></a></p><p><b>principalInvestigator</b>: <a href="Practitioner-SamGetWell.html">Generated Summary: UPIN: ABC123 (OFFICIAL); active; Samuel Home ; Phone: 555-123-5467; gender: male</a></p><p><b>reasonStopped</b>: <span title="Codes: ">accrual-goal-met</span></p><blockquote><p><b>arm</b></p><p><b>name</b>: Placebo</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C49648}">C49648</span></p><p><b>description</b>: Placebo arm</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: Low-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)</p></blockquote><blockquote><p><b>arm</b></p><p><b>name</b>: High-dose xanomeline arm</p><p><b>type</b>: <span title="Codes: {http://ncimeta.nci.nih.gov C174266}">C174266</span></p><p><b>description</b>: High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)</p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To document the safety profile of the xanomeline TTS.</p><p><b>type</b>: <span title="Codes: ">primary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote><blockquote><p><b>objective</b></p><p><b>name</b>: To assess the treatment response as a function of Apo E genotype.</p><p><b>type</b>: <span title="Codes: ">secondary</span></p></blockquote></div>
         </text>
         <identifier>
           <use value="usual"/>
@@ -109,9 +1668,17 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
           </type>
           <value value="NCTA12313212"/>
         </identifier>
+        <identifier>
+          <type>
+            <coding>
+              <code value="PUBCHEM"/>
+            </coding>
+          </type>
+          <value value="60809"/>
+        </identifier>
         <title value="Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
         <protocol>
-          <reference value="PlanDefinition/LZZT-Study-Definition"/>
+          <reference value="PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"/>
         </protocol>
         <status value="completed"/>
         <primaryPurposeType>
@@ -173,25 +1740,17 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
             <display value="Transdermal Patch Dosage Form"/>
           </coding>
         </focus>
+        <focus>
+          <coding>
+            <system value="https://pubmed.ncbi.nlm.nih.gov"/>
+            <code value="9109749"/>
+            <display value="Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"/>
+          </coding>
+        </focus>
         <condition>
           <coding>
-            <system value="http://snomed.info/sct"/>
             <code value="26929004"/>
             <display value="Alzheimer&#39;s Disease (Disorder)"/>
-          </coding>
-        </condition>
-        <condition>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="G30"/>
-            <display value="Alzheimer&#39;s disease"/>
-          </coding>
-        </condition>
-        <condition>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="10001896"/>
-            <display value="Alzheimer&#39;s disease"/>
           </coding>
         </condition>
         <contact>
@@ -204,6 +1763,12 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
         </contact>
         <relatedArtifact>
           <type value="documentation"/>
+          <label value="Arch Neurol.1997;54(4):465-473"/>
+          <display value="Arch Neurol.1997;54(4):465-473"/>
+          <citation value="Bodick NC, Offen WW, Levey AI, et al. Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease. Arch Neurol. 1997;54(4):465-473. doi:10.1001/archneur.1997.00550160091022"/>
+        </relatedArtifact>
+        <relatedArtifact>
+          <type value="documentation"/>
           <label value="Protocol H2Q-MC-LZZT(c)"/>
           <url value="https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"/>
         </relatedArtifact>
@@ -214,13 +1779,38 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
           </coding>
           <text value="Selective M1 muscarinic agonists"/>
         </keyword>
-        <description value="# Xanomeline (LY246708)&#xA;# Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+        <keyword>
+          <coding>
+            <system value="https://id.nlm.nih.gov/mesh"/>
+            <code value="D000544"/>
+          </coding>
+          <text value="Alzheimer Disease"/>
+        </keyword>
+        <keyword>
+          <coding>
+            <system value="https://id.nlm.nih.gov/mesh"/>
+            <code value="D018721"/>
+          </coding>
+          <text value="Selective M1 muscarinic agonists"/>
+        </keyword>
+        <description value="## Xanomeline (LY246708)&#xA;### Protocol H2Q-MC-LZZT(c) &#xA;Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer&#x2019;s Disease"/>
+        <enrollment>
+          <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"/>
+        </enrollment>
+        <enrollment>
+          <reference value="Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"/>
+        </enrollment>
         <sponsor>
           <reference value="Organization/EliLillyAndCompany"/>
         </sponsor>
         <principalInvestigator>
           <reference value="Practitioner/SamGetWell"/>
         </principalInvestigator>
+        <reasonStopped>
+          <coding>
+            <code value="accrual-goal-met"/>
+          </coding>
+        </reasonStopped>
         <arm>
           <name value="Placebo"/>
           <type>

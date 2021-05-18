@@ -3,7 +3,7 @@
   "id": "EliLillyAndCompany",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title=\"Codes: \">crs</span></p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title=\"Codes: \">crs</span></p><h3>Contacts</h3><table class=\"grid\"><tr><td>-</td><td><b>Purpose</b></td><td><b>Telecom</b></td></tr><tr><td>*</td><td><span title=\"Codes: \">ADMIN</span></td><td><a href=\"https://www.lilly.com\">https://www.lilly.com</a></td></tr></table></div>"
   },
   "identifier": [
     {
@@ -16,6 +16,23 @@
       "coding": [
         {
           "code": "crs"
+        }
+      ]
+    }
+  ],
+  "contact": [
+    {
+      "purpose": {
+        "coding": [
+          {
+            "code": "ADMIN"
+          }
+        ]
+      },
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.lilly.com"
         }
       ]
     }

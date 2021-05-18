@@ -3,7 +3,7 @@
 <Organization xmlns="http://hl7.org/fhir">
   <id value="EliLillyAndCompany"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title="Codes: ">crs</span></p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: Eli Lilly and Company (OFFICIAL)</p><p><b>type</b>: <span title="Codes: ">crs</span></p><h3>Contacts</h3><table class="grid"><tr><td>-</td><td><b>Purpose</b></td><td><b>Telecom</b></td></tr><tr><td>*</td><td><span title="Codes: ">ADMIN</span></td><td><a href="https://www.lilly.com">https://www.lilly.com</a></td></tr></table></div>
   </text>
   <identifier>
     <use value="official"/>
@@ -14,4 +14,15 @@
       <code value="crs"/>
     </coding>
   </type>
+  <contact>
+    <purpose>
+      <coding>
+        <code value="ADMIN"/>
+      </coding>
+    </purpose>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.lilly.com"/>
+    </telecom>
+  </contact>
 </Organization>

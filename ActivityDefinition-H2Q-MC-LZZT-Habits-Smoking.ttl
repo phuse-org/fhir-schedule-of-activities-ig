@@ -1,0 +1,46 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-Habits-Smoking"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking</code></p><p><b>identifier</b>: OID: F.SU_SMOKING</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 18, 2021, 1:05:31 PM</p><p><b>observationRequirement</b>: <a href=\"Habits-Observations-Smoking\">Habits-Observations-Smoking</a></p><p><b>observationResultRequirement</b>: <a href=\"Habits-Observations-Smoking\">Habits-Observations-Smoking</a></p></div>"
+  ];
+  fhir:ActivityDefinition.url [ fhir:value "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking"];
+  fhir:ActivityDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3#" ];
+         fhir:Coding.display [ fhir:value "OID" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3/FormDef#" ];
+     fhir:Identifier.value [ fhir:value "F.SU_SMOKING" ]
+  ];
+  fhir:ActivityDefinition.version [ fhir:value "0.1.1"];
+  fhir:ActivityDefinition.status [ fhir:value "active"];
+  fhir:ActivityDefinition.date [ fhir:value "2021-05-18T13:05:31+00:00"^^xsd:dateTime];
+  fhir:ActivityDefinition.observationRequirement [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "Habits-Observations-Smoking" ]
+  ];
+  fhir:ActivityDefinition.observationResultRequirement [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "Habits-Observations-Smoking" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
