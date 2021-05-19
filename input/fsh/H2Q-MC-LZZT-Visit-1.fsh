@@ -15,11 +15,18 @@ Description: "Planned Visit [Visit-1]"
 * extension[plannedStudyDay].valueInteger = -14
 * status = #active
 * action[+].title = "Record Visit Date"
+* action[=].id = "Action-Visit1-VisitDate"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[+].title = "Informed Consent "
+* action[=].id = "Action-Visit1-InformedConsent"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"
-* action[+].title = "Patient number assigned "
+* action[=].relatedAction.targetId = "Action-Visit1-VisitDate"
+* action[=].relatedAction.relationship = #after
+* action[+].title = "Patient number assigned"
+* action[=].id = "Action-Visit1-PatientNumber"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned"
+* action[=].relatedAction.targetId = "Action-Visit1-InformedConsent"
+* action[=].relatedAction.relationship = #after
 * action[+].title = "Hachinski 4 "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Hachinski-4"
 * action[+].title = "MMSE 10-23 "
