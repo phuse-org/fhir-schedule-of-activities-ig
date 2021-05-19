@@ -49,19 +49,6 @@ Title: "Ambulatory ECG removed"
 * observationRequirement = Reference(Ambulatory-ECG-removed-Observations)
 * observationResultRequirement = Reference(Ambulatory-ECG-removed-Observations)
 
-Instance: H2Q-MC-LZZT-Laboratory-Urinalysis
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Laboratory (Urinalysis)]"
-Usage: #example
-Title: "Laboratory (Urinalysis)"
-* status = #active
-* identifier[+].value = "F.LB_URINE"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-* observationRequirement = Reference(Laboratory-Urinalysis-Observations)
-* observationResultRequirement = Reference(Laboratory-Urinalysis-Observations)
 
 Instance: H2Q-MC-LZZT-Physical-examination
 InstanceOf: ActivityDefinition
@@ -111,6 +98,9 @@ Title: "Vital signs/Temperature"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
+* code.coding[+].code = #56342008
+* code.coding[=].system = "http://snomed.info/sct"
+* code.coding[=].display = "Temperature taking (procedure)"
 * observationRequirement = Reference(Vital-signs-Temperature-Observations)
 * observationResultRequirement = Reference(Vital-signs-Temperature-Observations)
 
@@ -165,43 +155,6 @@ Title: "CIBIC+"
 * observationRequirement = Reference(CIBIC-Observations)
 * observationResultRequirement = Reference(CIBIC-Observations)
 
-Instance: H2Q-MC-LZZT-Laboratory-Chem
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Laboratory (Chem)]"
-Usage: #example
-Title: "Laboratory (Chem)"
-* status = #active
-* identifier[+].value = "F.LB_CHEM"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-* observationRequirement = Reference(Laboratory-Chem-Observations)
-* observationResultRequirement = Reference(Laboratory-Chem-Observations)
-
-Instance: H2Q-MC-LZZT-Laboratory-Hemat
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Laboratory (Hemat)]"
-Usage: #example
-Title: "Laboratory (Hemat)"
-* status = #active
-* identifier[+].value = "F.LB_HEM"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-// TODO
-* observationRequirement = Reference(Laboratory-Hemat-Observations)
-* observationResultRequirement = Reference(Laboratory-Hemat-Observations)
-
-Instance: H2Q-MC-LZZT-Apo-E-genotyping
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Apo E genotyping]"
-Usage: #example
-Title: "Apo E genotyping"
-* status = #active
-* observationRequirement = Reference(Apo-E-genotyping-Observations)
-* observationResultRequirement = Reference(Apo-E-genotyping-Observations)
 
 Instance: H2Q-MC-LZZT-TTS-Acceptability-Survey
 InstanceOf: ActivityDefinition
