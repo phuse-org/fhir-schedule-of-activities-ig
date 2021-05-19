@@ -50,7 +50,7 @@ Usage: #example
 * identifier[3].value = "60809"
 * title = "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease"
 * protocol[PlanDefinition] = Reference(PlanDefinition/H2Q-MC-LZZT-ProtocolDesign)
-* status = #completed
+* status = #active
 * primaryPurposeType = #treatment
 * phase = #phase-3
 * category[0] = NCIT#C98388 "Interventional Study"
@@ -58,9 +58,10 @@ Usage: #example
 * category[2] = NCIT#C15228 "Double Blind Study"
 * category[3] = NCIT#C49648 "Placebo Control"
 * category[4] = NCIT#C82639 "Parallel Study"
-* focus[0] = NCIT#C152926 "Xanomeline"
-* focus[1] = NCIT#C149996 "Transdermal Patch Dosage Form"
-* focus[2] = PUBMED#9109749 "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"
+* focus[0].productCode = NCIT#C152926 "Xanomeline"
+* focus[0].focusType = #medication
+// * focus[1] = NCIT#C149996 "Transdermal Patch Dosage Form"
+// * focus[2] = PUBMED#9109749 "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"
 * condition[+] = #26929004 "Alzheimer's Disease (Disorder)"
 // * condition[+].coding[+].system = "http://hl7.org/fhir/sid/icd-10"
 // * condition[=].coding[=].code = "G30" 
@@ -92,16 +93,18 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
 """
 // TODO: Collaborator also?
 * principalInvestigator[Practitioner] = Reference(Practitioner/SamGetWell)
-* reasonStopped = #accrual-goal-met 
-* arm[+].name = "Placebo"
-* arm[=].type = NCIT#C49648
-* arm[=].description = "Placebo arm"
-* arm[+].name = "Low-dose xanomeline arm"
-* arm[=].type = NCIT#C174266
-* arm[=].description = "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"
-* arm[+].name = "High-dose xanomeline arm"
-* arm[=].type = NCIT#C174266
-* arm[=].description = "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
+* comparisonGroup[+].name = "Placebo"
+* comparisonGroup[=].identifierUri = "Placebo"
+* comparisonGroup[=].type = NCIT#C49648
+* comparisonGroup[=].description = "Placebo arm"
+* comparisonGroup[+].name = "Low-dose xanomeline arm"
+* comparisonGroup[=].identifierUri = "Low-dose-xanomeline-arm"
+* comparisonGroup[=].type = NCIT#C174266
+* comparisonGroup[=].description = "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"
+* comparisonGroup[+].name = "High-dose xanomeline arm"
+* comparisonGroup[=].identifierUri = "High-dose-xanomeline-arm"
+* comparisonGroup[=].type = NCIT#C174266
+* comparisonGroup[=].description = "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
 * objective[+].name = "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
 * objective[=].type = #primary
 * objective[+].name = "To document the safety profile of the xanomeline TTS."
@@ -114,7 +117,7 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
 * objective[=].type = #secondary
 * objective[+].name = "To assess the treatment response as a function of Apo E genotype."
 * objective[=].type = #secondary
-// * inclusion/exclusion criteria
-* enrollment[0] = Reference(Group/H2Q-MC-LZZT-ResearchStudy-Inclusion)
-* enrollment[1] = Reference(Group/H2Q-MC-LZZT-ResearchStudy-Exclusion)
+// * inclusion/exclusion criteria (combined in one element now)
+* recruitment[0].eligibility = Reference(Group/H2Q-MC-LZZT-InclusionExclusion)
+* recruitment[0].targetNumber = 300
 * sponsor[Organization] = Reference(Organization/EliLillyAndCompany)
