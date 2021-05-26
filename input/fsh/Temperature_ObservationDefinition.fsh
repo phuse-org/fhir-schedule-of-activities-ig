@@ -1,4 +1,4 @@
-Instance: H2Q-MC-LZZT-Vitalsigns-Temperature_Observation
+Instance: H2Q-MC-LZZT-Vitalsigns-Temperature-Observation
 InstanceOf: ObservationDefinition
 Usage: #example
 Title: "Temperature Measurement - Observation"
