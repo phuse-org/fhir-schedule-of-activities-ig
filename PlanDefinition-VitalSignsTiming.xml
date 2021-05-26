@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="VitalSignsTiming"/>
+  <meta>
+    <profile value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/VitalSignsTiming</code></p><p><b>identifier</b>: PLAC: VitalSignsHRBP (USUAL), OID: F.VS_4 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:52:13 PM</p><blockquote><p><b>action</b></p><p><b>title</b>: SUPINE-Timing-Delay-5</p><p><b>timing</b>:  5min</p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital Signs</p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>SUPINE-Timing-Delay-5</td><td>after</td></tr></table><p><b>definition</b>: <code>ActivityDefinition/VitalSigns</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: STANDING-Timing-Delay-1</p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>SUPINE-Timing-Delay-5</td><td>after</td></tr></table><p><b>timing</b>:  1min</p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital Signs</p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>STANDING-Timing-Delay-1</td><td>after</td></tr></table><p><b>definition</b>: <code>ActivityDefinition/VitalSigns</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: STANDING-Timing-Delay-3</p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>SUPINE-Timing-Delay-1</td><td>after</td></tr></table><p><b>timing</b>:  3min</p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital Signs</p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>STANDING-Timing-Delay-3</td><td>after</td></tr></table><p><b>definition</b>: <code>ActivityDefinition/VitalSigns</code></p></blockquote></div>
+  </text>
+  <url value="http://example.org/br-and-r/soa/PlanDefinition/VitalSignsTiming"/>
+  <identifier>
+    <use value="usual"/>
+    <type>
+      <coding>
+        <code value="PLAC"/>
+      </coding>
+    </type>
+    <value value="VitalSignsHRBP"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <type>
+      <coding>
+        <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+        <display value="OID"/>
+      </coding>
+      <text value="OID"/>
+    </type>
+    <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+    <value value="F.VS_4"/>
+  </identifier>
+  <version value="0.1.1"/>
+  <status value="active"/>
+  <date value="2021-05-26T14:52:13+00:00"/>
+  <action>
+    <title value="SUPINE-Timing-Delay-5"/>
+    <timingDuration>
+      <code value="5min"/>
+    </timingDuration>
+  </action>
+  <action>
+    <title value="Vital Signs"/>
+    <relatedAction>
+      <actionId value="SUPINE-Timing-Delay-5"/>
+      <relationship value="after"/>
+    </relatedAction>
+    <definitionUri value="ActivityDefinition/VitalSigns"/>
+  </action>
+  <action>
+    <title value="STANDING-Timing-Delay-1"/>
+    <relatedAction>
+      <actionId value="SUPINE-Timing-Delay-5"/>
+      <relationship value="after"/>
+    </relatedAction>
+    <timingDuration>
+      <code value="1min"/>
+    </timingDuration>
+  </action>
+  <action>
+    <title value="Vital Signs"/>
+    <relatedAction>
+      <actionId value="STANDING-Timing-Delay-1"/>
+      <relationship value="after"/>
+    </relatedAction>
+    <definitionUri value="ActivityDefinition/VitalSigns"/>
+  </action>
+  <action>
+    <title value="STANDING-Timing-Delay-3"/>
+    <relatedAction>
+      <actionId value="SUPINE-Timing-Delay-1"/>
+      <relationship value="after"/>
+    </relatedAction>
+    <timingDuration>
+      <code value="3min"/>
+    </timingDuration>
+  </action>
+  <action>
+    <title value="Vital Signs"/>
+    <relatedAction>
+      <actionId value="STANDING-Timing-Delay-3"/>
+      <relationship value="after"/>
+    </relatedAction>
+    <definitionUri value="ActivityDefinition/VitalSigns"/>
+  </action>
+</PlanDefinition>

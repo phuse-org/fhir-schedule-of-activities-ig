@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObservationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Temperature-Observation-SNOMED"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title="Codes: ">observationCode</span></p><p><b>identifier</b>: id: 703421000 (USUAL)</p></div>
+  </text>
+  <code>
+    <coding>
+      <code value="observationCode"/>
+    </coding>
+  </code>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://snomed.info/sct"/>
+    <value value="703421000"/>
+  </identifier>
+</ObservationDefinition>

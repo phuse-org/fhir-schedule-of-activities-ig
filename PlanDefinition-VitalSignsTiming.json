@@ -1,0 +1,106 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "VitalSignsTiming",
+  "meta": {
+    "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/PlanDefinition/VitalSignsTiming</code></p><p><b>identifier</b>: PLAC: VitalSignsHRBP (USUAL), OID: F.VS_4 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:52:13 PM</p><blockquote><p><b>action</b></p><p><b>title</b>: SUPINE-Timing-Delay-5</p><p><b>timing</b>:  5min</p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital Signs</p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>SUPINE-Timing-Delay-5</td><td>after</td></tr></table><p><b>definition</b>: <code>ActivityDefinition/VitalSigns</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: STANDING-Timing-Delay-1</p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>SUPINE-Timing-Delay-5</td><td>after</td></tr></table><p><b>timing</b>:  1min</p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital Signs</p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>STANDING-Timing-Delay-1</td><td>after</td></tr></table><p><b>definition</b>: <code>ActivityDefinition/VitalSigns</code></p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: STANDING-Timing-Delay-3</p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>SUPINE-Timing-Delay-1</td><td>after</td></tr></table><p><b>timing</b>:  3min</p></blockquote><blockquote><p><b>action</b></p><p><b>title</b>: Vital Signs</p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>STANDING-Timing-Delay-3</td><td>after</td></tr></table><p><b>definition</b>: <code>ActivityDefinition/VitalSigns</code></p></blockquote></div>"
+  },
+  "url": "http://example.org/br-and-r/soa/PlanDefinition/VitalSignsTiming",
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "code": "PLAC"
+          }
+        ]
+      },
+      "value": "VitalSignsHRBP"
+    },
+    {
+      "use": "secondary",
+      "type": {
+        "coding": [
+          {
+            "system": "http://www.cdisc.org/ns/odm/v1.3#",
+            "display": "OID"
+          }
+        ],
+        "text": "OID"
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "F.VS_4"
+    }
+  ],
+  "version": "0.1.1",
+  "status": "active",
+  "date": "2021-05-26T14:52:13+00:00",
+  "action": [
+    {
+      "title": "SUPINE-Timing-Delay-5",
+      "timingDuration": {
+        "code": "5min"
+      }
+    },
+    {
+      "title": "Vital Signs",
+      "relatedAction": [
+        {
+          "actionId": "SUPINE-Timing-Delay-5",
+          "relationship": "after"
+        }
+      ],
+      "definitionUri": "ActivityDefinition/VitalSigns"
+    },
+    {
+      "title": "STANDING-Timing-Delay-1",
+      "relatedAction": [
+        {
+          "actionId": "SUPINE-Timing-Delay-5",
+          "relationship": "after"
+        }
+      ],
+      "timingDuration": {
+        "code": "1min"
+      }
+    },
+    {
+      "title": "Vital Signs",
+      "relatedAction": [
+        {
+          "actionId": "STANDING-Timing-Delay-1",
+          "relationship": "after"
+        }
+      ],
+      "definitionUri": "ActivityDefinition/VitalSigns"
+    },
+    {
+      "title": "STANDING-Timing-Delay-3",
+      "relatedAction": [
+        {
+          "actionId": "SUPINE-Timing-Delay-1",
+          "relationship": "after"
+        }
+      ],
+      "timingDuration": {
+        "code": "3min"
+      }
+    },
+    {
+      "title": "Vital Signs",
+      "relatedAction": [
+        {
+          "actionId": "STANDING-Timing-Delay-3",
+          "relationship": "after"
+        }
+      ],
+      "definitionUri": "ActivityDefinition/VitalSigns"
+    }
+  ]
+}

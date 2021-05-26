@@ -1,11 +1,12 @@
 ﻿ScheduleOfActivityIG : Validation Results
 =========================================
 
-err = 66, warn = 446, info = 60
+err = 72, warn = 452, info = 60
 IG Publisher Version: 1.1.72
-Generated Wed May 26 14:43:11 UTC 2021. FHIR version 4.0.1 for fhir.example.brandr.soa#0.1.1 (canonical = http://example.org/br-and-r/soa)
+Generated Wed May 26 14:52:56 UTC 2021. FHIR version 4.0.1 for fhir.example.brandr.soa#0.1.1 (canonical = http://example.org/br-and-r/soa)
 
- Build Errors : 693 / 3 / 0
+ Build Errors : 718 / 3 / 0
+ /github/workspace/fsh-generated/resources/ActivityDefinition-Activity-VitalSignsTemperature : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog : 2 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Adverse-events : 2 / 1 / 1
  /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-Ambulatory-ECG-placed : 2 / 1 / 1
@@ -77,6 +78,9 @@ Generated Wed May 26 14:43:11 UTC 2021. FHIR version 4.0.1 for fhir.example.bran
  /github/workspace/fsh-generated/resources/ObservationDefinition-H2Q-MC-LZZT-TTS-Acceptability-Survey-Observations : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ObservationDefinition-H2Q-MC-LZZT-Vital-signs-Temperature-Observations : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ObservationDefinition-H2Q-MC-LZZT-Vitalsigns-Temperature-Observation : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/ObservationDefinition-Temperature-Observation-LOINC : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ObservationDefinition-Temperature-Observation-SNOMED : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ObservationDefinition-VitalSigns-Observation : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/Organization-EliLillyAndCompany : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/PlanDefinition-H2Q-MC-LZZT-ProtocolDesign : 0 / 1 / 2
  /github/workspace/fsh-generated/resources/PlanDefinition-H2Q-MC-LZZT-Study-ET-14 : 0 / 13 / 2
@@ -94,6 +98,7 @@ Generated Wed May 26 14:43:11 UTC 2021. FHIR version 4.0.1 for fhir.example.bran
  /github/workspace/fsh-generated/resources/PlanDefinition-H2Q-MC-LZZT-Study-Visit-7 : 0 / 8 / 2
  /github/workspace/fsh-generated/resources/PlanDefinition-H2Q-MC-LZZT-Study-Visit-8 : 0 / 10 / 2
  /github/workspace/fsh-generated/resources/PlanDefinition-H2Q-MC-LZZT-Study-Visit-9 : 0 / 13 / 2
+ /github/workspace/fsh-generated/resources/PlanDefinition-VitalSignsTiming : 6 / 2 / 2
  /github/workspace/fsh-generated/resources/Practitioner-SamGetWell : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ResearchStudy-H2Q-MC-LZZT-ResearchStudy : 0 / 12 / 21
  /github/workspace/fsh-generated/resources/StructureDefinition-ResearchStudy-Inclusion-Exclusion : 0 / 1 / 1
@@ -125,6 +130,11 @@ Generated Wed May 26 14:43:11 UTC 2021. FHIR version 4.0.1 for fhir.example.bran
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/SOA-study-activity-milestone-valueset.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Organization/EliLillyAndCompany.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Practitioner/SamGetWell.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: /github/workspace/output/ActivityDefinition-Activity-VitalSignsTemperature.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-Activity-VitalSignsTemperature.html#/html/body/div/div/div/p/a at Line 195, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-Activity-VitalSignsTemperature.json.html#/html/body/div/div/div/p/a at Line 234, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-Activity-VitalSignsTemperature.ttl.html#/html/body/div/div/div/p/a at Line 242, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ActivityDefinition-Activity-VitalSignsTemperature.xml.html#/html/body/div/div/div/p/a at Line 227, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog.html#/html/body/div/div/div/div/div/div/p/a at Line 166, column 357: The link 'ADAS-Cog-Observations' for "ADAS-Cog-Observations" cannot be resolved
 ERROR: /github/workspace/output/ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog.html#/html/body/div/div/div/div/div/div/p/a at Line 166, column 458: The link 'ADAS-Cog-Observations' for "ADAS-Cog-Observations" cannot be resolved
@@ -541,6 +551,21 @@ ERROR: /github/workspace/output/ObservationDefinition-H2Q-MC-LZZT-Vitalsigns-Tem
 ERROR: /github/workspace/output/ObservationDefinition-H2Q-MC-LZZT-Vitalsigns-Temperature-Observation.json.html#/html/body/div/div/div/p/a at Line 241, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ObservationDefinition-H2Q-MC-LZZT-Vitalsigns-Temperature-Observation.ttl.html#/html/body/div/div/div/p/a at Line 248, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/ObservationDefinition-H2Q-MC-LZZT-Vitalsigns-Temperature-Observation.xml.html#/html/body/div/div/div/p/a at Line 233, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-LOINC.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-LOINC.html#/html/body/div/div/div/p/a at Line 195, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-LOINC.json.html#/html/body/div/div/div/p/a at Line 212, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-LOINC.ttl.html#/html/body/div/div/div/p/a at Line 224, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-LOINC.xml.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-SNOMED.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-SNOMED.html#/html/body/div/div/div/p/a at Line 195, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-SNOMED.json.html#/html/body/div/div/div/p/a at Line 219, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-SNOMED.ttl.html#/html/body/div/div/div/p/a at Line 230, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-Temperature-Observation-SNOMED.xml.html#/html/body/div/div/div/p/a at Line 215, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-VitalSigns-Observation.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-VitalSigns-Observation.html#/html/body/div/div/div/p/a at Line 195, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-VitalSigns-Observation.json.html#/html/body/div/div/div/p/a at Line 244, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-VitalSigns-Observation.ttl.html#/html/body/div/div/div/p/a at Line 255, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/ObservationDefinition-VitalSigns-Observation.xml.html#/html/body/div/div/div/p/a at Line 240, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Organization-EliLillyAndCompany.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Organization-EliLillyAndCompany.html#/html/body/div/div/div/p/a at Line 195, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Organization-EliLillyAndCompany.json.html#/html/body/div/div/div/p/a at Line 237, column 28: The link '' for "" cannot be resolved
@@ -626,6 +651,11 @@ ERROR: /github/workspace/output/PlanDefinition-H2Q-MC-LZZT-Study-Visit-9.html#/h
 ERROR: /github/workspace/output/PlanDefinition-H2Q-MC-LZZT-Study-Visit-9.json.html#/html/body/div/div/div/p/a at Line 303, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/PlanDefinition-H2Q-MC-LZZT-Study-Visit-9.ttl.html#/html/body/div/div/div/p/a at Line 310, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/PlanDefinition-H2Q-MC-LZZT-Study-Visit-9.xml.html#/html/body/div/div/div/p/a at Line 298, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/PlanDefinition-VitalSignsTiming.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/PlanDefinition-VitalSignsTiming.html#/html/body/div/div/div/p/a at Line 195, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/PlanDefinition-VitalSignsTiming.json.html#/html/body/div/div/div/p/a at Line 303, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/PlanDefinition-VitalSignsTiming.ttl.html#/html/body/div/div/div/p/a at Line 297, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/PlanDefinition-VitalSignsTiming.xml.html#/html/body/div/div/div/p/a at Line 284, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Practitioner-SamGetWell.change.history.html#/html/body/div/div/div/p/a at Line 210, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Practitioner-SamGetWell.html#/html/body/div/div/div/p/a at Line 195, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/Practitioner-SamGetWell.json.html#/html/body/div/div/div/p/a at Line 242, column 28: The link '' for "" cannot be resolved
@@ -645,7 +675,7 @@ ERROR: /github/workspace/output/StructureDefinition-ResearchStudy-Inclusion-Excl
 ERROR: /github/workspace/output/StructureDefinition-ResearchStudy-Inclusion-Exclusion.profile.ttl.html#/html/body/div/div/div/p/a at Line 1528, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/StructureDefinition-ResearchStudy-Inclusion-Exclusion.profile.xml.html#/html/body/div/div/div/p/a at Line 1530, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/StructureDefinition-SOA-PlanDefinition-definitions.html#/html/body/div/div/div/p/a at Line 1267, column 28: The link '' for "" cannot be resolved
-ERROR: /github/workspace/output/StructureDefinition-SOA-PlanDefinition-examples.html#/html/body/div/div/div/p/a at Line 353, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/StructureDefinition-SOA-PlanDefinition-examples.html#/html/body/div/div/div/p/a at Line 359, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/StructureDefinition-SOA-PlanDefinition-mappings.html#/html/body/div/div/div/p/a at Line 341, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/StructureDefinition-SOA-PlanDefinition.html#/html/body/div/div/div/p/a at Line 1193, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/StructureDefinition-SOA-PlanDefinition.profile.history.html#/html/body/div/div/div/p/a at Line 241, column 28: The link '' for "" cannot be resolved
@@ -811,13 +841,16 @@ ERROR: /github/workspace/output/ValueSet-soa-epoch-epochtype-value-set.ttl.html#
 ERROR: /github/workspace/output/ValueSet-soa-epoch-epochtype-value-set.xml.html#/html/body/div/div/div/p/a at Line 223, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/artifacts.html#/html/body/div/div/div/div/div/div/p/table/tbody/tr/td/a at Line 981, column 20: The link '' for "H2Q-MC-LZZT Bundle 1" cannot be resolved
 ERROR: /github/workspace/output/artifacts.html#/html/body/div/div/div/div/div/div/p/table/tbody/tr/td/a at Line 989, column 20: The link '' for "H2Q-MC-LZZT Bundle 2" cannot be resolved
-ERROR: /github/workspace/output/artifacts.html#/html/body/div/div/div/p/a at Line 1304, column 28: The link '' for "" cannot be resolved
+ERROR: /github/workspace/output/artifacts.html#/html/body/div/div/div/p/a at Line 1349, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/cdisc-odm.html#/html/body/div/div/div/p/a at Line 455, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/deltas.html#/html/body/div/div/div/p/a at Line 169, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/developer.html#/html/body/div/div/div/p/a at Line 258, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/h2q-mc-lzzt.html#/html/body/div/div/div/p/a at Line 6836, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/index.html#/html/body/div/div/div/p/a at Line 194, column 28: The link '' for "" cannot be resolved
 ERROR: /github/workspace/output/toc.html#/html/body/div/div/div/p/a at Line 146, column 28: The link '' for "" cannot be resolved
+== /github/workspace/fsh-generated/resources/ActivityDefinition-Activity-VitalSignsTemperature.json ==
+INFORMATION: ActivityDefinition/Activity-VitalSignsTemperature: ActivityDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ActivityDefinition
+WARNING: ActivityDefinition/Activity-VitalSignsTemperature: ActivityDefinition: adf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
 == /github/workspace/fsh-generated/resources/ActivityDefinition-H2Q-MC-LZZT-ADAS-Cog.json ==
 INFORMATION: ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog: ActivityDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ActivityDefinition
 WARNING: ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog: ActivityDefinition: adf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
@@ -1352,6 +1385,15 @@ WARNING: ObservationDefinition/H2Q-MC-LZZT-Vital-signs-Temperature-Observations:
 INFORMATION: ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation: ObservationDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ObservationDefinition
 WARNING: ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation: ObservationDefinition.code.coding[0]: The display "Temperature taking (procedure)" is not a valid display for the code {http://loinc.org}8310-5 - should be one of ["Body temperature","Body temperature"] (from http://tx.fhir.org/r4) for 'http://loinc.org#8310-5'
 WARNING: ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation: ObservationDefinition.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+== /github/workspace/fsh-generated/resources/ObservationDefinition-Temperature-Observation-LOINC.json ==
+INFORMATION: ObservationDefinition/Temperature-Observation-LOINC: ObservationDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ObservationDefinition
+WARNING: ObservationDefinition/Temperature-Observation-LOINC: ObservationDefinition.code.coding[0]: A code with no system has no defined meaning. A system should be provided
+== /github/workspace/fsh-generated/resources/ObservationDefinition-Temperature-Observation-SNOMED.json ==
+INFORMATION: ObservationDefinition/Temperature-Observation-SNOMED: ObservationDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ObservationDefinition
+WARNING: ObservationDefinition/Temperature-Observation-SNOMED: ObservationDefinition.code.coding[0]: A code with no system has no defined meaning. A system should be provided
+== /github/workspace/fsh-generated/resources/ObservationDefinition-VitalSigns-Observation.json ==
+INFORMATION: ObservationDefinition/VitalSigns-Observation: ObservationDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ObservationDefinition
+WARNING: ObservationDefinition/VitalSigns-Observation: ObservationDefinition.code.coding[0]: A code with no system has no defined meaning. A system should be provided
 == /github/workspace/fsh-generated/resources/Organization-EliLillyAndCompany.json ==
 INFORMATION: Organization/EliLillyAndCompany: Organization: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
 WARNING: Organization/EliLillyAndCompany: Organization.type[0].coding[0]: A code with no system has no defined meaning. A system should be provided
@@ -1561,6 +1603,17 @@ WARNING: PlanDefinition/H2Q-MC-LZZT-Study-Visit-9: PlanDefinition.action[11].tit
 WARNING: PlanDefinition/H2Q-MC-LZZT-Study-Visit-9: PlanDefinition.action[12].title: value should not start or finish with whitespace
 WARNING: PlanDefinition/H2Q-MC-LZZT-Study-Visit-9: PlanDefinition.action[13].title: value should not start or finish with whitespace
 INFORMATION: PlanDefinition/H2Q-MC-LZZT-Study-Visit-9: PlanDefinition: Validate resource against profile http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition - listed in meta
+== /github/workspace/fsh-generated/resources/PlanDefinition-VitalSignsTiming.json ==
+INFORMATION: PlanDefinition/VitalSignsTiming: PlanDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition
+WARNING: PlanDefinition/VitalSignsTiming: PlanDefinition: pdf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
+WARNING: PlanDefinition/VitalSignsTiming: PlanDefinition.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: PlanDefinition/VitalSignsTiming: PlanDefinition.action[0].timing.ofType(Duration): drt-1: 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Rule 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Failed
+ERROR: PlanDefinition/VitalSignsTiming: PlanDefinition.action[0].timing.ofType(Duration): qty-3: 'If a code for the unit is present, the system SHALL also be present' Rule 'If a code for the unit is present, the system SHALL also be present' Failed
+ERROR: PlanDefinition/VitalSignsTiming: PlanDefinition.action[2].timing.ofType(Duration): drt-1: 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Rule 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Failed
+ERROR: PlanDefinition/VitalSignsTiming: PlanDefinition.action[2].timing.ofType(Duration): qty-3: 'If a code for the unit is present, the system SHALL also be present' Rule 'If a code for the unit is present, the system SHALL also be present' Failed
+ERROR: PlanDefinition/VitalSignsTiming: PlanDefinition.action[4].timing.ofType(Duration): drt-1: 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Rule 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Failed
+ERROR: PlanDefinition/VitalSignsTiming: PlanDefinition.action[4].timing.ofType(Duration): qty-3: 'If a code for the unit is present, the system SHALL also be present' Rule 'If a code for the unit is present, the system SHALL also be present' Failed
+INFORMATION: PlanDefinition/VitalSignsTiming: PlanDefinition: Validate resource against profile http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition - listed in meta
 == /github/workspace/fsh-generated/resources/Practitioner-SamGetWell.json ==
 INFORMATION: Practitioner/SamGetWell: Practitioner: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Practitioner
 WARNING: Practitioner/SamGetWell: Practitioner.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided

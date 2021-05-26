@@ -20,7 +20,7 @@
   "name": "SOAEpochDefinition",
   "title": "SOA Epoch Defintion",
   "status": "draft",
-  "date": "2021-05-26T14:42:20+00:00",
+  "date": "2021-05-26T14:52:13+00:00",
   "description": "An example of a study epoch definition for the study.",
   "fhirVersion": "4.0.1",
   "mapping": [

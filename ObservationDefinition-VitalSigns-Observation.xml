@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObservationDefinition xmlns="http://hl7.org/fhir">
+  <id value="VitalSigns-Observation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title="Codes: ">observationCode</span></p><p><b>identifier</b>: id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL)</p></div>
+  </text>
+  <code>
+    <coding>
+      <code value="observationCode"/>
+    </coding>
+  </code>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://snomed.info/sct"/>
+    <value value="8499008"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://snomed.info/sct"/>
+    <value value="163035008"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://snomed.info/sct"/>
+    <value value="8499008"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://snomed.info/sct"/>
+    <value value="163035008"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://snomed.info/sct"/>
+    <value value="8499008"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://snomed.info/sct"/>
+    <value value="163035008"/>
+  </identifier>
+</ObservationDefinition>

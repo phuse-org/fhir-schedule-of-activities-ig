@@ -3,7 +3,7 @@
 <ActivityDefinition xmlns="http://hl7.org/fhir">
   <id value="H2Q-MC-LZZT-CT-Scan"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-CT-Scan</code></p><p><b>identifier</b>: OID: F.PR_CTSCAN</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:42:20 PM</p><p><b>observationRequirement</b>: <a href="CT-Scan-Observations">CT-Scan-Observations</a></p><p><b>observationResultRequirement</b>: <a href="CT-Scan-Observations">CT-Scan-Observations</a></p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-CT-Scan</code></p><p><b>identifier</b>: OID: F.PR_CTSCAN</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:52:13 PM</p><p><b>observationRequirement</b>: <a href="CT-Scan-Observations">CT-Scan-Observations</a></p><p><b>observationResultRequirement</b>: <a href="CT-Scan-Observations">CT-Scan-Observations</a></p></div>
   </text>
   <url value="http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-CT-Scan"/>
   <identifier>
@@ -18,7 +18,7 @@
   </identifier>
   <version value="0.1.1"/>
   <status value="active"/>
-  <date value="2021-05-26T14:42:20+00:00"/>
+  <date value="2021-05-26T14:52:13+00:00"/>
   <observationRequirement>
     <reference value="CT-Scan-Observations"/>
   </observationRequirement>

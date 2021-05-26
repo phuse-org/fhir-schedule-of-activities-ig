@@ -20,7 +20,7 @@
   "name": "SOAArmGroupDefinition",
   "title": "SOA Arm Definition",
   "status": "active",
-  "date": "2021-05-26T14:42:20+00:00",
+  "date": "2021-05-26T14:52:13+00:00",
   "description": "Extension to define a Arm Group for a Research Study",
   "fhirVersion": "4.0.1",
   "mapping": [

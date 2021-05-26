@@ -1,5 +1,11 @@
 [
   {
+    "id": "Activity-VitalSignsTemperature",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/Activity-VitalSignsTemperature",
+    "version": "0.1.1"
+  },
+  {
     "id": "H2Q-MC-LZZT-ADAS-Cog",
     "type": "ActivityDefinition",
     "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog",
@@ -310,6 +316,12 @@
     "id": "H2Q-MC-LZZT-Study-Visit-9",
     "type": "PlanDefinition",
     "url": "http://example.org/br-and-r/soa/PlanDefinition/H2Q-MC-LZZT-Study-Visit-9",
+    "version": "0.1.1"
+  },
+  {
+    "id": "VitalSignsTiming",
+    "type": "PlanDefinition",
+    "url": "http://example.org/br-and-r/soa/PlanDefinition/VitalSignsTiming",
     "version": "0.1.1"
   },
   {

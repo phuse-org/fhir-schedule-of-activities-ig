@@ -9,7 +9,7 @@
   <version value="0.1.1"/>
   <name value="ScheduleOfActivityIG"/>
   <status value="draft"/>
-  <date value="2021-05-26T14:42:20+00:00"/>
+  <date value="2021-05-26T14:52:13+00:00"/>
   <packageId value="fhir.example.brandr.soa"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -448,6 +448,17 @@
       </reference>
       <name value="Study Milestone"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/Activity-VitalSignsTemperature"/>
+      </reference>
+      <name value="Vital Signs/Temperature"/>
+      <description value="Planned Activity [Vital signs/Temperature]"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1512,6 +1523,50 @@
       <name value="Samuel Home, M.D."/>
       <exampleBoolean value="true"/>
       <groupingId value="H2Q-MC-LZZT-Actors"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/Temperature-Observation-LOINC"/>
+      </reference>
+      <name value="Temperature-Observation"/>
+      <description value="Planned Observation [Temperature]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/Temperature-Observation-SNOMED"/>
+      </reference>
+      <name value="Temperature-Observation"/>
+      <description value="Planned Observation [Temperature]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ObservationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ObservationDefinition/VitalSigns-Observation"/>
+      </reference>
+      <name value="VitalSigns-Observation"/>
+      <description value="Planned Observation [VitalSigns]"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/VitalSignsTiming"/>
+      </reference>
+      <name value="Vitalsigns-HeartRate-Blood-Pressure"/>
+      <description value="Vital signs blood pressure and heart rate (repeated)"/>
+      <exampleCanonical value="http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

@@ -1,0 +1,22 @@
+{
+  "resourceType": "ObservationDefinition",
+  "id": "Temperature-Observation-SNOMED",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title=\"Codes: \">observationCode</span></p><p><b>identifier</b>: id: 703421000 (USUAL)</p></div>"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "observationCode"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "use": "usual",
+      "system": "http://snomed.info/sct",
+      "value": "703421000"
+    }
+  ]
+}

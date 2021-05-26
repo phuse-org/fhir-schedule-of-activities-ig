@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ObservationDefinition/VitalSigns-Observation> a fhir:ObservationDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "VitalSigns-Observation"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title=\"Codes: \">observationCode</span></p><p><b>identifier</b>: id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL)</p></div>"
+  ];
+  fhir:ObservationDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "observationCode" ]
+     ]
+  ];
+  fhir:ObservationDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "http://snomed.info/sct" ];
+     fhir:Identifier.value [ fhir:value "8499008" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "http://snomed.info/sct" ];
+     fhir:Identifier.value [ fhir:value "163035008" ]
+  ], [
+     fhir:index 2;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "http://snomed.info/sct" ];
+     fhir:Identifier.value [ fhir:value "8499008" ]
+  ], [
+     fhir:index 3;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "http://snomed.info/sct" ];
+     fhir:Identifier.value [ fhir:value "163035008" ]
+  ], [
+     fhir:index 4;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "http://snomed.info/sct" ];
+     fhir:Identifier.value [ fhir:value "8499008" ]
+  ], [
+     fhir:index 5;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "http://snomed.info/sct" ];
+     fhir:Identifier.value [ fhir:value "163035008" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ObservationDefinition/VitalSigns-Observation.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

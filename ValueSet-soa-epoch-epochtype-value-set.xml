@@ -10,7 +10,7 @@
   <name value="SOAEpochTypes"/>
   <title value="Epoch Type Value Set"/>
   <status value="active"/>
-  <date value="2021-05-26T14:42:20+00:00"/>
+  <date value="2021-05-26T14:52:13+00:00"/>
   <description value="Set of permitted values for Epoch"/>
   <compose>
     <include>

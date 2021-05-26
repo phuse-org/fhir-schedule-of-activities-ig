@@ -9,7 +9,7 @@
   "version": "0.1.1",
   "name": "ScheduleOfActivityIG",
   "status": "draft",
-  "date": "2021-05-26T14:42:20+00:00",
+  "date": "2021-05-26T14:52:13+00:00",
   "packageId": "fhir.example.brandr.soa",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -627,6 +627,20 @@
         },
         "name": "Study Milestone",
         "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/Activity-VitalSignsTemperature"
+        },
+        "name": "Vital Signs/Temperature",
+        "description": "Planned Activity [Vital signs/Temperature]",
+        "exampleBoolean": true
       },
       {
         "extension": [
@@ -1958,6 +1972,62 @@
         "name": "Samuel Home, M.D.",
         "exampleBoolean": true,
         "groupingId": "H2Q-MC-LZZT-Actors"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/Temperature-Observation-LOINC"
+        },
+        "name": "Temperature-Observation",
+        "description": "Planned Observation [Temperature]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/Temperature-Observation-SNOMED"
+        },
+        "name": "Temperature-Observation",
+        "description": "Planned Observation [Temperature]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/VitalSigns-Observation"
+        },
+        "name": "VitalSigns-Observation",
+        "description": "Planned Observation [VitalSigns]",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/VitalSignsTiming"
+        },
+        "name": "Vitalsigns-HeartRate-Blood-Pressure",
+        "description": "Vital signs blood pressure and heart rate (repeated)",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
       }
     ],
     "page": {

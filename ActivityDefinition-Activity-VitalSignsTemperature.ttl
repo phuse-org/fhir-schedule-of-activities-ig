@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/Activity-VitalSignsTemperature> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Activity-VitalSignsTemperature"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/Activity-VitalSignsTemperature</code></p><p><b>identifier</b>: OID: F.VS_3 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:52:13 PM</p><p><b>observationRequirement</b>: <a href=\"ObservationDefinition-VitalSigns-Observation.html\">Generated Summary: <span title=\"Codes: \">observationCode</span>; id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL)</a></p><p><b>observationResultRequirement</b>: <a href=\"ObservationDefinition-VitalSigns-Observation.html\">Generated Summary: <span title=\"Codes: \">observationCode</span>; id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL)</a></p></div>"
+  ];
+  fhir:ActivityDefinition.url [ fhir:value "http://example.org/br-and-r/soa/ActivityDefinition/Activity-VitalSignsTemperature"];
+  fhir:ActivityDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3#" ];
+         fhir:Coding.display [ fhir:value "OID" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3/FormDef#" ];
+     fhir:Identifier.value [ fhir:value "F.VS_3" ]
+  ];
+  fhir:ActivityDefinition.version [ fhir:value "0.1.1"];
+  fhir:ActivityDefinition.status [ fhir:value "active"];
+  fhir:ActivityDefinition.date [ fhir:value "2021-05-26T14:52:13+00:00"^^xsd:dateTime];
+  fhir:ActivityDefinition.observationRequirement [
+     fhir:index 0;
+     fhir:link <http://example.org/br-and-r/soa/ObservationDefinition/VitalSigns-Observation>;
+     fhir:Reference.reference [ fhir:value "ObservationDefinition/VitalSigns-Observation" ]
+  ];
+  fhir:ActivityDefinition.observationResultRequirement [
+     fhir:index 0;
+     fhir:link <http://example.org/br-and-r/soa/ObservationDefinition/VitalSigns-Observation>;
+     fhir:Reference.reference [ fhir:value "ObservationDefinition/VitalSigns-Observation" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/Activity-VitalSignsTemperature.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

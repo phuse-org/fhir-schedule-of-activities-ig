@@ -10,7 +10,7 @@
   "name": "UnPlannedStudyWindow",
   "title": "Unplanned Study Visit Range",
   "status": "active",
-  "date": "2021-05-26T14:42:20+00:00",
+  "date": "2021-05-26T14:52:13+00:00",
   "description": "Unplanned Study Visit Range [Day.min() to Day.max() of SoA]",
   "fhirVersion": "4.0.1",
   "mapping": [

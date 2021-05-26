@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+  <id value="Activity-VitalSignsTemperature"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/Activity-VitalSignsTemperature</code></p><p><b>identifier</b>: OID: F.VS_3 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:52:13 PM</p><p><b>observationRequirement</b>: <a href="ObservationDefinition-VitalSigns-Observation.html">Generated Summary: <span title="Codes: ">observationCode</span>; id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL)</a></p><p><b>observationResultRequirement</b>: <a href="ObservationDefinition-VitalSigns-Observation.html">Generated Summary: <span title="Codes: ">observationCode</span>; id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL), id: 8499008 (USUAL), id: 163035008 (USUAL)</a></p></div>
+  </text>
+  <url value="http://example.org/br-and-r/soa/ActivityDefinition/Activity-VitalSignsTemperature"/>
+  <identifier>
+    <use value="secondary"/>
+    <type>
+      <coding>
+        <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+        <display value="OID"/>
+      </coding>
+    </type>
+    <system value="http://www.cdisc.org/ns/odm/v1.3/FormDef#"/>
+    <value value="F.VS_3"/>
+  </identifier>
+  <version value="0.1.1"/>
+  <status value="active"/>
+  <date value="2021-05-26T14:52:13+00:00"/>
+  <observationRequirement>
+    <reference value="ObservationDefinition/VitalSigns-Observation"/>
+  </observationRequirement>
+  <observationResultRequirement>
+    <reference value="ObservationDefinition/VitalSigns-Observation"/>
+  </observationResultRequirement>
+</ActivityDefinition>
