@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObservationDefinition xmlns="http://hl7.org/fhir">
+  <id value="H2Q-MC-LZZT-Vitalsigns-Temperature-Observation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title="Codes: {http://loinc.org 8310-5}">Temperature taking (procedure)</span></p><p><b>identifier</b>: PLAC: Temperature Measurement - Observation (USUAL), OID: I.TEMP (SECONDARY)</p></div>
+  </text>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8310-5"/>
+      <display value="Temperature taking (procedure)"/>
+    </coding>
+  </code>
+  <identifier>
+    <use value="usual"/>
+    <type>
+      <coding>
+        <code value="PLAC"/>
+      </coding>
+    </type>
+    <value value="Temperature Measurement - Observation"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <type>
+      <coding>
+        <system value="http://www.cdisc.org/ns/odm/v1.3#"/>
+        <display value="OID"/>
+      </coding>
+      <text value="OID"/>
+    </type>
+    <system value="http://www.cdisc.org/ns/odm/v1.3/StudyDef#"/>
+    <value value="I.TEMP"/>
+  </identifier>
+</ObservationDefinition>

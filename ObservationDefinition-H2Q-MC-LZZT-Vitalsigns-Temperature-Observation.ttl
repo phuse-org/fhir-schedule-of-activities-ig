@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation> a fhir:ObservationDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-Vitalsigns-Temperature-Observation"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 8310-5}\">Temperature taking (procedure)</span></p><p><b>identifier</b>: PLAC: Temperature Measurement - Observation (USUAL), OID: I.TEMP (SECONDARY)</p></div>"
+  ];
+  fhir:ObservationDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:8310-5;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "8310-5" ];
+       fhir:Coding.display [ fhir:value "Temperature taking (procedure)" ]
+     ]
+  ];
+  fhir:ObservationDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "PLAC" ]
+       ]
+     ];
+     fhir:Identifier.value [ fhir:value "Temperature Measurement - Observation" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3#" ];
+         fhir:Coding.display [ fhir:value "OID" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "OID" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3/StudyDef#" ];
+     fhir:Identifier.value [ fhir:value "I.TEMP" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

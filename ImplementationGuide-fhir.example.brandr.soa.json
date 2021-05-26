@@ -9,7 +9,7 @@
   "version": "0.1.1",
   "name": "ScheduleOfActivityIG",
   "status": "draft",
-  "date": "2021-05-18T13:05:31+00:00",
+  "date": "2021-05-26T14:42:20+00:00",
   "packageId": "fhir.example.brandr.soa",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -1916,6 +1916,34 @@
         "description": "Planned Observation(s) [Vital signs/Temperature]",
         "exampleBoolean": true,
         "groupingId": "H2Q-MC-LZZT-Observations"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ActivityDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature"
+        },
+        "name": "Temperature Measurement",
+        "description": "Temperature Measurement",
+        "exampleCanonical": "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ObservationDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation"
+        },
+        "name": "Temperature Measurement - Observation",
+        "description": "Observation of Temperature Measurement",
+        "exampleBoolean": true
       },
       {
         "extension": [

@@ -10,7 +10,7 @@
   "name": "ArmStatus",
   "title": "Arm Status",
   "status": "active",
-  "date": "2021-05-18T13:05:31+00:00",
+  "date": "2021-05-26T14:42:20+00:00",
   "description": "Set of permitted values for Arm status",
   "fhirVersion": "4.0.1",
   "mapping": [

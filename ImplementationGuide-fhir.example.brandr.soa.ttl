@@ -16,7 +16,7 @@
   fhir:ImplementationGuide.version [ fhir:value "0.1.1"];
   fhir:ImplementationGuide.name [ fhir:value "ScheduleOfActivityIG"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-05-18T13:05:31+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-05-26T14:42:20+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.packageId [ fhir:value "fhir.example.brandr.soa"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [
@@ -1953,6 +1953,37 @@
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "H2Q-MC-LZZT-Observations" ]
      ], [
        fhir:index 110;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ActivityDefinition" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature>;
+         fhir:Reference.reference [ fhir:value "ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Temperature Measurement" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Temperature Measurement" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition";
+         fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition>
+       ]
+     ], [
+       fhir:index 111;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ObservationDefinition" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/br-and-r/soa/ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation>;
+         fhir:Reference.reference [ fhir:value "ObservationDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature-Observation" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Temperature Measurement - Observation" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Observation of Temperature Measurement" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 112;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];

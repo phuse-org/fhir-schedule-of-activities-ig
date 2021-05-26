@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-Vital-signs-Temperature"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature</code></p><p><b>identifier</b>: OID: F.VS_3 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 18, 2021, 1:05:31 PM</p><p><b>observationRequirement</b>: <a href=\"Vital-signs-Temperature-Observations\">Vital-signs-Temperature-Observations</a></p><p><b>observationResultRequirement</b>: <a href=\"Vital-signs-Temperature-Observations\">Vital-signs-Temperature-Observations</a></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature</code></p><p><b>identifier</b>: OID: F.VS_3 (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:42:20 PM</p><p><b>observationRequirement</b>: <a href=\"Vital-signs-Temperature-Observations\">Vital-signs-Temperature-Observations</a></p><p><b>observationResultRequirement</b>: <a href=\"Vital-signs-Temperature-Observations\">Vital-signs-Temperature-Observations</a></p></div>"
   ];
   fhir:ActivityDefinition.url [ fhir:value "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vital-signs-Temperature"];
   fhir:ActivityDefinition.identifier [
@@ -28,7 +28,7 @@
   ];
   fhir:ActivityDefinition.version [ fhir:value "0.1.1"];
   fhir:ActivityDefinition.status [ fhir:value "active"];
-  fhir:ActivityDefinition.date [ fhir:value "2021-05-18T13:05:31+00:00"^^xsd:dateTime];
+  fhir:ActivityDefinition.date [ fhir:value "2021-05-26T14:42:20+00:00"^^xsd:dateTime];
   fhir:ActivityDefinition.observationRequirement [
      fhir:index 0;
      fhir:Reference.reference [ fhir:value "Vital-signs-Temperature-Observations" ]

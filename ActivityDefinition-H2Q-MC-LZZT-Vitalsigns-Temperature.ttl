@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "H2Q-MC-LZZT-Vitalsigns-Temperature"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition";
+       fhir:index 0;
+       fhir:link <http://example.org/br-and-r/soa/StructureDefinition/SOA-planned-study-activity-definition>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature</code></p><p><b>identifier</b>: PLAC: Temperature Measurement (USUAL), OID: I.TEMP (SECONDARY)</p><p><b>version</b>: 0.1.1</p><p><b>status</b>: active</p><p><b>date</b>: May 26, 2021, 2:42:20 PM</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 56342008}\">Temperature taking (procedure)</span></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 74262004}, {http://snomed.info/sct 34402009}, {http://snomed.info/sct 91470000}, {http://snomed.info/sct 42859004}\">Oral cavity</span></p></div>"
+  ];
+  fhir:ActivityDefinition.url [ fhir:value "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature"];
+  fhir:ActivityDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "PLAC" ]
+       ]
+     ];
+     fhir:Identifier.value [ fhir:value "Temperature Measurement" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3#" ];
+         fhir:Coding.display [ fhir:value "OID" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "OID" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://www.cdisc.org/ns/odm/v1.3/StudyDef#" ];
+     fhir:Identifier.value [ fhir:value "I.TEMP" ]
+  ];
+  fhir:ActivityDefinition.version [ fhir:value "0.1.1"];
+  fhir:ActivityDefinition.status [ fhir:value "active"];
+  fhir:ActivityDefinition.date [ fhir:value "2021-05-26T14:42:20+00:00"^^xsd:dateTime];
+  fhir:ActivityDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:56342008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "56342008" ];
+       fhir:Coding.display [ fhir:value "Temperature taking (procedure)" ]
+     ]
+  ];
+  fhir:ActivityDefinition.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:74262004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "74262004" ];
+       fhir:Coding.display [ fhir:value "Oral cavity" ]
+     ], [
+       fhir:index 1;
+       a sct:34402009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "34402009" ];
+       fhir:Coding.display [ fhir:value "Rectum" ]
+     ], [
+       fhir:index 2;
+       a sct:91470000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "91470000" ];
+       fhir:Coding.display [ fhir:value "Axilla" ]
+     ], [
+       fhir:index 3;
+       a sct:42859004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "42859004" ];
+       fhir:Coding.display [ fhir:value "Tympanic membrane structure" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

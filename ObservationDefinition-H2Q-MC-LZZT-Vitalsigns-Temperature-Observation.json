@@ -1,0 +1,44 @@
+{
+  "resourceType": "ObservationDefinition",
+  "id": "H2Q-MC-LZZT-Vitalsigns-Temperature-Observation",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 8310-5}\">Temperature taking (procedure)</span></p><p><b>identifier</b>: PLAC: Temperature Measurement - Observation (USUAL), OID: I.TEMP (SECONDARY)</p></div>"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "8310-5",
+        "display": "Temperature taking (procedure)"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "code": "PLAC"
+          }
+        ]
+      },
+      "value": "Temperature Measurement - Observation"
+    },
+    {
+      "use": "secondary",
+      "type": {
+        "coding": [
+          {
+            "system": "http://www.cdisc.org/ns/odm/v1.3#",
+            "display": "OID"
+          }
+        ],
+        "text": "OID"
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "I.TEMP"
+    }
+  ]
+}

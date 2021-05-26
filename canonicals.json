@@ -204,6 +204,12 @@
     "version": "0.1.1"
   },
   {
+    "id": "H2Q-MC-LZZT-Vitalsigns-Temperature",
+    "type": "ActivityDefinition",
+    "url": "http://example.org/br-and-r/soa/ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature",
+    "version": "0.1.1"
+  },
+  {
     "id": "fhir.example.brandr.soa",
     "type": "ImplementationGuide",
     "url": "http://example.org/br-and-r/soa/ImplementationGuide/fhir.example.brandr.soa",
