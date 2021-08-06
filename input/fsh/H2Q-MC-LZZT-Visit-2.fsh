@@ -15,9 +15,16 @@ Description: "Planned Visit [Visit-2]"
 * status = #active
 * action[+].title = "Record Visit Date"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
-* action[+].title = "Vital signs/Temperature "
+* action[=].id = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
+* action[+].title = "Vital signs/Temperature"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
-* action[+].title = "Ambulatory ECG placed "
+* action[=].relatedAction[+].actionId = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Ambulatory ECG placed"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed"
-* action[+].title = "Adverse events "
+* action[=].relatedAction[+].actionId = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Adverse events"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+* action[=].relatedAction[+].actionId = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
