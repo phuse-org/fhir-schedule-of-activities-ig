@@ -76,12 +76,16 @@ Description: "Planned Visit [Visit-1]"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CT-Scan"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Laboratory (Chem/Hemat)"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"
+* action[+].title = "Laboratory (Hematology)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+* action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Laboratory (Chemistry)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Laboratory (Urinalysis)"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Hemoglobin A1C"
