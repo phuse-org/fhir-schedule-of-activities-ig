@@ -397,9 +397,9 @@ Title: "Visit Date"
 
 Instance: H2Q-MC-LZZT-Plasma-Specimen
 InstanceOf: ActivityDefinition
-Description: "Planned Activity [Plasma Specimen]"
+Description: "Planned Activity [Plasma Specimen (Xanomeline)]"
 Usage: #example
-Title: "Plasma Specimen"
+Title: "Plasma Specimen (Xanomeline)"
 * status = #active
 * observationRequirement = Reference(Plasma-Specimen-Observations)
 * observationResultRequirement = Reference(Plasma-Specimen-Observations)
@@ -455,9 +455,9 @@ Title: "Hemoglobin A1C"
 
 Instance: H2Q-MC-LZZT-Study-drug-record
 InstanceOf: ActivityDefinition
-Description: "Planned Activity [Study drug record]"
+Description: "Planned Activity [Study drug record: Medications Dispensed/Returned]"
 Usage: #example
-Title: "Study drug record"
+Title: "Study drug record: Medications Dispensed/Returned: Medications Dispensed/Returned"
 * status = #active
 * identifier[+].value = "F.EX_1"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"

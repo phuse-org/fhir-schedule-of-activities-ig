@@ -112,9 +112,9 @@ Title: "TTS Acceptability Survey-Observations"
 
 Instance: H2Q-MC-LZZT-Plasma-Specimen-Observations
 InstanceOf: ObservationDefinition
-Description: "Planned Observation(s) [Plasma Specimen]"
+Description: "Planned Observation(s) [Plasma Specimen (Xanomeline)]"
 Usage: #example
-Title: "Plasma Specimen-Observations"
+Title: "Plasma Specimen (Xanomeline)-Observations"
 * code = #observationCode
 
 Instance: H2Q-MC-LZZT-Habits-Observations
@@ -133,9 +133,9 @@ Title: "Hemoglobin A1C-Observations"
 
 Instance: H2Q-MC-LZZT-Study-drug-record-Observations
 InstanceOf: ObservationDefinition
-Description: "Planned Observation(s) [Study drug record]"
+Description: "Planned Observation(s) [Study drug record: Medications Dispensed/Returned]"
 Usage: #example
-Title: "Study drug record-Observations"
+Title: "Study drug record: Medications Dispensed/Returned-Observations"
 * code = #observationCode
 
 Instance: H2Q-MC-LZZT-ADAS-Cog-Observations
