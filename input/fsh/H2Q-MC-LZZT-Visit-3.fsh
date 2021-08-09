@@ -35,11 +35,11 @@ Description: "Planned Visit [Visit-3]"
 * action[+].title = "Patient randomized"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Patient-randomized"
 * action[=].id = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[+].title = "Plasma Specimen "
+* action[+].title = "Plasma Specimen (Xanomeline) "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
 * action[=].relatedAction[+].actionId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Study drug record"
+* action[+].title = "Study drug record: Medications Dispensed/Returned"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
 * action[=].relatedAction[+].actionId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after

@@ -46,11 +46,11 @@ Description: "Planned Visit [Visit-4]"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Plasma Specimen"
+* action[+].title = "Plasma Specimen (Xanomeline)"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Study drug record"
+* action[+].title = "Study drug record: Medications Dispensed/Returned"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
