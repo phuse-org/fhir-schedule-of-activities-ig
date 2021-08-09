@@ -23,7 +23,7 @@ Description: "Planned Visit [Visit-9] - removed in Protocol Amendment"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
 * action[=].relatedAction[+].actionId = "VISIT-9-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Heart Rate and Blood Pressure"
+* action[+].title = "Vital Signs: Heart Rate and Blood Pressure"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
 * action[=].relatedAction[+].actionId = "VISIT-9-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after

@@ -72,7 +72,7 @@ Description: "Planned Visit [Visit-1]"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Heart Rate and Blood Pressure"
+* action[+].title = "Vital Signs: Heart Rate and Blood Pressure"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
@@ -87,6 +87,10 @@ Description: "Planned Visit [Visit-1]"
 * action[+].title = "CT Scan"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CT-Scan"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Concomitant Medications"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+* action[=].relatedAction[+].actionId = "VISIT-1-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Laboratory (Hematology)"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
@@ -119,10 +123,6 @@ Description: "Planned Visit [Visit-1]"
 * action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Concomitant Medications"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
-* action[=].relatedAction[+].actionId = "VISIT-1-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"

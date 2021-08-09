@@ -18,6 +18,8 @@ Description: "Planned Visit [Visit-4]"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[+].title = "Apo E genotyping "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping"
+* action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
 * action[+].title = "Vital signs: Weight"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
@@ -26,12 +28,16 @@ Description: "Planned Visit [Visit-4]"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Heart Rate and Blood Pressure"
+* action[+].title = "Vital Signs: Heart Rate and Blood Pressure"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "ECG "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ECG"
+* action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Concomitant Medications "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Laboratory (Hematology)"
@@ -56,10 +62,6 @@ Description: "Planned Visit [Visit-4]"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
-* action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Concomitant Medications "
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
 * action[=].relatedAction[+].actionId = "VISIT-4-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events "
