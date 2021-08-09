@@ -60,8 +60,20 @@ Description: "Planned Visit [Visit-1]"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Vital signs/Temperature"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+* action[+].title = "Vital signs: Height"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Height-PD"
+* action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital signs: Weight"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+* action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital Signs: Temperature"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+* action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Heart Rate and Blood Pressure"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "ECG"

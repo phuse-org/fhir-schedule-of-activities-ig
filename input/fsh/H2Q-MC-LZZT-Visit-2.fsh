@@ -16,8 +16,16 @@ Description: "Planned Visit [Visit-2]"
 * action[+].title = "Record Visit Date"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[=].id = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
-* action[+].title = "Vital signs/Temperature"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+* action[+].title = "Vital signs: Weight"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+* action[=].relatedAction[+].actionId = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital Signs: Temperature"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+* action[=].relatedAction[+].actionId = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Heart Rate and Blood Pressure"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
 * action[=].relatedAction[+].actionId = "VISIT-2-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Ambulatory ECG placed"

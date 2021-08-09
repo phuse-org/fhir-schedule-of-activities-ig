@@ -2,7 +2,7 @@ Instance: H2Q-MC-LZZT-DAD
 InstanceOf: ActivityDefinition
 Description: "Planned Activity [DAD]"
 Usage: #example
-Title: "DAD"
+Title: "Disability Assessment for Dementia"
 * status = #active
 * identifier[+].value = "F.DAD"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
@@ -100,9 +100,172 @@ Title: "Patient number assigned"
 * observationRequirement = Reference(Patient-number-assigned-Observations)
 * observationResultRequirement = Reference(Patient-number-assigned-Observations)
 
-Instance: H2Q-MC-LZZT-Vital-signs-Temperature
+Instance: H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure
+InstanceOf: PlanDefinition
+Description: "Planned Activity [Heart Rate and Blood Pressure]"
+Usage: #example
+Title: "Vital Signs: Heart Rate and Blood Pressure"
+* status = #active
+* identifier[+].value = "F.VS_4"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+* action[+].title = "Supine Pulse"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE"
+* action[+].title = "Supine Systolic BP"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE"
+* action[+].title = "Supine Diastolic BP"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE"
+* action[+].title = "Pulse (after 3m standing)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING"
+* action[+].title = "Systolic BP (after 3m standing)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING"
+* action[+].title = "Diastolic BP (after 3m standing)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING"
+
+
+Instance: H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE
 InstanceOf: ActivityDefinition
-Description: "Planned Activity [Vital signs/Temperature]"
+Description: "Planned Activity [Supine Pulse]"
+Usage: #example
+Title: "Supine Pulse"
+* status = #active
+* identifier[+].value = "I.PULSE_SUPINE"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+
+Instance: H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Supine Systolic BP]"
+Usage: #example
+Title: "Supine Systolic BP"
+* status = #active
+* identifier[+].value = "I.SYSBP_SUPINE"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+Instance: H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Supine Diastolic BP]"
+Usage: #example
+Title: "Supine Diastolic BP"
+* status = #active
+* identifier[+].value = "I.DIABP_SUPINE"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+Instance: H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Supine Pulse]"
+Usage: #example
+Title: "Supine Pulse"
+* status = #active
+* identifier[+].value = "I.PULSE_STANDING"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+Instance: H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Standing Systolic BP]"
+Usage: #example
+Title: "Standing Systolic BP"
+* status = #active
+* identifier[+].value = "I.SYSBP_STANDING"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+Instance: H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Standing Diastolic BP]"
+Usage: #example
+Title: "Standing Diastolic BP"
+* status = #active
+* identifier[+].value = "I.DIABP_STANDING"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+Instance: H2Q-MC-LZZT-Vital-Signs-HEIGHT
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Height]"
+Usage: #example
+Title: "Height"
+* status = #active
+* identifier[+].value = "I.HEIGHT"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+Instance: H2Q-MC-LZZT-Vital-Signs-Height-PD
+InstanceOf: PlanDefinition
+Description: "Planned Activity [Vital signs] - Height"
+Usage: #example
+Title: "Vital signs/Height"
+* status = #active
+* identifier[+].value = "F.VS_1"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+* action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-HEIGHT"
+* action[=].title = "Height"
+
+Instance: H2Q-MC-LZZT-Vital-Signs-WEIGHT
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Weight]"
+Usage: #example
+Title: "Weight"
+* status = #active
+* identifier[+].value = "I.WEIGHT"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+Instance: H2Q-MC-LZZT-Vital-Signs-Weight-PD
+InstanceOf: PlanDefinition
+Description: "Planned Activity [Vital signs] - Weight"
+Usage: #example
+Title: "Vital signs/Weight"
+* status = #active
+* identifier[+].value = "F.VS_2"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+* action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-WEIGHT"
+* action[=].title = "Weight"
+
+Instance: H2Q-MC-LZZT-Vital-Signs-TEMP
+InstanceOf: ActivityDefinition
+Description: "Planned Activity [Body Temperature]"
+Usage: #example
+Title: "Weight"
+* status = #active
+* identifier[+].value = "I.TEMP"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* identifier[=].use = #secondary
+
+
+Instance: H2Q-MC-LZZT-Vital-Signs-Temperature-PD
+InstanceOf: PlanDefinition
+Description: "Planned Activity [Vital signs] - Temperature"
 Usage: #example
 Title: "Vital signs/Temperature"
 * status = #active
@@ -111,8 +274,8 @@ Title: "Vital signs/Temperature"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Vital-signs-Temperature-Observations)
-* observationResultRequirement = Reference(Vital-signs-Temperature-Observations)
+* action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-TEMP"
+* action[=].title = "Body Temperature"
 
 Instance: H2Q-MC-LZZT-Medical-History
 InstanceOf: ActivityDefinition
@@ -155,7 +318,7 @@ Instance: H2Q-MC-LZZT-CIBIC
 InstanceOf: ActivityDefinition
 Description: "Planned Activity [CIBIC+]"
 Usage: #example
-Title: "CIBIC+"
+Title: "Clinician's Interview-Based Impression of Change"
 * status = #active
 * identifier[+].value = "F.CIBC+"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
@@ -169,7 +332,7 @@ Instance: H2Q-MC-LZZT-Laboratory-Chem
 InstanceOf: ActivityDefinition
 Description: "Planned Activity [Laboratory (Chem)]"
 Usage: #example
-Title: "Laboratory (Chem)"
+Title: "Laboratory (Blood Chemistry)"
 * status = #active
 * identifier[+].value = "F.LB_CHEM"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
@@ -183,14 +346,13 @@ Instance: H2Q-MC-LZZT-Laboratory-Hemat
 InstanceOf: ActivityDefinition
 Description: "Planned Activity [Laboratory (Hemat)]"
 Usage: #example
-Title: "Laboratory (Hemat)"
+Title: "Laboratory (Hematology)"
 * status = #active
 * identifier[+].value = "F.LB_HEM"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-// TODO
 * observationRequirement = Reference(Laboratory-Hemat-Observations)
 * observationResultRequirement = Reference(Laboratory-Hemat-Observations)
 
@@ -217,6 +379,9 @@ Title: "TTS Acceptability Survey"
 * observationRequirement = Reference(TTS-Acceptability-Survey-Observations)
 * observationResultRequirement = Reference(TTS-Acceptability-Survey-Observations)
 
+/*
+The Visit Date activity represents an initiating action with a planned event
+*/
 Instance: H2Q-MC-LZZT-Visit-Date
 InstanceOf: ActivityDefinition
 Description: "Planned Activity [Record Visit Date]"
@@ -418,7 +583,7 @@ Instance: H2Q-MC-LZZT-NPI-X
 InstanceOf: ActivityDefinition
 Description: "Planned Activity [NPI-X]"
 Usage: #example
-Title: "NPI-X"
+Title: "Neuropsychiatric Inventory Questionnaire – Revised"
 * status = #active
 * identifier[+].value = "F.NPI-X"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
