@@ -65,5 +65,5 @@ Description: "Planned Visit [Visit-3]"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
-* action[=].relatedAction[+].actionId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[+].actionId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after
