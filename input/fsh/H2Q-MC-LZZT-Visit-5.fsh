@@ -28,7 +28,7 @@ Description: "Planned Visit [Visit-5]"
 * action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
 * action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "ECG "
+* action[+].title = "ECG"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ECG"
 * action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
