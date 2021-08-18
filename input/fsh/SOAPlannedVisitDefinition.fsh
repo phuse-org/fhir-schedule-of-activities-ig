@@ -43,7 +43,9 @@ Usage: #example
 * extension[studyEventOID].valueString = "VISIT1"
 * extension[plannedStudyDay].valueInteger = -21
 * extension[plannedStudyWindow].valueRange.low.value = -22
+* extension[plannedStudyWindow].valueRange.low.code = #d
 * extension[plannedStudyWindow].valueRange.high.value = -20
+* extension[plannedStudyWindow].valueRange.high.code = #d
 
 Instance: Visit2
 InstanceOf: SOAPlannedVisitDefinition
