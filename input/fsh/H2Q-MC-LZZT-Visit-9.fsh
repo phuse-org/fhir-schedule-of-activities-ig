@@ -61,7 +61,7 @@ Description: "Planned Visit [Visit-9] - removed in Protocol Amendment"
 * action[=].relatedAction[+].actionId = "VISIT-10-H2Q-MC-LZZT-NPI-X"
 * action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[=].offsetDuration.value = 2
-* action[=].relatedAction[=].offsetDuration.units = #wk
+* action[=].relatedAction[=].offsetDuration.code = #wk
 * action[+].title = "Concomitant Medications"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
 * action[=].relatedAction[+].actionId = "VISIT-9-H2Q-MC-LZZT-Visit-Date"

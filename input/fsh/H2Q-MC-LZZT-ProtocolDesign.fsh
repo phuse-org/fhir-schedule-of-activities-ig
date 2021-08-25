@@ -15,7 +15,7 @@ Usage: #example
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Study-Visit-1"
 * action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[=].offsetRange.low.value = 14
-* action[=].relatedAction[=].offsetRange.low.unit = d
+* action[=].relatedAction[=].offsetRange.low.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-3"
 * action[=].title = "Visit-3"
 * action[=].description = "Planned Visit [Visit-3]"
