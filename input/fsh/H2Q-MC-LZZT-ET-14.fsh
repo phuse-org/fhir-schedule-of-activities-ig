@@ -2,8 +2,8 @@ Instance: H2Q-MC-LZZT-Study-ET-14
 InstanceOf: SOAPlanDefinition
 Usage: #example
 Title: "ET-14"
-Description: "Planned Visit [ET-14]"
-* identifier[+].value = "ET-14"
+Description: "Planned Visit [ET]"
+* identifier[+].value = "ET"
 * identifier[=].type = #PLAC
 * identifier[=].use = #usual
 * identifier[+].value = "SE.EARLY_TERM_VISIT"
@@ -14,32 +14,77 @@ Description: "Planned Visit [ET-14]"
 * extension[plannedStudyDay].valueInteger = 0
 * status = #active
 * action[+].title = "Record Visit Date"
+* action[=].id = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
-* action[+].title = "ET"
+* action[+].title = "Early Termination"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ET"
-* action[+].title = "Physical examination "
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Physical examination"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Physical-examination"
-* action[+].title = "Vital signs/Temperature "
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
-* action[+].title = "ECG "
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital signs: Weight"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital Signs: Temperature"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital Signs: Heart Rate and Blood Pressure"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "ECG"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ECG"
-* action[+].title = "Concomitant Medications "
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Concomitant Medications"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
-* action[+].title = "Laboratory (Chem/Hemat)"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"
-* action[+].title = "Laboratory (Urinalysis) "
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Urinalysis)"
-* action[+].title = "Study drug record "
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Laboratory (Hematology)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Laboratory (Chemistry)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Laboratory (Urinalysis)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Plasma Specimen (Xanomeline) "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Study drug record: Medications Dispensed/Returned "
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record-ET"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
 * action[+].title = "TTS Acceptability Survey"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"
-* action[+].title = "ADAS-Cog "
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "ADAS-Cog"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
-* action[+].title = "CIBIC+ "
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Clinician's Interview-Based Impression of Change"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
-* action[+].title = "DAD "
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Disability Assessment for Dementia"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-DAD"
-* action[+].title = "NPI-X "
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after

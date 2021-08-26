@@ -14,20 +14,49 @@ Description: "Planned Visit [Visit-5]"
 * extension[plannedStudyDay].valueInteger = 21
 * status = #active
 * action[+].title = "Record Visit Date"
+* action[=].id = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
-* action[+].title = "Vital signs/Temperature "
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
-* action[+].title = "ECG "
+* action[+].title = "Vital signs: Weight"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital Signs: Temperature"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Vital Signs: Heart Rate and Blood Pressure"
+* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "ECG"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ECG"
-* action[+].title = "Concomitant Medications "
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Concomitant Medications"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
-* action[+].title = "Laboratory (Chem/Hemat)"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"
-* action[+].title = "Plasma Specimen "
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Laboratory (Hematology)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Laboratory (Chemistry)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Plasma Specimen (Xanomeline) "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
-* action[+].title = "Study drug record "
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Study drug record: Medications Dispensed/Returned "
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
-* action[+].title = "NPI-X "
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
-* action[+].title = "Adverse events "
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Adverse events"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+* action[=].relatedAction[+].actionId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
