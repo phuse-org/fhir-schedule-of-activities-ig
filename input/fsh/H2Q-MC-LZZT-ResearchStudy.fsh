@@ -8,7 +8,7 @@ Alias: MESH = https://id.nlm.nih.gov/mesh
 Instance: SamGetWell
 InstanceOf: Practitioner
 Title: "Samuel Home, M.D."
-* identifier[0].value = "ABC123"
+* identifier[0].value = "ABC1234"
 * identifier[0].type = #UPIN
 * identifier[0].use = #official
 * active = true
@@ -25,7 +25,7 @@ Title: "Samuel Home, M.D."
 Instance: EliLillyAndCompany
 InstanceOf: Organization
 Title: "Eli Lilly and Company"
-* identifier[0].value = "Eli Lilly and Company"
+* identifier[0].value = "Eli Lilly and Company Inc"
 * identifier[0].use = #official
 * contact[+].purpose = #ADMIN
 * contact[=].telecom[+].system = #url
