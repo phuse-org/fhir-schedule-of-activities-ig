@@ -4,6 +4,9 @@ Description: "H2Q-MC-LZZT-Protocol Schedule of Activities"
 Usage: #example
 * status = #active
 * version = "LZZT_1"
+* identifier[+].value = "H2Q-MC-LZZT-ProtocolDesign-1"
+* identifier[=].type = #PLAC
+* identifier[=].use = #usual
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"
 * action[=].title = "Visit-1"
 * action[=].description = "Planned Visit [Visit-1]"

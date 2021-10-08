@@ -102,7 +102,7 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
 * arm[+].name = "High-dose xanomeline arm"
 * arm[=].type = NCIT#C174266
 * arm[=].description = "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
-* objective[+].name = "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
+* objective[+].name = "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
 * objective[=].type = #primary
 * objective[+].name = "To document the safety profile of the xanomeline TTS."
 * objective[=].type = #primary

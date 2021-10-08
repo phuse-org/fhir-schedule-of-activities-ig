@@ -3,6 +3,9 @@ InstanceOf: SOAPlanDefinition
 Usage: #example
 Title: "Visit-1"
 Description: "Planned Visit [Visit-1]"
+* identifier[+].value = "H2Q-MC-LZZT-Study-Visit-1"
+* identifier[=].type = #PLAC
+* identifier[=].use = #usual
 * identifier[+].value = "VISIT-1"
 * identifier[=].type = #PLAC
 * identifier[=].use = #usual
@@ -113,7 +116,7 @@ Description: "Planned Visit [Visit-1]"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Clinician's Interview-Based Impression of Change"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC"
 * action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Disability Assessment for Dementia"

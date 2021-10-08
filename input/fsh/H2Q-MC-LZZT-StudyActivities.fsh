@@ -316,7 +316,7 @@ Title: "Placebo TTS test"
 
 Instance: H2Q-MC-LZZT-CIBIC
 InstanceOf: ActivityDefinition
-Description: "Planned Activity [CIBIC+]"
+Description: "Planned Activity [CIBIC]"
 Usage: #example
 Title: "Clinician's Interview-Based Impression of Change"
 * status = #active
@@ -388,6 +388,8 @@ Description: "Planned Activity [Record Visit Date]"
 Usage: #example
 Title: "Visit Date"
 * status = #active
+* identifier[+].value = "H2Q-MC-LZZT-Visit-Date"
+* identifier[=].use = #usual
 * identifier[+].value = "F.DOV"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"

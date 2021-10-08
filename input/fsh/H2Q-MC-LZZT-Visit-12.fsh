@@ -51,7 +51,7 @@ Description: "Planned Visit [Visit-12]"
 * action[=].relatedAction[+].actionId = "VISIT-11-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Clinician's Interview-Based Impression of Change"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC"
 * action[=].relatedAction[+].actionId = "VISIT-11-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Disability Assessment for Dementia"

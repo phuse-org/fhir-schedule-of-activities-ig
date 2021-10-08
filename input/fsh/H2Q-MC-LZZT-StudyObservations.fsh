@@ -84,9 +84,9 @@ Title: "Placebo TTS test-Observations"
 
 Instance: H2Q-MC-LZZT-CIBIC-Observations
 InstanceOf: ObservationDefinition
-Description: "Planned Observation(s) [CIBIC+]"
+Description: "Planned Observation(s) [CIBIC]"
 Usage: #example
-Title: "CIBIC+-Observations"
+Title: "CIBIC-Observations"
 * code = #observationCode
 
 Instance: H2Q-MC-LZZT-Laboratory-Chem-Hemat-Observations
