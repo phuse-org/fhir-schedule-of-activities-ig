@@ -13,8 +13,3 @@ Title: "Unplanned Study Visit Range"
 Description: "Unplanned Study Visit Range [Day.min() to Day.max() of SoA]"
 * value[x] only Range
 
-Extension: StudyDesignOID
-Id: study-event-oid
-Title: "Study Event OID"
-Description: "OID for Study Event in Design"
-* value[x] only string
