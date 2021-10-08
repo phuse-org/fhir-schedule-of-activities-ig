@@ -1,4 +1,4 @@
-Instance: H2Q-MC-LZZT-Vitalsigns-Temperature
+Instance: H2Q-MC-LZZT-Vitalsigns-Temperature-VS4
 InstanceOf: SOAPlanDefinition
 Usage: #example
 Title: "VitalSigns/Temperature"
