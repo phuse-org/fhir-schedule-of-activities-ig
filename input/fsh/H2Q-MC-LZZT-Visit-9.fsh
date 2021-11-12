@@ -1,10 +1,9 @@
 Instance: H2Q-MC-LZZT-Study-Visit-9
-InstanceOf: SOAPlanDefinition
+InstanceOf: PlanDefinition
 Usage: #example
 Title: "Visit-9"
 Description: "Planned Visit [Visit-9] - removed in Protocol Amendment"
 * identifier[+].value = "VISIT-9"
-* extension[plannedStudyDay].valueInteger = 84
 * identifier[+].value = "SE.TRT_VISIT_06"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"

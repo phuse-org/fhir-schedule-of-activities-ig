@@ -1,5 +1,5 @@
 Instance: H2Q-MC-LZZT-Study-RT-15
-InstanceOf: SOAPlanDefinition
+InstanceOf: PlanDefinition
 Usage: #example
 Title: "RT-15"
 Description: "Planned Visit [RT]"
@@ -11,7 +11,6 @@ Description: "Planned Visit [RT]"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* extension[plannedStudyDay].valueInteger = 0
 * status = #active
 * action[+].title = "Record Visit Date"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
@@ -48,6 +47,10 @@ Description: "Planned Visit [RT]"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+* action[=].relatedAction[+].actionId = "VISIT-15-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Patient Summary"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-PT-SUMMARY"
 * action[=].relatedAction[+].actionId = "VISIT-15-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events "

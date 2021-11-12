@@ -1,5 +1,5 @@
 Instance: H2Q-MC-LZZT-Study-Visit-4
-InstanceOf: SOAPlanDefinition
+InstanceOf: PlanDefinition
 Usage: #example
 Title: "Visit-4"
 Description: "Planned Visit [Visit-4]"
@@ -11,7 +11,6 @@ Description: "Planned Visit [Visit-4]"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* extension[plannedStudyDay].valueInteger = 14
 * status = #active
 * action[+].title = "Record Visit Date"
 * action[=].id = "VISIT-4-H2Q-MC-LZZT-Visit-Date"

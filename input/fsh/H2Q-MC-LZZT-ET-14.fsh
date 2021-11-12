@@ -1,8 +1,8 @@
 Instance: H2Q-MC-LZZT-Study-ET-14
-InstanceOf: SOAPlanDefinition
+InstanceOf: PlanDefinition
 Usage: #example
 Title: "ET-14"
-Description: "Planned Visit [ET]"
+Description: "Early Termination Visit [ET]"
 * identifier[+].value = "ET"
 * identifier[=].type = #PLAC
 * identifier[=].use = #usual
@@ -11,7 +11,6 @@ Description: "Planned Visit [ET]"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* extension[plannedStudyDay].valueInteger = 0
 * status = #active
 * action[+].title = "Record Visit Date"
 * action[=].id = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
@@ -61,7 +60,7 @@ Description: "Planned Visit [ET]"
 * action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Study drug record: Medications Dispensed/Returned "
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record-ET"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
 * action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "TTS Acceptability Survey"
@@ -84,7 +83,11 @@ Description: "Planned Visit [ET]"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
 * action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Adverse events "
+* action[+].title = "Patient Summary"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-PT-SUMMARY"
+* action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
+* action[=].relatedAction[=].relationship = #after
+* action[+].title = "Adverse events"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
 * action[=].relatedAction[+].actionId = "VISIT-14-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
