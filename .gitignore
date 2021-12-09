@@ -8,4 +8,4 @@ Thumbs.db
 .nvmrc
 .ruby-version
 node_modules
-
+.tool-versions
