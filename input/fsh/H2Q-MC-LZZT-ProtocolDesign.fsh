@@ -38,6 +38,7 @@ Usage: #example
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-5"
 * action[=].title = "Visit-5"
 * action[=].description = "Planned Visit [Visit-5]"
+* action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[=].offsetRange.low.value = 28
 * action[=].relatedAction[=].offsetRange.low.code = #d
