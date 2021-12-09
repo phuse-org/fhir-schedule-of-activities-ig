@@ -12,9 +12,9 @@ Usage: #example
 * action[=].description = "Planned Visit [Visit-1]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #before
-* action[=].relatedAction[=].offsetRange.low.value = 14
+* action[=].relatedAction[=].offsetRange.low.value = 12
 * action[=].relatedAction[=].offsetRange.low.code = #d
-* action[=].relatedAction[=].offsetRange.high.value = 12
+* action[=].relatedAction[=].offsetRange.high.value = 15
 * action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-2"
 * action[=].title = "Visit-2"
