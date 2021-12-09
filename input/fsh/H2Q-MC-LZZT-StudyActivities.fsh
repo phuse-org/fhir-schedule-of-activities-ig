@@ -594,3 +594,15 @@ Title: "Neuropsychiatric Inventory Questionnaire – Revised"
 * observationRequirement = Reference(NPI-X-Observations)
 * observationResultRequirement = Reference(NPI-X-Observations)
 
+Instance: H2Q-MC-LZZT-PT-SUMMARY
+InstanceOf: ActivityDefinition
+Description: "Patient Summary [DS_SUMMARY]"
+Usage: #example
+Title: "Patient Summary"
+* status = #active
+* identifier[+].value = "F.DS_SUMMARY"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
+* identifier[=].type.coding[0].display = "OID"
+* observationRequirement = Reference(H2Q-MC-LZZT-PT-Summary-Observations)
+
