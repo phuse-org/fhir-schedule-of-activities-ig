@@ -760,7 +760,7 @@ A couple of notes:
 				<Description>
 					<TranslatedText xml:lang="en-US">Patient Summary</TranslatedText>
 				</Description>
-				<ItemGroupRef ItemGroupOID="IG.DS_SUMMARY" Mandatory="Yes" OrderNumber="1"/>
+				<ItemGroupRef ItemGroupOID="IG.DS1001" Mandatory="Yes" OrderNumber="1"/>
 			</FormDef>
 			<FormDef OID="F.EX_1" Name="Study Drug Exposure" Repeating="No">
 				<Description>
@@ -1322,6 +1322,24 @@ A couple of notes:
 				<ItemRef ItemOID="I.SYSBP_STANDING" OrderNumber="5" Mandatory="No"/>
 				<ItemRef ItemOID="I.DIABP_STANDING" OrderNumber="5" Mandatory="No"/>
 			</ItemGroupDef>
+			<ItemDef OID="I.DSTERM" Name="Primary Reason for Ending Participation" DataType="integer" Origin="CRF" SASFieldName="DSTERM">
+				<Description>
+					<TranslatedText xml:lang="en">PRIMARY REASON FOR ENDING PARTICIPATION IN THE STUDY</TranslatedText>
+				</Description>
+				<Question>
+					<TranslatedText xml:lang="en">CHECK ONE PRIMARY REASON FOR ENDING PARTICIPATION IN THE STUDY</TranslatedText>
+				</Question>
+				<CodeListRef CodeListOID="DSTERM_REAS"/>
+			</Item>
+			<ItemDef OID="I.DTHDAT" Name="Date of Death" DataType="integer" Origin="CRF" SASFieldName="DT">
+				<Description>
+					<TranslatedText xml:lang="en">PRIMARY REASON FOR ENDING PARTICIPATION IN THE STUDY</TranslatedText>
+				</Description>
+				<Question>
+					<TranslatedText xml:lang="en">CHECK ONE PRIMARY REASON FOR ENDING PARTICIPATION IN THE STUDY</TranslatedText>
+				</Question>
+				<CodeListRef CodeListOID="DSTERM_REAS"/>
+			</Item>
 			<ItemDef OID="I.ACITM01" Name="WORD RECALL TASK" DataType="integer" Origin="CRF" SASFieldName="ACITM01">
 				<Description>
 					<TranslatedText xml:lang="en-US">WORD RECALL TASK</TranslatedText>
