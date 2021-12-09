@@ -208,3 +208,10 @@ Usage: #example
 Title: "NPI-X-Observations"
 * code = #observationCode
 
+Instance: H2Q-MC-LZZT-PT-Summary-Observations
+InstanceOf: ObservationDefinition
+Description: "Planned Observation(s) [Patient Summary]"
+Usage: #example
+Title: "Patient Summary"
+* code = #observationCode
+
