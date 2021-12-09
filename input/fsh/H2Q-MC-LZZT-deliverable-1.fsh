@@ -13,7 +13,7 @@ Description: "First Deliverable for the PHUSE Project"
 * entry[=].request.method = #POST
 * entry[=].request.url = "Organization"
 * entry[+].resource = H2Q-MC-LZZT-ProtocolDesign
-* entry[=].fullUrl = "SOAPlanDefinition/H2Q-MC-LZZT-ProtocolDesign"
+* entry[=].fullUrl = "PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"
 * entry[=].request.method = #POST
 * entry[=].request.url = "PlanDefinition"
 * entry[+].resource = H2Q-MC-LZZT-ResearchStudy

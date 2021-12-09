@@ -5,7 +5,7 @@ Usage: #example
 * type = #person
 * actual = true
 
-// Inc
+// Inclusion Criteria
 
 * characteristic[+].code = #inclusion
 * characteristic[=].valueCodeableConcept = #Inc01
@@ -39,7 +39,7 @@ Usage: #example
 * characteristic[=].valueCodeableConcept = #Inc08
 * characteristic[=].exclude = false
 
-//  Exc
+//  Exclusion Events 
 
 * characteristic[+].code = #exclusion
 * characteristic[=].valueCodeableConcept = #Exc01
