@@ -12,6 +12,11 @@ Usage: #example
 * characteristic[=].exclude = false
 * characteristic[=].valueBoolean = true
 * characteristic[+].code.text = "Diagnosis of probable AD as defined by National Institute of Neurological and Communicative Disorders and Stroke (NINCDS) and the Alzheimer’s Disease and Related Disorders Association (ADRDA) guidelines"
+// This is purely for record basis - not validated
+* characteristic[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-expression"
+* characteristic[=].extension.valueExpression.language = #text/cql
+* characteristic[=].extension.valueExpression.expression = "exists [Condition: Alzheimer's disease]"
+* characteristic.exclude = false
 * characteristic[=].exclude = false
 * characteristic[=].valueBoolean = true
 * characteristic[+].code.text = "MMSE score of 10 to 23."
