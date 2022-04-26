@@ -20,7 +20,6 @@ Description: "Planned Visit [Visit-1]"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
 * action[=].id = "VISIT-1-H2Q-MC-LZZT-Visit-Date"
 // This should be the activity that initiates all other activities
-// * action[=].trigger = 
 * action[+].title = "Informed Consent"
 * action[=].id = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"
