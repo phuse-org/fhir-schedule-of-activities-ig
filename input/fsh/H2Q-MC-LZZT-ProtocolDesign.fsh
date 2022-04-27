@@ -33,70 +33,90 @@ Usage: #example
 * action[=].description = "Planned Visit [Visit-4]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 14
+* action[=].relatedAction[=].offsetRange.low.value = 12
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 15
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-5"
 * action[=].title = "Visit-5"
 * action[=].description = "Planned Visit [Visit-5]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 28
+* action[=].relatedAction[=].offsetRange.low.value = 26
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 30
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"
 * action[=].title = "Visit-6"
 * action[=].description = "Planned Visit [Visit-6]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 35
+* action[=].relatedAction[=].offsetRange.low.value = 33
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 37
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-7"
 * action[=].title = "Visit-7"
 * action[=].description = "Planned Visit [Visit-7]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 42
+* action[=].relatedAction[=].offsetRange.low.value = 40
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 44
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-8"
 * action[=].title = "Visit-8"
 * action[=].description = "Planned Visit [Visit-8]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 56
+* action[=].relatedAction[=].offsetRange.low.value = 54
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 58
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"
 * action[=].title = "Visit-9"
 * action[=].description = "Planned Visit [Visit-9]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 84
+* action[=].relatedAction[=].offsetRange.low.value = 82
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 86
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-10"
 * action[=].title = "Visit-10"
 * action[=].description = "Planned Visit [Visit-10]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 112
+* action[=].relatedAction[=].offsetRange.low.value = 110
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 112
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-11"
 * action[=].title = "Visit-11"
 * action[=].description = "Planned Visit [Visit-11]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 140
+* action[=].relatedAction[=].offsetRange.low.value = 138
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 142
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-12"
 * action[=].title = "Visit-12"
 * action[=].description = "Planned Visit [Visit-12]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 168
+* action[=].relatedAction[=].offsetRange.low.value = 166
 * action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 170
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-13"
 * action[=].title = "Visit-13"
 * action[=].description = "Planned Visit [Visit-13]"
 * action[=].relatedAction[+].actionId = "Index-Activity-Event"
 * action[=].relatedAction[=].relationship = #after
-* action[=].relatedAction[=].offsetRange.low.value = 182
+* action[=].relatedAction[=].offsetRange.low.value = 180
+* action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.low.value = 184
 * action[=].relatedAction[=].offsetRange.low.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-ET-14"
 * action[=].title = "ET-14"
