@@ -73,6 +73,15 @@ Usage: #example
 * action[=].relatedAction[=].offsetRange.low.code = #d
 * action[=].relatedAction[=].offsetRange.high.value = 58
 * action[=].relatedAction[=].offsetRange.high.code = #d
+* action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-8-1"
+* action[=].title = "Visit-8.1"
+* action[=].description = "Telephone Contact [Post Visit-8]"
+* action[=].relatedAction[+].actionId = "Index-Activity-Event"
+* action[=].relatedAction[=].relationship = #after
+* action[=].relatedAction[=].offsetRange.low.value = 68
+* action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 72
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"
 * action[=].title = "Visit-9"
 * action[=].description = "Planned Visit [Visit-9]"
@@ -81,6 +90,15 @@ Usage: #example
 * action[=].relatedAction[=].offsetRange.low.value = 82
 * action[=].relatedAction[=].offsetRange.low.code = #d
 * action[=].relatedAction[=].offsetRange.high.value = 86
+* action[=].relatedAction[=].offsetRange.high.code = #d
+* action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9-1"
+* action[=].title = "Visit-9.1"
+* action[=].description = "Telephone Contact Visit [Post Visit-9]"
+* action[=].relatedAction[+].actionId = "Index-Activity-Event"
+* action[=].relatedAction[=].relationship = #after
+* action[=].relatedAction[=].offsetRange.low.value = 96
+* action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 100
 * action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-10"
 * action[=].title = "Visit-10"
@@ -91,6 +109,15 @@ Usage: #example
 * action[=].relatedAction[=].offsetRange.low.code = #d
 * action[=].relatedAction[=].offsetRange.high.value = 112
 * action[=].relatedAction[=].offsetRange.high.code = #d
+* action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-10-1"
+* action[=].title = "Visit-10.1"
+* action[=].description = "Telephone Contact Visit [Post Visit-10]"
+* action[=].relatedAction[+].actionId = "Index-Activity-Event"
+* action[=].relatedAction[=].relationship = #after
+* action[=].relatedAction[=].offsetRange.low.value = 124
+* action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 126
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-11"
 * action[=].title = "Visit-11"
 * action[=].description = "Planned Visit [Visit-11]"
@@ -99,6 +126,15 @@ Usage: #example
 * action[=].relatedAction[=].offsetRange.low.value = 138
 * action[=].relatedAction[=].offsetRange.low.code = #d
 * action[=].relatedAction[=].offsetRange.high.value = 142
+* action[=].relatedAction[=].offsetRange.high.code = #d
+* action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-11-1"
+* action[=].title = "Visit-11.1"
+* action[=].description = "Telephone Contact Visit [Post Visit-11]"
+* action[=].relatedAction[+].actionId = "Index-Activity-Event"
+* action[=].relatedAction[=].relationship = #after
+* action[=].relatedAction[=].offsetRange.low.value = 152
+* action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 156
 * action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-12"
 * action[=].title = "Visit-12"
@@ -116,8 +152,8 @@ Usage: #example
 * action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[=].offsetRange.low.value = 180
 * action[=].relatedAction[=].offsetRange.low.code = #d
-* action[=].relatedAction[=].offsetRange.low.value = 184
-* action[=].relatedAction[=].offsetRange.low.code = #d
+* action[=].relatedAction[=].offsetRange.high.value = 184
+* action[=].relatedAction[=].offsetRange.high.code = #d
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-ET-14"
 * action[=].title = "ET-14"
 * action[=].description = "Planned Visit [ET-14]"
