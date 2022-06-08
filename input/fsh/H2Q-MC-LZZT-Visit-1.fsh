@@ -15,6 +15,12 @@ Description: "Planned Visit [Visit-1]"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].type.text = "OID"
 * identifier[=].use = #secondary
+* identifier[+].value = "1.0"
+* identifier[=].system = "http://www.cdisc.org/ns/sdtm/TV#"
+* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/sdtm/TV#"
+* identifier[=].type.coding[0].display = "VISNUM"
+* identifier[=].type.text = "VISNUM"
+* identifier[=].use = #secondary
 * status = #active
 * action[+].title = "Record Visit Date"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
