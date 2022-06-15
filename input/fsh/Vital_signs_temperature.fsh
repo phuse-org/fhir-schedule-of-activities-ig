@@ -12,7 +12,6 @@ Description: "Vital signs including temperature, blood pressure and heart rate"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].type.text = "OID"
 * identifier[=].use = #secondary
-* extension[plannedStudyDay].valueInteger = -14
 * status = #active
 * action[+].title = "Heart Rate"
 * action[=].definitionUri = "ActivityDefinition/Heart_Rate"

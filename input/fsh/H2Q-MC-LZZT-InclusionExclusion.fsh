@@ -1,5 +1,5 @@
 Instance: H2Q-MC-LZZT-InclusionExclusion
-InstanceOf: ResearchStudyInclusionExclusion
+InstanceOf: Group
 Description: "H2Q-MC-LZZT Inclusion Exclusion Criteria"
 Usage: #example
 * type = #person
