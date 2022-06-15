@@ -1,20 +1,32 @@
+Extension: RangeTarget
+Id: soa-plan-target
+Title: "Range Target"
+Description: "Provides a fixed target date for a Range."
+// Limit the context to Range
+* ^context[+].type = #element
+* ^context[=].expression = "Range"
+* value[x] 1..1
+* value[x] only SimpleQuantity
+
 Profile:        SOAPlanDefinition
 Parent:         PlanDefinition
 Id:             SOA-PlanDefinition
 Title:          "SOA PlanDefinition"
 Description:    "Schedule of Activities PlanDefinition Extensions"
-* extension contains PlannedStudyDay named plannedStudyDay 0..1
-* extension contains PlannedStudyDayWindow named plannedStudyDayWindow 0..1
+* action.relatedAction.offsetRange.extension contains RangeTarget named target 0..1
 
-Extension: PlannedStudyDayWindow
-Id: plannedStudyDayWindow
-Title: "Planned Study Day Window"
-Description: "Planned Study Day Window (Times)"
-* value[x] only Range
-
-Profile:        ResearchStudyInclusionExclusion
-Parent:         Group
-Id:             ResearchStudy-Inclusion-Exclusion
-Title:          "Research Study Inclusion Exclusion"
-Description:    "Research Study Inclusion Exclusion Criteria"
-
+Instance: Visit1PlanDefinition
+InstanceOf: SOA-PlanDefinition
+Title: "Screening - Day -21"
+Description: "Screening Visit - Day -21"
+Usage: #example
+* status = #active
+* action[+].relatedAction[+].offsetRange.low.value = 19
+* action[=].relatedAction[=].offsetRange.low.unit = #d
+* action[=].relatedAction[=].offsetRange.high.value = 24
+* action[=].relatedAction[=].offsetRange.low.unit = #d
+* action[=].relatedAction[=].offsetRange.extension[soa-plan-target].valueQuantity.value = 21
+* action[=].relatedAction[=].offsetRange.extension[soa-plan-target].valueQuantity.unit = #d
+* action[=].relatedAction[=].actionId = "Index-Activity-Event"
+* action[=].relatedAction[=].relationship = #before
+* action[+].id = "Index-Activity-Event"
