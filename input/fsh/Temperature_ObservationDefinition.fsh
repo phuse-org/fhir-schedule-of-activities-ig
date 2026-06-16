@@ -15,3 +15,4 @@ Description: "Observation of Temperature Measurement"
 * code.coding[+].code = #8310-5
 * code.coding[=].system = "http://loinc.org"
 * code.coding[=].display = "Temperature taking (procedure)"
+* status = #active

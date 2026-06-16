@@ -7,3 +7,4 @@ Title: "Temperature-Observation"
 * identifier[+].value = "703421000"
 * identifier[=].system = "http://snomed.info/sct"
 * identifier[=].use = #usual
+* status = #active

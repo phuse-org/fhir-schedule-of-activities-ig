@@ -1,166 +1,165 @@
 Instance: H2Q-MC-LZZT-InclusionExclusion
-InstanceOf: ResearchStudyInclusionExclusion
+InstanceOf: Group
 Description: "H2Q-MC-LZZT Inclusion Exclusion Criteria"
 Usage: #example
 * type = #person
-* actual = true
 
 // Inc
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc01
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc01
+  * exclude = false
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc02
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc02
+  * exclude = false
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc03
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc03
+  * exclude = false
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc04
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc04
+  * exclude = false
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc05
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc05
+  * exclude = false
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc06
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc06
+  * exclude = false
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc07
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc07
+  * exclude = false
 
 * characteristic[+].code = #inclusion
-* characteristic[=].valueCodeableConcept = #Inc08
-* characteristic[=].exclude = false
+  * valueCodeableConcept = #Inc08
+  * exclude = false
 
 //  Exc
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc01
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc01
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc02
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc02
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc03
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc03
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc04
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc04
+  * exclude = true
 
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc05
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc05
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc06
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc06
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc07
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc07
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc08
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc08
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc08
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc09
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc10
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc10
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc11
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc11
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc12
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc12
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc13
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc13
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc14
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc14
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc15
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc15
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc16
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc16
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc17
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc17
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc18
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc18
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc19
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc19
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc20
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc20
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc21
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc21
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc22
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc22
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc23
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc23
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc24
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc24
+  * exclude = true
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc25
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc25
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc26
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc26
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc27
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc27
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc28
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc28
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc29
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc29
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc30
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc30
+  * exclude = true
 
 * characteristic[+].code = #exclusion
-* characteristic[=].valueCodeableConcept = #Exc31
-* characteristic[=].exclude = true
+  * valueCodeableConcept = #Exc31
+  * exclude = true

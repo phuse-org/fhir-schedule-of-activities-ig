@@ -12,7 +12,7 @@ Usage: #example
 * action[=].title = "Visit-2"
 * action[=].description = "Planned Visit [Visit-2]"
 * action[=].id = "H2Q-MC-LZZT-Study-Visit-2"
-* action[=].relatedAction[+].actionId = "H2Q-MC-LZZT-Study-Visit-1"
+* action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Study-Visit-1"
 * action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[=].offsetRange.low.value = 14
 * action[=].relatedAction[=].offsetRange.low.code = #d

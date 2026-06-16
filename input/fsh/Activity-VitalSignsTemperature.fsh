@@ -11,12 +11,10 @@ Title: "Vital Signs/Temperature"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
 
-* observationRequirement = Reference(Temperature-Observation-SNOMED)
-* observationResultRequirement = Reference(Temperature-Observation-LOINC)
+* observationRequirement = "ObservationDefinition/Temperature-Observation-SNOMED"
+* observationResultRequirement = "ObservationDefinition/Temperature-Observation-LOINC"
 
-* observationRequirement = Reference(VitalSigns-Observation)
-* observationResultRequirement = Reference(VitalSigns-Observation)
-* observationRequirement = Reference(VitalSigns-Observation)
-* observationResultRequirement = Reference(VitalSigns-Observation)
-* observationRequirement = Reference(VitalSigns-Observation)
-* observationResultRequirement = Reference(VitalSigns-Observation)
+* observationRequirement = "ObservationDefinition/VitalSigns-Observation"
+* observationResultRequirement = "ObservationDefinition/VitalSigns-Observation"
+* observationRequirement = "ObservationDefinition/VitalSigns-Observation"
+* observationResultRequirement = "ObservationDefinition/VitalSigns-Observation"

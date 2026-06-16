@@ -53,31 +53,34 @@ Usage: #example
 * status = #completed
 * primaryPurposeType = #treatment
 * phase = #phase-3
-* category[0] = NCIT#C98388 "Interventional Study"
-* category[1] = NCIT#C15417 "Randomized Clinical Trial"
-* category[2] = NCIT#C15228 "Double Blind Study"
-* category[3] = NCIT#C49648 "Placebo Control"
-* category[4] = NCIT#C82639 "Parallel Study"
-* focus[0] = NCIT#C152926 "Xanomeline"
-* focus[1] = NCIT#C149996 "Transdermal Patch Dosage Form"
-* focus[2] = PUBMED#9109749 "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"
-* condition[+] = #26929004 "Alzheimer's Disease (Disorder)"
+// * category[0] = NCIT#C98388 "Interventional Study"
+// * category[1] = NCIT#C15417 "Randomized Clinical Trial"
+// * category[2] = NCIT#C15228 "Double Blind Study"
+// * category[3] = NCIT#C49648 "Placebo Control"
+// * category[4] = NCIT#C82639 "Parallel Study"
+* classifier[+]
+  * coding[+].system = "http://terminology.hl7.org/CodeSystem/research-study-classifier"
+  * coding[=].code = "fda-regulated-drug"
+// * focus[0] = NCIT#C152926 "Xanomeline"
+// * focus[1] = NCIT#C149996 "Transdermal Patch Dosage Form"
+// * focus[2] = PUBMED#9109749 "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"
+// * condition[+] = #26929004 "Alzheimer's Disease (Disorder)"
 // * condition[+].coding[+].system = "http://hl7.org/fhir/sid/icd-10"
 // * condition[=].coding[=].code = "G30" 
 // * condition[=].coding[=].display = "Alzheimer's disease"
 //* condition[2] = MEDDRA#10001896 "Alzheimer's disease"
 // TODO: Contact should include an address and URL
-* contact[0].name = "Bob James, Ph.D."
-* contact[0].telecom.value = "555-555-5555"
-* contact[0].telecom.system = #phone
-* contact[0].telecom.use = #work
-* relatedArtifact[+].type = #documentation
-* relatedArtifact[=].label = "Arch Neurol.1997;54(4):465-473"
-* relatedArtifact[=].display = "Arch Neurol.1997;54(4):465-473"
-* relatedArtifact[=].citation = "Bodick NC, Offen WW, Levey AI, et al. Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease. Arch Neurol. 1997;54(4):465-473. doi:10.1001/archneur.1997.00550160091022"
-* relatedArtifact[+].type = #documentation
-* relatedArtifact[=].label = "Protocol H2Q-MC-LZZT(c)"
-* relatedArtifact[=].url = "https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"
+// * contact[0].name = "Bob James, Ph.D."
+// * contact[0].telecom.value = "555-555-5555"
+// * contact[0].telecom.system = #phone
+// * contact[0].telecom.use = #work
+// * relatedArtifact[+].type = #documentation
+// * relatedArtifact[=].label = "Arch Neurol.1997;54(4):465-473"
+// * relatedArtifact[=].display = "Arch Neurol.1997;54(4):465-473"
+// * relatedArtifact[=].citation = "Bodick NC, Offen WW, Levey AI, et al. Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease. Arch Neurol. 1997;54(4):465-473. doi:10.1001/archneur.1997.00550160091022"
+// * relatedArtifact[+].type = #documentation
+// * relatedArtifact[=].label = "Protocol H2Q-MC-LZZT(c)"
+// * relatedArtifact[=].url = "https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"
 // keywords
 * keyword[+].coding[+] = MESH#D018721
 * keyword[=].text = "Selective M1 muscarinic agonists"
@@ -90,18 +93,16 @@ Usage: #example
 ### Protocol H2Q-MC-LZZT(c) 
 Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease
 """
-// TODO: Collaborator also?
-* principalInvestigator[Practitioner] = Reference(Practitioner/SamGetWell)
 * reasonStopped = #accrual-goal-met 
-* arm[+].name = "Placebo"
-* arm[=].type = NCIT#C49648
-* arm[=].description = "Placebo arm"
-* arm[+].name = "Low-dose xanomeline arm"
-* arm[=].type = NCIT#C174266
-* arm[=].description = "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"
-* arm[+].name = "High-dose xanomeline arm"
-* arm[=].type = NCIT#C174266
-* arm[=].description = "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
+// * arm[+].name = "Placebo"
+// * arm[=].type = NCIT#C49648
+// * arm[=].description = "Placebo arm"
+// * arm[+].name = "Low-dose xanomeline arm"
+// * arm[=].type = NCIT#C174266
+// * arm[=].description = "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"
+// * arm[+].name = "High-dose xanomeline arm"
+// * arm[=].type = NCIT#C174266
+// * arm[=].description = "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
 * objective[+].name = "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
 * objective[=].type = #primary
 * objective[+].name = "To document the safety profile of the xanomeline TTS."
@@ -115,6 +116,9 @@ Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Pa
 * objective[+].name = "To assess the treatment response as a function of Apo E genotype."
 * objective[=].type = #secondary
 // * inclusion/exclusion criteria
-* enrollment[0] = Reference(Group/H2Q-MC-LZZT-ResearchStudy-Inclusion)
-* enrollment[1] = Reference(Group/H2Q-MC-LZZT-ResearchStudy-Exclusion)
-* sponsor[Organization] = Reference(Organization/EliLillyAndCompany)
+* associatedParty[+]
+  * party = Reference(Organization/EliLillyAndCompany)
+  * role = #lead-sponsor
+* associatedParty[+]
+  * party = Reference(Practitioner/SamGetWell)
+  * role = #primary-investigator

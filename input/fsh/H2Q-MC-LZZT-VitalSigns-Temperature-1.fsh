@@ -1,5 +1,5 @@
 Instance: H2Q-MC-LZZT-Vitalsigns-Temperature
-InstanceOf: SOAStudyActivityDefinition
+InstanceOf: ActivityDefinition
 Usage: #example
 Title: "Temperature Measurement"
 Description: "Temperature Measurement"
