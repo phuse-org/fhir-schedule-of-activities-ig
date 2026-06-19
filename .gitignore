@@ -9,3 +9,6 @@ Thumbs.db
 .ruby-version
 node_modules
 
+
+# Python
+__pycache__/
