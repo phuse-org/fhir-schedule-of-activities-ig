@@ -71,4 +71,15 @@
 10. Change back to the `main` branch
 11. Pull the changes from the remote
 
+## Generating activity FSH
+
+Some ActivityDefinitions and their ObservationDefinitions are generated from
+CSV definitions. Regenerate before building when the CSVs change:
+
+    python3 scripts/gen-activities.py
+
+This writes `input/fsh/generated/Measurement-Activities.gen.fsh` (DO NOT EDIT).
+Run the generator's tests with:
+
+    python3 scripts/test_gen_activities.py
 
