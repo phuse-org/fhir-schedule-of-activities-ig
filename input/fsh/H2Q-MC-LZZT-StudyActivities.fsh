@@ -254,20 +254,6 @@ Title: "Apo E genotyping"
 * observationRequirement = "ObservationDefinition/Apo-E-genotyping-Observations"
 * observationResultRequirement = "ObservationDefinition/Apo-E-genotyping-Observations"
 
-Instance: H2Q-MC-LZZT-TTS-Acceptability-Survey
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [TTS Acceptability Survey]"
-Usage: #example
-Title: "TTS Acceptability Survey"
-* status = #active
-* identifier[+].value = "F.TTSACC"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-* observationRequirement = "ObservationDefinition/TTS-Acceptability-Survey-Observations"
-* observationResultRequirement = "ObservationDefinition/TTS-Acceptability-Survey-Observations"
-
 /*
 The Visit Date activity represents an initiating action with a planned event
 */

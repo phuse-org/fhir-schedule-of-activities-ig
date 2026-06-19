@@ -48,7 +48,7 @@ Description: "Planned Visit [Visit-13]"
 * action[=].relatedAction[+].targetId = "VISIT-13-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "TTS Acceptability Survey"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"
+* action[=].definitionCanonical = Canonical(H2Q-MC-LZZT-Questionnaire-TTS-Acceptability-Survey)
 * action[=].relatedAction[+].targetId = "VISIT-13-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"

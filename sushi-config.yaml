@@ -100,7 +100,7 @@ groups:
     - ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem
     - ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat
     - ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping
-    - ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey
+    - Questionnaire/H2Q-MC-LZZT-Questionnaire-TTS-Acceptability-Survey
     - ActivityDefinition/H2Q-MC-LZZT-Visit-Date
     - ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen
     - ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol
