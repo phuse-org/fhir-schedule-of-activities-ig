@@ -33,3 +33,10 @@ Description: "Temperature Measurement"
 * bodySite.coding[=].system = "http://snomed.info/sct"
 * bodySite.coding[=].display = "Tympanic membrane structure"
 
+* observationRequirement = "ObservationDefinition/Temperature-Observation-SNOMED"
+* observationResultRequirement = "ObservationDefinition/Temperature-Observation-LOINC"
+
+* observationRequirement = "ObservationDefinition/VitalSigns-Observation"
+* observationResultRequirement = "ObservationDefinition/VitalSigns-Observation"
+* observationRequirement = "ObservationDefinition/VitalSigns-Observation"
+* observationResultRequirement = "ObservationDefinition/VitalSigns-Observation"

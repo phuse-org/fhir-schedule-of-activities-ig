@@ -59,8 +59,22 @@ Usage: #example
 // * category[3] = NCIT#C49648 "Placebo Control"
 // * category[4] = NCIT#C82639 "Parallel Study"
 * classifier[+]
-  * coding[+].system = "http://terminology.hl7.org/CodeSystem/research-study-classifier"
-  * coding[=].code = "fda-regulated-drug"
+  * coding[+]
+    * system = "http://terminology.hl7.org/CodeSystem/research-study-classifier"
+    * code = #fda-regulated-drug
+    * display = "FDA Regulated Drug"
+* studyDesign[+]
+  * coding[+]
+    * system = "https://fevir.net/sevco"
+    * code = #01001
+    * display = "interventional research"
+  * text = "interventional research"
+* studyDesign[+]
+  * coding[+]
+    * system = "https://fevir.net/sevco"
+    * code = #01003
+    * display = "randomized assignment"
+  * text = "randomized assignment"
 // * focus[0] = NCIT#C152926 "Xanomeline"
 // * focus[1] = NCIT#C149996 "Transdermal Patch Dosage Form"
 // * focus[2] = PUBMED#9109749 "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"
@@ -93,28 +107,31 @@ Usage: #example
 ### Protocol H2Q-MC-LZZT(c) 
 Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer’s Disease
 """
-* reasonStopped = #accrual-goal-met 
-// * arm[+].name = "Placebo"
-// * arm[=].type = NCIT#C49648
-// * arm[=].description = "Placebo arm"
-// * arm[+].name = "Low-dose xanomeline arm"
-// * arm[=].type = NCIT#C174266
-// * arm[=].description = "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"
-// * arm[+].name = "High-dose xanomeline arm"
-// * arm[=].type = NCIT#C174266
-// * arm[=].description = "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
-* objective[+].name = "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
-* objective[=].type = #primary
-* objective[+].name = "To document the safety profile of the xanomeline TTS."
-* objective[=].type = #primary
-* objective[+].name = "To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas."
-* objective[=].type = #secondary
-* objective[+].name = "To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas."
-* objective[=].type = #secondary
-* objective[+].name = "To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment."
-* objective[=].type = #secondary
-* objective[+].name = "To assess the treatment response as a function of Apo E genotype."
-* objective[=].type = #secondary
+* progressStatus[+]
+  * state = #completed
+  * actual = true
+  * period
+    * start = "2006-01-01"
+    * end = "2009-01-01"
+* whyStopped = #accrual-goal-met 
+* objective[+]
+  * name = "To determine if there is a statistically significant relationship (overall Type 1 error rate, α=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
+  * type = #primary
+* objective[+]
+  * name = "To document the safety profile of the xanomeline TTS."
+  * type = #primary
+* objective[+]
+  * name = "To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas."
+  * type = #secondary
+* objective[+]
+  * name = "To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas."
+  * type = #secondary
+* objective
+  * name = "To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer’s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment."
+  * type = #secondary
+* objective[+]
+  * name = "To assess the treatment response as a function of Apo E genotype."
+  * type = #secondary
 // * inclusion/exclusion criteria
 * associatedParty[+]
   * party = Reference(Organization/EliLillyAndCompany)

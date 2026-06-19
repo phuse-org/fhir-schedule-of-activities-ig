@@ -4,7 +4,7 @@ Title: "H2Q-MC-LZZT Inclusion Criteria"
 Description: "H2Q-MC-LZZT Inclusion Criteria"
 Usage: #example
 * type = #person
-* actual = false
+* membership = #definitional
 * characteristic[+].code.text = "Males and postmenopausal females at least 50 years of age."
 * characteristic[=].exclude = false
 * characteristic[=].valueBoolean = true
@@ -36,7 +36,7 @@ Title: "H2Q-MC-LZZT Exclusion Criteria"
 Description: "H2Q-MC-LZZT Exclusion Criteria"
 Usage: #example
 * type = #person
-* actual = false
+* membership = #definitional
 * characteristic[+].code.text = "Persons who have previously completed or withdrawn from this study or any other study investigating xanomeline TTS or the oral formulation of xanomeline."
 * characteristic[=].exclude = true
 * characteristic[=].valueBoolean = true

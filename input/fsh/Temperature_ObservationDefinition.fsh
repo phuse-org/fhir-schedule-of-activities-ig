@@ -3,16 +3,21 @@ InstanceOf: ObservationDefinition
 Usage: #example
 Title: "Temperature Measurement - Observation"
 Description: "Observation of Temperature Measurement"
-* identifier[+].value = "Temperature Measurement - Observation"
-* identifier[=].type = #PLAC
-* identifier[=].use = #usual
-* identifier[+].value = "I.TEMP"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].type.text = "OID"
-* identifier[=].use = #secondary
-* code.coding[+].code = #8310-5
-* code.coding[=].system = "http://loinc.org"
-* code.coding[=].display = "Temperature taking (procedure)"
 * status = #active
+* code
+  * coding[+]
+    * code = #8310-5
+    * system = "http://loinc.org"
+    * display = "Temperature taking (procedure)"
+  * text = "Temperature taking (procedure)"
+
+// * identifier[+].value = "Temperature Measurement - Observation"
+// * identifier[=].type = #PLAC
+// * identifier[=].use = #usual
+
+* identifier[+]
+  * value = "I.TEMP"
+  * system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+  * type
+    * text = "OID"
+  * use = #secondary
