@@ -10,6 +10,11 @@ Title: "TTS Acceptability Survey"
 Description: "Patient-reported acceptability survey for the transdermal therapeutic system (TTS)."
 * status = #active
 * subjectType = #Patient
+// SDC pattern by convention: extraction of the scored result Observation.
+// The SDC extension definition is not loaded (no R6 SDC package), so the
+// publisher emits a tolerated "unresolved extension" warning, not an error.
+* extension[+].url = SDC_EXTRACT
+* extension[=].valueCanonical = Canonical(H2Q-MC-LZZT-TTS-Acceptability-Score-Obs)
 * identifier[+].value = "F.TTSACC"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
@@ -31,7 +36,7 @@ Description: "Patient-reported acceptability survey for the transdermal therapeu
 
 Instance: H2Q-MC-LZZT-TTS-Acceptability-Score-Obs
 InstanceOf: ObservationDefinition
-Usage: #example
+Usage: #definition
 Title: "TTS Acceptability Score - Observation"
 Description: "Scored result extracted from the TTS Acceptability Survey (SDC extraction target)."
 * insert ScoredInstrumentObservation(71969-0, [[TTS acceptability score]])
