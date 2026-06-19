@@ -29,5 +29,18 @@ def render_measurement(row):
     )
 
 
+def render_measurement_obs(row):
+    """FSH for the ObservationDefinition a measurement must produce."""
+    return (
+        f"Instance: {row['obsdef_id']}\n"
+        f"InstanceOf: ObservationDefinition\n"
+        f"Usage: #example\n"
+        f'Title: "{row["title"]} - Observation"\n'
+        f'Description: "Result requirement for {row["title"]}"\n'
+        f"* insert VitalSignObservation({row['loinc']}, "
+        f"[[{row['loinc_display']}]], {row['unit']})\n"
+    )
+
+
 if __name__ == "__main__":
     sys.exit(0)

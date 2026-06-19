@@ -32,5 +32,22 @@ class RenderMeasurementTests(unittest.TestCase):
             out)
 
 
+class RenderMeasurementObsTests(unittest.TestCase):
+    def test_renders_obsdef_with_insert(self):
+        row = {
+            "obsdef_id": "H2Q-MC-LZZT-Vital-Signs-WEIGHT-Obs",
+            "title": "Weight",
+            "loinc": "29463-7",
+            "loinc_display": "Body weight",
+            "unit": "kg",
+        }
+        out = gen.render_measurement_obs(row)
+        self.assertIn(
+            "Instance: H2Q-MC-LZZT-Vital-Signs-WEIGHT-Obs", out)
+        self.assertIn("InstanceOf: ObservationDefinition", out)
+        self.assertIn(
+            "insert VitalSignObservation(29463-7, [[Body weight]], kg)", out)
+
+
 if __name__ == "__main__":
     unittest.main()
