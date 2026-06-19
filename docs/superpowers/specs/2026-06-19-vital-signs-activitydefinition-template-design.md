@@ -57,17 +57,22 @@ SoA activities are not uniform. This design recognises distinct archetypes, each
 its own template and its own generator row-type. Two are built this pass; the rest are
 catalogued for the roll-out.
 
-| Archetype | Example activities | `kind` | Collection defined by | Result expressed by | Built now? |
+| Archetype | Example activities | Definitional resource | Referenced from the visit by | Result expressed by | Built now? |
 |---|---|---|---|---|---|
-| **Quantitative measurement** | Vital signs, simple labs | `#ServiceRequest` | `code` + ObservationDefinition | `observationResultRequirement` | **Yes — Vital Signs family** |
-| **PRO / clinician instrument** | ADAS-Cog, MMSE, CIBIC+, DAD, NPI-X, Hachinski, TTS Survey, Habits | `#Task` | `relatedArtifact` → **Questionnaire** | `QuestionnaireResponse` (+ optional scored `observationResultRequirement`) | **Yes — one exemplar** |
-| Specimen-based lab | Chemistry, Hematology, Urinalysis, Apo-E | `#ServiceRequest` | `specimenRequirement` → SpecimenDefinition (+ result ObsDef) | `observationResultRequirement` | No (future) |
-| Procedure / imaging | Chest x-ray, CT, ECG, TTS placement | `#ServiceRequest` / `#Task` | `code` (+ result ObsDef) | `observationResultRequirement` | No (future) |
-| Administrative / milestone | Informed consent, randomization, patient number | `#Task` | `code` | (event/status, no observation) | No (future) |
+| **Quantitative measurement** | Vital signs, simple labs | `ActivityDefinition` (`StudyActivitySoa`, `kind=#ServiceRequest`) + ObservationDefinition | `action.definitionUri/Canonical → ActivityDefinition` | `observationResultRequirement` | **Yes — Vital Signs family** |
+| **PRO / clinician instrument** | ADAS-Cog, MMSE, CIBIC+, DAD, NPI-X, Hachinski, TTS Survey, Habits | **`Questionnaire`** (no ActivityDefinition) | **`action.definitionCanonical → Questionnaire`** (direct) | `QuestionnaireResponse` + optional **SDC-extracted** scored Observation | **Yes — one exemplar** |
+| Specimen-based lab | Chemistry, Hematology, Urinalysis, Apo-E | `ActivityDefinition` + SpecimenDefinition (+ result ObsDef) | `action → ActivityDefinition` | `observationResultRequirement` | No (future) |
+| Procedure / imaging | Chest x-ray, CT, ECG, TTS placement | `ActivityDefinition` (+ result ObsDef) | `action → ActivityDefinition` | `observationResultRequirement` | No (future) |
+| Administrative / milestone | Informed consent, randomization, patient number | `ActivityDefinition` (`kind=#Task`) | `action → ActivityDefinition` | (event/status, no observation) | No (future) |
 
-The two built archetypes share the same `StudyActivitySoa` conformance, identifier
-handling, and `intent = #plan`; they differ in `kind`, how *what to collect* is defined,
-and how *results* are expressed.
+The two built archetypes differ fundamentally in **how the visit references them**:
+measurements go through an `ActivityDefinition` (conforming to `StudyActivitySoa`);
+instruments are attached **directly** as a `Questionnaire` via
+`action.definitionCanonical`. This is deliberate — `definitionCanonical → Questionnaire`
+is FHIR's first-class "fulfil this action by completing this form" link, which is a
+stronger and more idiomatic fit than wrapping the form in an ActivityDefinition. As a
+result, instruments do **not** conform to `StudyActivitySoa` (that profile is for the
+ActivityDefinition-based archetypes).
 
 ## Archetype 1 — Quantitative measurement (Vital Signs) shape
 
@@ -208,47 +213,68 @@ The other ~30 ObsDef stubs are untouched.
 
 Instrument-based activities (PROs and clinician-rated scales) do **not** fit the
 quantitative-measurement shape: what they collect is a structured set of items, not a
-single coded `Quantity`. They use a `Questionnaire`.
+single coded `Quantity`. They are modelled as a **`Questionnaire`**, attached to the
+study **directly from the PlanDefinition action** — **no ActivityDefinition wrapper**.
 
-### ActivityDefinition shape (instrument)
+### Attachment from the PlanDefinition action
+
+`PlanDefinition.action.definition[x]` (as `definitionCanonical`) may target a
+`Questionnaire` (verified against `hl7.fhir.r6.core#6.0.0-ballot3`, alongside
+ActivityDefinition / PlanDefinition / ObservationDefinition / SpecimenDefinition). The
+instrument form is referenced directly:
+
+```fsh
+* action[+].title = "ADAS-Cog"
+* action[=].code = $LOINC#... "ADAS-Cog"            // instrument concept (where one exists)
+* action[=].definitionCanonical = Canonical(H2Q-MC-LZZT-Questionnaire-ADAS-Cog)
+* action[=].participant[+].type = #patient          // or #practitioner for clinician-rated
+```
+
+This is FHIR's first-class "fulfil this action by completing this form" link — a stronger
+and more idiomatic relationship than wrapping the form in an ActivityDefinition and
+pointing at it via `relatedArtifact`.
+
+> Repo note: the project currently references all definitions via `action.definitionUri`
+> (literal URIs). Questionnaire attachment uses `action.definitionCanonical` (the canonical
+> choice) — the **first** use of the canonical form in this IG. Measurement activities keep
+> `definitionUri` for now; migrating those is out of scope (see Open items).
+
+### The Questionnaire (the definitional resource)
+
+A core-R6 `Questionnaire` instance carries what an ActivityDefinition otherwise would:
 
 | Element | Value | Notes |
 |---|---|---|
-| `InstanceOf` | `StudyActivitySoa` | same conformance as archetype 1 |
-| `status` / `identifier` / `intent` | `#active` / ODM OID (`FormDef`) / `#plan` | as archetype 1 |
-| `kind` | `#Task` | completing an instrument is a task, not a service request that yields a measurement |
-| `code` | the instrument concept (LOINC panel/survey code where one exists, else SNOMED assessment code) | e.g. a survey-instrument code |
-| `relatedArtifact` | `type = #depends-on`, `resource = Canonical(Questionnaire/…)` | **the link to the instrument** — `ActivityDefinition` has no native questionnaire element, so this is the standard way to reference it |
-| `observationResultRequirement` | **optional** → ObservationDefinition for a **scored** result (e.g. total score) | only when the instrument yields a reportable derived value |
-| `participant` | `type = #patient` (PRO) or `#practitioner` (clinician-rated) | distinguishes self-report vs. rater |
+| `status` | `#active` | |
+| `identifier` | ODM `FormDef` OID | the instrument's traceable identifier |
+| `code` | instrument concept (LOINC survey/panel code where one exists, else SNOMED assessment code) | |
+| `subjectType` | `#Patient` | |
+| `item` | the instrument's questions, answer options, units, `enableWhen` skip logic, `required` flags | the form itself |
 
 ### Result model
 
 - **Raw answers** → a `QuestionnaireResponse`. There is no "QuestionnaireResponseDefinition";
-  the **Questionnaire is the definition** of what's collected, so no ObsDef is needed for
-  the raw response.
-- **Scored outcome** (e.g. ADAS-Cog/MMSE total) → an `Observation`, expressed via
-  `observationResultRequirement` exactly as in archetype 1. The score `Observation` is
-  `derivedFrom` the `QuestionnaireResponse` at runtime.
-
-`observationRequirement` (input) stays empty here too, unless the instrument genuinely
-requires a prior observation to be administered.
+  the **Questionnaire *is* the definition** of what's collected.
+- **Scored outcome** (e.g. ADAS-Cog/MMSE total) → an `Observation`, produced by **SDC
+  extraction** configured on the Questionnaire (see below). Where a scored result exists,
+  an optional standalone `ObservationDefinition` defines that score and is the extraction
+  target. (No `observationResultRequirement` here — that element belongs to
+  ActivityDefinition, which this archetype does not use.)
 
 ### SDC patterns — adopted by convention, package deferred
 
 There is **no R6 build of `hl7.fhir.uv.sdc`** (latest published is R4 `4.0.0`). To keep
 the R6 build clean we **do not** add it as a hard dependency this pass. Instead we follow
-SDC patterns on a core-R6 `Questionnaire`, using SDC canonical extension URLs where they
+SDC patterns on the core-R6 `Questionnaire`, using SDC canonical extension URLs where they
 add value:
 
-- **Task-based form-filling** — the runtime enactment of the `#Task` activity is an SDC
-  "complete-questionnaire" Task whose input is the referenced `Questionnaire`.
 - **`sdc-questionnaire-itemExtractionContext`** — defines extraction of the scored
-  `Observation` from the `QuestionnaireResponse`, wiring the result back to the
-  `observationResultRequirement` target.
+  `Observation` from the `QuestionnaireResponse` (targeting the optional scored ObsDef).
 - **`sdc-questionnaire-launchContext`** — supplies patient/encounter context at launch.
 - **Answer constraints / `enableWhen` skip logic / required items / units** — authored on
   the Questionnaire items.
+- **Task-based form-filling** — at runtime the action is enacted as an SDC
+  "complete-questionnaire" Task whose input is the referenced `Questionnaire`.
 
 Caveat: because the SDC extension definitions are not loaded (no R6 package), the
 publisher will emit *unresolved-extension* warnings on these URLs. Accepted for now;
@@ -259,15 +285,16 @@ resolved when an R6 SDC package exists (tracked as a follow-up). The build must 
 
 The `Questionnaire` is precisely the resource that drives a good data-entry UX: it
 defines items, answer value sets, required-ness, units, and `enableWhen` skip logic, so
-the site renders a **validated form** with branching instead of free text. SDC extraction
-then produces the scored `Observation` automatically, removing manual transcription and
-the queries it generates.
+the site renders a **validated form** with branching instead of free text. Attaching it
+directly to the action means the site's form-filler resolves one canonical link to the
+exact instrument. SDC extraction then produces the scored `Observation` automatically,
+removing manual transcription and the queries it generates.
 
 ### Exemplar (build one)
 
-Build a single instrument end-to-end: ActivityDefinition (`#Task`) + a real core-R6
-`Questionnaire` + (if the instrument scores) a scored ObservationDefinition + the
-`observationResultRequirement` link.
+Build a single instrument end-to-end: a real core-R6 `Questionnaire` +
+`action.definitionCanonical` attachment from the relevant visit PlanDefinition + (if the
+instrument scores) a scored ObservationDefinition referenced as the SDC extraction target.
 
 **Recommended exemplar: TTS Acceptability Survey** (`F.TTSACC`) — a genuine *patient-reported*
 survey, small enough to author fully, and it exercises items + answer options. If a clean
@@ -319,11 +346,20 @@ and carries the result-spec detail (`permittedDataType`, `permittedUnit`,
 `observationResultRequirement` only; `observationRequirement` is never emitted for this
 family. `title`/`description`/`bodySite` that vary stay on the instance.
 
-A **second** RuleSet, `InstrumentActivity(...)`, expresses archetype 2 (PRO/instrument):
-sets `kind = #Task`, `code`, the `relatedArtifact[depends-on]` → `Questionnaire` link,
-and an optional scored `observationResultRequirement`. Both RuleSets emit
-`StudyActivitySoa` instances, so the archetypes share conformance and differ only where
-they must.
+Archetype 2 (PRO/instrument) does **not** emit an ActivityDefinition, so its RuleSet is
+an **action-attachment** helper rather than an activity builder. `InstrumentAction(qcanonical, title, code)`
+inserts the direct Questionnaire attachment into a visit/form PlanDefinition:
+
+```fsh
+RuleSet: InstrumentAction(qcanonical, title, ptype)
+* action[+].title = "{title}"
+* action[=].definitionCanonical = Canonical({qcanonical})
+* action[=].participant[+].type = #{ptype}
+```
+
+The Questionnaire body itself is authored by hand (it is not tabular). A small
+`ScoredInstrumentObservation(...)` RuleSet covers the optional scored ObservationDefinition
+that SDC extraction targets.
 
 ### Stage 2 (now, seeded; scales later): archetype-driven CSV generator
 
@@ -331,14 +367,14 @@ they must.
   - `input/data/measurement-activities.csv` — `id, title, description, loinc,
     loinc_display, snomed, oid, oidsys, unit, bodysite, obsdef_id` (seeded with the 9
     Vital Signs rows).
-  - `input/data/instrument-activities.csv` — `id, title, description, code, code_system,
-    oid, questionnaire_canonical, score_obsdef_id, participant` (seeded with the one
-    exemplar row).
+  - `input/data/instrument-activities.csv` — `id, title, visit_id, questionnaire_canonical,
+    participant, score_obsdef_id` (seeded with the one exemplar row).
 - **Script:** `scripts/gen-activities.py` (Python 3.12, stdlib only) dispatches on
-  archetype and emits the matching `insert` block — measurement → `VitalSignActivity` +
-  ObsDef; instrument → `InstrumentActivity` (+ scored ObsDef when `score_obsdef_id` is
-  set). It does **not** generate the Questionnaire bodies themselves (those are authored,
-  not tabular); it only emits the activity and its links.
+  archetype: measurement → `VitalSignActivity` ActivityDefinition + ObsDef; instrument →
+  an `InstrumentAction` insert (the `action.definitionCanonical → Questionnaire`
+  attachment for the named visit) **+** a scored ObsDef when `score_obsdef_id` is set.
+  It does **not** generate ActivityDefinitions for instruments, and it does **not**
+  generate the Questionnaire bodies (those are authored, not tabular).
 - **Output contract:** writes to clearly-marked generated files (e.g.
   `input/fsh/generated/*-Generated.fsh`) with a "DO NOT EDIT — generated by
   scripts/gen-activities.py" header. Idempotent: an unchanged CSV produces byte-identical
@@ -367,12 +403,15 @@ share one definition of "what a built-out activity looks like" per archetype.
    `permittedUnit` (and `preferredReportName`/`qualifiedValue` where sensible).
 7. Every family activity uses **`observationResultRequirement` only**; no
    `observationRequirement` remains on any vital-signs activity.
-8. The PRO exemplar exists end-to-end: a `StudyActivitySoa` activity with `kind = #Task`,
-   a `relatedArtifact[depends-on]` → the authored core-R6 `Questionnaire`, and (if scored)
-   an `observationResultRequirement` → scored ObsDef. The build **succeeds** (SDC
-   unresolved-extension warnings tolerated; no errors).
-9. `gen-activities.py` handles both archetypes from their CSVs and regenerates
-   byte-identically.
+8. The PRO exemplar exists end-to-end: an authored core-R6 `Questionnaire` (with ODM
+   `identifier`, `code`, items) attached to its visit PlanDefinition via
+   `action.definitionCanonical`, and (if scored) a scored ObservationDefinition as the
+   SDC extraction target. **No ActivityDefinition** is created for the instrument. The
+   build **succeeds** (SDC unresolved-extension warnings tolerated; no errors).
+9. The instrument's `action.definitionCanonical` resolves to the Questionnaire in the
+   built IG.
+10. `gen-activities.py` handles both archetypes from their CSVs and regenerates
+    byte-identically.
 
 ## Open items to confirm during review
 
@@ -383,6 +422,9 @@ share one definition of "what a built-out activity looks like" per archetype.
 - Whether the chosen exemplar warrants a **scored ObservationDefinition**, or just the
   `QuestionnaireResponse`.
 - Which SDC extension URLs to apply now vs leave for the R6-package follow-up.
+- Whether the instrument attachment should use `definitionCanonical` only, or whether the
+  measurement archetype should also migrate `definitionUri → definitionCanonical` (kept
+  out of scope this pass — see below).
 
 ## Out of scope / future
 
@@ -390,6 +432,8 @@ share one definition of "what a built-out activity looks like" per archetype.
   Note: the same `observationRequirement`/`observationResultRequirement` misuse (both
   pointing at one ObsDef) exists repo-wide; the generator's correct emission fixes it as
   each family is rolled out. The non-family activities are **not** corrected in this pass.
+- Migrating the existing 223 `action.definitionUri` references to `definitionCanonical`
+  repo-wide (only the new instrument attachment uses the canonical form this pass).
 - Making `code`/`kind`/`bodySite` must-support in `StudyActivitySoa`.
 - Wiring `subject[x]` on activities (profile marks it MS but it is optional cardinality).
 - Adding `hl7.fhir.uv.sdc` as a hard dependency once an **R6 build exists**, and replacing
