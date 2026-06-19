@@ -7,7 +7,7 @@ Description: "Temperature Measurement"
 * identifier[=].type = #PLAC
 * identifier[=].use = #usual
 * identifier[+].value = "I.TEMP"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].type.text = "OID"
