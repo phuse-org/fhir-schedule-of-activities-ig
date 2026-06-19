@@ -124,92 +124,6 @@ Title: "Vital Signs: Heart Rate and Blood Pressure"
 * action[+].title = "Diastolic BP (after 3m standing)"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING"
 
-
-Instance: H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Pulse]"
-Usage: #example
-Title: "Supine Pulse"
-* status = #active
-* identifier[+].value = "I.PULSE_SUPINE"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-
-Instance: H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Systolic BP]"
-Usage: #example
-Title: "Supine Systolic BP"
-* status = #active
-* identifier[+].value = "I.SYSBP_SUPINE"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Diastolic BP]"
-Usage: #example
-Title: "Supine Diastolic BP"
-* status = #active
-* identifier[+].value = "I.DIABP_SUPINE"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Pulse]"
-Usage: #example
-Title: "Supine Pulse"
-* status = #active
-* identifier[+].value = "I.PULSE_STANDING"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Standing Systolic BP]"
-Usage: #example
-Title: "Standing Systolic BP"
-* status = #active
-* identifier[+].value = "I.SYSBP_STANDING"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Standing Diastolic BP]"
-Usage: #example
-Title: "Standing Diastolic BP"
-* status = #active
-* identifier[+].value = "I.DIABP_STANDING"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-HEIGHT
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Height]"
-Usage: #example
-Title: "Height"
-* status = #active
-* identifier[+].value = "I.HEIGHT"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
 Instance: H2Q-MC-LZZT-Vital-Signs-Height-PD
 InstanceOf: PlanDefinition
 Description: "Planned Activity [Vital signs] - Height"
@@ -223,18 +137,6 @@ Title: "Vital signs/Height"
 * identifier[=].use = #secondary
 * action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-HEIGHT"
 * action[=].title = "Height"
-
-Instance: H2Q-MC-LZZT-Vital-Signs-WEIGHT
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Weight]"
-Usage: #example
-Title: "Weight"
-* status = #active
-* identifier[+].value = "I.WEIGHT"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
 
 Instance: H2Q-MC-LZZT-Vital-Signs-Weight-PD
 InstanceOf: PlanDefinition
