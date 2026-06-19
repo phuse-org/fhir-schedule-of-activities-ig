@@ -1,4 +1,8 @@
-# Vital Signs ActivityDefinition Family — Template & Acceleration Design
+# ActivityDefinition Templates & Acceleration Design
+
+> Builds two activity archetypes this pass — the **Vital Signs** family (quantitative
+> measurement) and one **PRO/instrument** exemplar (Questionnaire-based) — plus
+> archetype-aware helpers to scale to the rest.
 
 - **Date:** 2026-06-19
 - **Status:** Approved (pending spec review)
@@ -24,23 +28,48 @@ and is the de-facto "gold standard," though it has copy/paste defects (duplicate
 
 ## Goals
 
-1. Establish a **gold-standard template** for a fully built-out `ActivityDefinition`,
-   proven on the **Vital Signs family** before scaling to all ~40 activities.
-2. Make the family instances **conform to `StudyActivitySoa`**.
-3. Stand up **acceleration helpers** (FSH `RuleSet`s now; a CSV-driven generator for the
-   full roll-out) so the pattern scales quickly and consistently.
-4. Fix the visible copy/paste defects encountered in the family.
+1. Establish **gold-standard templates** for fully built-out `ActivityDefinition`s,
+   recognising that the study has **more than one activity archetype** (see below).
+2. Prove the **quantitative-measurement** archetype on the **Vital Signs family**, and
+   prove the **PRO / instrument** archetype on **one exemplar**, before scaling to all
+   ~40 activities.
+3. Make the built-out instances **conform to `StudyActivitySoa`**.
+4. Stand up **archetype-aware acceleration helpers** (FSH `RuleSet`s now; a CSV-driven
+   generator for the full roll-out) so the pattern scales quickly and consistently.
+5. Fix the visible copy/paste defects encountered along the way.
 
 ## Non-goals
 
-- Building out the other ~30 (non-vital-signs) activities — future work, enabled by
-  the generator stood up here.
+- Building out the other ~30 activities — future work, enabled by the generator.
+- Building the **full** PRO/instrument family (ADAS-Cog, MMSE, CIBIC+, DAD, NPI-X,
+  Hachinski, …). Only one PRO exemplar is built this pass; authoring real instruments
+  at scale is substantial follow-up work.
 - Reworking the visit/PlanDefinition framework (already done).
-- Enriching ObservationDefinition stubs outside the Vital Signs family.
+- Enriching ObservationDefinition stubs outside the built families.
 - Extending the `StudyActivitySoa` profile's must-support flags (conform only; profile
   enrichment is noted as possible future work).
+- Adding a hard `hl7.fhir.uv.sdc` package dependency (no R6 build exists — see PRO
+  archetype section); SDC patterns are adopted by convention now.
 
-## Target ActivityDefinition shape
+## Activity archetypes
+
+SoA activities are not uniform. This design recognises distinct archetypes, each with
+its own template and its own generator row-type. Two are built this pass; the rest are
+catalogued for the roll-out.
+
+| Archetype | Example activities | `kind` | Collection defined by | Result expressed by | Built now? |
+|---|---|---|---|---|---|
+| **Quantitative measurement** | Vital signs, simple labs | `#ServiceRequest` | `code` + ObservationDefinition | `observationResultRequirement` | **Yes — Vital Signs family** |
+| **PRO / clinician instrument** | ADAS-Cog, MMSE, CIBIC+, DAD, NPI-X, Hachinski, TTS Survey, Habits | `#Task` | `relatedArtifact` → **Questionnaire** | `QuestionnaireResponse` (+ optional scored `observationResultRequirement`) | **Yes — one exemplar** |
+| Specimen-based lab | Chemistry, Hematology, Urinalysis, Apo-E | `#ServiceRequest` | `specimenRequirement` → SpecimenDefinition (+ result ObsDef) | `observationResultRequirement` | No (future) |
+| Procedure / imaging | Chest x-ray, CT, ECG, TTS placement | `#ServiceRequest` / `#Task` | `code` (+ result ObsDef) | `observationResultRequirement` | No (future) |
+| Administrative / milestone | Informed consent, randomization, patient number | `#Task` | `code` | (event/status, no observation) | No (future) |
+
+The two built archetypes share the same `StudyActivitySoa` conformance, identifier
+handling, and `intent = #plan`; they differ in `kind`, how *what to collect* is defined,
+and how *results* are expressed.
+
+## Archetype 1 — Quantitative measurement (Vital Signs) shape
 
 Every Vital Signs activity becomes `InstanceOf: StudyActivitySoa` and carries:
 
@@ -175,6 +204,77 @@ Element names verified against `hl7.fhir.r6.core#6.0.0-ballot3` (note: R6 uses
 
 The other ~30 ObsDef stubs are untouched.
 
+## Archetype 2 — PRO / clinician instrument (Questionnaire-based)
+
+Instrument-based activities (PROs and clinician-rated scales) do **not** fit the
+quantitative-measurement shape: what they collect is a structured set of items, not a
+single coded `Quantity`. They use a `Questionnaire`.
+
+### ActivityDefinition shape (instrument)
+
+| Element | Value | Notes |
+|---|---|---|
+| `InstanceOf` | `StudyActivitySoa` | same conformance as archetype 1 |
+| `status` / `identifier` / `intent` | `#active` / ODM OID (`FormDef`) / `#plan` | as archetype 1 |
+| `kind` | `#Task` | completing an instrument is a task, not a service request that yields a measurement |
+| `code` | the instrument concept (LOINC panel/survey code where one exists, else SNOMED assessment code) | e.g. a survey-instrument code |
+| `relatedArtifact` | `type = #depends-on`, `resource = Canonical(Questionnaire/…)` | **the link to the instrument** — `ActivityDefinition` has no native questionnaire element, so this is the standard way to reference it |
+| `observationResultRequirement` | **optional** → ObservationDefinition for a **scored** result (e.g. total score) | only when the instrument yields a reportable derived value |
+| `participant` | `type = #patient` (PRO) or `#practitioner` (clinician-rated) | distinguishes self-report vs. rater |
+
+### Result model
+
+- **Raw answers** → a `QuestionnaireResponse`. There is no "QuestionnaireResponseDefinition";
+  the **Questionnaire is the definition** of what's collected, so no ObsDef is needed for
+  the raw response.
+- **Scored outcome** (e.g. ADAS-Cog/MMSE total) → an `Observation`, expressed via
+  `observationResultRequirement` exactly as in archetype 1. The score `Observation` is
+  `derivedFrom` the `QuestionnaireResponse` at runtime.
+
+`observationRequirement` (input) stays empty here too, unless the instrument genuinely
+requires a prior observation to be administered.
+
+### SDC patterns — adopted by convention, package deferred
+
+There is **no R6 build of `hl7.fhir.uv.sdc`** (latest published is R4 `4.0.0`). To keep
+the R6 build clean we **do not** add it as a hard dependency this pass. Instead we follow
+SDC patterns on a core-R6 `Questionnaire`, using SDC canonical extension URLs where they
+add value:
+
+- **Task-based form-filling** — the runtime enactment of the `#Task` activity is an SDC
+  "complete-questionnaire" Task whose input is the referenced `Questionnaire`.
+- **`sdc-questionnaire-itemExtractionContext`** — defines extraction of the scored
+  `Observation` from the `QuestionnaireResponse`, wiring the result back to the
+  `observationResultRequirement` target.
+- **`sdc-questionnaire-launchContext`** — supplies patient/encounter context at launch.
+- **Answer constraints / `enableWhen` skip logic / required items / units** — authored on
+  the Questionnaire items.
+
+Caveat: because the SDC extension definitions are not loaded (no R6 package), the
+publisher will emit *unresolved-extension* warnings on these URLs. Accepted for now;
+resolved when an R6 SDC package exists (tracked as a follow-up). The build must still
+**succeed** — these are warnings, not errors.
+
+### Why this improves the site experience
+
+The `Questionnaire` is precisely the resource that drives a good data-entry UX: it
+defines items, answer value sets, required-ness, units, and `enableWhen` skip logic, so
+the site renders a **validated form** with branching instead of free text. SDC extraction
+then produces the scored `Observation` automatically, removing manual transcription and
+the queries it generates.
+
+### Exemplar (build one)
+
+Build a single instrument end-to-end: ActivityDefinition (`#Task`) + a real core-R6
+`Questionnaire` + (if the instrument scores) a scored ObservationDefinition + the
+`observationResultRequirement` link.
+
+**Recommended exemplar: TTS Acceptability Survey** (`F.TTSACC`) — a genuine *patient-reported*
+survey, small enough to author fully, and it exercises items + answer options. If a clean
+numeric-score extraction is preferred for the demo, **CIBIC+** (single 7-point ordinal,
+clinician-rated) or **Hachinski** (summed ischemic score) are alternatives. Final choice
+is an open item for spec review.
+
 ## Profile conformance
 
 Instances change to `InstanceOf: StudyActivitySoa`. This sets `meta.profile` and
@@ -219,26 +319,38 @@ and carries the result-spec detail (`permittedDataType`, `permittedUnit`,
 `observationResultRequirement` only; `observationRequirement` is never emitted for this
 family. `title`/`description`/`bodySite` that vary stay on the instance.
 
-### Stage 2 (now, seeded; scales later): CSV-driven generator
+A **second** RuleSet, `InstrumentActivity(...)`, expresses archetype 2 (PRO/instrument):
+sets `kind = #Task`, `code`, the `relatedArtifact[depends-on]` → `Questionnaire` link,
+and an optional scored `observationResultRequirement`. Both RuleSets emit
+`StudyActivitySoa` instances, so the archetypes share conformance and differ only where
+they must.
 
-- **Data:** `input/data/vital-signs-activities.csv` — one row per activity. Columns:
-  `id, title, description, loinc, loinc_display, snomed, oid, oidsys, unit, bodysite,
-  obsdef_id`. Seeded with the 9 family rows so the generator is proven before scaling.
-- **Script:** `scripts/gen-activities.py` (Python 3.12, stdlib only) reads the CSV and
-  emits FSH `insert` blocks (or full instances) for ActivityDefinitions and their
-  paired ObservationDefinitions.
-- **Output contract:** writes to a clearly-marked generated file (e.g.
-  `input/fsh/generated/VitalSigns-Generated.fsh`) with a "DO NOT EDIT — generated by
-  scripts/gen-activities.py" header. Idempotent: re-running with an unchanged CSV
-  produces byte-identical output. Hand-authored FSH and generated FSH never overlap on
+### Stage 2 (now, seeded; scales later): archetype-driven CSV generator
+
+- **Data:** one CSV per archetype (or one CSV with an `archetype` column):
+  - `input/data/measurement-activities.csv` — `id, title, description, loinc,
+    loinc_display, snomed, oid, oidsys, unit, bodysite, obsdef_id` (seeded with the 9
+    Vital Signs rows).
+  - `input/data/instrument-activities.csv` — `id, title, description, code, code_system,
+    oid, questionnaire_canonical, score_obsdef_id, participant` (seeded with the one
+    exemplar row).
+- **Script:** `scripts/gen-activities.py` (Python 3.12, stdlib only) dispatches on
+  archetype and emits the matching `insert` block — measurement → `VitalSignActivity` +
+  ObsDef; instrument → `InstrumentActivity` (+ scored ObsDef when `score_obsdef_id` is
+  set). It does **not** generate the Questionnaire bodies themselves (those are authored,
+  not tabular); it only emits the activity and its links.
+- **Output contract:** writes to clearly-marked generated files (e.g.
+  `input/fsh/generated/*-Generated.fsh`) with a "DO NOT EDIT — generated by
+  scripts/gen-activities.py" header. Idempotent: an unchanged CSV produces byte-identical
+  output. Hand-authored FSH (including Questionnaires) and generated FSH never overlap on
   the same instance id.
-- **Workflow:** `python3 scripts/gen-activities.py` is a pre-build step (documented in
-  the developer page / README); SUSHI then compiles the generated FSH like any other.
-- **Scale path:** rolling out the remaining ~30 activities is adding rows to a CSV +
-  rerun, not hand-authoring FSH.
+- **Workflow:** `python3 scripts/gen-activities.py` is a pre-build step (documented in the
+  developer page / README); SUSHI then compiles the generated FSH like any other.
+- **Scale path:** rolling out the remaining ~30 activities is adding rows to the right
+  CSV (and authoring Questionnaires for new instruments), not hand-authoring activity FSH.
 
-The RuleSet (Stage 1) is the unit of reuse the generator emits, so the two stages share
-one definition of "what a built-out activity looks like."
+The RuleSets (Stage 1) are the units of reuse the generator emits, so the two stages
+share one definition of "what a built-out activity looks like" per archetype.
 
 ## Validation / done criteria
 
@@ -255,12 +367,22 @@ one definition of "what a built-out activity looks like."
    `permittedUnit` (and `preferredReportName`/`qualifiedValue` where sensible).
 7. Every family activity uses **`observationResultRequirement` only**; no
    `observationRequirement` remains on any vital-signs activity.
+8. The PRO exemplar exists end-to-end: a `StudyActivitySoa` activity with `kind = #Task`,
+   a `relatedArtifact[depends-on]` → the authored core-R6 `Questionnaire`, and (if scored)
+   an `observationResultRequirement` → scored ObsDef. The build **succeeds** (SDC
+   unresolved-extension warnings tolerated; no errors).
+9. `gen-activities.py` handles both archetypes from their CSVs and regenerates
+   byte-identically.
 
 ## Open items to confirm during review
 
 - Height/Weight units (metric vs US customary).
 - Position-specific BP LOINC codes (8461-6 / 8460-8 / 8453-3 / 8454-1) vs base codes.
 - Whether Pulse should use position-specific LOINC or base 8867-4 + ObsDef distinction.
+- **PRO exemplar choice**: TTS Acceptability Survey (recommended) vs CIBIC+ vs Hachinski.
+- Whether the chosen exemplar warrants a **scored ObservationDefinition**, or just the
+  `QuestionnaireResponse`.
+- Which SDC extension URLs to apply now vs leave for the R6-package follow-up.
 
 ## Out of scope / future
 
@@ -270,3 +392,8 @@ one definition of "what a built-out activity looks like."
   each family is rolled out. The non-family activities are **not** corrected in this pass.
 - Making `code`/`kind`/`bodySite` must-support in `StudyActivitySoa`.
 - Wiring `subject[x]` on activities (profile marks it MS but it is optional cardinality).
+- Adding `hl7.fhir.uv.sdc` as a hard dependency once an **R6 build exists**, and replacing
+  the convention-only SDC usage with validated extensions (resolves the
+  unresolved-extension warnings). Tracked as a follow-up.
+- The remaining PRO/instrument family and the specimen-based, procedure, and
+  administrative archetypes (catalogued in *Activity archetypes*).
