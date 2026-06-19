@@ -83,5 +83,24 @@ class GenerateMeasurementsFileTests(unittest.TestCase):
             self.assertEqual(first, f.read())
 
 
+class RenderInstrumentActionTests(unittest.TestCase):
+    def test_renders_instrument_action_insert(self):
+        row = {
+            "id": "TTS-ACC",
+            "title": "TTS Acceptability Survey",
+            "visit_id": "H2Q-MC-LZZT-Study-Visit-13",
+            "questionnaire_canonical":
+                "H2Q-MC-LZZT-Questionnaire-TTS-Acceptability-Survey",
+            "participant": "patient",
+            "score_obsdef_id": "",
+        }
+        out = gen.render_instrument_action(row)
+        self.assertIn(
+            "insert InstrumentAction("
+            "H2Q-MC-LZZT-Questionnaire-TTS-Acceptability-Survey, "
+            "[[TTS Acceptability Survey]], #patient)",
+            out)
+
+
 if __name__ == "__main__":
     unittest.main()

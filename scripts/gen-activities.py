@@ -41,6 +41,19 @@ def render_measurement_obs(row):
     )
 
 
+def render_instrument_action(row):
+    """InstrumentAction insert snippet for a visit PlanDefinition.
+
+    Emitted for reference/scale; the live exemplar action is hand-wired in
+    the visit FSH to keep one source of truth per action fragment.
+    """
+    return (
+        f"// Add to PlanDefinition {row['visit_id']}:\n"
+        f"* insert InstrumentAction({row['questionnaire_canonical']}, "
+        f"[[{row['title']}]], #{row['participant']})\n"
+    )
+
+
 def generate_measurements(csv_path, out_path):
     with open(csv_path, newline="") as f:
         rows = list(csv.DictReader(f))
