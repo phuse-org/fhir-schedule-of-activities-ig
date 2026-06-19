@@ -152,19 +152,6 @@ Title: "Vital signs/Weight"
 * action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-WEIGHT"
 * action[=].title = "Weight"
 
-Instance: H2Q-MC-LZZT-Vital-Signs-TEMP
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Body Temperature]"
-Usage: #example
-Title: "Weight"
-* status = #active
-* identifier[+].value = "I.TEMP"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-
 Instance: H2Q-MC-LZZT-Vital-Signs-Temperature-PD
 InstanceOf: PlanDefinition
 Description: "Planned Activity [Vital signs] - Temperature"
@@ -176,7 +163,7 @@ Title: "Vital signs/Temperature"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-TEMP"
+* action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature"
 * action[=].title = "Body Temperature"
 
 Instance: H2Q-MC-LZZT-Medical-History

@@ -1,5 +1,5 @@
 Instance: H2Q-MC-LZZT-Vitalsigns-Temperature
-InstanceOf: ActivityDefinition
+InstanceOf: StudyActivitySoa
 Usage: #example
 Title: "Temperature Measurement"
 Description: "Temperature Measurement"
@@ -13,6 +13,9 @@ Description: "Temperature Measurement"
 * identifier[=].type.text = "OID"
 * identifier[=].use = #secondary
 * status = #active
+* kind = #ServiceRequest
+* intent = #plan
+* participant[+].type = #practitioner
 * code.coding[+].code = #56342008
 * code.coding[=].system = "http://snomed.info/sct"
 * code.coding[=].display = "Temperature taking (procedure)"
@@ -33,10 +36,4 @@ Description: "Temperature Measurement"
 * bodySite.coding[=].system = "http://snomed.info/sct"
 * bodySite.coding[=].display = "Tympanic membrane structure"
 
-* observationRequirement = "ObservationDefinition/Temperature-Observation-SNOMED"
 * observationResultRequirement = "ObservationDefinition/Temperature-Observation-LOINC"
-
-* observationRequirement = "ObservationDefinition/VitalSigns-Observation"
-* observationResultRequirement = "ObservationDefinition/VitalSigns-Observation"
-* observationRequirement = "ObservationDefinition/VitalSigns-Observation"
-* observationResultRequirement = "ObservationDefinition/VitalSigns-Observation"
