@@ -5,7 +5,6 @@ stdlib only. Emits idempotent, DO-NOT-EDIT FSH for measurement activities
 (archetype 1). See docs/superpowers/specs for the design.
 """
 import csv
-import sys
 import pathlib
 
 HEADER = (
@@ -42,5 +41,26 @@ def render_measurement_obs(row):
     )
 
 
+def generate_measurements(csv_path, out_path):
+    with open(csv_path, newline="") as f:
+        rows = list(csv.DictReader(f))
+    parts = [HEADER.format(source=pathlib.Path(csv_path).name)]
+    for row in rows:
+        parts.append(render_measurement(row))
+        parts.append("\n")
+        parts.append(render_measurement_obs(row))
+        parts.append("\n")
+    pathlib.Path(out_path).write_text("".join(parts))
+
+
+def main():
+    base = pathlib.Path(__file__).resolve().parent.parent
+    generate_measurements(
+        base / "input/data/measurement-activities.csv",
+        base / "input/fsh/generated/Measurement-Activities.gen.fsh",
+    )
+    print("Generated measurement activities.")
+
+
 if __name__ == "__main__":
-    sys.exit(0)
+    main()

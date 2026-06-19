@@ -49,5 +49,39 @@ class RenderMeasurementObsTests(unittest.TestCase):
             "insert VitalSignObservation(29463-7, [[Body weight]], kg)", out)
 
 
+import tempfile, os
+
+
+class GenerateMeasurementsFileTests(unittest.TestCase):
+    CSV = (
+        "id,title,description,oidsys,oid,loinc,loinc_display,unit,obsdef_id\n"
+        "H2Q-MC-LZZT-Vital-Signs-WEIGHT,Weight,Planned Activity [Weight],"
+        "ItemDef,I.WEIGHT,29463-7,Body weight,kg,"
+        "H2Q-MC-LZZT-Vital-Signs-WEIGHT-Obs\n"
+    )
+
+    def _run(self):
+        d = tempfile.mkdtemp()
+        csv_p = os.path.join(d, "m.csv")
+        out_p = os.path.join(d, "out.fsh")
+        with open(csv_p, "w") as f:
+            f.write(self.CSV)
+        gen.generate_measurements(csv_p, out_p)
+        with open(out_p) as f:
+            return out_p, csv_p, f.read()
+
+    def test_has_header_and_both_resources(self):
+        _, _, text = self._run()
+        self.assertTrue(text.startswith("// DO NOT EDIT"))
+        self.assertIn("Instance: H2Q-MC-LZZT-Vital-Signs-WEIGHT\n", text)
+        self.assertIn("Instance: H2Q-MC-LZZT-Vital-Signs-WEIGHT-Obs\n", text)
+
+    def test_idempotent(self):
+        out_p, csv_p, first = self._run()
+        gen.generate_measurements(csv_p, out_p)
+        with open(out_p) as f:
+            self.assertEqual(first, f.read())
+
+
 if __name__ == "__main__":
     unittest.main()
