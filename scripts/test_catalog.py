@@ -101,5 +101,16 @@ class ValidateCatalogsTests(unittest.TestCase):
             catalog.validate_catalogs(activities, observations, conditions), [])
 
 
+class RealCatalogIntegrationTests(unittest.TestCase):
+    def test_authored_catalogs_validate_clean(self):
+        base = pathlib.Path(__file__).resolve().parent.parent / "input/data"
+        errs = catalog.validate_catalogs(
+            catalog.load_csv(base / "activity-catalog.csv"),
+            catalog.load_csv(base / "observation-catalog.csv"),
+            catalog.load_csv(base / "condition-catalog.csv"),
+        )
+        self.assertEqual(errs, [], f"catalog validation errors: {errs}")
+
+
 if __name__ == "__main__":
     unittest.main()
