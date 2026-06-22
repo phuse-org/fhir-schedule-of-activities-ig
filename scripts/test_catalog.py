@@ -50,5 +50,56 @@ class ValidateActivitiesTests(unittest.TestCase):
         self.assertTrue(any("default_condition" in e for e in errs))
 
 
+class ValidateObservationsTests(unittest.TestCase):
+    def test_valid_panel_and_analyte_pass(self):
+        rows = [
+            {"obsdef_id": "P", "kind": "panel", "member_of": "",
+             "code": "58410-2", "unit": "", "datatype": ""},
+            {"obsdef_id": "A", "kind": "analyte", "member_of": "P",
+             "code": "718-7", "unit": "g/dL", "datatype": "Quantity"},
+        ]
+        self.assertEqual(catalog.validate_observations(rows), [])
+
+    def test_bad_kind_flagged(self):
+        rows = [{"obsdef_id": "X", "kind": "blob", "member_of": "",
+                 "code": "1", "unit": "", "datatype": ""}]
+        self.assertTrue(any("kind" in e for e in catalog.validate_observations(rows)))
+
+    def test_panel_missing_code_flagged(self):
+        rows = [{"obsdef_id": "P", "kind": "panel", "member_of": "",
+                 "code": "", "unit": "", "datatype": ""}]
+        self.assertTrue(any("code" in e for e in catalog.validate_observations(rows)))
+
+    def test_member_of_non_panel_flagged(self):
+        rows = [{"obsdef_id": "A", "kind": "analyte", "member_of": "NOPE",
+                 "code": "1", "unit": "x", "datatype": "Quantity"}]
+        self.assertTrue(any("member_of" in e for e in catalog.validate_observations(rows)))
+
+
+class ValidateConditionsTests(unittest.TestCase):
+    def test_valid_condition_passes(self):
+        rows = [{"condition_id": "c1", "language": "text/fhirpath",
+                 "expression": "true", "description": "d"}]
+        self.assertEqual(catalog.validate_conditions(rows), [])
+
+    def test_missing_expression_flagged(self):
+        rows = [{"condition_id": "c1", "language": "text/fhirpath",
+                 "expression": "", "description": "d"}]
+        self.assertTrue(any("expression" in e for e in catalog.validate_conditions(rows)))
+
+
+class ValidateCatalogsTests(unittest.TestCase):
+    def test_composes_and_resolves_cross_refs(self):
+        activities = [{"id": "A", "archetype": "measurement",
+                       "result_obsdef_id": "P", "questionnaire_id": "",
+                       "default_condition": "c1"}]
+        observations = [{"obsdef_id": "P", "kind": "panel", "member_of": "",
+                         "code": "58410-2", "unit": "", "datatype": ""}]
+        conditions = [{"condition_id": "c1", "language": "text/fhirpath",
+                       "expression": "true", "description": "d"}]
+        self.assertEqual(
+            catalog.validate_catalogs(activities, observations, conditions), [])
+
+
 if __name__ == "__main__":
     unittest.main()
