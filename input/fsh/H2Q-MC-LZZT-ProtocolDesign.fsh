@@ -4,10 +4,12 @@ Description: "H2Q-MC-LZZT-Protocol Schedule of Activities"
 Usage: #example
 * status = #active
 * version = "LZZT_1"
+
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"
 * action[=].title = "Visit-1"
 * action[=].description = "Planned Visit [Visit-1]"
 * action[=].id = "H2Q-MC-LZZT-Study-Visit-1"
+
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-2"
 * action[=].title = "Visit-2"
 * action[=].description = "Planned Visit [Visit-2]"
@@ -16,6 +18,7 @@ Usage: #example
 * action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[=].offsetRange.low.value = 14
 * action[=].relatedAction[=].offsetRange.low.code = #d
+
 * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-3"
 * action[=].title = "Visit-3"
 * action[=].description = "Planned Visit [Visit-3]"

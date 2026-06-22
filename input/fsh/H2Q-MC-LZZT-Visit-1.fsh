@@ -99,12 +99,17 @@ Description: "Planned Visit [Visit-1]"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
-* action[+].title = "Laboratory (Urinalysis)"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
-* action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
-* action[=].relatedAction[=].relationship = #after
 * action[+].title = "Hemoglobin A1C"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C"
+* action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
+* action[=].relatedAction[=].relationship = #after
+// Conditional scheduling: HbA1c only applies to (e.g.) diabetic subjects.
+* action[=].condition[+].kind = #applicability
+* action[=].condition[=].expression.description = "Blood Chemistry with HbA1c"
+* action[=].condition[=].expression.language = #"text/fhirpath"
+* action[=].condition[=].expression.expression = "Condition.where(subject.reference = 'Patient/' + Id).where(code.coding.system = 'http://snomed.info/sct' and code.coding.code = '73211009').exists()"
+* action[+].title = "Laboratory (Urinalysis)"
+* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "ADAS-Cog"
@@ -116,11 +121,11 @@ Description: "Planned Visit [Visit-1]"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Disability Assessment for Dementia"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-DAD"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-DAD"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-NPI-X"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events"
