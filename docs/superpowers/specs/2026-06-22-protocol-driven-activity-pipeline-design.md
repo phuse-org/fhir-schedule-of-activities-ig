@@ -58,34 +58,69 @@ soa-matrix.csv (visit×activity) ──┘  4. emit activity resources +        
 ```
 
 The pipeline reads **compiled FHIR JSON** from `fsh-generated/resources/` (already parsed
-by SUSHI — robust), never raw FSH. Two new editable inputs join with the protocol graph:
-the **catalog** (per-activity content) and the **SoA matrix** (visit×activity schedule).
+by SUSHI — robust), never raw FSH. Three new editable inputs join with the protocol graph:
+the **activity catalog** (per-activity content), the **observation catalog** (result
+ObservationDefinitions, including lab-panel members), and the **SoA matrix** (visit×activity
+schedule).
 
 ### Components (each independently testable)
 
 | Unit | Responsibility | Input → Output |
 |---|---|---|
 | `protocol_graph.py` | Traverse compiled ProtocolDesign + visit PlanDefs, **recursing through grouping PlanDefinitions** (e.g. `Vital-Signs-Height-PD`) to reach leaf activity refs; return the ordered visit list and the set of (visit, activity-ref, ref-kind) tuples, where ref-kind ∈ {`ActivityDefinition`, `Questionnaire`, `PlanDefinition`}. | `fsh-generated/resources/*.json` → graph dict |
-| `catalog.py` | Load + validate `activity-catalog.csv`; key by activity id/OID; expose archetype + codes. | CSV → dict |
+| `catalog.py` | Load + validate `activity-catalog.csv` and `observation-catalog.csv`; key by id; expose archetype, codes, and panel membership (which analyte ObsDefs belong to which panel). | CSVs → dict |
 | `matrix.py` | Load `soa-matrix.csv`; bootstrap-extract it from compiled visits when absent. | CSV (or compiled visits) → visit×activity |
 | `render.py` | Render measurement AD+ObsDef, instrument Questionnaire-shell+scored ObsDef, and visit activity-action blocks (reuses existing RuleSets). | row+matrix → FSH |
 | `gen_activities.py` (extended) | Orchestrate: graph ∩ matrix ∩ catalog → write `*.gen.fsh`. Idempotent. | all of the above → files |
 | `build_bundle.py` | Filter compiled resources to definitional kinds; assemble transaction Bundle (PUT-by-id). | `fsh-generated/resources/*.json` → `dist/soa-deploy-bundle.json` |
 
-## The two editable sources
+## Using `observationResultRequirement` correctly
+
+`ActivityDefinition.observationResultRequirement` (0..\* canonical, "what observations must
+be **produced** by this action") is the element every measurement/lab activity uses for its
+results — **not** `observationRequirement` (which is for prerequisite *input* observations).
+A panel activity legitimately produces many observations; R6 models that as a **panel/battery
+`ObservationDefinition`** whose `hasMember` (Reference(ObservationDefinition)) lists the
+analyte definitions — the element's own definition cites *"a battery, a panel of tests, a set
+of vital sign measurements."* So:
+
+- A simple measurement activity (e.g. Weight) → `observationResultRequirement` → its single
+  analyte `ObservationDefinition`.
+- A lab-panel activity (Hematology, Blood Chemistry, Urinalysis) → `observationResultRequirement`
+  → **one panel `ObservationDefinition`** whose `hasMember` references each analyte
+  `ObservationDefinition` (WBC, RBC, Hgb, …). The activity stays a single canonical ref; the
+  panel ObsDef holds the (possibly 20–30) members. This scales and keeps the activity clean.
+
+## The editable sources
 
 ### `input/data/activity-catalog.csv`
 
 One row per activity. Columns:
-`id, oid, oidsys, title, archetype, code_system, code, code_display, unit, obsdef_id, questionnaire_id`.
+`id, oid, oidsys, title, archetype, code_system, code, code_display, unit, result_obsdef_id, questionnaire_id`.
 
 - `archetype` ∈ {`measurement`, `instrument`}.
-- Measurement rows carry LOINC `code` + UCUM `unit` + `obsdef_id`.
+- Measurement rows carry a `code` + (for single analytes) UCUM `unit`; `result_obsdef_id`
+  names the ObservationDefinition the activity requires as its result — a single analyte
+  ObsDef for vital signs, or a **panel** ObsDef for labs.
 - Instrument rows carry an instrument `code` (LOINC survey/SNOMED assessment) + `questionnaire_id`.
 - Replaces today's `measurement-activities.csv` + `instrument-activities.csv` (migrated in).
 - Codes enriched during authoring via the healthcare MCP (`search_clinical_concepts`
   `sources:["LNC"]` for LOINC, `lookup_icd_code`, UMLS CUI lookups). The MCP returns CUIs +
   long names; the exact code is resolved and **baked into the CSV** — no runtime MCP call.
+
+### `input/data/observation-catalog.csv`
+
+One row per result `ObservationDefinition` — both panels and analytes. Columns:
+`obsdef_id, kind, member_of, code, code_display, unit, datatype`.
+
+- `kind` ∈ {`analyte`, `panel`}.
+- `analyte` rows carry LOINC `code`, UCUM `unit`, `datatype` (default `Quantity`), and an
+  optional `member_of` naming the panel they belong to.
+- `panel` rows carry a LOINC **panel** `code` (e.g. CBC `58410-2`), blank `unit`/`datatype`;
+  the generator gives each panel a `hasMember` reference to every analyte whose `member_of`
+  equals that panel id.
+- Vital-signs analytes simply have blank `member_of` and are referenced directly by their
+  activity's `result_obsdef_id`.
 
 ### `input/data/soa-matrix.csv`
 
@@ -101,10 +136,16 @@ default anchor is the visit's hand-authored anchor convention).
 ## Generation behavior
 
 - **Measurement** → full `ActivityDefinition` (conforms to `StudyActivitySoa`,
-  `kind=#ServiceRequest`, `intent=#plan`, LOINC `code`, `participant`) + result
-  `ObservationDefinition` (`permittedDataType`, `permittedUnit`, `preferredReportName`).
-  Visit action uses `definitionUri = "ActivityDefinition/<id>"`. (Reuses the existing
-  `VitalSignActivity`/`VitalSignObservation` RuleSets.)
+  `kind=#ServiceRequest`, `intent=#plan`, LOINC `code`, `participant`) with
+  `observationResultRequirement` → its `result_obsdef_id`. (Reuses the existing
+  `VitalSignActivity` RuleSet.)
+- **Result ObservationDefinitions** come from the observation catalog:
+  - `analyte` rows → a coded `ObservationDefinition` (`permittedDataType`, `permittedUnit`,
+    `preferredReportName`) via the `VitalSignObservation` RuleSet.
+  - `panel` rows → a `PanelObservation` ObsDef carrying the panel `code` and a
+    `* hasMember[+] = Reference(<analyte>)` line for every analyte whose `member_of` matches.
+  - A **lab activity** therefore references one panel ObsDef, which in turn groups its
+    analytes — no long list of refs on the activity.
 - **Instrument** → `Questionnaire` **shell**: `status`, ODM `FormDef` identifier, `code`,
   `subjectType = #Patient`, SDC `itemExtractionContext` extension → a scored
   `ObservationDefinition`. Visit action uses
@@ -156,6 +197,9 @@ inputs.
    archetype; no stub ActivityDefinitions remain for catalogued activities.
 3. Instrument visit actions serialize `definitionCanonical`; measurement visit actions
    serialize `definitionUri`.
+3b. Lab-panel activities reference a single panel `ObservationDefinition` whose `hasMember`
+   array lists every analyte ObsDef from the observation catalog; no lab activity carries a
+   flat list of analyte refs. Every analyte's `member_of` resolves to a defined panel.
 4. `gen-activities.py` and `build_bundle.py` are idempotent (rerun ⇒ byte-identical output).
 5. `dist/soa-deploy-bundle.json` is a valid `transaction` Bundle whose entries are
    PUT-by-id and whose count equals the definitional-resource count.
@@ -176,8 +220,9 @@ inputs.
 ## Implementation phasing
 
 Cohesive but large; the plan will sequence:
-- **A. Catalog scale-up** — one `activity-catalog.csv` for all ~40 activities, archetype
-  classified, codes MCP-enriched; migrate the two existing CSVs in.
+- **A. Catalog scale-up** — `activity-catalog.csv` for all ~40 activities (archetype
+  classified, codes MCP-enriched) plus `observation-catalog.csv` (analytes + lab panels with
+  membership); migrate the two existing CSVs in. Add a `PanelObservation` RuleSet.
 - **B. Protocol traversal + SoA-matrix bootstrap** — `protocol_graph.py`, `matrix.py`,
   bootstrap from compiled visits, verify no drift.
 - **C. Generate activity resources + visit activity-actions** — extend the generator;
