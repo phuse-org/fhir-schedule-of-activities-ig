@@ -58,10 +58,11 @@ soa-matrix.csv (visit×activity) ──┘  4. emit activity resources +        
 ```
 
 The pipeline reads **compiled FHIR JSON** from `fsh-generated/resources/` (already parsed
-by SUSHI — robust), never raw FSH. Three new editable inputs join with the protocol graph:
+by SUSHI — robust), never raw FSH. Four new editable inputs join with the protocol graph:
 the **activity catalog** (per-activity content), the **observation catalog** (result
-ObservationDefinitions, including lab-panel members), and the **SoA matrix** (visit×activity
-schedule).
+ObservationDefinitions, including lab-panel members), the **condition catalog** (reusable
+applicability expressions), and the **SoA matrix** (visit×activity schedule, with optional
+per-cell conditions).
 
 ### Components (each independently testable)
 
@@ -69,7 +70,8 @@ schedule).
 |---|---|---|
 | `protocol_graph.py` | Traverse compiled ProtocolDesign + visit PlanDefs, **recursing through grouping PlanDefinitions** (e.g. `Vital-Signs-Height-PD`) to reach leaf activity refs; return the ordered visit list and the set of (visit, activity-ref, ref-kind) tuples, where ref-kind ∈ {`ActivityDefinition`, `Questionnaire`, `PlanDefinition`}. | `fsh-generated/resources/*.json` → graph dict |
 | `catalog.py` | Load + validate `activity-catalog.csv` and `observation-catalog.csv`; key by id; expose archetype, codes, and panel membership (which analyte ObsDefs belong to which panel). | CSVs → dict |
-| `matrix.py` | Load `soa-matrix.csv`; bootstrap-extract it from compiled visits when absent. | CSV (or compiled visits) → visit×activity |
+| `matrix.py` | Load `soa-matrix.csv` (cells may carry `@anchor`/`@cond` annotations); bootstrap-extract it from compiled visits when absent. | CSV (or compiled visits) → visit×activity |
+| `conditions.py` | Load + validate `condition-catalog.csv`; expose each applicability expression by id. | CSV → dict |
 | `render.py` | Render measurement AD+ObsDef, instrument Questionnaire-shell+scored ObsDef, and visit activity-action blocks (reuses existing RuleSets). | row+matrix → FSH |
 | `gen_activities.py` (extended) | Orchestrate: graph ∩ matrix ∩ catalog → write `*.gen.fsh`. Idempotent. | all of the above → files |
 | `build_bundle.py` | Filter compiled resources to definitional kinds; assemble transaction Bundle (PUT-by-id). | `fsh-generated/resources/*.json` → `dist/soa-deploy-bundle.json` |
@@ -122,11 +124,25 @@ One row per result `ObservationDefinition` — both panels and analytes. Columns
 - Vital-signs analytes simply have blank `member_of` and are referenced directly by their
   activity's `result_obsdef_id`.
 
+### `input/data/condition-catalog.csv`
+
+One row per reusable applicability condition. Columns:
+`condition_id, language, expression, description`.
+
+- `language` is the expression mime type (e.g. `text/fhirpath` or `text/cql`).
+- `expression` is a **Boolean-valued** expression evaluated against the subject at runtime
+  (e.g. a check for a `Condition` coded as Type-I diabetes).
+- `description` is human-readable (e.g. "Type I diabetics only").
+- Referenced by id from SoA-matrix cells (`@cond:<condition_id>`) or, for an always-applicable
+  activity, an optional `default_condition` column in the activity catalog.
+
 ### `input/data/soa-matrix.csv`
 
 Rows = activity ids, columns = visit ids, cell = `X` when the activity occurs at that
-visit (optional `@anchor-id` in a cell to set that action's `relatedAction.targetId`;
-default anchor is the visit's hand-authored anchor convention).
+visit. A cell may carry annotations: `@anchor:<id>` sets that action's
+`relatedAction.targetId` (default is the visit's hand-authored anchor convention), and
+`@cond:<condition_id>` makes the action conditional (see Conditional scheduling). Example
+cell: `X@cond:type1-diabetes`.
 
 - **Bootstrapped once** by `matrix.py` extracting (visit, activity) pairs from the current
   compiled visit PlanDefinitions, so no scheduling information is lost in the transition.
@@ -158,6 +174,14 @@ default anchor is the visit's hand-authored anchor convention).
   and SOA extensions, and applies the generated block with a single
   `* insert <Visit>Actions`. (Grouping PlanDefinitions like `Vital-Signs-Height-PD` are
   preserved; a visit cell may reference a grouping PD instead of a leaf activity.)
+- **Conditional scheduling:** a `@cond:<condition_id>` annotation on a matrix cell (or an
+  activity's `default_condition`) makes that activity-action conditional. The generator
+  emits, on that action, `* action[=].condition[+].kind = #applicability`,
+  `* action[=].condition[=].expression.language = #<language>`, and
+  `* action[=].condition[=].expression.expression = "<expr>"` resolved from the condition
+  catalog. Conditionality lives on `PlanDefinition.action.condition` (applicability), **not**
+  on `observationResultRequirement` — the *scheduling* of the test is gated; its result
+  requirement stays unconditional. Example: HbA1c scheduled only where `type1-diabetes` holds.
 - **Stub retirement:** the ~30 hand-authored stub `ActivityDefinition`s in
   `StudyActivities.fsh` are removed as the catalog takes over (same id, single source).
 
@@ -200,6 +224,9 @@ inputs.
 3b. Lab-panel activities reference a single panel `ObservationDefinition` whose `hasMember`
    array lists every analyte ObsDef from the observation catalog; no lab activity carries a
    flat list of analyte refs. Every analyte's `member_of` resolves to a defined panel.
+3c. A `@cond` matrix cell produces an `action.condition` with `kind=applicability` and the
+   catalog's boolean expression on exactly that visit's activity-action; unconditional
+   actions carry no `condition`. Every `@cond:<id>` resolves to a defined condition.
 4. `gen-activities.py` and `build_bundle.py` are idempotent (rerun ⇒ byte-identical output).
 5. `dist/soa-deploy-bundle.json` is a valid `transaction` Bundle whose entries are
    PUT-by-id and whose count equals the definitional-resource count.
@@ -226,7 +253,8 @@ Cohesive but large; the plan will sequence:
 - **B. Protocol traversal + SoA-matrix bootstrap** — `protocol_graph.py`, `matrix.py`,
   bootstrap from compiled visits, verify no drift.
 - **C. Generate activity resources + visit activity-actions** — extend the generator;
-  retire stubs; visits `insert` generated actions.
+  retire stubs; visits `insert` generated actions; emit `action.condition` for `@cond`
+  cells from the `condition-catalog.csv`.
 - **D. Usage sweep** — flip definitional resources to `#definition`, keep 0 errors.
 - **E. Deploy Bundle** — `build_bundle.py` + `build-soa.sh` + docs.
 
