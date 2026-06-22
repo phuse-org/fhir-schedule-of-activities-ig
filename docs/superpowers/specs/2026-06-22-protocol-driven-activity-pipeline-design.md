@@ -98,13 +98,15 @@ of vital sign measurements."* So:
 ### `input/data/activity-catalog.csv`
 
 One row per activity. Columns:
-`id, oid, oidsys, title, archetype, code_system, code, code_display, unit, result_obsdef_id, questionnaire_id`.
+`id, oid, oidsys, title, archetype, code_system, code, code_display, unit, result_obsdef_id, questionnaire_id, default_condition`.
 
 - `archetype` ∈ {`measurement`, `instrument`}.
 - Measurement rows carry a `code` + (for single analytes) UCUM `unit`; `result_obsdef_id`
   names the ObservationDefinition the activity requires as its result — a single analyte
   ObsDef for vital signs, or a **panel** ObsDef for labs.
 - Instrument rows carry an instrument `code` (LOINC survey/SNOMED assessment) + `questionnaire_id`.
+- `default_condition` optionally names a row in `condition-catalog.csv` that always gates this
+  activity's scheduling (see Conditional scheduling below); blank means unconditional.
 - Replaces today's `measurement-activities.csv` + `instrument-activities.csv` (migrated in).
 - Codes enriched during authoring via the healthcare MCP (`search_clinical_concepts`
   `sources:["LNC"]` for LOINC, `lookup_icd_code`, UMLS CUI lookups). The MCP returns CUIs +
