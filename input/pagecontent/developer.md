@@ -83,3 +83,17 @@ Run the generator's tests with:
 
     python3 scripts/test_gen_activities.py
 
+## Activity catalogs (pipeline)
+
+The protocol-driven pipeline is fed by three editable catalogs under `input/data/`:
+
+- `activity-catalog.csv` — one row per study activity (archetype, codes, result/questionnaire links).
+- `observation-catalog.csv` — result ObservationDefinitions; `kind=panel` rows group
+  `kind=analyte` rows via `member_of` (rendered as `ObservationDefinition.hasMember`).
+- `condition-catalog.csv` — reusable applicability expressions for conditional scheduling.
+
+Validate them before regenerating:
+
+    python3 scripts/catalog.py        # exits non-zero on any error
+    python3 scripts/test_catalog.py   # unit + integration tests
+
