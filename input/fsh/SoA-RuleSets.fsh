@@ -40,3 +40,8 @@ RuleSet: ScoredInstrumentObservation(loinc, lname)
 * code = LOINC#{loinc} "{lname}"
 * permittedDataType = #integer
 * preferredReportName = "{lname}"
+
+// Panel / battery ObservationDefinition (groups analytes via hasMember).
+RuleSet: PanelObservation(loinc, lname)
+* status = #active
+* code = LOINC#{loinc} "{lname}"
