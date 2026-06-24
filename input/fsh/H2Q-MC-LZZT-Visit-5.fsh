@@ -52,7 +52,7 @@ Description: "Planned Visit [Visit-5]"
 * action[=].relatedAction[+].targetId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-NPI-X"
 * action[=].relatedAction[+].targetId = "VISIT-5-H2Q-MC-LZZT-Visit-Date"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events"

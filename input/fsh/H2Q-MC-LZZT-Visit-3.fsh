@@ -47,7 +47,7 @@ Description: "Planned Visit [Visit-3]"
 * action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "ADAS-Cog"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-ADAS-Cog"
 * action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Clinician's Interview-Based Impression of Change"
@@ -55,11 +55,11 @@ Description: "Planned Visit [Visit-3]"
 * action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Disability Assessment for Dementia"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-DAD"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-DAD"
 * action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-NPI-X"
 * action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Adverse events"

@@ -113,11 +113,11 @@ Description: "Planned Visit [Visit-1]"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "ADAS-Cog"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-ADAS-Cog"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Clinician's Interview-Based Impression of Change"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-CIBIC+"
 * action[=].relatedAction[+].targetId = "H2Q-MC-LZZT-Informed-Consent"
 * action[=].relatedAction[=].relationship = #after
 * action[+].title = "Disability Assessment for Dementia"
