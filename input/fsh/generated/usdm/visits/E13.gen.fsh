@@ -48,3 +48,59 @@ Description: "Day 182"
         * code = #d
         * system = "http://unitsofmeasure.org"
     * description = "Early withdrawal or adverse event"
+
+// --- Activity actions for E13 ---
+* action[+]
+  * title = "Physical examination"
+  * definitionUri = "ActivityDefinition/usdm-act-physical-examination"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "Vital Signs and Temperature"
+  * definitionUri = "ActivityDefinition/usdm-act-vital-signs-and-temperature"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "ECG"
+  * definitionUri = "ActivityDefinition/usdm-act-ecg"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "Concomitant medications"
+  * definitionUri = "ActivityDefinition/usdm-act-concomitant-medications"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "Hematology"
+  * definitionUri = "ActivityDefinition/usdm-act-hematology"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "Chemistry"
+  * definitionUri = "ActivityDefinition/usdm-act-chemistry"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "Study drug record , Medications dispensed, Medications returned"
+  * definitionUri = "ActivityDefinition/usdm-act-study-drug-record-medications-dispensed-medicati-bf9d38"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "TTS Acceptability Survey"
+  * definitionUri = "ActivityDefinition/usdm-act-tts-acceptability-survey"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after
+* action[+]
+  * title = "NPI-X"
+  * definitionUri = "ActivityDefinition/usdm-act-npi-x"
+  * relatedAction[+]
+    * targetId = "E13"
+    * relationship = #after

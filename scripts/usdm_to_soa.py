@@ -40,6 +40,7 @@ if str(_SCRIPTS_DIR) not in sys.path:
 
 from usdm_reader import USDMDoc, emit_research_study, emit_eligibility_groups  # noqa: E402
 from usdm_reader import emit_visit_plan_definitions, emit_protocol_design       # noqa: E402
+from usdm_reader import emit_activity_stubs, emit_visit_activity_actions        # noqa: E402
 from usdm_timing import TimingResolver                                           # noqa: E402
 from usdm_catalogs import (                                                      # noqa: E402
     extract_activity_catalog, write_activity_catalog,
@@ -151,6 +152,25 @@ def run(usdm_path: str) -> int:
         write_soa_matrix(matrix_result, matrix_path)
     except Exception as exc:
         print(f"FATAL: extract_soa_matrix failed: {exc}", file=sys.stderr)
+        return 1
+
+    # Step 10: Activity, ObservationDefinition, and Questionnaire stubs
+    stubs_path = os.path.join(fsh_out, "ActivityStubs.gen.fsh")
+    print(f"  → {stubs_path}", flush=True)
+    try:
+        emit_activity_stubs(act_path, obs_path, stubs_path)
+    except Exception as exc:
+        print(f"FATAL: emit_activity_stubs failed: {exc}", file=sys.stderr)
+        return 1
+
+    # Step 11: Inline activity actions into visit FSH files
+    visits_dir = os.path.join(fsh_out, "visits")
+    print(f"  → activity actions in {visits_dir}/", flush=True)
+    try:
+        modified = emit_visit_activity_actions(act_path, matrix_path, visits_dir)
+        print(f"     {len(modified)} visit files updated", flush=True)
+    except Exception as exc:
+        print(f"FATAL: emit_visit_activity_actions failed: {exc}", file=sys.stderr)
         return 1
 
     print("Done — pipeline complete (0 errors).", flush=True)

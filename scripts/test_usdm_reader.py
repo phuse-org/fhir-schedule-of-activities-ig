@@ -27,6 +27,8 @@ emit_research_study = usdm_reader.emit_research_study
 emit_eligibility_groups = usdm_reader.emit_eligibility_groups
 emit_visit_plan_definitions = usdm_reader.emit_visit_plan_definitions
 emit_protocol_design = usdm_reader.emit_protocol_design
+emit_activity_stubs = usdm_reader.emit_activity_stubs
+emit_visit_activity_actions = usdm_reader.emit_visit_activity_actions
 parse_iso8601_duration_to_days = usdm_reader.parse_iso8601_duration_to_days
 strip_html = usdm_reader.strip_html
 
@@ -1505,6 +1507,201 @@ class TestUsdmToSoaIntegration(unittest.TestCase):
                 first_data, second_data,
                 f"usdm_to_soa.py is not idempotent for: {rel}",
             )
+
+
+# ---------------------------------------------------------------------------
+# emit_activity_stubs — content tests (F-activities)
+# ---------------------------------------------------------------------------
+class TestEmitActivityStubs(unittest.TestCase):
+    """
+    Integration tests for emit_activity_stubs against the real USDM catalogs.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        if not _USDM_AVAILABLE:
+            return
+        cls.act_path = str(
+            _REPO_ROOT / "input" / "data" / "usdm-activity-catalog.csv"
+        )
+        cls.obs_path = str(
+            _REPO_ROOT / "input" / "data" / "usdm-observation-catalog.csv"
+        )
+        if not (pathlib.Path(cls.act_path).exists()
+                and pathlib.Path(cls.obs_path).exists()):
+            return
+        cls.tmp_dir = tempfile.mkdtemp()
+        cls.out_path = os.path.join(cls.tmp_dir, "ActivityStubs.gen.fsh")
+        emit_activity_stubs(cls.act_path, cls.obs_path, cls.out_path)
+        with open(cls.out_path, encoding="utf-8") as fh:
+            cls.content = fh.read()
+
+    def setUp(self):
+        _require_usdm(self)
+        if not pathlib.Path(self.__class__.act_path).exists():
+            self.skipTest("Activity catalog not found")
+
+    def test_do_not_edit_header(self):
+        self.assertIn("DO NOT EDIT", self.content.splitlines()[0])
+
+    def test_activity_definition_emitted(self):
+        self.assertIn("InstanceOf: ActivityDefinition", self.content)
+
+    def test_observation_definition_emitted(self):
+        self.assertIn("InstanceOf: ObservationDefinition", self.content)
+
+    def test_questionnaire_emitted(self):
+        self.assertIn("InstanceOf: Questionnaire", self.content)
+
+    def test_measurement_has_definition_uri(self):
+        self.assertIn("usdm-act-informed-consent", self.content)
+
+    def test_instrument_has_questionnaire(self):
+        self.assertIn("usdm-q-mmse", self.content)
+
+    def test_obsdefs_have_code(self):
+        """Every ObsDef must have * code (1..1 cardinality)."""
+        lines = self.content.splitlines()
+        in_obsdef = False
+        has_code = False
+        for line in lines:
+            if line.startswith("InstanceOf: ObservationDefinition"):
+                in_obsdef = True
+                has_code = False
+            elif line.startswith("InstanceOf:") and in_obsdef:
+                self.assertTrue(
+                    has_code,
+                    "An ObservationDefinition block is missing * code",
+                )
+                in_obsdef = False
+            elif in_obsdef and line.strip().startswith("* code"):
+                has_code = True
+
+    def test_observation_result_requirement_is_canonical(self):
+        """observationResultRequirement must use Canonical(), not Reference()."""
+        self.assertIn("Canonical(usdm-obs-", self.content)
+        self.assertNotIn(
+            "observationResultRequirement[+] = Reference",
+            self.content,
+        )
+
+    def test_fhir_ids_within_64_chars(self):
+        """All Instance ids must be ≤ 64 characters."""
+        for line in self.content.splitlines():
+            if line.startswith("Instance: "):
+                fhir_id = line[len("Instance: "):].strip()
+                self.assertLessEqual(
+                    len(fhir_id), 64,
+                    f"FHIR id too long ({len(fhir_id)} chars): {fhir_id}",
+                )
+
+    def test_idempotent(self):
+        with open(self.out_path, "rb") as fh:
+            first = fh.read()
+        emit_activity_stubs(self.act_path, self.obs_path, self.out_path)
+        with open(self.out_path, "rb") as fh:
+            second = fh.read()
+        self.assertEqual(first, second, "emit_activity_stubs is not idempotent")
+
+
+# ---------------------------------------------------------------------------
+# emit_visit_activity_actions — content tests (F-activities)
+# ---------------------------------------------------------------------------
+class TestEmitVisitActivityActions(unittest.TestCase):
+    """
+    Integration tests for emit_visit_activity_actions.
+    Runs against the real catalogs + matrix, writing into a temp visits dir
+    pre-populated with the real generated visit FSH skeletons.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        if not _USDM_AVAILABLE:
+            return
+        cls.act_path = str(
+            _REPO_ROOT / "input" / "data" / "usdm-activity-catalog.csv"
+        )
+        cls.matrix_path = str(
+            _REPO_ROOT / "input" / "data" / "usdm-soa-matrix.csv"
+        )
+        src_visits = _REPO_ROOT / "input" / "fsh" / "generated" / "usdm" / "visits"
+        if not (pathlib.Path(cls.act_path).exists()
+                and pathlib.Path(cls.matrix_path).exists()
+                and src_visits.exists()):
+            return
+
+        import shutil
+        cls.tmp_dir = tempfile.mkdtemp()
+        cls.visits_dir = os.path.join(cls.tmp_dir, "visits")
+        shutil.copytree(str(src_visits), cls.visits_dir)
+
+        emit_visit_activity_actions(cls.act_path, cls.matrix_path, cls.visits_dir)
+
+        cls.files: dict = {}
+        for fname in os.listdir(cls.visits_dir):
+            if fname.endswith(".gen.fsh"):
+                enc = fname.replace(".gen.fsh", "")
+                with open(os.path.join(cls.visits_dir, fname), encoding="utf-8") as fh:
+                    cls.files[enc] = fh.read()
+
+    def setUp(self):
+        _require_usdm(self)
+        if not pathlib.Path(self.__class__.act_path).exists():
+            self.skipTest("Activity catalog not found")
+
+    def test_e1_has_activity_actions(self):
+        """E1 should have multiple activity action blocks."""
+        content = self.files["E1"]
+        count = content.count("* action[+]")
+        # E1 has visit action + 2 transitions + ~23 activity actions
+        self.assertGreater(count, 5)
+
+    def test_e1_has_informed_consent(self):
+        self.assertIn("Informed consent", self.files["E1"])
+        self.assertIn("usdm-act-informed-consent", self.files["E1"])
+
+    def test_e3_has_patient_randomised(self):
+        self.assertIn("Patient randomised", self.files["E3"])
+
+    def test_e4_has_vital_signs(self):
+        self.assertIn("Vital Signs and Temperature", self.files["E4"])
+
+    def test_e13_has_tts_acceptability_survey(self):
+        """TTS Acceptability Survey appears only at E13."""
+        self.assertIn("TTS Acceptability Survey", self.files["E13"])
+        for enc, content in self.files.items():
+            if enc != "E13":
+                self.assertNotIn("tts-acceptability-survey", content,
+                                 f"TTS survey unexpectedly in {enc}")
+
+    def test_activity_actions_have_related_action(self):
+        """Every activity action block must have a relatedAction targeting the visit."""
+        import re
+        for enc, content in self.files.items():
+            # Extract action blocks after the activity section header
+            marker = f"# --- Activity actions for {enc} ---"
+            if marker not in content:
+                continue
+            activity_section = content.split(marker, 1)[1]
+            action_count = activity_section.count("* action[+]")
+            related_count = activity_section.count("* relatedAction[+]")
+            self.assertEqual(
+                action_count, related_count,
+                f"{enc}: {action_count} activity actions but {related_count} relatedActions",
+            )
+
+    def test_instrument_uses_definition_canonical(self):
+        """Instrument activities must use definitionCanonical, not definitionUri."""
+        # MMSE is an instrument at E1
+        self.assertIn("Canonical(usdm-q-mmse)", self.files["E1"])
+        self.assertNotIn("definitionUri.*mmse", self.files["E1"])
+
+    def test_measurement_uses_definition_uri(self):
+        """Measurement activities must use definitionUri."""
+        self.assertIn(
+            'definitionUri = "ActivityDefinition/usdm-act-informed-consent"',
+            self.files["E1"],
+        )
 
 
 if __name__ == "__main__":

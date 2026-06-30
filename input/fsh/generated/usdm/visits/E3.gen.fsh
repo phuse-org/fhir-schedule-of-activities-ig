@@ -48,3 +48,65 @@ Description: "Baseline encounter - Ambulatory ECG Removal"
         * code = #d
         * system = "http://unitsofmeasure.org"
     * description = "Early withdrawal or adverse event"
+
+// --- Activity actions for E3 ---
+* action[+]
+  * title = "Patient randomised"
+  * definitionUri = "ActivityDefinition/usdm-act-patient-randomised"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "Vital Signs and Temperature"
+  * definitionUri = "ActivityDefinition/usdm-act-vital-signs-and-temperature"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "Ambulatory ECG removed"
+  * definitionUri = "ActivityDefinition/usdm-act-ambulatory-ecg-removed"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "Concomitant medications"
+  * definitionUri = "ActivityDefinition/usdm-act-concomitant-medications"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "Plasma Specimen (Xanomeline)"
+  * definitionUri = "ActivityDefinition/usdm-act-plasma-specimen-xanomeline"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "Study drug record , Medications dispensed, Medications returned"
+  * definitionUri = "ActivityDefinition/usdm-act-study-drug-record-medications-dispensed-medicati-bf9d38"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "ADAS-Cog"
+  * definitionUri = "ActivityDefinition/usdm-act-adas-cog"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "CIBIC+"
+  * definitionUri = "ActivityDefinition/usdm-act-cibic"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "DAD"
+  * definitionUri = "ActivityDefinition/usdm-act-dad"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after
+* action[+]
+  * title = "NPI-X"
+  * definitionUri = "ActivityDefinition/usdm-act-npi-x"
+  * relatedAction[+]
+    * targetId = "E3"
+    * relationship = #after

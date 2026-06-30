@@ -48,3 +48,147 @@ Description: "Screening encounter"
         * code = #d
         * system = "http://unitsofmeasure.org"
     * description = "Early withdrawal or adverse event"
+
+// --- Activity actions for E1 ---
+* action[+]
+  * title = "Informed consent"
+  * definitionUri = "ActivityDefinition/usdm-act-informed-consent"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Inclusion and exclusion criteria"
+  * definitionUri = "ActivityDefinition/usdm-act-inclusion-and-exclusion-criteria"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Patient number assigned"
+  * definitionUri = "ActivityDefinition/usdm-act-patient-number-assigned"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Demographics"
+  * definitionCanonical = Canonical(usdm-q-date-of-birth)
+  * participant[+].type = #practitioner
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Hachinski Ischemic Scale"
+  * definitionCanonical = Canonical(usdm-q-haschinski-ischemic-scale)
+  * participant[+].type = #practitioner
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "MMSE"
+  * definitionCanonical = Canonical(usdm-q-mmse)
+  * participant[+].type = #practitioner
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Physical examination"
+  * definitionUri = "ActivityDefinition/usdm-act-physical-examination"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Medical history"
+  * definitionUri = "ActivityDefinition/usdm-act-medical-history"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Habits"
+  * definitionUri = "ActivityDefinition/usdm-act-habits"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Chest X-ray"
+  * definitionUri = "ActivityDefinition/usdm-act-chest-x-ray"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Vital Signs and Temperature"
+  * definitionUri = "ActivityDefinition/usdm-act-vital-signs-and-temperature"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "ECG"
+  * definitionUri = "ActivityDefinition/usdm-act-ecg"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Placebo TTS test"
+  * definitionCanonical = Canonical(usdm-q-placebo-tts-test)
+  * participant[+].type = #patient
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "CT scan"
+  * definitionUri = "ActivityDefinition/usdm-act-ct-scan"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Concomitant medications"
+  * definitionUri = "ActivityDefinition/usdm-act-concomitant-medications"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Hematology"
+  * definitionUri = "ActivityDefinition/usdm-act-hematology"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Chemistry"
+  * definitionUri = "ActivityDefinition/usdm-act-chemistry"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Uninalysis"
+  * definitionUri = "ActivityDefinition/usdm-act-uninalysis"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "Hemoglobin A1C"
+  * definitionUri = "ActivityDefinition/usdm-act-hemoglobin-a1c"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "ADAS-Cog"
+  * definitionUri = "ActivityDefinition/usdm-act-adas-cog"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "CIBIC+"
+  * definitionUri = "ActivityDefinition/usdm-act-cibic"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "DAD"
+  * definitionUri = "ActivityDefinition/usdm-act-dad"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after
+* action[+]
+  * title = "NPI-X"
+  * definitionUri = "ActivityDefinition/usdm-act-npi-x"
+  * relatedAction[+]
+    * targetId = "E1"
+    * relationship = #after

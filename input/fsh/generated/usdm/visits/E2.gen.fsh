@@ -48,3 +48,17 @@ Description: "Screening encounter - Ambulatory ECG Placement"
         * code = #d
         * system = "http://unitsofmeasure.org"
     * description = "Early withdrawal or adverse event"
+
+// --- Activity actions for E2 ---
+* action[+]
+  * title = "Vital Signs and Temperature"
+  * definitionUri = "ActivityDefinition/usdm-act-vital-signs-and-temperature"
+  * relatedAction[+]
+    * targetId = "E2"
+    * relationship = #after
+* action[+]
+  * title = "Ambulatory ECG placed"
+  * definitionUri = "ActivityDefinition/usdm-act-ambulatory-ecg-placed"
+  * relatedAction[+]
+    * targetId = "E2"
+    * relationship = #after

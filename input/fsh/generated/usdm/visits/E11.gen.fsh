@@ -70,3 +70,53 @@ Description: "Day 140"
         * code = #d
         * system = "http://unitsofmeasure.org"
     * description = "Early withdrawal or adverse event"
+
+// --- Activity actions for E11 ---
+* action[+]
+  * title = "Vital Signs and Temperature"
+  * definitionUri = "ActivityDefinition/usdm-act-vital-signs-and-temperature"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after
+* action[+]
+  * title = "ECG"
+  * definitionUri = "ActivityDefinition/usdm-act-ecg"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after
+* action[+]
+  * title = "Concomitant medications"
+  * definitionUri = "ActivityDefinition/usdm-act-concomitant-medications"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after
+* action[+]
+  * title = "Hematology"
+  * definitionUri = "ActivityDefinition/usdm-act-hematology"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after
+* action[+]
+  * title = "Chemistry"
+  * definitionUri = "ActivityDefinition/usdm-act-chemistry"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after
+* action[+]
+  * title = "Plasma Specimen (Xanomeline)"
+  * definitionUri = "ActivityDefinition/usdm-act-plasma-specimen-xanomeline"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after
+* action[+]
+  * title = "Study drug record , Medications dispensed, Medications returned"
+  * definitionUri = "ActivityDefinition/usdm-act-study-drug-record-medications-dispensed-medicati-bf9d38"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after
+* action[+]
+  * title = "NPI-X"
+  * definitionUri = "ActivityDefinition/usdm-act-npi-x"
+  * relatedAction[+]
+    * targetId = "E11"
+    * relationship = #after

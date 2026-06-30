@@ -1230,3 +1230,327 @@ def emit_protocol_design(
 
     lines.append("")
     _write_fsh(out_path, lines)
+
+
+# ---------------------------------------------------------------------------
+# Activity stubs + visit activity actions
+# ---------------------------------------------------------------------------
+
+import csv as _csv
+
+
+def _load_csv_skip_comments(path: str) -> list:
+    """Load a CSV file, skipping lines that start with '#'."""
+    import io
+    with open(path, newline="", encoding="utf-8") as fh:
+        lines = [ln for ln in fh if not ln.startswith("#")]
+    return list(_csv.DictReader(io.StringIO("".join(lines))))
+
+
+def _activity_instance_id(activity_id: str) -> str:
+    """Convert catalog id to a FHIR-safe FSH instance id (max 64 chars)."""
+    raw = f"usdm-act-{activity_id}"
+    if len(raw) <= 64:
+        return raw
+    # Truncate: prefix=9, hyphen=1, hash=6 → 16 overhead; body gets 48 chars
+    import hashlib
+    suffix = hashlib.md5(raw.encode()).hexdigest()[:6]
+    return f"usdm-act-{activity_id[:48]}-{suffix}"
+
+
+def _obsdef_instance_id(obsdef_id: str) -> str:
+    """Convert catalog obsdef_id to a FHIR-safe FSH instance id."""
+    return f"usdm-obs-{obsdef_id}"
+
+
+def _questionnaire_instance_id(questionnaire_id: str) -> str:
+    """Convert catalog questionnaire_id to a FHIR-safe FSH instance id."""
+    return f"usdm-q-{questionnaire_id}"
+
+
+def _code_system_to_alias(code_system: str) -> str:
+    """
+    Map a raw code_system string from the catalog to a FHIR system URI.
+    Returns a full URI suitable for use in FSH system = "..." lines.
+    """
+    _MAP = {
+        "LOINC": "http://loinc.org",
+        "SNOMED": "http://snomed.info/sct",
+        "OMOP": "http://omop.org",
+        "SPONSOR": "http://example.org/sponsor",
+        "http://www.cdisc.org": "http://www.cdisc.org",
+    }
+    return _MAP.get(code_system, code_system or "http://example.org/code-system")
+
+
+def emit_activity_stubs(
+    activity_catalog_path: str,
+    observation_catalog_path: str,
+    out_path: str,
+) -> None:
+    """
+    Generate ActivityDefinition, ObservationDefinition, and Questionnaire
+    stub FSH instances from the USDM activity + observation catalogs.
+
+    Output: a single file at out_path (e.g.
+    input/fsh/generated/usdm/ActivityStubs.gen.fsh).
+
+    Rules:
+    - measurement rows  → ActivityDefinition stub +
+                          ObservationDefinition stub (if result_obsdef_id set)
+    - procedure rows    → ActivityDefinition stub (no ObsDef)
+    - instrument rows   → Questionnaire stub (no ActivityDefinition)
+    - panel ObsDef rows → ObservationDefinition panel stub (hasMember wired
+                          when analyte rows with matching member_of exist)
+    - analyte ObsDef rows → ObservationDefinition analyte stub
+    """
+    activities = _load_csv_skip_comments(activity_catalog_path)
+    observations = _load_csv_skip_comments(observation_catalog_path)
+
+    # Index observations by id and build panel→[analyte] map
+    obs_by_id = {r["obsdef_id"]: r for r in observations}
+    panel_members: dict = {}  # panel_id → [analyte_id, ...]
+    for obs in observations:
+        mo = obs.get("member_of", "")
+        if mo:
+            panel_members.setdefault(mo, []).append(obs["obsdef_id"])
+
+    lines: list = [_fsh_header()]
+
+    # -----------------------------------------------------------------------
+    # Observation definitions (panels first so analytes can reference them)
+    # -----------------------------------------------------------------------
+    panels = [o for o in observations if o.get("kind") == "panel"]
+    analytes = [o for o in observations if o.get("kind") == "analyte"]
+
+    for obs in panels + analytes:
+        oid = obs["obsdef_id"]
+        fhir_id = _obsdef_instance_id(oid)
+        code = obs.get("code", "")
+        code_display = obs.get("code_display", "")
+        unit = obs.get("unit", "")
+        datatype = obs.get("datatype", "")
+        kind = obs.get("kind", "")
+
+        lines += [
+            "",
+            f"// ObservationDefinition: {oid}",
+            f"Instance: {fhir_id}",
+            "InstanceOf: ObservationDefinition",
+            "Usage: #definition",
+            f'Title: "{_fsh_escape(code_display or oid)}"',
+            f'Description: "USDM-derived observation definition for {_fsh_escape(oid)}"',
+            "* status = #active",
+        ]
+        # code is 1..1 on ObservationDefinition — always emit it
+        lines += ["* code"]
+        if code:
+            lines += [
+                "  * coding[+]",
+                f'    * system = "http://www.cdisc.org"',
+                f"    * code = #{code}",
+            ]
+            if code_display:
+                lines.append(f'    * display = "{_fsh_escape(code_display)}"')
+        else:
+            # Fallback text-only code so cardinality constraint is satisfied
+            lines.append(f'  * text = "{_fsh_escape(code_display or oid)}"')
+        if datatype == "Quantity":
+            lines.append("* permittedDataType = #Quantity")
+        elif datatype == "string":
+            lines.append("* permittedDataType = #string")
+        if unit:
+            lines.append(f'* permittedUnit = UCUM#"{unit}"')
+        if kind == "panel":
+            for member_id in panel_members.get(oid, []):
+                member_fhir_id = _obsdef_instance_id(member_id)
+                lines.append(
+                    f"* hasMember[+] = Reference({member_fhir_id})"
+                )
+
+    # -----------------------------------------------------------------------
+    # ActivityDefinitions (measurement + procedure)
+    # -----------------------------------------------------------------------
+    for act in activities:
+        act_id = act["id"]
+        archetype = act.get("archetype", "")
+        title = act.get("title", act_id)
+        code = act.get("code", "")
+        code_display = act.get("code_display", "")
+        code_system = act.get("code_system", "")
+        result_obsdef_id = act.get("result_obsdef_id", "")
+
+        if archetype in ("measurement", "procedure"):
+            fhir_id = _activity_instance_id(act_id)
+            lines += [
+                "",
+                f"// ActivityDefinition: {act_id} ({archetype})",
+                f"Instance: {fhir_id}",
+                "InstanceOf: ActivityDefinition",
+                "Usage: #definition",
+                f'Title: "{_fsh_escape(title)}"',
+                f'Description: "USDM-derived activity: {_fsh_escape(title)}"',
+                "* status = #active",
+                "* kind = #ServiceRequest",
+                "* intent = #plan",
+            ]
+            if code and code_system:
+                sys_uri = _code_system_to_alias(code_system)
+                lines += [
+                    "* code",
+                    "  * coding[+]",
+                    f'    * system = "{sys_uri}"',
+                    f"    * code = #{code}",
+                ]
+                if code_display:
+                    lines.append(f'    * display = "{_fsh_escape(code_display)}"')
+            if result_obsdef_id and result_obsdef_id in obs_by_id:
+                obs_fhir_id = _obsdef_instance_id(result_obsdef_id)
+                # observationResultRequirement is canonical in R6, not Reference
+                lines.append(
+                    f"* observationResultRequirement[+] = Canonical({obs_fhir_id})"
+                )
+
+    # -----------------------------------------------------------------------
+    # Questionnaires (instrument rows)
+    # -----------------------------------------------------------------------
+    for act in activities:
+        act_id = act["id"]
+        archetype = act.get("archetype", "")
+        if archetype != "instrument":
+            continue
+        title = act.get("title", act_id)
+        q_id = act.get("questionnaire_id", "") or act_id
+        respondent_type = act.get("respondent_type", "")
+        fhir_id = _questionnaire_instance_id(q_id)
+
+        lines += [
+            "",
+            f"// Questionnaire: {act_id} (instrument)",
+            f"Instance: {fhir_id}",
+            "InstanceOf: Questionnaire",
+            "Usage: #definition",
+            f'Title: "{_fsh_escape(title)}"',
+            f'Description: "USDM-derived questionnaire shell for {_fsh_escape(title)}"',
+            "* status = #active",
+            "* subjectType = #Patient",
+        ]
+
+    lines.append("")
+    _write_fsh(out_path, lines)
+
+
+def emit_visit_activity_actions(
+    activity_catalog_path: str,
+    matrix_path: str,
+    visits_out_dir: str,
+) -> list:
+    """
+    For each visit in the SoA matrix, append activity action[+] blocks to the
+    existing visit .gen.fsh file (the visit encounter skeleton).
+
+    Each activity row in the matrix that has an 'X' for a given encounter
+    produces one action[+] block:
+
+      * action[+]
+        * title = "<activity title>"
+        * definitionUri = "ActivityDefinition/usdm-act-<id>"   (measurement/procedure)
+        OR
+        * definitionCanonical = Canonical(usdm-q-<questionnaire_id>)   (instrument)
+        * relatedAction[+]
+          * targetId = "<encounter.name>"
+          * relationship = #after
+
+    The encounter action id (the relatedAction target) is the encounter name
+    (e.g. "E1"), which matches the `* id = "E1"` set in the visit skeleton.
+
+    Returns a list of visit file paths modified.
+    """
+    activities = _load_csv_skip_comments(activity_catalog_path)
+    act_by_id = {r["id"]: r for r in activities}
+
+    matrix_rows = _load_csv_skip_comments(matrix_path)
+    if not matrix_rows:
+        return []
+
+    all_cols = list(matrix_rows[0].keys())
+    activity_col = all_cols[0]
+    visit_cols = all_cols[1:]
+
+    # Collect activities per visit
+    visit_activities: dict = {vc: [] for vc in visit_cols}
+    for row in matrix_rows:
+        act_id = row.get(activity_col, "").strip()
+        if not act_id:
+            continue
+        for vc in visit_cols:
+            if row.get(vc, "").strip().startswith("X"):
+                visit_activities[vc].append(act_id)
+
+    modified = []
+
+    for enc_name, act_ids in visit_activities.items():
+        if not act_ids:
+            continue
+
+        visit_file = os.path.join(visits_out_dir, f"{enc_name}.gen.fsh")
+        if not os.path.exists(visit_file):
+            continue
+
+        with open(visit_file, encoding="utf-8") as fh:
+            existing = fh.read()
+
+        action_lines: list = [
+            "",
+            f"// --- Activity actions for {enc_name} ---",
+        ]
+
+        for act_id in act_ids:
+            act = act_by_id.get(act_id)
+            if act is None:
+                continue
+
+            archetype = act.get("archetype", "")
+            title = act.get("title", act_id)
+            respondent_type = act.get("respondent_type", "") or "practitioner"
+            q_id = act.get("questionnaire_id", "") or act_id
+
+            action_lines.append("* action[+]")
+            action_lines.append(f'  * title = "{_fsh_escape(title)}"')
+
+            if archetype == "instrument":
+                q_fhir_id = _questionnaire_instance_id(q_id)
+                action_lines.append(
+                    f"  * definitionCanonical = Canonical({q_fhir_id})"
+                )
+                # participant type from respondent_type column
+                ptype_map = {
+                    "patient": "#patient",
+                    "practitioner": "#practitioner",
+                    "related-person": "#related-person",
+                }
+                ptype = ptype_map.get(respondent_type, "#practitioner")
+                action_lines.append(f"  * participant[+].type = {ptype}")
+            else:
+                # measurement or procedure → ActivityDefinition
+                act_fhir_id = _activity_instance_id(act_id)
+                action_lines.append(
+                    f"  * definitionUri = \"ActivityDefinition/{act_fhir_id}\""
+                )
+
+            # relatedAction: after the encounter anchor action
+            action_lines += [
+                "  * relatedAction[+]",
+                f'    * targetId = "{enc_name}"',
+                "    * relationship = #after",
+            ]
+
+        # Append action blocks to the visit file (before the trailing newline)
+        new_content = existing.rstrip("\n") + "\n" + "\n".join(action_lines) + "\n"
+        tmp = visit_file + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            fh.write(new_content)
+        os.replace(tmp, visit_file)
+        modified.append(visit_file)
+
+    return modified
