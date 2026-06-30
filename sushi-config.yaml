@@ -31,6 +31,8 @@ pages:
     title: Study Design for H2Q-MC-LZZT
   deltas.md:
     title: Clinical Research Profile Backlog
+  usdm.md:
+    title: USDM Transform
 
 # filter draft resources
 resources:

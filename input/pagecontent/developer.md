@@ -97,3 +97,28 @@ Validate them before regenerating:
     python3 scripts/catalog.py        # exits non-zero on any error
     python3 scripts/test_catalog.py   # unit + integration tests
 
+## USDM transform (Phase F)
+
+To regenerate all USDM-derived FSH and catalog CSVs:
+
+    python3 scripts/usdm_to_soa.py input/usdm/CDISC_Pilot_Study_v4_FIXED.json
+
+Then rerun sushi:
+
+    sushi .
+
+The `usdm-*` catalog files are USDM extracts for review only. To promote codes into
+the live pipeline, manually merge reviewed entries into `activity-catalog.csv` and
+`observation-catalog.csv`.
+
+To regenerate the reconciliation report (USDM vs. hand-authored):
+
+    python3 scripts/usdm_reconcile.py
+
+Run all tests (catalog + USDM reader + timing + catalogs):
+
+    python3 -m unittest discover scripts/
+
+See the [USDM Transform](usdm.html) page for architecture, archetype classification,
+code enrichment policy, and known gaps.
+
