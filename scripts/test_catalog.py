@@ -10,7 +10,8 @@ spec.loader.exec_module(catalog)
 class ValidateActivitiesTests(unittest.TestCase):
     def _row(self, **kw):
         base = {"id": "A", "archetype": "measurement", "result_obsdef_id": "O",
-                "questionnaire_id": "", "default_condition": ""}
+                "questionnaire_id": "", "respondent_type": "",
+                "default_condition": ""}
         base.update(kw)
         return base
 
@@ -35,7 +36,43 @@ class ValidateActivitiesTests(unittest.TestCase):
 
     def test_instrument_missing_questionnaire_flagged(self):
         rows = [self._row(archetype="instrument", result_obsdef_id="",
-                          questionnaire_id="")]
+                          questionnaire_id="", respondent_type="practitioner")]
+        errs = catalog.validate_activities(rows, set(), set())
+        self.assertTrue(any("questionnaire_id" in e for e in errs))
+
+    def test_instrument_missing_respondent_type_flagged(self):
+        rows = [self._row(archetype="instrument", result_obsdef_id="",
+                          questionnaire_id="Q", respondent_type="")]
+        errs = catalog.validate_activities(rows, set(), set())
+        self.assertTrue(any("respondent_type" in e for e in errs))
+
+    def test_valid_instrument_passes(self):
+        rows = [self._row(archetype="instrument", result_obsdef_id="",
+                          questionnaire_id="Q", respondent_type="practitioner")]
+        errs = catalog.validate_activities(rows, set(), set())
+        self.assertEqual(errs, [])
+
+    def test_valid_procedure_passes(self):
+        rows = [self._row(archetype="procedure", result_obsdef_id="",
+                          questionnaire_id="", code="12345")]
+        errs = catalog.validate_activities(rows, set(), set())
+        self.assertEqual(errs, [])
+
+    def test_procedure_missing_code_flagged(self):
+        rows = [self._row(archetype="procedure", result_obsdef_id="",
+                          questionnaire_id="", code="")]
+        errs = catalog.validate_activities(rows, set(), set())
+        self.assertTrue(any("code" in e for e in errs))
+
+    def test_procedure_with_result_obsdef_flagged(self):
+        rows = [self._row(archetype="procedure", result_obsdef_id="OBS",
+                          questionnaire_id="", code="12345")]
+        errs = catalog.validate_activities(rows, {"OBS"}, set())
+        self.assertTrue(any("result_obsdef_id" in e for e in errs))
+
+    def test_procedure_with_questionnaire_id_flagged(self):
+        rows = [self._row(archetype="procedure", result_obsdef_id="",
+                          questionnaire_id="Q", code="12345")]
         errs = catalog.validate_activities(rows, set(), set())
         self.assertTrue(any("questionnaire_id" in e for e in errs))
 
@@ -92,7 +129,7 @@ class ValidateCatalogsTests(unittest.TestCase):
     def test_composes_and_resolves_cross_refs(self):
         activities = [{"id": "A", "archetype": "measurement",
                        "result_obsdef_id": "P", "questionnaire_id": "",
-                       "default_condition": "c1"}]
+                       "respondent_type": "", "default_condition": "c1"}]
         observations = [{"obsdef_id": "P", "kind": "panel", "member_of": "",
                          "code": "58410-2", "unit": "", "datatype": ""}]
         conditions = [{"condition_id": "c1", "language": "text/fhirpath",
