@@ -158,3 +158,10 @@ groups:
     resources:
     - Bundle/H2Q-MC-LZZT-Bundle-1
     - Bundle/H2Q-MC-LZZT-Bundle-2
+  H2Q-MC-LZZT-USDM:
+    name: H2Q-MC-LZZT USDM-Derived Resources
+    description: Resources generated from the USDM JSON source (DO NOT EDIT — see scripts/usdm_to_soa.py)
+    resources:
+    - ResearchStudy/H2Q-MC-LZZT-ResearchStudy-USDM
+    - Organization/LILLY-USDM
+    - Practitioner/Pers_001

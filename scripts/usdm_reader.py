@@ -1,0 +1,487 @@
+#!/usr/bin/env python3
+"""
+USDMDoc — loader, indexer, and FSH emitter for USDM v4 JSON.
+
+Foundation module for Phase F (Tasks F-1 through F-8).
+stdlib only — no third-party imports.
+"""
+
+import json
+import os
+import re
+import html
+from pathlib import Path
+from typing import Optional
+
+# ---------------------------------------------------------------------------
+# CDISC → FHIR phase code mapping
+# ---------------------------------------------------------------------------
+CDISC_PHASE_MAP: dict[str, str] = {
+    "C15600": "phase-1",       # Phase I Trial
+    "C15601": "phase-2",       # Phase II Trial
+    "C15602": "phase-3",       # Phase III Trial
+    "C15603": "phase-4",       # Phase IV Trial
+    "C198388": "phase-1-phase-2",  # Phase I/II
+    "C15693": "phase-2-phase-3",   # Phase II/III
+    "C48660": "n-a",           # Not Applicable
+    "C25301": "early-phase-1", # Early Phase 1
+}
+
+# CDISC arm type → FHIR comparisonGroup.type
+CDISC_ARM_TYPE_MAP: dict[str, str] = {
+    "C174268": "placebo-comparator",   # Placebo Control Arm
+    "C174267": "active-comparator",    # Active Comparator Arm
+    "C174266": "experimental",         # Experimental Arm
+    "C174269": "sham-comparator",      # Sham Comparator Arm
+    "C174270": "no-intervention",      # No Intervention Arm
+    "C174271": "other",                # Other Arm
+}
+
+# CDISC code system → FHIR system URI
+CDISC_CODE_SYSTEM_MAP: dict[str, str] = {
+    "ICD-10-CM": "http://hl7.org/fhir/sid/icd-10-cm",
+    "SNOMED": "http://snomed.info/sct",
+    "LOINC": "http://loinc.org",
+    "http://www.cdisc.org": "http://www.cdisc.org",
+    "SPONSOR": "http://example.org/sponsor",
+}
+
+# ---------------------------------------------------------------------------
+# HTML stripping helper
+# ---------------------------------------------------------------------------
+_HTML_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def strip_html(text: str) -> str:
+    """Remove HTML tags and unescape HTML entities."""
+    if not text:
+        return ""
+    text = _HTML_TAG_RE.sub("", text)
+    text = html.unescape(text)
+    return text.strip()
+
+
+# ---------------------------------------------------------------------------
+# ISO 8601 duration parser (stdlib only)
+# ---------------------------------------------------------------------------
+def parse_iso8601_duration_to_days(s: Optional[str]) -> Optional[float]:
+    """
+    Parse an ISO 8601 duration string to a float number of days.
+
+    Supported formats:
+      P<n>W  — weeks (× 7)
+      P<n>D  — days
+      PT<n>H — hours (÷ 24)
+      PT<n>M — minutes (÷ 1440)
+
+    Returns None if s is None.
+    Raises ValueError for unsupported formats.
+    """
+    if s is None:
+        return None
+    # Week form: P<n>W
+    m = re.fullmatch(r"P(\d+(?:\.\d+)?)W", s)
+    if m:
+        return float(m.group(1)) * 7
+    # Day form: P<n>D
+    m = re.fullmatch(r"P(\d+(?:\.\d+)?)D", s)
+    if m:
+        return float(m.group(1))
+    # Hour form: PT<n>H
+    m = re.fullmatch(r"PT(\d+(?:\.\d+)?)H", s)
+    if m:
+        return float(m.group(1)) / 24
+    # Minute form: PT<n>M
+    m = re.fullmatch(r"PT(\d+(?:\.\d+)?)M", s)
+    if m:
+        return float(m.group(1)) / 1440
+    raise ValueError(f"Unsupported ISO 8601 duration: {s!r}")
+
+
+# ---------------------------------------------------------------------------
+# USDMDoc
+# ---------------------------------------------------------------------------
+class USDMDoc:
+    """
+    Loads a USDM v4 JSON file and builds a flat id→object index for O(1)
+    resolution of any object by its "id" field.
+
+    All accessor methods return live references into the parsed JSON dict.
+    """
+
+    def __init__(self, path: str) -> None:
+        self._path = path
+        with open(path, encoding="utf-8") as fh:
+            self._raw: dict = json.load(fh)
+
+        # Build flat id → object index by walking the entire document tree
+        self._index: dict[str, dict] = {}
+        self._build_index(self._raw)
+
+    # ------------------------------------------------------------------
+    # Index builder
+    # ------------------------------------------------------------------
+    def _build_index(self, node) -> None:
+        """Recursively walk the JSON tree and index every object with an 'id'."""
+        if isinstance(node, dict):
+            node_id = node.get("id")
+            if node_id and isinstance(node_id, str):
+                self._index[node_id] = node
+            for value in node.values():
+                self._build_index(value)
+        elif isinstance(node, list):
+            for item in node:
+                self._build_index(item)
+
+    # ------------------------------------------------------------------
+    # Core accessors
+    # ------------------------------------------------------------------
+    def resolve(self, obj_id: str) -> dict:
+        """Return the object with the given id, or raise KeyError."""
+        if obj_id not in self._index:
+            raise KeyError(f"USDM id not found: {obj_id!r}")
+        return self._index[obj_id]
+
+    def study(self) -> dict:
+        """Return the root study object."""
+        return self._raw["study"]
+
+    def study_version(self) -> dict:
+        """Return versions[0]."""
+        return self.study()["versions"][0]
+
+    def study_design(self) -> dict:
+        """Return versions[0].studyDesigns[0]."""
+        return self.study_version()["studyDesigns"][0]
+
+    def encounters(self) -> list:
+        """Return all Encounter objects from the study design."""
+        return self.study_design().get("encounters", [])
+
+    def activities(self) -> list:
+        """Return all Activity objects from the study design."""
+        return self.study_design().get("activities", [])
+
+    def schedule_timelines(self) -> list:
+        """Return all ScheduleTimeline objects from the study design."""
+        return self.study_design().get("scheduleTimelines", [])
+
+    def bc_surrogates(self) -> list:
+        """Return all BiomedicalConceptSurrogate objects from the study design."""
+        return self.study_design().get("bcSurrogates", [])
+
+    def biomedical_concepts(self) -> list:
+        """Return all BiomedicalConcept objects from the study design."""
+        return self.study_design().get("biomedicalConcepts", [])
+
+    def organizations(self) -> list:
+        """Return all Organization objects from the study version."""
+        return self.study_version().get("organizations", [])
+
+    def roles(self) -> list:
+        """Return all StudyRole objects from the study version."""
+        return self.study_version().get("roles", [])
+
+    def sponsor_org(self) -> Optional[dict]:
+        """Return the first Organization with type code C70793 (Sponsor)."""
+        for org in self.organizations():
+            type_obj = org.get("type") or {}
+            std = type_obj.get("standardCode") or type_obj
+            if std.get("code") == "C70793":
+                return org
+        return None
+
+    def investigator_persons(self) -> list:
+        """
+        Return all AssignedPerson objects from roles with code C25936 (Investigator).
+        Per F-0 audit: persons live under studyRoles[*].assignedPersons.
+        """
+        persons = []
+        for role in self.roles():
+            code_obj = role.get("code") or {}
+            if code_obj.get("code") == "C25936":
+                persons.extend(role.get("assignedPersons", []))
+        return persons
+
+
+# ---------------------------------------------------------------------------
+# FSH helpers
+# ---------------------------------------------------------------------------
+def _fsh_header() -> str:
+    return "// DO NOT EDIT — generated by scripts/usdm_to_soa.py\n"
+
+
+def _code_system_uri(raw_system: str) -> str:
+    """Map a USDM codeSystem string to a FHIR system URI."""
+    return CDISC_CODE_SYSTEM_MAP.get(raw_system, raw_system)
+
+
+def _fsh_escape(text: str) -> str:
+    """Escape a string for use inside FSH double-quoted literals."""
+    # Escape backslashes first, then double-quotes
+    text = text.replace("\\", "\\\\")
+    text = text.replace('"', '\\"')
+    return text
+
+
+# ---------------------------------------------------------------------------
+# emit_research_study
+# ---------------------------------------------------------------------------
+def emit_research_study(doc: USDMDoc, out_path: str) -> None:
+    """
+    Generate ResearchStudy.gen.fsh from the USDM document.
+
+    Emits:
+      - Organization instance for the sponsor (LILLY)
+      - Practitioner instance for the principal investigator
+      - ResearchStudy instance H2Q-MC-LZZT-ResearchStudy-USDM
+
+    The output file is written atomically (write to temp, rename) to ensure
+    idempotency: two runs on unchanged input produce byte-identical output.
+    """
+    lines: list[str] = []
+
+    sv = doc.study_version()
+    sd = doc.study_design()
+
+    # ------------------------------------------------------------------
+    # Sponsor Organization
+    # ------------------------------------------------------------------
+    sponsor = doc.sponsor_org()
+    if sponsor:
+        org_id = "LILLY-USDM"
+        org_name = sponsor.get("name", "")
+        org_label = sponsor.get("label", "")
+        org_identifier = sponsor.get("identifier", "")
+        org_scheme = sponsor.get("identifierScheme", "")
+
+        lines += [
+            _fsh_header(),
+            "// ============================================================",
+            "// Sponsor Organization (USDM-derived)",
+            "// ============================================================",
+            f'Instance: {org_id}',
+            "InstanceOf: Organization",
+            f'Title: "{_fsh_escape(org_label or org_name)}"',
+            "Usage: #example",
+            f'* name = "{_fsh_escape(org_name)}"',
+        ]
+        if org_label:
+            lines.append(f'* alias[+] = "{_fsh_escape(org_label)}"')
+        if org_identifier:
+            lines.append(f'* identifier[+].value = "{_fsh_escape(org_identifier)}"')
+            if org_scheme:
+                lines.append(f'* identifier[=].system = "http://example.org/id/{org_scheme.lower()}"')
+        # type: Sponsor
+        lines += [
+            "* type[+]",
+            '  * coding[+]',
+            '    * system = "http://www.cdisc.org"',
+            '    * code = #C70793',
+            '    * display = "Sponsor"',
+            "",
+        ]
+
+    # ------------------------------------------------------------------
+    # Principal Investigator Practitioner
+    # ------------------------------------------------------------------
+    pi_persons = doc.investigator_persons()
+    pi_fhir_id = None
+    if pi_persons:
+        pi = pi_persons[0]
+        pi_fhir_id = pi.get("id", "Pers_001")  # e.g. "Pers_001"
+        pn = pi.get("personName") or {}
+        pi_text = pn.get("text", "")
+        pi_family = pn.get("familyName", "")
+        pi_given = pn.get("givenNames", [])
+        pi_job = pi.get("jobTitle", "")
+
+        lines += [
+            "// ============================================================",
+            "// Principal Investigator Practitioner (USDM-derived)",
+            "// ============================================================",
+            f"Instance: {pi_fhir_id}",
+            "InstanceOf: Practitioner",
+            f'Title: "{_fsh_escape(pi_text or pi_family)}"',
+            "Usage: #example",
+            "* active = true",
+        ]
+        if pi_text or pi_family:
+            lines.append("* name[+]")
+            if pi_text:
+                lines.append(f'  * text = "{_fsh_escape(pi_text)}"')
+            if pi_family:
+                lines.append(f'  * family = "{_fsh_escape(pi_family)}"')
+            for gn in pi_given:
+                lines.append(f'  * given[+] = "{_fsh_escape(gn)}"')
+        if pi_job:
+            lines += [
+                "* qualification[+]",
+                "  * code",
+                f'    * text = "{_fsh_escape(pi_job)}"',
+            ]
+        lines.append("")
+
+    # ------------------------------------------------------------------
+    # ResearchStudy
+    # ------------------------------------------------------------------
+    study = doc.study()
+    study_title = study.get("name", "")
+    study_version_id = sv.get("versionIdentifier", "")
+
+    # Identifiers
+    identifiers = sv.get("studyIdentifiers", [])
+
+    # Phase
+    phase_alias = sd.get("studyPhase") or {}
+    phase_std = phase_alias.get("standardCode") or {}
+    phase_cdisc_code = phase_std.get("code", "")
+    fhir_phase = CDISC_PHASE_MAP.get(phase_cdisc_code, "n-a")
+
+    # Indications → condition
+    indications = sd.get("indications", [])
+
+    # Therapeutic areas → focus
+    therapeutic_areas = sd.get("therapeuticAreas", [])
+
+    # Arms → comparisonGroup
+    arms = sd.get("arms", [])
+
+    # Objectives
+    objectives = sd.get("objectives", [])
+
+    lines += [
+        "// ============================================================",
+        "// ResearchStudy (USDM-derived)",
+        "// ============================================================",
+        "Instance: H2Q-MC-LZZT-ResearchStudy-USDM",
+        "InstanceOf: ResearchStudy",
+        f'Title: "{_fsh_escape(study_title)}"',
+        "Usage: #example",
+        f'* title = "{_fsh_escape(study_title)}"',
+        f'* version = "{_fsh_escape(study_version_id)}"',
+        "* status = #active",
+        f"* phase = #{fhir_phase}",
+    ]
+
+    # Identifiers
+    for si in identifiers:
+        si_text = si.get("text", "")
+        si_scope = si.get("scopeId", "")
+        # Determine system from scope org type
+        si_system = "http://example.org/study-id"
+        if si_scope == "Organization_2":
+            si_system = "https://clinicaltrials.gov/show/"
+        lines += [
+            "* identifier[+]",
+            f'  * value = "{_fsh_escape(si_text)}"',
+            f'  * system = "{si_system}"',
+        ]
+        if si_scope and si_scope == "Organization_1" and sponsor:
+            lines.append(f'  * assigner = Reference(Organization/LILLY-USDM)')
+
+    # Sponsor reference
+    if sponsor:
+        lines += [
+            "* associatedParty[+]",
+            "  * party = Reference(Organization/LILLY-USDM)",
+            '  * role = #lead-sponsor',
+        ]
+
+    # Principal investigator reference
+    if pi_fhir_id:
+        lines += [
+            "* associatedParty[+]",
+            f"  * party = Reference(Practitioner/{pi_fhir_id})",
+            '  * role = #primary-investigator',
+        ]
+
+    # Conditions (indications)
+    for ind in indications:
+        for code_obj in ind.get("codes", []):
+            code_val = code_obj.get("code", "")
+            code_sys_raw = code_obj.get("codeSystem", "")
+            code_sys = _code_system_uri(code_sys_raw)
+            code_display = code_obj.get("decode", "")
+            lines += [
+                "* condition[+]",
+                "  * coding[+]",
+                f'    * system = "{code_sys}"',
+                f'    * code = #{code_val}',
+                f'    * display = "{_fsh_escape(code_display)}"',
+            ]
+
+    # Focus (therapeutic areas)
+    for ta in therapeutic_areas:
+        ta_code = ta.get("code", "")
+        ta_sys_raw = ta.get("codeSystem", "")
+        ta_sys = _code_system_uri(ta_sys_raw)
+        ta_display = ta.get("decode", "")
+        lines += [
+            "* focus[+]",
+            "  * coding[+]",
+            f'    * system = "{ta_sys}"',
+            f'    * code = #{ta_code}',
+            f'    * display = "{_fsh_escape(ta_display)}"',
+        ]
+
+    # Comparison groups (arms)
+    for arm in arms:
+        arm_name = arm.get("name", "")
+        arm_label = arm.get("label", "")
+        arm_desc = arm.get("description", "")
+        arm_type_obj = arm.get("type") or {}
+        arm_type_code = arm_type_obj.get("code", "")
+        arm_type_display = arm_type_obj.get("decode", "")
+        fhir_arm_type = CDISC_ARM_TYPE_MAP.get(arm_type_code, "other")
+
+        lines += [
+            "* comparisonGroup[+]",
+            f'  * name = "{_fsh_escape(arm_name)}"',
+        ]
+        if arm_label and arm_label != arm_name:
+            lines.append(f'  * description = "{_fsh_escape(arm_label)}"')
+        elif arm_desc:
+            lines.append(f'  * description = "{_fsh_escape(arm_desc)}"')
+        lines += [
+            "  * type",
+            "    * coding[+]",
+            '      * system = "http://www.cdisc.org"',
+            f'      * code = #{arm_type_code}',
+            f'      * display = "{_fsh_escape(arm_type_display)}"',
+        ]
+
+    # Objectives
+    for obj in objectives:
+        obj_text_raw = obj.get("text", "") or obj.get("description", "")
+        obj_text = strip_html(obj_text_raw)
+        level_obj = obj.get("level") or {}
+        level_code = level_obj.get("code", "")
+        # C85826 = Primary, C85827 = Secondary
+        if level_code == "C85826":
+            fhir_obj_type = "#primary"
+        elif level_code == "C85827":
+            fhir_obj_type = "#secondary"
+        else:
+            fhir_obj_type = "#exploratory"
+
+        lines += [
+            "* objective[+]",
+            f'  * name = "{_fsh_escape(obj_text)}"',
+            f"  * type = {fhir_obj_type}",
+        ]
+
+    lines.append("")
+
+    # ------------------------------------------------------------------
+    # Write output (atomic: write to .tmp then rename for idempotency)
+    # ------------------------------------------------------------------
+    out_dir = os.path.dirname(out_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+
+    content = "\n".join(lines)
+    tmp_path = out_path + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as fh:
+        fh.write(content)
+    os.replace(tmp_path, out_path)
