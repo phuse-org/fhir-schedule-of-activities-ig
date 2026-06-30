@@ -165,3 +165,17 @@ groups:
     - ResearchStudy/H2Q-MC-LZZT-ResearchStudy-USDM
     - Organization/LILLY-USDM
     - Practitioner/Pers_001
+    - Group/H2Q-MC-LZZT-ResearchStudy-Inclusion-USDM
+    - Group/H2Q-MC-LZZT-ResearchStudy-Exclusion-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E1-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E2-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E3-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E4-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E5-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E7-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E8-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E9-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E10-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E11-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E12-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E13-USDM

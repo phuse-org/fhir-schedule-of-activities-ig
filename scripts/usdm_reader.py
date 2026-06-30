@@ -476,6 +476,11 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
     # ------------------------------------------------------------------
     # Write output (atomic: write to .tmp then rename for idempotency)
     # ------------------------------------------------------------------
+    _write_fsh(out_path, lines)
+
+
+def _write_fsh(out_path: str, lines: list) -> None:
+    """Write FSH lines to out_path atomically (write to .tmp then rename)."""
     out_dir = os.path.dirname(out_path)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
@@ -485,3 +490,443 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
     with open(tmp_path, "w", encoding="utf-8") as fh:
         fh.write(content)
     os.replace(tmp_path, out_path)
+
+
+# ---------------------------------------------------------------------------
+# emit_eligibility_groups
+# ---------------------------------------------------------------------------
+
+# CDISC category codes for inclusion / exclusion
+_INCLUSION_CODE = "C25532"
+_EXCLUSION_CODE = "C25370"
+
+# Regex to strip <usdm:tag .../> and other XML-like tags not caught by the
+# generic HTML stripper (which already handles <tag> and </tag>).
+_USDM_TAG_RE = re.compile(r"<usdm:[^>]+>", re.IGNORECASE)
+
+
+def _strip_criterion_text(raw_text: str) -> str:
+    """
+    Strip HTML tags, <usdm:tag> elements, and HTML entities from criterion text.
+    Collapses internal whitespace to single spaces.
+    """
+    if not raw_text:
+        return ""
+    # Remove <usdm:...> tags first (not caught by the generic HTML stripper
+    # because they contain a colon in the tag name)
+    text = _USDM_TAG_RE.sub("", raw_text)
+    # Remove remaining HTML tags and unescape entities
+    text = strip_html(text)
+    # Collapse runs of whitespace (newlines, tabs, multiple spaces) to a
+    # single space so multi-paragraph items become a single readable line.
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def emit_eligibility_groups(doc: USDMDoc, out_path: str) -> None:
+    """
+    Generate Eligibility.gen.fsh from the USDM document.
+
+    Emits two Group instances:
+      - H2Q-MC-LZZT-ResearchStudy-Inclusion-USDM  (category C25532)
+      - H2Q-MC-LZZT-ResearchStudy-Exclusion-USDM  (category C25370)
+
+    Each EligibilityCriterion in studyDesigns[0].population.criterionIds
+    becomes one Group.characteristic entry.  The criterion text is taken
+    from the linked EligibilityCriterionItem.text (HTML-stripped); if that
+    is empty the criterion label is used as a fallback.
+
+    The FSH structure matches the hand-authored
+    H2Q-MC-LZZT-ResearchStudy-Eligibility.fsh exactly.
+    """
+    sd = doc.study_design()
+    population = sd.get("population") or {}
+    criterion_ids: list = population.get("criterionIds", [])
+
+    # Resolve all criteria and split by category
+    inclusion: list[dict] = []
+    exclusion: list[dict] = []
+
+    for cid in criterion_ids:
+        criterion = doc.resolve(cid)
+        cat_code = (criterion.get("category") or {}).get("code", "")
+        if cat_code == _INCLUSION_CODE:
+            inclusion.append(criterion)
+        elif cat_code == _EXCLUSION_CODE:
+            exclusion.append(criterion)
+        # Unknown category: skip silently (none expected in this file)
+
+    lines: list[str] = [_fsh_header()]
+
+    def _emit_group(
+        instance_id: str,
+        title: str,
+        description: str,
+        criteria: list[dict],
+        exclude_flag: bool,
+        first: bool = False,
+    ) -> None:
+        # Add a blank separator line before each group (but not before the
+        # very first one, since the header already ends with \n which provides
+        # one blank line when joined).
+        if not first:
+            lines.append("")
+        lines.extend([
+            "// ============================================================",
+            f"// {title}",
+            "// ============================================================",
+            f"Instance: {instance_id}",
+            "InstanceOf: Group",
+            f'Title: "{_fsh_escape(title)}"',
+            f'Description: "{_fsh_escape(description)}"',
+            "Usage: #example",
+            "* type = #person",
+            "* membership = #definitional",
+        ])
+        for criterion in criteria:
+            # Resolve the linked EligibilityCriterionItem for the text
+            item_id = criterion.get("criterionItemId")
+            raw_text = ""
+            if item_id:
+                try:
+                    item = doc.resolve(item_id)
+                    raw_text = item.get("text") or ""
+                except KeyError:
+                    pass
+
+            text = _strip_criterion_text(raw_text)
+            # Fallback to criterion label if text is empty after stripping
+            if not text:
+                text = criterion.get("label") or criterion.get("name") or ""
+
+            exclude_str = "true" if exclude_flag else "false"
+            lines.extend([
+                f'* characteristic[+].code.text = "{_fsh_escape(text)}"',
+                f"* characteristic[=].exclude = {exclude_str}",
+                "* characteristic[=].valueBoolean = true",
+            ])
+
+    _emit_group(
+        instance_id="H2Q-MC-LZZT-ResearchStudy-Inclusion-USDM",
+        title="H2Q-MC-LZZT Inclusion Criteria (USDM-derived)",
+        description="H2Q-MC-LZZT Inclusion Criteria (USDM-derived)",
+        criteria=inclusion,
+        exclude_flag=False,
+        first=True,
+    )
+
+    _emit_group(
+        instance_id="H2Q-MC-LZZT-ResearchStudy-Exclusion-USDM",
+        title="H2Q-MC-LZZT Exclusion Criteria (USDM-derived)",
+        description="H2Q-MC-LZZT Exclusion Criteria (USDM-derived)",
+        criteria=exclusion,
+        exclude_flag=True,
+        first=False,
+    )
+
+    lines.append("")
+
+    _write_fsh(out_path, lines)
+
+
+# ---------------------------------------------------------------------------
+# emit_visit_plan_definitions
+# ---------------------------------------------------------------------------
+
+# soaTimePointSubType derivation table (checked in order)
+_SUBTYPE_RULES: list[tuple[str, str]] = [
+    ("Screening", "screening"),
+    ("Baseline", "baseline"),
+    ("Early Termination", "early-termination"),
+    ("Retreatment", "retreatment"),
+]
+
+
+def _derive_subtype(label: str) -> str:
+    """
+    Derive soaTimePointSubType from encounter label.
+
+    | Encounter label contains | soaTimePointSubType   |
+    |--------------------------|----------------------|
+    | "Screening"              | "screening"          |
+    | "Baseline"               | "baseline"           |
+    | "Early Termination"      | "early-termination"  |
+    | "Retreatment"            | "retreatment"        |
+    | Anything else            | "planned"            |
+    """
+    for keyword, subtype in _SUBTYPE_RULES:
+        if keyword in label:
+            return subtype
+    return "planned"
+
+
+def _fmt_days(value: float) -> str:
+    """
+    Format a float day value for FSH output.
+
+    Whole numbers are emitted as integers (e.g. 14.0 → "14").
+    Fractional values are emitted with up to 6 significant decimal places,
+    trailing zeros stripped (e.g. 0.16666666666666666 → "0.166667").
+    """
+    if value == int(value):
+        return str(int(value))
+    # Round to 6 decimal places and strip trailing zeros
+    return f"{value:.6f}".rstrip("0").rstrip(".")
+
+
+def _emit_visit_fsh(
+    encounter: dict,
+    timing,          # ResolvedTiming | None
+    prior_encounter: Optional[dict],
+    transition_start_rule: Optional[dict],
+    transition_end_rule: Optional[dict],
+) -> list[str]:
+    """
+    Emit FSH lines for a single visit PlanDefinition.
+
+    Parameters
+    ----------
+    encounter            : the USDM Encounter dict
+    timing               : ResolvedTiming (or None for anchor visits)
+    prior_encounter      : the previous Encounter dict (or None for first anchor)
+    transition_start_rule: TransitionRule dict for transitionStartRuleId (or None)
+    transition_end_rule  : TransitionRule dict for transitionEndRuleId (or None)
+    """
+    enc_name = encounter.get("name", "")
+    enc_label = encounter.get("label", "")
+    enc_desc = encounter.get("description", "") or enc_label
+    instance_id = f"H2Q-MC-LZZT-{enc_name}-USDM"
+
+    subtype = _derive_subtype(enc_label)
+    # soaRepeatAllowed = true only for retreatment visits
+    repeat_allowed = "true" if subtype == "retreatment" else "false"
+
+    # Contact modes
+    # Each contactMode item is a Code object with flat fields:
+    #   { "code": "C175574", "decode": "IN PERSON", "codeSystem": "...", ... }
+    contact_modes = encounter.get("contactModes", []) or []
+    mode_codes: list[tuple[str, str]] = []  # (cdisc_code, decode)
+    for cm in contact_modes:
+        if not isinstance(cm, dict):
+            continue
+        cdisc_code = cm.get("code", "") or ""
+        decode = cm.get("decode", "") or ""
+        if decode or cdisc_code:
+            mode_codes.append((cdisc_code, decode))
+
+    lines: list[str] = []
+
+    lines += [
+        _fsh_header(),
+        f"Instance: {instance_id}",
+        "InstanceOf: SOAPlanDefinition",
+        "Usage: #definition",
+        f'Title: "{_fsh_escape(enc_label)}"',
+        f'Description: "{_fsh_escape(enc_desc)}"',
+        "* status = #active",
+    ]
+
+    # ---- action block ----
+    lines += [
+        "* action[+]",
+        f'  * id = "{enc_name}"',
+        f'  * title = "{_fsh_escape(enc_label)}"',
+    ]
+
+    # Contact mode: encode as action.code (gap workaround).
+    # All modes go into a single CodeableConcept with one coding per mode.
+    # Per F-0 audit §5.1: no SOAPlanDefinition element for contactMode.
+    if mode_codes:
+        lines.append(
+            "  // Gap: no SoA profile element for contactMode; encoded as action.code"
+        )
+        lines.append("  * code")
+        for cdisc_code, decode in mode_codes:
+            lines += [
+                "    * coding[+]",
+                '      * system = "http://www.cdisc.org"',
+                f"      * code = #{cdisc_code}",
+                f'      * display = "{_fsh_escape(decode)}"',
+            ]
+
+    # ---- soaTimepoint extension ----
+    lines += [
+        "  * extension[soaTimepoint]",
+        '    * extension[soaTimePointType].valueString = "interaction"',
+        f'    * extension[soaTimePointSubType].valueString = "{subtype}"',
+    ]
+
+    if timing is not None:
+        # Non-anchor visit: emit full timing values.
+        # FSH Quantity syntax: use .value and .code sub-elements (UCUM code = #d).
+        day_str = _fmt_days(timing.planned_day_value)
+        lines += [
+            "    * extension[soaPlannedTimePoint].valueQuantity",
+            f"      * value = {day_str}",
+            "      * code = #d",
+            '      * system = "http://unitsofmeasure.org"',
+        ]
+        if timing.reference_encounter_name:
+            lines.append(
+                f'    * extension[soaReferenceTimePoint].valueString = "{timing.reference_encounter_name}"'
+            )
+        if timing.window_lower_days is not None and timing.window_upper_days is not None:
+            low_str = _fmt_days(timing.window_lower_days)
+            high_str = _fmt_days(timing.window_upper_days)
+            lines += [
+                "    * extension[soaPlannedRange].valueRange",
+                "      * low",
+                f"        * value = {low_str}",
+                "        * code = #d",
+                '        * system = "http://unitsofmeasure.org"',
+                "      * high",
+                f"        * value = {high_str}",
+                "        * code = #d",
+                '        * system = "http://unitsofmeasure.org"',
+            ]
+        lines.append(
+            f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
+        )
+
+        # ---- relatedAction block ----
+        if prior_encounter is not None:
+            prior_name = prior_encounter.get("name", "")
+            low_val = _fmt_days(timing.window_lower_days) if timing.window_lower_days is not None else "0"
+            lines += [
+                "  * relatedAction[+]",
+                f'    * targetId = "{prior_name}"',
+                "    * relationship = #after",
+                f"    * offsetRange.low.value = {low_val}",
+                "    * offsetRange.low.code = #d",
+            ]
+
+            # ---- transition sub-action ----
+            prior_label = prior_encounter.get("label", "")
+            delay_str = _fmt_days(timing.transition_delay_days)
+            # Build transition description from rules
+            rule_texts: list[str] = []
+            if transition_start_rule:
+                rt = (transition_start_rule.get("text") or "").strip()
+                if rt:
+                    rule_texts.append(rt)
+            if transition_end_rule:
+                rt = (transition_end_rule.get("text") or "").strip()
+                if rt:
+                    rule_texts.append(rt)
+            transition_desc = " / ".join(rule_texts) if rule_texts else ""
+
+            lines += [
+                "  * action[+]",
+                "    * extension[soaTransition]",
+                f'      * extension[soaTargetId].valueString = "{prior_name}"',
+                f'      * extension[soaTargetName].valueString = "{_fsh_escape(prior_label)}"',
+                '      * extension[soaTransitionType].valueString = "scheduled"',
+                "      * extension[soaTransitionDelay].valueDuration",
+                f"        * value = {delay_str}",
+                "        * code = #d",
+                '        * system = "http://unitsofmeasure.org"',
+            ]
+            if timing.window_lower_days is not None and timing.window_upper_days is not None:
+                low_str2 = _fmt_days(timing.window_lower_days)
+                high_str2 = _fmt_days(timing.window_upper_days)
+                lines += [
+                    "      * extension[soaTransitionRange].valueRange",
+                    "        * low",
+                    f"          * value = {low_str2}",
+                    "          * code = #d",
+                    '          * system = "http://unitsofmeasure.org"',
+                    "        * high",
+                    f"          * value = {high_str2}",
+                    "          * code = #d",
+                    '          * system = "http://unitsofmeasure.org"',
+                ]
+            if transition_desc:
+                lines.append(
+                    f'    * description = "{_fsh_escape(transition_desc)}"'
+                )
+    else:
+        # Anchor visit: soaTimePointType and soaTimePointSubType only
+        lines.append(
+            f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
+        )
+
+    lines.append("")
+    return lines
+
+
+def emit_visit_plan_definitions(
+    doc: "USDMDoc",
+    out_dir: str,
+    timing_resolver=None,
+) -> list[str]:
+    """
+    Generate one FSH file per encounter under out_dir/visits/.
+
+    Each file is named <encounter.name>.gen.fsh (e.g. E1.gen.fsh).
+
+    Parameters
+    ----------
+    doc             : USDMDoc instance
+    out_dir         : base output directory (e.g. "input/fsh/generated/usdm")
+    timing_resolver : optional pre-built TimingResolver; if None, one is
+                      constructed from doc using the usdm_timing module.
+
+    Returns
+    -------
+    List of output file paths written.
+    """
+    # Import TimingResolver — prefer the standalone usdm_timing module (F-3)
+    # but fall back to constructing one inline if not available.
+    if timing_resolver is None:
+        try:
+            from usdm_timing import TimingResolver as _TR
+        except ImportError:
+            # Fallback: use the inline TimingResolver if usdm_timing is not on path
+            # (This path is used when running tests from the repo root.)
+            import sys
+            import importlib
+            _scripts_dir = os.path.dirname(os.path.abspath(__file__))
+            if _scripts_dir not in sys.path:
+                sys.path.insert(0, _scripts_dir)
+            from usdm_timing import TimingResolver as _TR
+        timing_resolver = _TR(doc)
+
+    visits_dir = os.path.join(out_dir, "visits")
+    os.makedirs(visits_dir, exist_ok=True)
+
+    encounters = doc.encounters()
+    # Build encounter-by-id map for prior encounter lookup
+    enc_by_id: dict[str, dict] = {e["id"]: e for e in encounters}
+
+    written: list[str] = []
+
+    for encounter in encounters:
+        enc_name = encounter.get("name", "")
+        scheduled_at_id = encounter.get("scheduledAtId")
+
+        # Resolve timing (None for anchor visits)
+        timing = timing_resolver.resolve(scheduled_at_id)
+
+        # Resolve prior encounter
+        prior_enc_id = encounter.get("previousId")
+        prior_encounter = enc_by_id.get(prior_enc_id) if prior_enc_id else None
+
+        # Resolve transition rules
+        # In USDM v4, transitionStartRule and transitionEndRule are inline
+        # TransitionRule objects (not ID references).
+        transition_start_rule: Optional[dict] = encounter.get("transitionStartRule") or None
+        transition_end_rule: Optional[dict] = encounter.get("transitionEndRule") or None
+
+        lines = _emit_visit_fsh(
+            encounter=encounter,
+            timing=timing,
+            prior_encounter=prior_encounter,
+            transition_start_rule=transition_start_rule,
+            transition_end_rule=transition_end_rule,
+        )
+
+        out_path = os.path.join(visits_dir, f"{enc_name}.gen.fsh")
+        _write_fsh(out_path, lines)
+        written.append(out_path)
+
+    return written
