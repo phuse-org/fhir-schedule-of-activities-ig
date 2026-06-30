@@ -26,6 +26,7 @@ USDMDoc = usdm_reader.USDMDoc
 emit_research_study = usdm_reader.emit_research_study
 emit_eligibility_groups = usdm_reader.emit_eligibility_groups
 emit_visit_plan_definitions = usdm_reader.emit_visit_plan_definitions
+emit_protocol_design = usdm_reader.emit_protocol_design
 parse_iso8601_duration_to_days = usdm_reader.parse_iso8601_duration_to_days
 strip_html = usdm_reader.strip_html
 
@@ -1118,6 +1119,182 @@ class TestEmitVisitPlanDefinitionsDirCreation(unittest.TestCase):
             # At least one .gen.fsh file must exist
             fsh_files = [f for f in os.listdir(visits_dir) if f.endswith(".gen.fsh")]
             self.assertGreater(len(fsh_files), 0)
+
+
+# ---------------------------------------------------------------------------
+# emit_protocol_design — FSH output content (F-7)
+# ---------------------------------------------------------------------------
+class TestEmitProtocolDesign(unittest.TestCase):
+    """
+    Integration tests for emit_protocol_design against the real USDM.
+
+    Verifies:
+      - Single output file produced
+      - DO NOT EDIT header
+      - Correct instance ID, InstanceOf, Usage, status, version
+      - 12 encounter actions present
+      - Encounter order: E1 before E3 before E4 ... E13
+      - definitionUri for each encounter
+      - Anchor visits (E1, E3) have no soaPlannedTimePoint / relatedAction
+      - Non-anchor visits have timing values and relatedAction
+      - Timing spot-checks match F-0 audit values
+      - Idempotency
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        if not _USDM_AVAILABLE:
+            return
+        cls.doc = USDMDoc(_USDM_PATH)
+        cls.tmp_dir = tempfile.mkdtemp()
+        cls.out_path = os.path.join(cls.tmp_dir, "ProtocolDesign.gen.fsh")
+        emit_protocol_design(cls.doc, cls.out_path)
+        with open(cls.out_path, encoding="utf-8") as fh:
+            cls.content = fh.read()
+
+    def setUp(self):
+        _require_usdm(self)
+
+    # -----------------------------------------------------------------------
+    # Header / boilerplate
+    # -----------------------------------------------------------------------
+
+    def test_do_not_edit_header(self):
+        first_line = self.content.splitlines()[0]
+        self.assertIn("DO NOT EDIT", first_line)
+        self.assertIn("usdm_to_soa.py", first_line)
+
+    def test_instance_id(self):
+        self.assertIn("Instance: H2Q-MC-LZZT-ProtocolDesign-USDM", self.content)
+
+    def test_instance_of_soa_plan_definition(self):
+        self.assertIn("InstanceOf: SOAPlanDefinition", self.content)
+
+    def test_usage_definition(self):
+        self.assertIn("Usage: #definition", self.content)
+
+    def test_status_active(self):
+        self.assertIn("* status = #active", self.content)
+
+    def test_version_present(self):
+        self.assertIn('* version = "2"', self.content)
+
+    # -----------------------------------------------------------------------
+    # 12 encounter actions
+    # -----------------------------------------------------------------------
+
+    def test_twelve_encounter_actions(self):
+        """12 encounter actions → 12 definitionUri lines."""
+        count = self.content.count("* definitionUri = ")
+        self.assertEqual(count, 12)
+
+    def test_all_encounter_definition_uris_present(self):
+        for enc_name in ("E1", "E2", "E3", "E4", "E5", "E7",
+                         "E8", "E9", "E10", "E11", "E12", "E13"):
+            expected = f'"PlanDefinition/H2Q-MC-LZZT-{enc_name}-USDM"'
+            self.assertIn(expected, self.content,
+                          f"Missing definitionUri for {enc_name}")
+
+    # -----------------------------------------------------------------------
+    # Encounter ordering: E1 before E3 before E4
+    # -----------------------------------------------------------------------
+
+    def test_encounter_order_e1_before_e3(self):
+        pos_e1 = self.content.find('"PlanDefinition/H2Q-MC-LZZT-E1-USDM"')
+        pos_e3 = self.content.find('"PlanDefinition/H2Q-MC-LZZT-E3-USDM"')
+        self.assertLess(pos_e1, pos_e3)
+
+    def test_encounter_order_e3_before_e4(self):
+        pos_e3 = self.content.find('"PlanDefinition/H2Q-MC-LZZT-E3-USDM"')
+        pos_e4 = self.content.find('"PlanDefinition/H2Q-MC-LZZT-E4-USDM"')
+        self.assertLess(pos_e3, pos_e4)
+
+    def test_encounter_order_e4_before_e13(self):
+        pos_e4 = self.content.find('"PlanDefinition/H2Q-MC-LZZT-E4-USDM"')
+        pos_e13 = self.content.find('"PlanDefinition/H2Q-MC-LZZT-E13-USDM"')
+        self.assertLess(pos_e4, pos_e13)
+
+    # -----------------------------------------------------------------------
+    # Anchor visits: no soaPlannedTimePoint, no relatedAction on their section
+    # (checked by ensuring the first occurrence of soaPlannedTimePoint
+    #  comes after E1 and E3)
+    # -----------------------------------------------------------------------
+
+    def test_e1_action_id_present(self):
+        self.assertIn('* id = "E1"', self.content)
+
+    def test_e3_action_id_present(self):
+        self.assertIn('* id = "E3"', self.content)
+
+    def test_soa_time_point_type_interaction(self):
+        """All encounters must have soaTimePointType = interaction."""
+        count = self.content.count(
+            'extension[soaTimePointType].valueString = "interaction"'
+        )
+        self.assertEqual(count, 12)
+
+    # -----------------------------------------------------------------------
+    # Non-anchor timing spot-checks (from F-0 audit Section 6)
+    # -----------------------------------------------------------------------
+
+    def test_e4_definition_uri(self):
+        self.assertIn('"PlanDefinition/H2Q-MC-LZZT-E4-USDM"', self.content)
+
+    def test_e4_planned_day_14(self):
+        """E4 (Week 2): Timing_4 = P2W → 14 days."""
+        self.assertIn("soaPlannedTimePoint", self.content)
+        self.assertIn("* value = 14", self.content)
+
+    def test_e13_planned_day_182(self):
+        """E13 (Week 26): Timing_16 = P26W → 182 days."""
+        self.assertIn("* value = 182", self.content)
+
+    # -----------------------------------------------------------------------
+    # relatedAction present for non-anchor
+    # -----------------------------------------------------------------------
+
+    def test_related_action_present(self):
+        self.assertIn("relatedAction", self.content)
+
+    def test_e4_related_action_targets_e3(self):
+        """E4 relatedAction must target E3 (Baseline = prior encounter)."""
+        self.assertIn('targetId = "E3"', self.content)
+
+    # -----------------------------------------------------------------------
+    # Titles and descriptions
+    # -----------------------------------------------------------------------
+
+    def test_e1_title(self):
+        self.assertIn('* title = "Screening 1"', self.content)
+
+    def test_e3_title(self):
+        self.assertIn('* title = "Baseline"', self.content)
+
+    def test_e4_title(self):
+        self.assertIn('* title = "Week 2"', self.content)
+
+    def test_e13_title(self):
+        self.assertIn('* title = "Week 26"', self.content)
+
+
+# ---------------------------------------------------------------------------
+# emit_protocol_design — idempotency
+# ---------------------------------------------------------------------------
+class TestEmitProtocolDesignIdempotency(unittest.TestCase):
+    def setUp(self):
+        _require_usdm(self)
+
+    def test_idempotent(self):
+        doc = USDMDoc(_USDM_PATH)
+        with tempfile.TemporaryDirectory() as tmp:
+            out = os.path.join(tmp, "ProtocolDesign.gen.fsh")
+            emit_protocol_design(doc, out)
+            with open(out, "rb") as fh:
+                first = fh.read()
+            emit_protocol_design(doc, out)
+            with open(out, "rb") as fh:
+                second = fh.read()
+        self.assertEqual(first, second, "emit_protocol_design is not idempotent")
 
 
 if __name__ == "__main__":

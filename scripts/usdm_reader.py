@@ -930,3 +930,233 @@ def emit_visit_plan_definitions(
         written.append(out_path)
 
     return written
+
+
+# ---------------------------------------------------------------------------
+# emit_protocol_design
+# ---------------------------------------------------------------------------
+
+def _ordered_encounters(doc: "USDMDoc") -> list:
+    """
+    Return encounters in nextId-chain order, starting from the encounter
+    whose previousId is None (the first anchor).
+
+    Falls back to the raw list order if the chain cannot be followed.
+    """
+    encounters = doc.encounters()
+    if not encounters:
+        return []
+
+    # Build id → encounter map
+    enc_by_id: dict = {e["id"]: e for e in encounters}
+
+    # Find the first encounter (previousId is None or absent)
+    first = None
+    for enc in encounters:
+        if not enc.get("previousId"):
+            first = enc
+            break
+    if first is None:
+        # Fall back to raw order
+        return list(encounters)
+
+    # Walk the nextId chain
+    ordered: list = []
+    current = first
+    visited: set = set()
+    while current is not None:
+        if current["id"] in visited:
+            break  # cycle guard
+        visited.add(current["id"])
+        ordered.append(current)
+        next_id = current.get("nextId")
+        current = enc_by_id.get(next_id) if next_id else None
+
+    # Append any encounters not reached via the chain (safety net)
+    for enc in encounters:
+        if enc["id"] not in visited:
+            ordered.append(enc)
+
+    return ordered
+
+
+def emit_protocol_design(
+    doc: "USDMDoc",
+    out_path: str,
+    timing_resolver=None,
+) -> None:
+    """
+    Generate ProtocolDesign.gen.fsh from the USDM document.
+
+    Emits a single SOAPlanDefinition instance
+    H2Q-MC-LZZT-ProtocolDesign-USDM with one action per encounter
+    (in nextId-chain order).  Each action mirrors the timing structure
+    produced by emit_visit_plan_definitions:
+
+      * action[+]
+        * id          = "<encounter.name>"
+        * title       = "<encounter.label>"
+        * description = "<encounter.description>"
+        * definitionUri = "PlanDefinition/H2Q-MC-LZZT-<encounter.name>-USDM"
+        * extension[soaTimepoint] ...
+        * relatedAction[+] ...   (non-anchor only)
+        * action[+]              (transition sub-action; non-anchor only)
+    """
+    if timing_resolver is None:
+        try:
+            from usdm_timing import TimingResolver as _TR
+        except ImportError:
+            import sys as _sys
+            _scripts_dir = os.path.dirname(os.path.abspath(__file__))
+            if _scripts_dir not in _sys.path:
+                _sys.path.insert(0, _scripts_dir)
+            from usdm_timing import TimingResolver as _TR
+        timing_resolver = _TR(doc)
+
+    sv = doc.study_version()
+    study_version_id = sv.get("versionIdentifier", "")
+
+    ordered = _ordered_encounters(doc)
+    enc_by_id: dict = {e["id"]: e for e in doc.encounters()}
+
+    lines: list = [
+        _fsh_header(),
+        "// ============================================================",
+        "// ProtocolDesign PlanDefinition (USDM-derived)",
+        "// ============================================================",
+        "Instance: H2Q-MC-LZZT-ProtocolDesign-USDM",
+        "InstanceOf: SOAPlanDefinition",
+        "Usage: #definition",
+        'Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"',
+        "* status = #active",
+        f'* version = "{_fsh_escape(study_version_id)}"',
+    ]
+
+    for encounter in ordered:
+        enc_name = encounter.get("name", "")
+        enc_label = encounter.get("label", "")
+        enc_desc = encounter.get("description", "") or enc_label
+        instance_ref = f"H2Q-MC-LZZT-{enc_name}-USDM"
+
+        scheduled_at_id = encounter.get("scheduledAtId")
+        timing = timing_resolver.resolve(scheduled_at_id)
+
+        prior_enc_id = encounter.get("previousId")
+        prior_encounter = enc_by_id.get(prior_enc_id) if prior_enc_id else None
+
+        transition_start_rule = encounter.get("transitionStartRule") or None
+        transition_end_rule = encounter.get("transitionEndRule") or None
+
+        subtype = _derive_subtype(enc_label)
+        repeat_allowed = "true" if subtype == "retreatment" else "false"
+
+        lines += [
+            "* action[+]",
+            f'  * id = "{enc_name}"',
+            f'  * title = "{_fsh_escape(enc_label)}"',
+            f'  * description = "{_fsh_escape(enc_desc)}"',
+            f'  * definitionUri = "PlanDefinition/{instance_ref}"',
+            "  * extension[soaTimepoint]",
+            '    * extension[soaTimePointType].valueString = "interaction"',
+            f'    * extension[soaTimePointSubType].valueString = "{subtype}"',
+        ]
+
+        if timing is not None:
+            day_str = _fmt_days(timing.planned_day_value)
+            lines += [
+                "    * extension[soaPlannedTimePoint].valueQuantity",
+                f"      * value = {day_str}",
+                "      * code = #d",
+                '      * system = "http://unitsofmeasure.org"',
+            ]
+            if timing.reference_encounter_name:
+                lines.append(
+                    f'    * extension[soaReferenceTimePoint].valueString = "{timing.reference_encounter_name}"'
+                )
+            if (timing.window_lower_days is not None
+                    and timing.window_upper_days is not None):
+                low_str = _fmt_days(timing.window_lower_days)
+                high_str = _fmt_days(timing.window_upper_days)
+                lines += [
+                    "    * extension[soaPlannedRange].valueRange",
+                    "      * low",
+                    f"        * value = {low_str}",
+                    "        * code = #d",
+                    '        * system = "http://unitsofmeasure.org"',
+                    "      * high",
+                    f"        * value = {high_str}",
+                    "        * code = #d",
+                    '        * system = "http://unitsofmeasure.org"',
+                ]
+            lines.append(
+                f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
+            )
+
+            # relatedAction block
+            if prior_encounter is not None:
+                prior_name = prior_encounter.get("name", "")
+                low_val = (
+                    _fmt_days(timing.window_lower_days)
+                    if timing.window_lower_days is not None
+                    else "0"
+                )
+                lines += [
+                    "  * relatedAction[+]",
+                    f'    * targetId = "{prior_name}"',
+                    "    * relationship = #after",
+                    f"    * offsetRange.low.value = {low_val}",
+                    "    * offsetRange.low.code = #d",
+                ]
+
+                # Transition sub-action
+                prior_label = prior_encounter.get("label", "")
+                delay_str = _fmt_days(timing.transition_delay_days)
+                rule_texts: list = []
+                if transition_start_rule:
+                    rt = (transition_start_rule.get("text") or "").strip()
+                    if rt:
+                        rule_texts.append(rt)
+                if transition_end_rule:
+                    rt = (transition_end_rule.get("text") or "").strip()
+                    if rt:
+                        rule_texts.append(rt)
+                transition_desc = " / ".join(rule_texts) if rule_texts else ""
+
+                lines += [
+                    "  * action[+]",
+                    "    * extension[soaTransition]",
+                    f'      * extension[soaTargetId].valueString = "{prior_name}"',
+                    f'      * extension[soaTargetName].valueString = "{_fsh_escape(prior_label)}"',
+                    '      * extension[soaTransitionType].valueString = "scheduled"',
+                    "      * extension[soaTransitionDelay].valueDuration",
+                    f"        * value = {delay_str}",
+                    "        * code = #d",
+                    '        * system = "http://unitsofmeasure.org"',
+                ]
+                if (timing.window_lower_days is not None
+                        and timing.window_upper_days is not None):
+                    low_str2 = _fmt_days(timing.window_lower_days)
+                    high_str2 = _fmt_days(timing.window_upper_days)
+                    lines += [
+                        "      * extension[soaTransitionRange].valueRange",
+                        "        * low",
+                        f"          * value = {low_str2}",
+                        "          * code = #d",
+                        '          * system = "http://unitsofmeasure.org"',
+                        "        * high",
+                        f"          * value = {high_str2}",
+                        "          * code = #d",
+                        '          * system = "http://unitsofmeasure.org"',
+                    ]
+                if transition_desc:
+                    lines.append(
+                        f'    * description = "{_fsh_escape(transition_desc)}"'
+                    )
+        else:
+            # Anchor visit: subtype only
+            lines.append(
+                f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
+            )
+
+    lines.append("")
+    _write_fsh(out_path, lines)
