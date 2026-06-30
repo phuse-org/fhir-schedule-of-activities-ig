@@ -40,11 +40,11 @@ Description: "Day 28"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "E4"
-      * extension[soaTargetName].valueString = "Week 2"
+      * extension[soaTargetId].valueString = "E7"
+      * extension[soaTargetName].valueString = "Week 6"
       * extension[soaTransitionType].valueString = "scheduled"
       * extension[soaTransitionDelay].valueDuration
-        * value = 28
+        * value = 42
         * code = #d
         * system = "http://unitsofmeasure.org"
       * extension[soaTransitionRange].valueRange
@@ -56,3 +56,13 @@ Description: "Day 28"
           * value = 3
           * code = #d
           * system = "http://unitsofmeasure.org"
+  * action[+]
+    * extension[soaTransition]
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetName].valueString = "Early Termination"
+      * extension[soaTransitionType].valueString = "early-termination"
+      * extension[soaTransitionDelay].valueDuration
+        * value = 0
+        * code = #d
+        * system = "http://unitsofmeasure.org"
+    * description = "Early withdrawal or adverse event"

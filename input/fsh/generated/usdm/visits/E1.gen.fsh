@@ -19,3 +19,32 @@ Description: "Screening encounter"
     * extension[soaTimePointType].valueString = "interaction"
     * extension[soaTimePointSubType].valueString = "screening"
     * extension[soaRepeatAllowed].valueBoolean = false
+  * action[+]
+    * extension[soaTransition]
+      * extension[soaTargetId].valueString = "E2"
+      * extension[soaTargetName].valueString = "Screening 2"
+      * extension[soaTransitionType].valueString = "scheduled"
+      * extension[soaTransitionDelay].valueDuration
+        * value = 2
+        * code = #d
+        * system = "http://unitsofmeasure.org"
+      * extension[soaTransitionRange].valueRange
+        * low
+          * value = 0.166667
+          * code = #d
+          * system = "http://unitsofmeasure.org"
+        * high
+          * value = 0
+          * code = #d
+          * system = "http://unitsofmeasure.org"
+    * description = "completion of screening activities / Subject identifier"
+  * action[+]
+    * extension[soaTransition]
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetName].valueString = "Early Termination"
+      * extension[soaTransitionType].valueString = "early-termination"
+      * extension[soaTransitionDelay].valueDuration
+        * value = 0
+        * code = #d
+        * system = "http://unitsofmeasure.org"
+    * description = "Early withdrawal or adverse event"

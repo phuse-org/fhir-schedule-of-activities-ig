@@ -843,8 +843,13 @@ class TestEmitVisitPlanDefinitions(unittest.TestCase):
         self.assertNotIn("relatedAction", self.files["E1"])
 
     def test_anchor_e1_no_transition_sub_action(self):
-        """E1 is an anchor — must NOT have soaTransition."""
-        self.assertNotIn("soaTransition", self.files["E1"])
+        """E1 is an anchor but still has forward transitions (to E2 and ET).
+        Verify the forward scheduled edge points to E2, not backward to itself."""
+        content = self.files["E1"]
+        self.assertIn("soaTransition", content)
+        self.assertIn('"E2"', content)
+        # soaTargetId must not reference E1 itself
+        self.assertNotIn('soaTargetId].valueString = "E1"', content)
 
     def test_anchor_e3_no_planned_time_point(self):
         """E3 (Baseline) is an anchor — must NOT have soaPlannedTimePoint."""
@@ -1040,11 +1045,70 @@ class TestEmitVisitPlanDefinitions(unittest.TestCase):
         self.assertIn("Instance: H2Q-MC-LZZT-E1-USDM", content)
 
     def test_e12_has_transition_description(self):
-        """E12 has TransitionRule_6 (end) → description should contain rule text."""
+        """Transitions are now forward-facing.
+        E13 is the last encounter — no forward scheduled edge, only ET edge."""
         content = self.files["E13"]
-        # E13 = Encounter_12 (Week 26) has TransitionRule_6 as transitionEndRule
-        # The description should contain "End of treatment"
-        self.assertIn("End of treatment", content)
+        self.assertIn("soaTransition", content)
+        self.assertIn("H2Q-MC-LZZT-Study-ET-14", content)
+        self.assertIn("early-termination", content)
+        # No forward scheduled edge on the last encounter
+        self.assertNotIn('"scheduled"', content)
+
+    # -----------------------------------------------------------------------
+    # Forward transitions: each encounter → next + ET edge
+    # -----------------------------------------------------------------------
+
+    def test_e1_forward_transition_to_e2(self):
+        """E1 (Screening 1) must have a forward scheduled transition to E2."""
+        content = self.files["E1"]
+        self.assertIn('"E2"', content)
+        self.assertIn('"scheduled"', content)
+
+    def test_e3_forward_transition_to_e4(self):
+        """E3 (Baseline) must have a forward scheduled transition to E4."""
+        content = self.files["E3"]
+        self.assertIn('"E4"', content)
+        self.assertIn('"scheduled"', content)
+
+    def test_e4_forward_transition_to_e5(self):
+        """E4 (Week 2) must have a forward scheduled transition to E5."""
+        content = self.files["E4"]
+        self.assertIn('"E5"', content)
+        self.assertIn('"scheduled"', content)
+
+    def test_all_non_et_encounters_have_et_edge(self):
+        """Every encounter must have an early-termination edge to ET."""
+        for enc_name, content in self.files.items():
+            self.assertIn(
+                "H2Q-MC-LZZT-Study-ET-14", content,
+                f"{enc_name}.gen.fsh missing ET edge",
+            )
+            self.assertIn(
+                "early-termination", content,
+                f"{enc_name}.gen.fsh missing early-termination transition type",
+            )
+
+    def test_transitions_forward_not_backward(self):
+        """Scheduled transitions must point forward (to next), never backward."""
+        # E4's scheduled transition must target E5, not E3
+        content = self.files["E4"]
+        # Find the scheduled transition target
+        import re
+        scheduled_blocks = re.findall(
+            r'soaTransitionType.*?"scheduled".*?soaTargetId.*?"([^"]+)"',
+            content, re.DOTALL
+        )
+        # Also search the other order (soaTargetId appears before soaTransitionType in FSH)
+        target_ids_near_scheduled = re.findall(
+            r'soaTargetId.*?"([^"]+)"',
+            content
+        )
+        # The first target should be E5 (forward), not E3 (backward)
+        self.assertTrue(
+            any(t == "E5" for t in target_ids_near_scheduled),
+            f"E4 should have a forward transition to E5; found targets: {target_ids_near_scheduled}",
+        )
+        self.assertNotIn('"E3"', content.split("soaTransition")[1] if "soaTransition" in content else "")
 
     # -----------------------------------------------------------------------
     # Titles and descriptions

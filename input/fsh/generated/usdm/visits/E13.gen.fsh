@@ -40,20 +40,11 @@ Description: "Day 182"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "E12"
-      * extension[soaTargetName].valueString = "Week 24"
-      * extension[soaTransitionType].valueString = "scheduled"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetName].valueString = "Early Termination"
+      * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
-        * value = 182
+        * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-      * extension[soaTransitionRange].valueRange
-        * low
-          * value = 3
-          * code = #d
-          * system = "http://unitsofmeasure.org"
-        * high
-          * value = 3
-          * code = #d
-          * system = "http://unitsofmeasure.org"
-    * description = "End of treatment"
+    * description = "Early withdrawal or adverse event"

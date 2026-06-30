@@ -660,23 +660,85 @@ def _fmt_days(value: float) -> str:
     return f"{value:.6f}".rstrip("0").rstrip(".")
 
 
+def _emit_transition_sub_action(
+    lines: list,
+    target_id: str,
+    target_label: str,
+    transition_type: str,
+    delay_str: str,
+    window_lower_days,
+    window_upper_days,
+    description: str = "",
+) -> None:
+    """
+    Append a soaTransition sub-action block to lines.
+
+    target_id        : FHIR action id of the destination encounter
+    target_label     : human-readable label of the destination encounter
+    transition_type  : "scheduled" | "early-termination" | "adverse-event"
+    delay_str        : formatted day value for soaTransitionDelay
+    window_lower_days: float | None
+    window_upper_days: float | None
+    description      : optional description text
+    """
+    lines += [
+        "  * action[+]",
+        "    * extension[soaTransition]",
+        f'      * extension[soaTargetId].valueString = "{target_id}"',
+        f'      * extension[soaTargetName].valueString = "{_fsh_escape(target_label)}"',
+        f'      * extension[soaTransitionType].valueString = "{transition_type}"',
+        "      * extension[soaTransitionDelay].valueDuration",
+        f"        * value = {delay_str}",
+        "        * code = #d",
+        '        * system = "http://unitsofmeasure.org"',
+    ]
+    if window_lower_days is not None and window_upper_days is not None:
+        low_str = _fmt_days(window_lower_days)
+        high_str = _fmt_days(window_upper_days)
+        lines += [
+            "      * extension[soaTransitionRange].valueRange",
+            "        * low",
+            f"          * value = {low_str}",
+            "          * code = #d",
+            '          * system = "http://unitsofmeasure.org"',
+            "        * high",
+            f"          * value = {high_str}",
+            "          * code = #d",
+            '          * system = "http://unitsofmeasure.org"',
+        ]
+    if description:
+        lines.append(f'    * description = "{_fsh_escape(description)}"')
+
+
+# ET encounter id used for early-withdrawal edges (hand-authored; no USDM Encounter object).
+_ET_ENCOUNTER_ID = "H2Q-MC-LZZT-Study-ET-14"
+_ET_ENCOUNTER_LABEL = "Early Termination"
+
+
 def _emit_visit_fsh(
     encounter: dict,
-    timing,          # ResolvedTiming | None
+    timing,           # ResolvedTiming | None  (this encounter's own timing)
     prior_encounter: Optional[dict],
+    next_encounter: Optional[dict],
+    next_timing,      # ResolvedTiming | None  (next encounter's timing, for fwd transition delay)
     transition_start_rule: Optional[dict],
     transition_end_rule: Optional[dict],
+    include_et_edge: bool = True,
 ) -> list[str]:
     """
     Emit FSH lines for a single visit PlanDefinition.
 
-    Parameters
-    ----------
-    encounter            : the USDM Encounter dict
-    timing               : ResolvedTiming (or None for anchor visits)
-    prior_encounter      : the previous Encounter dict (or None for first anchor)
-    transition_start_rule: TransitionRule dict for transitionStartRuleId (or None)
-    transition_end_rule  : TransitionRule dict for transitionEndRuleId (or None)
+    Transitions are **forward-facing graph edges**:
+      - One "scheduled" soaTransition sub-action pointing to next_encounter
+        (omitted for the last encounter in the main sequence).
+      - One "early-termination" soaTransition sub-action pointing to the ET
+        encounter (omitted when include_et_edge is False, e.g. for ET itself).
+
+    The soaTransitionDelay on the forward edge is taken from next_timing
+    (the planned duration from this encounter to the next one).
+
+    The backward relatedAction (#after prior_encounter) is kept unchanged —
+    it encodes the scheduling dependency, not the graph direction.
     """
     enc_name = encounter.get("name", "")
     enc_label = encounter.get("label", "")
@@ -684,14 +746,11 @@ def _emit_visit_fsh(
     instance_id = f"H2Q-MC-LZZT-{enc_name}-USDM"
 
     subtype = _derive_subtype(enc_label)
-    # soaRepeatAllowed = true only for retreatment visits
     repeat_allowed = "true" if subtype == "retreatment" else "false"
 
     # Contact modes
-    # Each contactMode item is a Code object with flat fields:
-    #   { "code": "C175574", "decode": "IN PERSON", "codeSystem": "...", ... }
     contact_modes = encounter.get("contactModes", []) or []
-    mode_codes: list[tuple[str, str]] = []  # (cdisc_code, decode)
+    mode_codes: list[tuple[str, str]] = []
     for cm in contact_modes:
         if not isinstance(cm, dict):
             continue
@@ -719,9 +778,7 @@ def _emit_visit_fsh(
         f'  * title = "{_fsh_escape(enc_label)}"',
     ]
 
-    # Contact mode: encode as action.code (gap workaround).
-    # All modes go into a single CodeableConcept with one coding per mode.
-    # Per F-0 audit §5.1: no SOAPlanDefinition element for contactMode.
+    # Contact mode (gap workaround — no SoA profile element)
     if mode_codes:
         lines.append(
             "  // Gap: no SoA profile element for contactMode; encoded as action.code"
@@ -743,8 +800,6 @@ def _emit_visit_fsh(
     ]
 
     if timing is not None:
-        # Non-anchor visit: emit full timing values.
-        # FSH Quantity syntax: use .value and .code sub-elements (UCUM code = #d).
         day_str = _fmt_days(timing.planned_day_value)
         lines += [
             "    * extension[soaPlannedTimePoint].valueQuantity",
@@ -774,10 +829,14 @@ def _emit_visit_fsh(
             f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
         )
 
-        # ---- relatedAction block ----
+        # ---- relatedAction: backward scheduling dependency (#after prior) ----
         if prior_encounter is not None:
             prior_name = prior_encounter.get("name", "")
-            low_val = _fmt_days(timing.window_lower_days) if timing.window_lower_days is not None else "0"
+            low_val = (
+                _fmt_days(timing.window_lower_days)
+                if timing.window_lower_days is not None
+                else "0"
+            )
             lines += [
                 "  * relatedAction[+]",
                 f'    * targetId = "{prior_name}"',
@@ -785,55 +844,54 @@ def _emit_visit_fsh(
                 f"    * offsetRange.low.value = {low_val}",
                 "    * offsetRange.low.code = #d",
             ]
-
-            # ---- transition sub-action ----
-            prior_label = prior_encounter.get("label", "")
-            delay_str = _fmt_days(timing.transition_delay_days)
-            # Build transition description from rules
-            rule_texts: list[str] = []
-            if transition_start_rule:
-                rt = (transition_start_rule.get("text") or "").strip()
-                if rt:
-                    rule_texts.append(rt)
-            if transition_end_rule:
-                rt = (transition_end_rule.get("text") or "").strip()
-                if rt:
-                    rule_texts.append(rt)
-            transition_desc = " / ".join(rule_texts) if rule_texts else ""
-
-            lines += [
-                "  * action[+]",
-                "    * extension[soaTransition]",
-                f'      * extension[soaTargetId].valueString = "{prior_name}"',
-                f'      * extension[soaTargetName].valueString = "{_fsh_escape(prior_label)}"',
-                '      * extension[soaTransitionType].valueString = "scheduled"',
-                "      * extension[soaTransitionDelay].valueDuration",
-                f"        * value = {delay_str}",
-                "        * code = #d",
-                '        * system = "http://unitsofmeasure.org"',
-            ]
-            if timing.window_lower_days is not None and timing.window_upper_days is not None:
-                low_str2 = _fmt_days(timing.window_lower_days)
-                high_str2 = _fmt_days(timing.window_upper_days)
-                lines += [
-                    "      * extension[soaTransitionRange].valueRange",
-                    "        * low",
-                    f"          * value = {low_str2}",
-                    "          * code = #d",
-                    '          * system = "http://unitsofmeasure.org"',
-                    "        * high",
-                    f"          * value = {high_str2}",
-                    "          * code = #d",
-                    '          * system = "http://unitsofmeasure.org"',
-                ]
-            if transition_desc:
-                lines.append(
-                    f'    * description = "{_fsh_escape(transition_desc)}"'
-                )
     else:
-        # Anchor visit: soaTimePointType and soaTimePointSubType only
+        # Anchor visit
         lines.append(
             f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
+        )
+
+    # ---- soaTransition sub-actions: forward graph edges ----
+
+    # 1. Forward "scheduled" edge → next encounter in the main sequence
+    if next_encounter is not None and next_timing is not None:
+        next_name = next_encounter.get("name", "")
+        next_label = next_encounter.get("label", "")
+        delay_str = _fmt_days(next_timing.planned_day_value)
+
+        # Transition description from this encounter's end-rule / next's start-rule
+        rule_texts: list[str] = []
+        if transition_end_rule:
+            rt = (transition_end_rule.get("text") or "").strip()
+            if rt:
+                rule_texts.append(rt)
+        if transition_start_rule:
+            rt = (transition_start_rule.get("text") or "").strip()
+            if rt:
+                rule_texts.append(rt)
+        transition_desc = " / ".join(rule_texts) if rule_texts else ""
+
+        _emit_transition_sub_action(
+            lines,
+            target_id=next_name,
+            target_label=next_label,
+            transition_type="scheduled",
+            delay_str=delay_str,
+            window_lower_days=next_timing.window_lower_days,
+            window_upper_days=next_timing.window_upper_days,
+            description=transition_desc,
+        )
+
+    # 2. Early-termination edge → ET encounter (every non-ET encounter)
+    if include_et_edge:
+        _emit_transition_sub_action(
+            lines,
+            target_id=_ET_ENCOUNTER_ID,
+            target_label=_ET_ENCOUNTER_LABEL,
+            transition_type="early-termination",
+            delay_str="0",
+            window_lower_days=None,
+            window_upper_days=None,
+            description="Early withdrawal or adverse event",
         )
 
     lines.append("")
@@ -881,34 +939,54 @@ def emit_visit_plan_definitions(
     os.makedirs(visits_dir, exist_ok=True)
 
     encounters = doc.encounters()
-    # Build encounter-by-id map for prior encounter lookup
+    # Build id-keyed maps
     enc_by_id: dict[str, dict] = {e["id"]: e for e in encounters}
+
+    # Build next-encounter map: enc_id → enc whose previousId == enc_id
+    next_by_id: dict[str, dict] = {}
+    for enc in encounters:
+        prev_id = enc.get("previousId")
+        if prev_id:
+            next_by_id[prev_id] = enc
 
     written: list[str] = []
 
     for encounter in encounters:
+        enc_id = encounter["id"]
         enc_name = encounter.get("name", "")
         scheduled_at_id = encounter.get("scheduledAtId")
 
-        # Resolve timing (None for anchor visits)
+        # This encounter's own timing
         timing = timing_resolver.resolve(scheduled_at_id)
 
-        # Resolve prior encounter
+        # Prior encounter (for relatedAction backward dep)
         prior_enc_id = encounter.get("previousId")
         prior_encounter = enc_by_id.get(prior_enc_id) if prior_enc_id else None
 
-        # Resolve transition rules
-        # In USDM v4, transitionStartRule and transitionEndRule are inline
-        # TransitionRule objects (not ID references).
+        # Next encounter (for forward soaTransition)
+        next_encounter = next_by_id.get(enc_id)
+        next_timing = None
+        if next_encounter is not None:
+            next_timing = timing_resolver.resolve(next_encounter.get("scheduledAtId"))
+
+        # Transition rules on this encounter (used for description text)
         transition_start_rule: Optional[dict] = encounter.get("transitionStartRule") or None
         transition_end_rule: Optional[dict] = encounter.get("transitionEndRule") or None
+
+        # ET edge suppressed for ET/RT encounters themselves
+        enc_label = encounter.get("label", "")
+        subtype = _derive_subtype(enc_label)
+        include_et_edge = subtype not in ("early-termination", "retreatment")
 
         lines = _emit_visit_fsh(
             encounter=encounter,
             timing=timing,
             prior_encounter=prior_encounter,
+            next_encounter=next_encounter,
+            next_timing=next_timing,
             transition_start_rule=transition_start_rule,
             transition_end_rule=transition_end_rule,
+            include_et_edge=include_et_edge,
         )
 
         out_path = os.path.join(visits_dir, f"{enc_name}.gen.fsh")
@@ -1001,9 +1079,15 @@ def emit_protocol_design(
 
     sv = doc.study_version()
     study_version_id = sv.get("versionIdentifier", "")
-
     ordered = _ordered_encounters(doc)
     enc_by_id: dict = {e["id"]: e for e in doc.encounters()}
+
+    # Build next-encounter map
+    next_by_id: dict = {}
+    for enc in doc.encounters():
+        prev_id = enc.get("previousId")
+        if prev_id:
+            next_by_id[prev_id] = enc
 
     lines: list = [
         _fsh_header(),
@@ -1019,6 +1103,7 @@ def emit_protocol_design(
     ]
 
     for encounter in ordered:
+        enc_id = encounter["id"]
         enc_name = encounter.get("name", "")
         enc_label = encounter.get("label", "")
         enc_desc = encounter.get("description", "") or enc_label
@@ -1030,11 +1115,17 @@ def emit_protocol_design(
         prior_enc_id = encounter.get("previousId")
         prior_encounter = enc_by_id.get(prior_enc_id) if prior_enc_id else None
 
+        next_encounter = next_by_id.get(enc_id)
+        next_timing = None
+        if next_encounter is not None:
+            next_timing = timing_resolver.resolve(next_encounter.get("scheduledAtId"))
+
         transition_start_rule = encounter.get("transitionStartRule") or None
         transition_end_rule = encounter.get("transitionEndRule") or None
 
         subtype = _derive_subtype(enc_label)
         repeat_allowed = "true" if subtype == "retreatment" else "false"
+        include_et_edge = subtype not in ("early-termination", "retreatment")
 
         lines += [
             "* action[+]",
@@ -1078,7 +1169,7 @@ def emit_protocol_design(
                 f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
             )
 
-            # relatedAction block
+            # relatedAction: backward scheduling dependency
             if prior_encounter is not None:
                 prior_name = prior_encounter.get("name", "")
                 low_val = (
@@ -1093,55 +1184,48 @@ def emit_protocol_design(
                     f"    * offsetRange.low.value = {low_val}",
                     "    * offsetRange.low.code = #d",
                 ]
-
-                # Transition sub-action
-                prior_label = prior_encounter.get("label", "")
-                delay_str = _fmt_days(timing.transition_delay_days)
-                rule_texts: list = []
-                if transition_start_rule:
-                    rt = (transition_start_rule.get("text") or "").strip()
-                    if rt:
-                        rule_texts.append(rt)
-                if transition_end_rule:
-                    rt = (transition_end_rule.get("text") or "").strip()
-                    if rt:
-                        rule_texts.append(rt)
-                transition_desc = " / ".join(rule_texts) if rule_texts else ""
-
-                lines += [
-                    "  * action[+]",
-                    "    * extension[soaTransition]",
-                    f'      * extension[soaTargetId].valueString = "{prior_name}"',
-                    f'      * extension[soaTargetName].valueString = "{_fsh_escape(prior_label)}"',
-                    '      * extension[soaTransitionType].valueString = "scheduled"',
-                    "      * extension[soaTransitionDelay].valueDuration",
-                    f"        * value = {delay_str}",
-                    "        * code = #d",
-                    '        * system = "http://unitsofmeasure.org"',
-                ]
-                if (timing.window_lower_days is not None
-                        and timing.window_upper_days is not None):
-                    low_str2 = _fmt_days(timing.window_lower_days)
-                    high_str2 = _fmt_days(timing.window_upper_days)
-                    lines += [
-                        "      * extension[soaTransitionRange].valueRange",
-                        "        * low",
-                        f"          * value = {low_str2}",
-                        "          * code = #d",
-                        '          * system = "http://unitsofmeasure.org"',
-                        "        * high",
-                        f"          * value = {high_str2}",
-                        "          * code = #d",
-                        '          * system = "http://unitsofmeasure.org"',
-                    ]
-                if transition_desc:
-                    lines.append(
-                        f'    * description = "{_fsh_escape(transition_desc)}"'
-                    )
         else:
-            # Anchor visit: subtype only
             lines.append(
                 f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
+            )
+
+        # Forward "scheduled" transition → next encounter
+        if next_encounter is not None and next_timing is not None:
+            next_name = next_encounter.get("name", "")
+            next_label = next_encounter.get("label", "")
+            delay_str = _fmt_days(next_timing.planned_day_value)
+            rule_texts: list = []
+            if transition_end_rule:
+                rt = (transition_end_rule.get("text") or "").strip()
+                if rt:
+                    rule_texts.append(rt)
+            if transition_start_rule:
+                rt = (transition_start_rule.get("text") or "").strip()
+                if rt:
+                    rule_texts.append(rt)
+            transition_desc = " / ".join(rule_texts) if rule_texts else ""
+            _emit_transition_sub_action(
+                lines,
+                target_id=next_name,
+                target_label=next_label,
+                transition_type="scheduled",
+                delay_str=delay_str,
+                window_lower_days=next_timing.window_lower_days,
+                window_upper_days=next_timing.window_upper_days,
+                description=transition_desc,
+            )
+
+        # Early-termination edge
+        if include_et_edge:
+            _emit_transition_sub_action(
+                lines,
+                target_id=_ET_ENCOUNTER_ID,
+                target_label=_ET_ENCOUNTER_LABEL,
+                transition_type="early-termination",
+                delay_str="0",
+                window_lower_days=None,
+                window_upper_days=None,
+                description="Early withdrawal or adverse event",
             )
 
     lines.append("")

@@ -40,20 +40,11 @@ Description: "Screening encounter - Ambulatory ECG Placement"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "E1"
-      * extension[soaTargetName].valueString = "Screening 1"
-      * extension[soaTransitionType].valueString = "scheduled"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetName].valueString = "Early Termination"
+      * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
-        * value = 2
+        * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-      * extension[soaTransitionRange].valueRange
-        * low
-          * value = 0.166667
-          * code = #d
-          * system = "http://unitsofmeasure.org"
-        * high
-          * value = 0
-          * code = #d
-          * system = "http://unitsofmeasure.org"
-    * description = "subject leaves clinic after connection of ambulatory ECG machine"
+    * description = "Early withdrawal or adverse event"

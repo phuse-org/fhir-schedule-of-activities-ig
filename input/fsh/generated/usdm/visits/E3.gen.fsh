@@ -19,3 +19,32 @@ Description: "Baseline encounter - Ambulatory ECG Removal"
     * extension[soaTimePointType].valueString = "interaction"
     * extension[soaTimePointSubType].valueString = "baseline"
     * extension[soaRepeatAllowed].valueBoolean = false
+  * action[+]
+    * extension[soaTransition]
+      * extension[soaTargetId].valueString = "E4"
+      * extension[soaTargetName].valueString = "Week 2"
+      * extension[soaTransitionType].valueString = "scheduled"
+      * extension[soaTransitionDelay].valueDuration
+        * value = 14
+        * code = #d
+        * system = "http://unitsofmeasure.org"
+      * extension[soaTransitionRange].valueRange
+        * low
+          * value = 3
+          * code = #d
+          * system = "http://unitsofmeasure.org"
+        * high
+          * value = 3
+          * code = #d
+          * system = "http://unitsofmeasure.org"
+    * description = "Radomized / subject has connection of ambulatory ECG machine removed"
+  * action[+]
+    * extension[soaTransition]
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetName].valueString = "Early Termination"
+      * extension[soaTransitionType].valueString = "early-termination"
+      * extension[soaTransitionDelay].valueDuration
+        * value = 0
+        * code = #d
+        * system = "http://unitsofmeasure.org"
+    * description = "Early withdrawal or adverse event"
