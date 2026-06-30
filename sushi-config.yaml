@@ -166,7 +166,7 @@ groups:
     resources:
     - ResearchStudy/H2Q-MC-LZZT-ResearchStudy-USDM
     - Organization/LILLY-USDM
-    - Practitioner/Pers_001
+    - Practitioner/Pers-001
     - Group/H2Q-MC-LZZT-ResearchStudy-Inclusion-USDM
     - Group/H2Q-MC-LZZT-ResearchStudy-Exclusion-USDM
     - PlanDefinition/H2Q-MC-LZZT-E1-USDM

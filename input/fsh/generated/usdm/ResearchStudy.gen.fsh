@@ -20,7 +20,7 @@ Usage: #example
 // ============================================================
 // Principal Investigator Practitioner (USDM-derived)
 // ============================================================
-Instance: Pers_001
+Instance: Pers-001
 InstanceOf: Practitioner
 Title: "Mr. X"
 Usage: #example
@@ -56,7 +56,7 @@ Usage: #example
   * party = Reference(Organization/LILLY-USDM)
   * role = #lead-sponsor
 * associatedParty[+]
-  * party = Reference(Practitioner/Pers_001)
+  * party = Reference(Practitioner/Pers-001)
   * role = #primary-investigator
 * condition[+]
   * coding[+]
@@ -69,39 +69,20 @@ Usage: #example
     * code = #26929004
     * display = "Alzheimer's disease"
 * focus[+]
-  * coding[+]
-    * system = "http://example.org/sponsor"
-    * code = #MILD_MOD_ALZ
-    * display = "Mild to Moderate Alzheimer's Disease"
+  * concept
+    * coding[+]
+      * system = "http://example.org/sponsor"
+      * code = #MILD_MOD_ALZ
+      * display = "Mild to Moderate Alzheimer's Disease"
 * focus[+]
-  * coding[+]
-    * system = "http://snomed.info/sct"
-    * code = #26929004
-    * display = "Alzheimer's disease"
-* comparisonGroup[+]
-  * name = "Placebo"
-  * description = "Placebo"
-  * type
+  * concept
     * coding[+]
-      * system = "http://www.cdisc.org"
-      * code = #C174268
-      * display = "Placebo Control Arm"
+      * system = "http://snomed.info/sct"
+      * code = #26929004
+      * display = "Alzheimer's disease"
 * comparisonGroup[+]
-  * name = "Xanomeline Low Dose"
-  * description = "Active Substance"
-  * type
-    * coding[+]
-      * system = "http://www.cdisc.org"
-      * code = #C174267
-      * display = "Active Comparator Arm"
 * comparisonGroup[+]
-  * name = "Xanomeline High Dose"
-  * description = "Active Substance"
-  * type
-    * coding[+]
-      * system = "http://www.cdisc.org"
-      * code = #C174267
-      * display = "Active Comparator Arm"
+* comparisonGroup[+]
 * objective[+]
   * name = "To determine if there is a statistically significant relationship (overall Type 1 erroralpha=0.05) between the change in both the ADAS-Cog (11) and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
   * type = #primary

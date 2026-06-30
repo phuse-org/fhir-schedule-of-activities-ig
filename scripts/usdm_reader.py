@@ -289,7 +289,9 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
     pi_fhir_id = None
     if pi_persons:
         pi = pi_persons[0]
-        pi_fhir_id = pi.get("id", "Pers_001")  # e.g. "Pers_001"
+        pi_fhir_id = pi.get("id", "Pers-001")  # e.g. "Pers_001"
+        # FHIR ids may not contain underscores — replace with hyphens
+        pi_fhir_id = pi_fhir_id.replace("_", "-")
         pn = pi.get("personName") or {}
         pi_text = pn.get("text", "")
         pi_family = pn.get("familyName", "")
@@ -412,6 +414,7 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
             ]
 
     # Focus (therapeutic areas)
+    # focus is CodeableReference in R6 — use .concept.coding (not .coding directly)
     for ta in therapeutic_areas:
         ta_code = ta.get("code", "")
         ta_sys_raw = ta.get("codeSystem", "")
@@ -419,36 +422,19 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
         ta_display = ta.get("decode", "")
         lines += [
             "* focus[+]",
-            "  * coding[+]",
-            f'    * system = "{ta_sys}"',
-            f'    * code = #{ta_code}',
-            f'    * display = "{_fsh_escape(ta_display)}"',
+            "  * concept",
+            "    * coding[+]",
+            f'      * system = "{ta_sys}"',
+            f'      * code = #{ta_code}',
+            f'      * display = "{_fsh_escape(ta_display)}"',
         ]
 
     # Comparison groups (arms)
+    # In FHIR R6 ballot3, comparisonGroup has no .name, .description, or .type —
+    # those were added in ballot4.  Emit only the backbone element itself.
     for arm in arms:
-        arm_name = arm.get("name", "")
-        arm_label = arm.get("label", "")
-        arm_desc = arm.get("description", "")
-        arm_type_obj = arm.get("type") or {}
-        arm_type_code = arm_type_obj.get("code", "")
-        arm_type_display = arm_type_obj.get("decode", "")
-        fhir_arm_type = CDISC_ARM_TYPE_MAP.get(arm_type_code, "other")
-
         lines += [
             "* comparisonGroup[+]",
-            f'  * name = "{_fsh_escape(arm_name)}"',
-        ]
-        if arm_label and arm_label != arm_name:
-            lines.append(f'  * description = "{_fsh_escape(arm_label)}"')
-        elif arm_desc:
-            lines.append(f'  * description = "{_fsh_escape(arm_desc)}"')
-        lines += [
-            "  * type",
-            "    * coding[+]",
-            '      * system = "http://www.cdisc.org"',
-            f'      * code = #{arm_type_code}',
-            f'      * display = "{_fsh_escape(arm_type_display)}"',
         ]
 
     # Objectives

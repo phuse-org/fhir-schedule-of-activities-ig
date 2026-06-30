@@ -306,14 +306,15 @@ class TestEmitResearchStudy(unittest.TestCase):
         self.assertIn("Reference(Organization/LILLY-USDM)", self.content)
 
     def test_practitioner_instance(self):
-        self.assertIn("Instance: Pers_001", self.content)
+        # FHIR ids must not contain underscores; Pers_001 → Pers-001
+        self.assertIn("Instance: Pers-001", self.content)
         self.assertIn("InstanceOf: Practitioner", self.content)
 
     def test_pi_family_name(self):
         self.assertIn('"X"', self.content)
 
     def test_pi_reference(self):
-        self.assertIn("Reference(Practitioner/Pers_001)", self.content)
+        self.assertIn("Reference(Practitioner/Pers-001)", self.content)
 
     def test_sponsor_identifier(self):
         self.assertIn("H2Q-MC-LZZT", self.content)
@@ -336,15 +337,18 @@ class TestEmitResearchStudy(unittest.TestCase):
         self.assertIn("MILD_MOD_ALZ", self.content)
 
     def test_arms_present(self):
-        self.assertIn("Placebo", self.content)
-        self.assertIn("Xanomeline Low Dose", self.content)
-        self.assertIn("Xanomeline High Dose", self.content)
+        # In FHIR R6 ballot3 comparisonGroup has no name/description/type elements.
+        # Verify the three comparisonGroup entries are emitted (3 × "* comparisonGroup[+]").
+        count = self.content.count("* comparisonGroup[+]")
+        self.assertEqual(count, 3)
 
     def test_arm_type_placebo(self):
-        self.assertIn("C174268", self.content)
+        # comparisonGroup.type does not exist in ballot3 — test removed.
+        pass
 
     def test_arm_type_active(self):
-        self.assertIn("C174267", self.content)
+        # comparisonGroup.type does not exist in ballot3 — test removed.
+        pass
 
     def test_objectives_present(self):
         self.assertIn("#primary", self.content)
