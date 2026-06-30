@@ -490,6 +490,283 @@ def extract_observation_catalog(usdm_path: str) -> list:
 
 
 # ---------------------------------------------------------------------------
+# SoA matrix extraction
+# ---------------------------------------------------------------------------
+
+# Column order for the SoA matrix CSV
+SOA_MATRIX_ACTIVITY_COL = "activity_id"
+
+
+def extract_soa_matrix(usdm_path: str, catalog_path: str) -> dict:
+    """
+    Extract the Schedule of Activities matrix from a USDM JSON file.
+
+    Returns a dict with:
+      "encounter_names": list[str]   — encounter names in encounter-order
+      "rows": list[dict]             — one dict per catalog activity:
+                                       {"activity_id": str, <enc_name>: "X"|""}
+
+    Algorithm (per spec §Task F-6):
+
+    1. PRIMARY — traverse all ScheduleTimeline instances.
+       Each ScheduledActivityInstance has:
+         - encounterId (singular string, or null for sub-timeline instances)
+         - activityIds (list of Activity ids)
+         - defaultConditionId (the "next" pointer in the linked list)
+       Build a mapping: activity_id → set of encounter_ids from all SAIs
+       across all timelines.
+
+    2. FALLBACK — if an activity has Activity.timelineId set and no SAI
+       links it to a specific encounter, assign it to all encounters on
+       that timeline.  In this USDM, the secondary timelines (AE, ET,
+       VS-BP) have no encounters (encounterId = null on all their SAIs),
+       so the fallback produces an empty set for those activities.
+       A WARNING is logged for any catalog activity that ends up in zero
+       encounters.
+
+    3. ENCOUNTER ORDER — follow the nextId linked list on Encounter objects
+       starting from the anchor encounter where previousId is null.
+
+    4. HEADER ROW — encounter names (encounter.name field, e.g. "E1") in
+       encounter-order.
+
+    5. DATA ROWS — one per activity id from the catalog CSV; cell = "X"
+       where scheduled, blank otherwise.
+
+    Structural notes (from USDM v4 CDISC Pilot Study):
+      - encounterId is a singular string (not an array)
+      - Navigation between SAIs uses defaultConditionId (not nextId)
+      - ScheduledDecisionInstance nodes have no encounterId/activityIds;
+        they are skipped transparently during traversal
+    """
+    data, index, study_version, study_design = _load_usdm(usdm_path)
+
+    # ------------------------------------------------------------------
+    # Step 1: Build encounter order from the Encounter linked list
+    # ------------------------------------------------------------------
+    encounters = study_design.get("encounters", [])
+    # Find anchor encounter (previousId is null)
+    enc_by_id = {e["id"]: e for e in encounters}
+    anchor = next(
+        (e for e in encounters if not e.get("previousId")), None
+    )
+    if anchor is None:
+        raise ValueError("No anchor encounter found (no encounter with previousId=null)")
+
+    # Walk the nextId chain to get ordered encounter list
+    ordered_encounters = []
+    current = anchor
+    visited: set = set()
+    while current is not None:
+        enc_id = current["id"]
+        if enc_id in visited:
+            logger.warning("Cycle detected in encounter nextId chain at %s", enc_id)
+            break
+        visited.add(enc_id)
+        ordered_encounters.append(current)
+        next_id = current.get("nextId")
+        current = enc_by_id.get(next_id) if next_id else None
+
+    encounter_names = [e["name"] for e in ordered_encounters]
+    encounter_id_to_name = {e["id"]: e["name"] for e in ordered_encounters}
+
+    # ------------------------------------------------------------------
+    # Step 2: Build activity_id → set of encounter_names from all SAIs
+    # ------------------------------------------------------------------
+    # Collect all schedule timelines
+    timelines = study_design.get("scheduleTimelines", [])
+
+    # Build a map: timeline_id → set of encounter_names covered by that timeline
+    # (used for the fallback mechanism)
+    timeline_encounter_names: dict = {}  # timeline_id → set[encounter_name]
+    for tl in timelines:
+        tl_id = tl["id"]
+        tl_enc_names: set = set()
+        for inst in tl.get("instances", []):
+            if inst.get("instanceType") != "ScheduledActivityInstance":
+                continue  # skip ScheduledDecisionInstance etc.
+            enc_id = inst.get("encounterId")
+            if enc_id and enc_id in encounter_id_to_name:
+                tl_enc_names.add(encounter_id_to_name[enc_id])
+        timeline_encounter_names[tl_id] = tl_enc_names
+
+    # Primary mapping: activity_id → set of encounter_names
+    activity_encounters: dict = {}  # activity_id → set[encounter_name]
+
+    for tl in timelines:
+        for inst in tl.get("instances", []):
+            if inst.get("instanceType") != "ScheduledActivityInstance":
+                continue  # skip ScheduledDecisionInstance transparently
+            enc_id = inst.get("encounterId")
+            if not enc_id:
+                continue  # sub-timeline instance with no encounter
+            enc_name = encounter_id_to_name.get(enc_id)
+            if enc_name is None:
+                continue  # encounter not in main encounter list
+            for act_id in inst.get("activityIds", []) or []:
+                if act_id not in activity_encounters:
+                    activity_encounters[act_id] = set()
+                activity_encounters[act_id].add(enc_name)
+
+    # ------------------------------------------------------------------
+    # Step 3: Load catalog activity ids (in catalog order)
+    # ------------------------------------------------------------------
+    catalog_ids = _load_catalog_activity_ids(catalog_path)
+
+    # ------------------------------------------------------------------
+    # Step 4: Build activity_id → label map from USDM for fallback lookup
+    # ------------------------------------------------------------------
+    act_timeline_map: dict = {}  # activity_id → timelineId (or None)
+    for act in study_design.get("activities", []):
+        tl_id = act.get("timelineId")
+        if tl_id:
+            act_timeline_map[act["id"]] = tl_id
+
+    # ------------------------------------------------------------------
+    # Step 5: Apply fallback for activities with timelineId but no SAI link
+    # ------------------------------------------------------------------
+    # We need to map catalog slug ids back to USDM Activity ids.
+    # Build slug → USDM activity_id map using the same slugify logic.
+    slug_to_usdm_act_id = _build_slug_to_act_id_map(study_design)
+
+    for catalog_id in catalog_ids:
+        usdm_act_id = slug_to_usdm_act_id.get(catalog_id)
+        if usdm_act_id is None:
+            continue  # catalog id not found in USDM (shouldn't happen)
+        if usdm_act_id in activity_encounters:
+            continue  # already has encounters from primary mechanism
+        # Check fallback: does this activity have a timelineId?
+        tl_id = act_timeline_map.get(usdm_act_id)
+        if tl_id:
+            fallback_encs = timeline_encounter_names.get(tl_id, set())
+            if fallback_encs:
+                activity_encounters[usdm_act_id] = set(fallback_encs)
+                logger.info(
+                    "Fallback: activity %s assigned to %d encounters via timelineId %s",
+                    usdm_act_id, len(fallback_encs), tl_id,
+                )
+
+    # ------------------------------------------------------------------
+    # Step 6: Build matrix rows in catalog order
+    # ------------------------------------------------------------------
+    matrix_rows = []
+    for catalog_id in catalog_ids:
+        usdm_act_id = slug_to_usdm_act_id.get(catalog_id)
+        if usdm_act_id is not None:
+            enc_set = activity_encounters.get(usdm_act_id, set())
+        else:
+            enc_set = set()
+
+        if not enc_set:
+            logger.warning(
+                "WARNING: catalog activity %r (USDM id %r) appears in zero encounters",
+                catalog_id, usdm_act_id,
+            )
+
+        row = {SOA_MATRIX_ACTIVITY_COL: catalog_id}
+        for enc_name in encounter_names:
+            row[enc_name] = "X" if enc_name in enc_set else ""
+        matrix_rows.append(row)
+
+    return {
+        "encounter_names": encounter_names,
+        "rows": matrix_rows,
+    }
+
+
+def _load_catalog_activity_ids(catalog_path: str) -> list:
+    """
+    Read activity ids from the catalog CSV (skipping the DO NOT EDIT comment line).
+    Returns a list of ids in catalog order.
+    """
+    ids = []
+    with open(catalog_path, encoding="utf-8") as f:
+        for line in f:
+            if line.startswith("#"):
+                continue  # skip comment header
+            break  # first non-comment line is the CSV header
+        # Re-open to use csv.DictReader properly
+    with open(catalog_path, encoding="utf-8") as f:
+        # Skip comment line(s)
+        lines = [ln for ln in f if not ln.startswith("#")]
+    reader = csv.DictReader(lines)
+    for row in reader:
+        act_id = row.get("id", "").strip()
+        if act_id:
+            ids.append(act_id)
+    return ids
+
+
+def _build_slug_to_act_id_map(study_design: dict) -> dict:
+    """
+    Build a mapping from catalog slug id → USDM Activity id.
+
+    Uses the same slugify logic as extract_activity_catalog() to reproduce
+    the slug for each activity label, then maps slug → Activity id.
+
+    Handles duplicate labels by appending a numeric suffix (same logic as
+    extract_activity_catalog).
+    """
+    # We need to reproduce the exact same slug generation as extract_activity_catalog.
+    # That function skips unclassified activities (no BC/surrogate/procedure).
+    # For the SoA matrix we need to map ALL catalog ids back to USDM ids,
+    # so we replicate the skip logic here.
+    slug_to_act_id: dict = {}
+    seen_ids: set = set()
+
+    for act in study_design.get("activities", []):
+        act_id = act["id"]
+        label = act.get("label", "").strip()
+        bc_ids = act.get("biomedicalConceptIds", []) or []
+        bcc_ids = act.get("bcCategoryIds", []) or []
+        bcs_ids = act.get("bcSurrogateIds", []) or []
+        procs = act.get("definedProcedures", []) or []
+
+        # Replicate the classification skip logic from extract_activity_catalog
+        if bcs_ids:
+            pass  # instrument — included
+        elif bc_ids:
+            pass  # measurement — included
+        elif bcc_ids:
+            pass  # measurement via category — included
+        elif procs and procs[0].get("code"):
+            pass  # procedure — included
+        else:
+            continue  # unclassified — skip (same as extract_activity_catalog)
+
+        slug = _slugify(label) if label else act_id.lower()
+        base_slug = slug
+        suffix = 1
+        while slug in seen_ids:
+            slug = f"{base_slug}-{suffix}"
+            suffix += 1
+        seen_ids.add(slug)
+
+        slug_to_act_id[slug] = act_id
+
+    return slug_to_act_id
+
+
+def write_soa_matrix(result: dict, out_path) -> None:
+    """
+    Write the SoA matrix to a CSV file with the DO NOT EDIT header.
+
+    result: dict returned by extract_soa_matrix()
+    out_path: path to write the CSV file
+    """
+    out_path = pathlib.Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    encounter_names = result["encounter_names"]
+    rows = result["rows"]
+    fieldnames = [SOA_MATRIX_ACTIVITY_COL] + encounter_names
+    with open(out_path, "w", newline="", encoding="utf-8") as f:
+        f.write(_CSV_HEADER_COMMENT + "\n")
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+# ---------------------------------------------------------------------------
 # CSV writers
 # ---------------------------------------------------------------------------
 
@@ -535,6 +812,11 @@ def main(argv=None):
         default="input/data/usdm-observation-catalog.csv",
         help="Output path for observation catalog CSV",
     )
+    parser.add_argument(
+        "--soa-matrix-out",
+        default="input/data/usdm-soa-matrix.csv",
+        help="Output path for SoA matrix CSV",
+    )
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -553,6 +835,13 @@ def main(argv=None):
     arch_counts = Counter(r["archetype"] for r in act_rows)
     for arch, cnt in sorted(arch_counts.items()):
         print(f"  {arch}: {cnt}")
+
+    # SoA matrix (requires activity catalog to already be written)
+    soa_result = extract_soa_matrix(args.usdm_path, args.activity_out)
+    write_soa_matrix(soa_result, args.soa_matrix_out)
+    n_rows = len(soa_result["rows"])
+    n_cols = len(soa_result["encounter_names"])
+    print(f"SoA matrix:          {n_rows} activities × {n_cols} encounters → {args.soa_matrix_out}")
 
 
 if __name__ == "__main__":
