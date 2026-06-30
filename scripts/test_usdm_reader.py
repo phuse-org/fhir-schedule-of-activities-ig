@@ -1297,5 +1297,147 @@ class TestEmitProtocolDesignIdempotency(unittest.TestCase):
         self.assertEqual(first, second, "emit_protocol_design is not idempotent")
 
 
+# ---------------------------------------------------------------------------
+# usdm_to_soa.py — integration test (F-8)
+# ---------------------------------------------------------------------------
+class TestUsdmToSoaIntegration(unittest.TestCase):
+    """
+    Integration test for the full usdm_to_soa.py pipeline.
+
+    Verifies:
+      - All expected output files exist and are non-empty after one run
+      - A second run produces byte-identical outputs (idempotency)
+      - The pipeline exits 0
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        if not _USDM_AVAILABLE:
+            return
+
+        import importlib.util as _ilu
+
+        _soa_path = _HERE / "usdm_to_soa.py"
+        _spec = _ilu.spec_from_file_location("usdm_to_soa", _soa_path)
+        cls.soa = _ilu.module_from_spec(_spec)
+        _spec.loader.exec_module(cls.soa)
+
+        cls.tmp_dir = tempfile.mkdtemp()
+
+        # Patch the repo root so the pipeline writes into our temp dir
+        cls._orig_repo_root = cls.soa._repo_root
+
+        def _fake_repo_root(usdm_path):
+            return pathlib.Path(cls.tmp_dir)
+
+        cls.soa._repo_root = _fake_repo_root
+
+        # First run
+        cls.exit_code = cls.soa.run(_USDM_PATH)
+
+        # Capture first-run file contents
+        cls.first_contents = {}
+        for rel in [
+            "input/fsh/generated/usdm/ResearchStudy.gen.fsh",
+            "input/fsh/generated/usdm/Eligibility.gen.fsh",
+            "input/fsh/generated/usdm/ProtocolDesign.gen.fsh",
+            "input/data/usdm-activity-catalog.csv",
+            "input/data/usdm-observation-catalog.csv",
+            "input/data/usdm-soa-matrix.csv",
+        ]:
+            full = os.path.join(cls.tmp_dir, rel)
+            if os.path.exists(full):
+                with open(full, "rb") as fh:
+                    cls.first_contents[rel] = fh.read()
+
+        # Visit files
+        visits_dir = os.path.join(
+            cls.tmp_dir, "input", "fsh", "generated", "usdm", "visits"
+        )
+        if os.path.isdir(visits_dir):
+            for fname in os.listdir(visits_dir):
+                if fname.endswith(".gen.fsh"):
+                    rel = f"input/fsh/generated/usdm/visits/{fname}"
+                    with open(os.path.join(visits_dir, fname), "rb") as fh:
+                        cls.first_contents[rel] = fh.read()
+
+        # Second run (idempotency)
+        cls.exit_code2 = cls.soa.run(_USDM_PATH)
+        cls.second_contents = {}
+        for rel, data in cls.first_contents.items():
+            full = os.path.join(cls.tmp_dir, rel)
+            if os.path.exists(full):
+                with open(full, "rb") as fh:
+                    cls.second_contents[rel] = fh.read()
+
+    def setUp(self):
+        _require_usdm(self)
+
+    # -----------------------------------------------------------------------
+    # Exit codes
+    # -----------------------------------------------------------------------
+
+    def test_first_run_exits_0(self):
+        self.assertEqual(self.exit_code, 0)
+
+    def test_second_run_exits_0(self):
+        self.assertEqual(self.exit_code2, 0)
+
+    # -----------------------------------------------------------------------
+    # Expected files exist and are non-empty
+    # -----------------------------------------------------------------------
+
+    def _assert_file_nonempty(self, rel):
+        self.assertIn(rel, self.first_contents,
+                      f"Missing output file: {rel}")
+        self.assertGreater(len(self.first_contents[rel]), 0,
+                           f"Empty output file: {rel}")
+
+    def test_research_study_exists(self):
+        self._assert_file_nonempty(
+            "input/fsh/generated/usdm/ResearchStudy.gen.fsh"
+        )
+
+    def test_eligibility_exists(self):
+        self._assert_file_nonempty(
+            "input/fsh/generated/usdm/Eligibility.gen.fsh"
+        )
+
+    def test_protocol_design_exists(self):
+        self._assert_file_nonempty(
+            "input/fsh/generated/usdm/ProtocolDesign.gen.fsh"
+        )
+
+    def test_activity_catalog_exists(self):
+        self._assert_file_nonempty("input/data/usdm-activity-catalog.csv")
+
+    def test_observation_catalog_exists(self):
+        self._assert_file_nonempty("input/data/usdm-observation-catalog.csv")
+
+    def test_soa_matrix_exists(self):
+        self._assert_file_nonempty("input/data/usdm-soa-matrix.csv")
+
+    def test_visit_files_exist(self):
+        """At least 12 visit .gen.fsh files must be produced."""
+        visit_keys = [
+            k for k in self.first_contents
+            if k.startswith("input/fsh/generated/usdm/visits/")
+        ]
+        self.assertGreaterEqual(len(visit_keys), 12)
+
+    # -----------------------------------------------------------------------
+    # Idempotency: second run byte-identical to first
+    # -----------------------------------------------------------------------
+
+    def test_idempotent_all_files(self):
+        for rel, first_data in self.first_contents.items():
+            second_data = self.second_contents.get(rel)
+            self.assertIsNotNone(second_data, f"File missing on second run: {rel}")
+            self.assertEqual(
+                first_data, second_data,
+                f"usdm_to_soa.py is not idempotent for: {rel}",
+            )
+
+
 if __name__ == "__main__":
     unittest.main()
