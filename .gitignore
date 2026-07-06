@@ -12,3 +12,8 @@ node_modules
 
 # Python
 __pycache__/
+
+
+.task 
+.claude
+.superpowers
