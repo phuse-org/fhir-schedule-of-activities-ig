@@ -112,25 +112,29 @@ Description: "Day 168"
     * relationship = #after
 * action[+]
   * title = "ADAS-Cog"
-  * definitionUri = "ActivityDefinition/usdm-act-adas-cog"
+  * definitionCanonical = Canonical(usdm-q-adas-cog)
+  * participant[+].type = #practitioner
   * relatedAction[+]
     * targetId = "E12"
     * relationship = #after
 * action[+]
   * title = "CIBIC+"
-  * definitionUri = "ActivityDefinition/usdm-act-cibic"
+  * definitionCanonical = Canonical(usdm-q-cibic-plus)
+  * participant[+].type = #practitioner
   * relatedAction[+]
     * targetId = "E12"
     * relationship = #after
 * action[+]
   * title = "DAD"
-  * definitionUri = "ActivityDefinition/usdm-act-dad"
+  * definitionCanonical = Canonical(usdm-q-dad)
+  * participant[+].type = #related-person
   * relatedAction[+]
     * targetId = "E12"
     * relationship = #after
 * action[+]
   * title = "NPI-X"
-  * definitionUri = "ActivityDefinition/usdm-act-npi-x"
+  * definitionCanonical = Canonical(usdm-q-npi-x)
+  * participant[+].type = #related-person
   * relatedAction[+]
     * targetId = "E12"
     * relationship = #after

@@ -116,7 +116,8 @@ Description: "Day 140"
     * relationship = #after
 * action[+]
   * title = "NPI-X"
-  * definitionUri = "ActivityDefinition/usdm-act-npi-x"
+  * definitionCanonical = Canonical(usdm-q-npi-x)
+  * participant[+].type = #related-person
   * relatedAction[+]
     * targetId = "E11"
     * relationship = #after

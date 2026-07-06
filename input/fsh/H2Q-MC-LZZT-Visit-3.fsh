@@ -3,66 +3,96 @@ InstanceOf: SOAPlanDefinition
 Usage: #example
 Title: "Visit-3"
 Description: "Planned Visit [Visit-3]"
-* identifier[+].value = "VISIT-3"
-* identifier[=].type = #PLAC
-* identifier[=].use = #usual
-* identifier[+].value = "SE.RANDOMIZATION_VISIT"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
+* identifier[+]
+  * value = "VISIT-3"
+  * type = #PLAC
+  * use = #usual
+* identifier[+]
+  * value = "SE.RANDOMIZATION_VISIT"
+  * system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+  * type
+    * coding[0]
+      * system = "http://www.cdisc.org/ns/odm/v1.3#"
+      * display = "OID"
+  * use = #secondary
 * status = #active
-* action[+].title = "Record Visit Date"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
-* action[=].id = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
-* action[+].title = "Vital signs: Weight"
-* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Vital Signs: Temperature"
-* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Vital Signs: Heart Rate and Blood Pressure"
-* action[=].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Ambulatory ECG removed"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Concomitant Medications"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Patient randomized"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Patient-randomized"
-* action[=].id = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[+].title = "Plasma Specimen (Xanomeline) "
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Study drug record: Medications Dispensed/Returned"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "ADAS-Cog"
-* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-ADAS-Cog"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Clinician's Interview-Based Impression of Change"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Disability Assessment for Dementia"
-* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-DAD"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Neuropsychiatric Inventory Questionnaire – Revised"
-* action[=].definitionUri = "Questionnaire/H2Q-MC-LZZT-NPI-X"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[=].relatedAction[=].relationship = #after
-* action[+].title = "Adverse events"
-* action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
-* action[=].relatedAction[+].targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
-* action[=].relatedAction[=].relationship = #after
+* action[+]
+  * title = "Record Visit Date"
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+  * id = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
+* action[+]
+  * title = "Vital signs: Weight"
+  * definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
+    * relationship = #after
+* action[+]
+  * title = "Vital Signs: Temperature"
+  * definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
+    * relationship = #after
+* action[+]
+  * title = "Vital Signs: Heart Rate and Blood Pressure"
+  * definitionUri = "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
+    * relationship = #after
+* action[+]
+  * title = "Ambulatory ECG removed"
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
+    * relationship = #after
+* action[+]
+  * title = "Concomitant Medications"
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Visit-Date"
+    * relationship = #after
+* action[+]
+  * title = "Patient randomized"
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Patient-randomized"
+  * id = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+* action[+]
+  * title = "Plasma Specimen (Xanomeline) "
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+    * relationship = #after
+* action[+]
+  * title = "Study drug record: Medications Dispensed/Returned"
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+    * relationship = #after
+* action[+]
+  * title = "ADAS-Cog"
+  * definitionUri = "Questionnaire/H2Q-MC-LZZT-ADAS-Cog"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+    * relationship = #after
+* action[+]
+  * title = "Clinician's Interview-Based Impression of Change"
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+    * relationship = #after
+* action[+]
+  * title = "Disability Assessment for Dementia"
+  * definitionUri = "Questionnaire/H2Q-MC-LZZT-DAD"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+    * relationship = #after
+* action[+]
+  * title = "Neuropsychiatric Inventory Questionnaire – Revised"
+  * definitionUri = "Questionnaire/H2Q-MC-LZZT-NPI-X"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+    * relationship = #after
+* action[+]
+  * title = "Adverse events"
+  * definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+  * relatedAction[+]
+    * targetId = "VISIT-3-H2Q-MC-LZZT-Patient-randomized"
+    * relationship = #after

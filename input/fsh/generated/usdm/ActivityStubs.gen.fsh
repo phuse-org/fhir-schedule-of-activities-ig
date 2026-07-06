@@ -22,28 +22,6 @@ Description: "USDM-derived observation definition for vscat2-panel-obs"
 * code
   * text = "Vital Signs Category"
 
-// ObservationDefinition: chemcat1-panel-obs
-Instance: usdm-obs-chemcat1-panel-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "Biochemistry Category"
-Description: "USDM-derived observation definition for chemcat1-panel-obs"
-* status = #active
-* code
-  * text = "Biochemistry Category"
-* hasMember[+] = Reference(usdm-obs-chemistry-obs)
-
-// ObservationDefinition: urincat1-panel-obs
-Instance: usdm-obs-urincat1-panel-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "Biochemistry Category"
-Description: "USDM-derived observation definition for urincat1-panel-obs"
-* status = #active
-* code
-  * text = "Biochemistry Category"
-* hasMember[+] = Reference(usdm-obs-uninalysis-obs)
-
 // ObservationDefinition: informed-consent-obs
 Instance: usdm-obs-informed-consent-obs
 InstanceOf: ObservationDefinition
@@ -138,41 +116,6 @@ Description: "USDM-derived observation definition for concomitant-medications-ob
     * display = "Concomitant Therapy"
 * permittedDataType = #string
 
-// ObservationDefinition: hematology-obs
-Instance: usdm-obs-hematology-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "HBA1C"
-Description: "USDM-derived observation definition for hematology-obs"
-* status = #active
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C64849
-    * display = "HBA1C"
-* permittedDataType = #Quantity
-* permittedUnit = UCUM#"Gram per Deciliter"
-
-// ObservationDefinition: chemistry-obs
-Instance: usdm-obs-chemistry-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "chemistry-obs"
-Description: "USDM-derived observation definition for chemistry-obs"
-* status = #active
-* code
-  * text = "chemistry-obs"
-
-// ObservationDefinition: uninalysis-obs
-Instance: usdm-obs-uninalysis-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "uninalysis-obs"
-Description: "USDM-derived observation definition for uninalysis-obs"
-* status = #active
-* code
-  * text = "uninalysis-obs"
-
 // ObservationDefinition: hemoglobin-a1c-obs
 Instance: usdm-obs-hemoglobin-a1c-obs
 InstanceOf: ObservationDefinition
@@ -187,62 +130,6 @@ Description: "USDM-derived observation definition for hemoglobin-a1c-obs"
     * display = "HBA1C"
 * permittedDataType = #Quantity
 * permittedUnit = UCUM#"Gram per Deciliter"
-
-// ObservationDefinition: adas-cog-obs
-Instance: usdm-obs-adas-cog-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "CDISC ADAS-Cog - Word Recognition Summary Score"
-Description: "USDM-derived observation definition for adas-cog-obs"
-* status = #active
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C100247
-    * display = "CDISC ADAS-Cog - Word Recognition Summary Score"
-* permittedDataType = #string
-
-// ObservationDefinition: cibic-obs
-Instance: usdm-obs-cibic-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "Sex"
-Description: "USDM-derived observation definition for cibic-obs"
-* status = #active
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C28421
-    * display = "Sex"
-* permittedDataType = #string
-
-// ObservationDefinition: dad-obs
-Instance: usdm-obs-dad-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "Sex"
-Description: "USDM-derived observation definition for dad-obs"
-* status = #active
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C28421
-    * display = "Sex"
-* permittedDataType = #string
-
-// ObservationDefinition: npi-x-obs
-Instance: usdm-obs-npi-x-obs
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "Sex"
-Description: "USDM-derived observation definition for npi-x-obs"
-* status = #active
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C28421
-    * display = "Sex"
-* permittedDataType = #string
 
 // ObservationDefinition: adverse-events-obs
 Instance: usdm-obs-adverse-events-obs
@@ -500,44 +387,6 @@ Description: "USDM-derived activity: Concomitant medications"
     * display = "Concomitant Therapy"
 * observationResultRequirement[+] = Canonical(usdm-obs-concomitant-medications-obs)
 
-// ActivityDefinition: hematology (measurement)
-Instance: usdm-act-hematology
-InstanceOf: ActivityDefinition
-Usage: #definition
-Title: "Hematology"
-Description: "USDM-derived activity: Hematology"
-* status = #active
-* kind = #ServiceRequest
-* intent = #plan
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C64849
-    * display = "HBA1C"
-* observationResultRequirement[+] = Canonical(usdm-obs-hematology-obs)
-
-// ActivityDefinition: chemistry (measurement)
-Instance: usdm-act-chemistry
-InstanceOf: ActivityDefinition
-Usage: #definition
-Title: "Chemistry"
-Description: "USDM-derived activity: Chemistry"
-* status = #active
-* kind = #ServiceRequest
-* intent = #plan
-* observationResultRequirement[+] = Canonical(usdm-obs-chemistry-obs)
-
-// ActivityDefinition: uninalysis (measurement)
-Instance: usdm-act-uninalysis
-InstanceOf: ActivityDefinition
-Usage: #definition
-Title: "Uninalysis"
-Description: "USDM-derived activity: Uninalysis"
-* status = #active
-* kind = #ServiceRequest
-* intent = #plan
-* observationResultRequirement[+] = Canonical(usdm-obs-uninalysis-obs)
-
 // ActivityDefinition: plasma-specimen-xanomeline (procedure)
 Instance: usdm-act-plasma-specimen-xanomeline
 InstanceOf: ActivityDefinition
@@ -598,70 +447,6 @@ Description: "USDM-derived activity: TTS Acceptability Survey"
     * system = "http://snomed.info/sct"
     * code = #725111000000103
     * display = "Survey"
-
-// ActivityDefinition: adas-cog (measurement)
-Instance: usdm-act-adas-cog
-InstanceOf: ActivityDefinition
-Usage: #definition
-Title: "ADAS-Cog"
-Description: "USDM-derived activity: ADAS-Cog"
-* status = #active
-* kind = #ServiceRequest
-* intent = #plan
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C100247
-    * display = "CDISC ADAS-Cog - Word Recognition Summary Score"
-* observationResultRequirement[+] = Canonical(usdm-obs-adas-cog-obs)
-
-// ActivityDefinition: cibic (measurement)
-Instance: usdm-act-cibic
-InstanceOf: ActivityDefinition
-Usage: #definition
-Title: "CIBIC+"
-Description: "USDM-derived activity: CIBIC+"
-* status = #active
-* kind = #ServiceRequest
-* intent = #plan
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C28421
-    * display = "Sex"
-* observationResultRequirement[+] = Canonical(usdm-obs-cibic-obs)
-
-// ActivityDefinition: dad (measurement)
-Instance: usdm-act-dad
-InstanceOf: ActivityDefinition
-Usage: #definition
-Title: "DAD"
-Description: "USDM-derived activity: DAD"
-* status = #active
-* kind = #ServiceRequest
-* intent = #plan
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C28421
-    * display = "Sex"
-* observationResultRequirement[+] = Canonical(usdm-obs-dad-obs)
-
-// ActivityDefinition: npi-x (measurement)
-Instance: usdm-act-npi-x
-InstanceOf: ActivityDefinition
-Usage: #definition
-Title: "NPI-X"
-Description: "USDM-derived activity: NPI-X"
-* status = #active
-* kind = #ServiceRequest
-* intent = #plan
-* code
-  * coding[+]
-    * system = "http://www.cdisc.org"
-    * code = #C28421
-    * display = "Sex"
-* observationResultRequirement[+] = Canonical(usdm-obs-npi-x-obs)
 
 // ActivityDefinition: adverse-events (measurement)
 Instance: usdm-act-adverse-events
@@ -798,5 +583,41 @@ InstanceOf: Questionnaire
 Usage: #definition
 Title: "Placebo TTS test"
 Description: "USDM-derived questionnaire shell for Placebo TTS test"
+* status = #active
+* subjectType = #Patient
+
+// Questionnaire: adas-cog (instrument)
+Instance: usdm-q-adas-cog
+InstanceOf: Questionnaire
+Usage: #definition
+Title: "ADAS-Cog"
+Description: "USDM-derived questionnaire shell for ADAS-Cog"
+* status = #active
+* subjectType = #Patient
+
+// Questionnaire: cibic (instrument)
+Instance: usdm-q-cibic-plus
+InstanceOf: Questionnaire
+Usage: #definition
+Title: "CIBIC+"
+Description: "USDM-derived questionnaire shell for CIBIC+"
+* status = #active
+* subjectType = #Patient
+
+// Questionnaire: dad (instrument)
+Instance: usdm-q-dad
+InstanceOf: Questionnaire
+Usage: #definition
+Title: "DAD"
+Description: "USDM-derived questionnaire shell for DAD"
+* status = #active
+* subjectType = #Patient
+
+// Questionnaire: npi-x (instrument)
+Instance: usdm-q-npi-x
+InstanceOf: Questionnaire
+Usage: #definition
+Title: "NPI-X"
+Description: "USDM-derived questionnaire shell for NPI-X"
 * status = #active
 * subjectType = #Patient

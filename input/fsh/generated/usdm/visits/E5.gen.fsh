@@ -112,7 +112,8 @@ Description: "Day 28"
     * relationship = #after
 * action[+]
   * title = "NPI-X"
-  * definitionUri = "ActivityDefinition/usdm-act-npi-x"
+  * definitionCanonical = Canonical(usdm-q-npi-x)
+  * participant[+].type = #related-person
   * relatedAction[+]
     * targetId = "E5"
     * relationship = #after
