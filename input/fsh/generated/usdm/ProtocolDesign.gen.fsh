@@ -74,6 +74,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E1"
     * relationship = #after
     * offsetRange.low.value = 0.166667
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -150,6 +151,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E3"
     * relationship = #after
     * offsetRange.low.value = 3
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -206,6 +208,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E4"
     * relationship = #after
     * offsetRange.low.value = 3
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -262,6 +265,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E5"
     * relationship = #after
     * offsetRange.low.value = 3
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -318,6 +322,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E7"
     * relationship = #after
     * offsetRange.low.value = 3
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -374,6 +379,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E8"
     * relationship = #after
     * offsetRange.low.value = 4
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -430,6 +436,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E9"
     * relationship = #after
     * offsetRange.low.value = 4
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -486,6 +493,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E10"
     * relationship = #after
     * offsetRange.low.value = 4
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -542,6 +550,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E11"
     * relationship = #after
     * offsetRange.low.value = 4
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -598,6 +607,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * targetId = "E12"
     * relationship = #after
     * offsetRange.low.value = 3
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]

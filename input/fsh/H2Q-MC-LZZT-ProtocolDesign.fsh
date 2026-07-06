@@ -20,8 +20,10 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 28
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
     * offsetRange.high.value = 14
+    * offsetRange.high.system = "http://unitsofmeasure.org"
     * offsetRange.high.code = #d
 
 * action[+]
@@ -32,6 +34,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-2"
     * relationship = #after
     * offsetRange.low.value = 1
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -42,6 +45,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-3"
     * relationship = #after
     * offsetRange.low.value = 14
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -52,6 +56,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-3"
     * relationship = #after
     * offsetRange.low.value = 28
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 // * action[+].definitionUri = "PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"
@@ -70,6 +75,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 42
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -80,6 +86,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 56
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -90,6 +97,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 84
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -100,6 +108,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 112
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -110,6 +119,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 140
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -120,6 +130,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 168
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -130,6 +141,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 182
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]
@@ -140,6 +152,7 @@ Usage: #example
     * targetId = "H2Q-MC-LZZT-Study-Visit-1"
     * relationship = #after
     * offsetRange.low.value = 14
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
 
 * action[+]

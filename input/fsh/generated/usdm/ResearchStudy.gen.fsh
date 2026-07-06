@@ -81,8 +81,36 @@ Usage: #example
       * code = #26929004
       * display = "Alzheimer's disease"
 * comparisonGroup[+]
+  * id = "placebo"
+  * extension[+].url = "http://example.org/soa/ext/arm-name"
+  * extension[=].valueString = "Placebo"
+  * extension[+].url = "http://example.org/soa/ext/arm-type"
+  * extension[=].valueCoding
+    * system = "http://www.cdisc.org"
+    * code = #C174268
+    * display = "Placebo Control Arm"
 * comparisonGroup[+]
+  * id = "xanomeline-low-dose"
+  * extension[+].url = "http://example.org/soa/ext/arm-name"
+  * extension[=].valueString = "Xanomeline Low Dose"
+  * extension[+].url = "http://example.org/soa/ext/arm-type"
+  * extension[=].valueCoding
+    * system = "http://www.cdisc.org"
+    * code = #C174267
+    * display = "Active Comparator Arm"
+  * extension[+].url = "http://example.org/soa/ext/arm-description"
+  * extension[=].valueString = "Active Substance"
 * comparisonGroup[+]
+  * id = "xanomeline-high-dose"
+  * extension[+].url = "http://example.org/soa/ext/arm-name"
+  * extension[=].valueString = "Xanomeline High Dose"
+  * extension[+].url = "http://example.org/soa/ext/arm-type"
+  * extension[=].valueCoding
+    * system = "http://www.cdisc.org"
+    * code = #C174267
+    * display = "Active Comparator Arm"
+  * extension[+].url = "http://example.org/soa/ext/arm-description"
+  * extension[=].valueString = "Active Substance"
 * objective[+]
   * name = "To determine if there is a statistically significant relationship (overall Type 1 erroralpha=0.05) between the change in both the ADAS-Cog (11) and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg])."
   * type = #primary

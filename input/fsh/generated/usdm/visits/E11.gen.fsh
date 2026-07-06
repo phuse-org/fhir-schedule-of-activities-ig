@@ -41,6 +41,7 @@ Description: "Day 140"
     * targetId = "E10"
     * relationship = #after
     * offsetRange.low.value = 4
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -117,7 +118,7 @@ Description: "Day 140"
 * action[+]
   * title = "NPI-X"
   * definitionCanonical = Canonical(usdm-q-npi-x)
-  * participant[+].type = #related-person
+  * participant[+].type = #relatedperson
   * relatedAction[+]
     * targetId = "E11"
     * relationship = #after

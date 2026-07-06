@@ -37,6 +37,7 @@ Description: "Screening encounter - Ambulatory ECG Placement"
     * targetId = "E1"
     * relationship = #after
     * offsetRange.low.value = 0.166667
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]

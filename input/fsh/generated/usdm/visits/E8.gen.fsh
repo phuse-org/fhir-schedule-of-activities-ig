@@ -41,6 +41,7 @@ Description: "Day 56"
     * targetId = "E7"
     * relationship = #after
     * offsetRange.low.value = 3
+    * offsetRange.low.system = "http://unitsofmeasure.org"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
@@ -125,14 +126,14 @@ Description: "Day 56"
 * action[+]
   * title = "DAD"
   * definitionCanonical = Canonical(usdm-q-dad)
-  * participant[+].type = #related-person
+  * participant[+].type = #relatedperson
   * relatedAction[+]
     * targetId = "E8"
     * relationship = #after
 * action[+]
   * title = "NPI-X"
   * definitionCanonical = Canonical(usdm-q-npi-x)
-  * participant[+].type = #related-person
+  * participant[+].type = #relatedperson
   * relatedAction[+]
     * targetId = "E8"
     * relationship = #after

@@ -103,14 +103,14 @@ Description: "Baseline encounter - Ambulatory ECG Removal"
 * action[+]
   * title = "DAD"
   * definitionCanonical = Canonical(usdm-q-dad)
-  * participant[+].type = #related-person
+  * participant[+].type = #relatedperson
   * relatedAction[+]
     * targetId = "E3"
     * relationship = #after
 * action[+]
   * title = "NPI-X"
   * definitionCanonical = Canonical(usdm-q-npi-x)
-  * participant[+].type = #related-person
+  * participant[+].type = #relatedperson
   * relatedAction[+]
     * targetId = "E3"
     * relationship = #after
