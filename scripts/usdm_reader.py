@@ -1320,11 +1320,26 @@ def emit_activity_stubs(
     # -----------------------------------------------------------------------
     # Observation definitions (panels first so analytes can reference them)
     # -----------------------------------------------------------------------
+    # ObservationDefinition ids that are superseded by LabPanels.gen.fsh.
+    # The lab panels generator emits richer LOINC-coded definitions for these.
+    _LAB_PANEL_OBSDEF_IDS: frozenset = frozenset({
+        "hematology-obs",
+        "chemistry-obs",
+        "uninalysis-obs",
+        "thyroid-obs",
+        "other-obs",
+        # USDM BCCat panel stubs — superseded by richer lab panel definitions
+        "chemcat1-panel-obs",
+        "urincat1-panel-obs",
+    })
+
     panels = [o for o in observations if o.get("kind") == "panel"]
     analytes = [o for o in observations if o.get("kind") == "analyte"]
 
     for obs in panels + analytes:
         oid = obs["obsdef_id"]
+        if oid in _LAB_PANEL_OBSDEF_IDS:
+            continue  # superseded by LabPanels.gen.fsh
         fhir_id = _obsdef_instance_id(oid)
         code = obs.get("code", "")
         code_display = obs.get("code_display", "")
@@ -1371,6 +1386,17 @@ def emit_activity_stubs(
     # -----------------------------------------------------------------------
     # ActivityDefinitions (measurement + procedure)
     # -----------------------------------------------------------------------
+    # Activities whose ActivityDefinition is emitted by lab_panels_to_fsh.py
+    # (richer LOINC panel codes, hasMember wiring).  Skip them here to avoid
+    # duplicate Instance ids across FSH files.
+    _LAB_PANEL_ACTIVITY_IDS: frozenset = frozenset({
+        "hematology",
+        "chemistry",
+        "uninalysis",
+        "thyroid",
+        "other",
+    })
+
     for act in activities:
         act_id = act["id"]
         archetype = act.get("archetype", "")
@@ -1379,6 +1405,9 @@ def emit_activity_stubs(
         code_display = act.get("code_display", "")
         code_system = act.get("code_system", "")
         result_obsdef_id = act.get("result_obsdef_id", "")
+
+        if act_id in _LAB_PANEL_ACTIVITY_IDS:
+            continue  # superseded by LabPanels.gen.fsh
 
         if archetype in ("measurement", "procedure"):
             fhir_id = _activity_instance_id(act_id)

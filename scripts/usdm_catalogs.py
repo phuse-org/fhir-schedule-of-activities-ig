@@ -58,6 +58,46 @@ _SURROGATE_RESPONDENT = {
 }
 
 # ---------------------------------------------------------------------------
+# Activity archetype override table
+# Overrides the USDM-derived classification for activities that are clinical
+# outcome assessments (COAs) or other instruments not flagged by a BCSurrogate.
+# Each entry: activity_id → {"archetype": ..., "questionnaire_id": ...,
+#                             "respondent_type": ...}
+# The questionnaire_id becomes the Questionnaire resource id suffix
+# (usdm-q-<questionnaire_id>).
+# ---------------------------------------------------------------------------
+_ACTIVITY_ARCHETYPE_OVERRIDES: dict = {
+    # ADAS-Cog: clinician-administered cognitive scale; USDM wrongly classifies
+    # as measurement (single BC BiomedicalConcept_40 = ADASCOG).
+    "Activity_27": {
+        "archetype": "instrument",
+        "questionnaire_id": "adas-cog",
+        "respondent_type": "practitioner",
+    },
+    # CIBIC+: clinician-rated global impression; USDM has wrong BCs (Sex/Race
+    # from Demographics copy-paste error).
+    "Activity_28": {
+        "archetype": "instrument",
+        "questionnaire_id": "cibic-plus",
+        "respondent_type": "practitioner",
+    },
+    # DAD: Disability Assessment for Dementia; caregiver/informant rated.
+    # USDM has wrong BCs (Sex/Race).
+    "Activity_29": {
+        "archetype": "instrument",
+        "questionnaire_id": "dad",
+        "respondent_type": "related-person",
+    },
+    # NPI-X: Neuropsychiatric Inventory; caregiver/informant rated.
+    # USDM has wrong BCs (Sex/Race).
+    "Activity_30": {
+        "archetype": "instrument",
+        "questionnaire_id": "npi-x",
+        "respondent_type": "related-person",
+    },
+}
+
+# ---------------------------------------------------------------------------
 # Slugify helper
 # ---------------------------------------------------------------------------
 # Characters to convert to hyphens (spaces, slashes, commas, parentheses)
@@ -234,6 +274,9 @@ def extract_activity_catalog(usdm_path: str) -> list:
 
         # --- Classify ---
         # Decision tree (per spec §Task F-5):
+        #   0. _ACTIVITY_ARCHETYPE_OVERRIDES match → use override (highest priority)
+        #      Handles COAs (ADAS-Cog, CIBIC+, DAD, NPI-X) that the USDM
+        #      misclassifies due to wrong/missing BCSurrogate references.
         #   1. bcSurrogateIds non-empty  → instrument
         #      (surrogate wins over BC when both present — e.g. Activity_4 Demographics
         #       has both BC_20/21 and BCSurr_1; the clinical purpose is the Date of Birth
@@ -252,7 +295,15 @@ def extract_activity_catalog(usdm_path: str) -> list:
         questionnaire_id = ""
         respondent_type = ""
 
-        if bcs_ids:
+        # --- Step 0: explicit override table (highest priority) ---
+        _override = _ACTIVITY_ARCHETYPE_OVERRIDES.get(act_id)
+        if _override:
+            archetype = _override["archetype"]
+            questionnaire_id = _override.get("questionnaire_id", "")
+            respondent_type = _override.get("respondent_type", "")
+            # Continue to slug/id building below; skip normal decision tree.
+
+        elif bcs_ids:
             # instrument — surrogate wins even when BC refs also present
             archetype = "instrument"
             surrogate_id = bcs_ids[0]
@@ -423,7 +474,13 @@ def extract_observation_catalog(usdm_path: str) -> list:
         procs = act.get("definedProcedures", []) or []
 
         # Determine archetype (same logic as extract_activity_catalog)
-        if bcs_ids:
+        # Step 0: explicit override table — must mirror extract_activity_catalog
+        _obs_override = _ACTIVITY_ARCHETYPE_OVERRIDES.get(act_id)
+        if _obs_override:
+            if _obs_override["archetype"] == "instrument":
+                continue  # instrument override — no observation row
+            archetype = _obs_override["archetype"]
+        elif bcs_ids:
             continue  # instrument — no observation row
         elif bc_ids:
             archetype = "measurement"

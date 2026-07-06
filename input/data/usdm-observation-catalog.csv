@@ -15,10 +15,6 @@ hematology-obs,analyte,,C64849,HBA1C,Gram per Deciliter,Quantity
 chemistry-obs,analyte,chemcat1-panel-obs,,,,
 uninalysis-obs,analyte,urincat1-panel-obs,,,,
 hemoglobin-a1c-obs,analyte,,C64849,HBA1C,Gram per Deciliter,Quantity
-adas-cog-obs,analyte,,C100247,CDISC ADAS-Cog - Word Recognition Summary Score,,string
-cibic-obs,analyte,,C28421,Sex,,string
-dad-obs,analyte,,C28421,Sex,,string
-npi-x-obs,analyte,,C28421,Sex,,string
 adverse-events-obs,analyte,,C179175,Solicited Adverse Event,,string
 vital-signs-while-supine-obs,analyte,,C25298,SYSBP,Unit of Pressure,Quantity
 vital-signs-while-standing-obs,analyte,,C25298,SYSBP,Unit of Pressure,Quantity

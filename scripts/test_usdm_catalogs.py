@@ -708,9 +708,10 @@ class TestRealUSDMIntegration(unittest.TestCase):
         self.assertIn("measurement", counts)
         self.assertIn("instrument", counts)
         self.assertIn("procedure", counts)
-        # 5 instruments (one per BCSurrogate)
-        self.assertEqual(counts["instrument"], 5,
-                         f"Expected 5 instruments, got {counts['instrument']}")
+        # 9 instruments: 5 from BCSurrogates + 4 COA overrides
+        # (ADAS-Cog, CIBIC+, DAD, NPI-X reclassified via _ACTIVITY_ARCHETYPE_OVERRIDES)
+        self.assertEqual(counts["instrument"], 9,
+                         f"Expected 9 instruments, got {counts['instrument']}")
 
     # --- Observation catalog ---
 
