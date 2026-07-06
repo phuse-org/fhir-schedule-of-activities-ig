@@ -37,6 +37,23 @@ CDISC_ARM_TYPE_MAP: dict[str, str] = {
     "C174271": "other",                # Other Arm
 }
 
+# USDM document/study status → FHIR publication-status
+# FHIR R6 publication-status: draft | active | retired | unknown
+# The USDM v4 study version carries no explicit publication status field.
+# This map covers USDM StudyStatus codes if present; the fallback is used
+# when the field is absent (as in CDISC_Pilot_Study_v4_FIXED.json).
+USDM_STUDY_STATUS_MAP: dict[str, str] = {
+    "DRAFT":     "draft",
+    "IN REVIEW": "draft",
+    "APPROVED":  "active",
+    "ACTIVE":    "active",
+    "COMPLETED": "active",    # study completed → resource is #active (authoritative)
+    "RETIRED":   "retired",
+    "UNKNOWN":   "unknown",
+}
+# Fallback when USDM carries no status — override per-study as needed.
+_USDM_STATUS_FALLBACK = "active"
+
 # CDISC code system → FHIR system URI
 CDISC_CODE_SYSTEM_MAP: dict[str, str] = {
     "ICD-10-CM": "http://hl7.org/fhir/sid/icd-10-cm",
@@ -340,6 +357,21 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
     phase_cdisc_code = phase_std.get("code", "")
     fhir_phase = CDISC_PHASE_MAP.get(phase_cdisc_code, "n-a")
 
+    # Publication status — derived from USDM study/version status if present,
+    # otherwise fall back to the module-level default.
+    usdm_status_raw = (
+        sv.get("documentStatus")
+        or sv.get("status")
+        or study.get("documentStatus")
+        or study.get("status")
+        or ""
+    )
+    fhir_status = (
+        USDM_STUDY_STATUS_MAP.get(usdm_status_raw.upper(), _USDM_STATUS_FALLBACK)
+        if usdm_status_raw
+        else _USDM_STATUS_FALLBACK
+    )
+
     # Indications → condition
     indications = sd.get("indications", [])
 
@@ -362,7 +394,7 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
         "Usage: #example",
         f'* title = "{_fsh_escape(study_title)}"',
         f'* version = "{_fsh_escape(study_version_id)}"',
-        "* status = #active",
+        f"* status = #{fhir_status}",
         f"* phase = #{fhir_phase}",
     ]
 
@@ -430,12 +462,49 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
         ]
 
     # Comparison groups (arms)
-    # In FHIR R6 ballot3, comparisonGroup has no .name, .description, or .type —
-    # those were added in ballot4.  Emit only the backbone element itself.
+    # FHIR R6 ballot3 comparisonGroup backbone has no .name, .type, or .description
+    # elements — those were added post-ballot3.  We carry the arm name and CDISC
+    # arm-type code via inline extensions (url/value[x] pattern, no pre-declared
+    # StructureDefinition required) and set the backbone .id to a slug of the arm
+    # name for cross-referencing.
+    _EXT_ARM_NAME = "http://example.org/soa/ext/arm-name"
+    _EXT_ARM_TYPE = "http://example.org/soa/ext/arm-type"
+    _EXT_ARM_DESC = "http://example.org/soa/ext/arm-description"
     for arm in arms:
-        lines += [
-            "* comparisonGroup[+]",
-        ]
+        arm_name = arm.get("name") or arm.get("label", "")
+        arm_desc = arm.get("description", "")
+        arm_type_obj = arm.get("type") or {}
+        arm_type_code = arm_type_obj.get("code", "")
+        arm_type_decode = arm_type_obj.get("decode", "")
+        # FSH backbone element id — slug of arm name
+        arm_id = re.sub(r"[^a-z0-9-]", "-",
+                        re.sub(r"\s+", "-", arm_name.lower())).strip("-")
+        arm_id = re.sub(r"-+", "-", arm_id)
+
+        lines += ["* comparisonGroup[+]"]
+        if arm_id:
+            lines.append(f'  * id = "{arm_id}"')
+        # Name
+        if arm_name:
+            lines += [
+                '  * extension[+].url = "' + _EXT_ARM_NAME + '"',
+                f'  * extension[=].valueString = "{_fsh_escape(arm_name)}"',
+            ]
+        # Arm type (CDISC code)
+        if arm_type_code:
+            lines += [
+                '  * extension[+].url = "' + _EXT_ARM_TYPE + '"',
+                "  * extension[=].valueCoding",
+                f'    * system = "http://www.cdisc.org"',
+                f'    * code = #{arm_type_code}',
+                f'    * display = "{_fsh_escape(arm_type_decode)}"',
+            ]
+        # Description (only when it differs from name)
+        if arm_desc and arm_desc != arm_name:
+            lines += [
+                '  * extension[+].url = "' + _EXT_ARM_DESC + '"',
+                f'  * extension[=].valueString = "{_fsh_escape(arm_desc)}"',
+            ]
 
     # Objectives
     for obj in objectives:
@@ -842,6 +911,7 @@ def _emit_visit_fsh(
                 f'    * targetId = "{prior_name}"',
                 "    * relationship = #after",
                 f"    * offsetRange.low.value = {low_val}",
+                '    * offsetRange.low.system = "http://unitsofmeasure.org"',
                 "    * offsetRange.low.code = #d",
             ]
     else:
@@ -1182,6 +1252,7 @@ def emit_protocol_design(
                     f'    * targetId = "{prior_name}"',
                     "    * relationship = #after",
                     f"    * offsetRange.low.value = {low_val}",
+                    '    * offsetRange.low.system = "http://unitsofmeasure.org"',
                     "    * offsetRange.low.code = #d",
                 ]
         else:
@@ -1556,7 +1627,7 @@ def emit_visit_activity_actions(
                 ptype_map = {
                     "patient": "#patient",
                     "practitioner": "#practitioner",
-                    "related-person": "#related-person",
+                    "related-person": "#relatedperson",
                 }
                 ptype = ptype_map.get(respondent_type, "#practitioner")
                 action_lines.append(f"  * participant[+].type = {ptype}")
