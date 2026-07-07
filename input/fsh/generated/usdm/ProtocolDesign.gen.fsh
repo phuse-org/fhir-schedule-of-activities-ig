@@ -39,7 +39,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * description = "completion of screening activities / Subject identifier"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -78,7 +78,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -116,7 +116,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * description = "Radomized / subject has connection of ambulatory ECG machine removed"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -173,7 +173,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -230,7 +230,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -287,7 +287,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -344,7 +344,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -401,7 +401,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -458,7 +458,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -515,7 +515,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -572,7 +572,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
@@ -611,7 +611,7 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration

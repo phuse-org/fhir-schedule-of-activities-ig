@@ -40,7 +40,7 @@ Description: "Baseline encounter - Ambulatory ECG Removal"
     * description = "Radomized / subject has connection of ambulatory ECG machine removed"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration

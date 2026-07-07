@@ -166,7 +166,7 @@ groups:
     description: Resources generated from the USDM JSON source (DO NOT EDIT — see scripts/usdm_to_soa.py)
     resources:
     - ResearchStudy/H2Q-MC-LZZT-ResearchStudy-USDM
-    - Organization/LILLY-USDM
+    - Organization/Organization-1
     - Practitioner/Pers-001
     - Group/H2Q-MC-LZZT-ResearchStudy-Inclusion-USDM
     - Group/H2Q-MC-LZZT-ResearchStudy-Exclusion-USDM

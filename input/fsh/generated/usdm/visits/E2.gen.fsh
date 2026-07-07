@@ -41,7 +41,7 @@ Description: "Screening encounter - Ambulatory ECG Placement"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-Study-ET-14"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
