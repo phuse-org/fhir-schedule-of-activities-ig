@@ -58,6 +58,14 @@ tasks:
       - task: generate:labs
 
   # --------------------------------------------------------------------------
+  # validate — run usdm4 DDF rule validation standalone (requires usdm4)
+  # --------------------------------------------------------------------------
+  validate:
+    desc: "Validate USDM file with usdm4 DDF rules (requires: pip install usdm4)"
+    cmds:
+      - "{{.PYTHON}} scripts/usdm_validate.py {{.USDM_SRC}}"
+
+  # --------------------------------------------------------------------------
   # test — Python unit tests
   # --------------------------------------------------------------------------
   test:
