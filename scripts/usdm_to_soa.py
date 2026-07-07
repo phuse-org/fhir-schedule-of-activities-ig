@@ -10,6 +10,7 @@ Exit codes:
     1  — fatal error (unresolved id reference, unresolvable scheduledAtId, etc.)
 
 Execution order (per spec §Task F-8):
+    0. Pre-flight validation via usdm4 (optional; skipped when not installed)
     1. Load + index USDM via USDMDoc
     2. Build TimingResolver
     3. emit_research_study()  → input/fsh/generated/usdm/ResearchStudy.gen.fsh
@@ -24,7 +25,8 @@ All output directories are created if they do not exist.
 All generated FSH carries a DO NOT EDIT header.
 CSV outputs are idempotent on unchanged inputs.
 
-stdlib only — no third-party imports.
+stdlib only for core pipeline — usdm4 is an optional dependency used for
+pre-flight validation only; the pipeline runs without it.
 """
 
 import os
@@ -37,6 +39,8 @@ import pathlib
 _SCRIPTS_DIR = pathlib.Path(__file__).resolve().parent
 if str(_SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS_DIR))
+
+from usdm_loader import load as _usdm_load, USDM4_AVAILABLE  # noqa: E402
 
 from usdm_reader import USDMDoc, emit_research_study, emit_eligibility_groups  # noqa: E402
 from usdm_reader import emit_visit_plan_definitions, emit_protocol_design       # noqa: E402
@@ -69,6 +73,11 @@ def run(usdm_path: str) -> int:
     Execute the full pipeline.  Returns 0 on success, 1 on fatal error.
     Warnings are printed to stderr but do not affect the exit code.
     """
+    # Step 0: pre-flight validation (optional — graceful no-op without usdm4)
+    if USDM4_AVAILABLE:
+        print("Validating USDM (usdm4) …", flush=True)
+    _usdm_load(usdm_path, validate=True, strict=False)
+
     print(f"Loading USDM: {usdm_path}", flush=True)
     try:
         doc = USDMDoc(usdm_path)

@@ -241,6 +241,116 @@ def _fsh_escape(text: str) -> str:
     return text
 
 
+def _study_prefix(doc: "USDMDoc") -> str:
+    """
+    Derive a stable FHIR-id-safe prefix for this study's generated resources.
+
+    Priority:
+      1. First sponsor-scoped studyIdentifier text (e.g. "H2Q-MC-LZZT")
+      2. study.name slugified
+      3. Fallback "usdm-study"
+
+    The result is used as a prefix for all FHIR instance ids emitted by the
+    pipeline (ResearchStudy, PlanDefinitions, Groups, …).
+    """
+    sv = doc.study_version()
+    identifiers = sv.get("studyIdentifiers", [])
+    # Prefer the sponsor-scoped identifier (not the registry/CT.gov one)
+    # Sponsor org has type code C70793; registry org has a different type.
+    # We detect the sponsor identifier as the one whose scopeId resolves to a
+    # Sponsor-typed organisation.
+    sponsor = doc.sponsor_org()
+    sponsor_id = sponsor.get("id", "") if sponsor else ""
+
+    for si in identifiers:
+        scope = si.get("scopeId", "")
+        text = (si.get("text", "") or "").strip()
+        if scope == sponsor_id and text:
+            return _slugify_id(text)
+
+    # Fall back: first identifier with text
+    for si in identifiers:
+        text = (si.get("text", "") or "").strip()
+        if text:
+            return _slugify_id(text)
+
+    # Last resort: slugify study name
+    name = (doc.study().get("name", "") or "").strip()
+    if name:
+        return _slugify_id(name)
+
+    return "usdm-study"
+
+
+def _slugify_id(text: str) -> str:
+    """Convert free text to a FHIR-id-safe slug (alphanumeric + hyphens, ≤64 chars)."""
+    import re as _re
+    slug = _re.sub(r"[^a-zA-Z0-9]+", "-", text).strip("-")
+    return slug[:64]
+
+
+def _sponsor_org_fhir_id(doc: "USDMDoc") -> str:
+    """
+    Derive the FHIR instance id for the sponsor Organization from the USDM.
+
+    Uses the sponsor org's own USDM id with underscores replaced by hyphens,
+    falling back to "<study-prefix>-sponsor".
+    """
+    sponsor = doc.sponsor_org()
+    if sponsor:
+        raw_id = sponsor.get("id", "")
+        if raw_id:
+            return raw_id.replace("_", "-")
+    return f"{_study_prefix(doc)}-sponsor"
+
+
+def _et_encounter(doc: "USDMDoc") -> tuple[str, str]:
+    """
+    Detect the Early Termination encounter from the USDM schedule timelines.
+
+    Strategy:
+      1. Find a ScheduleTimeline whose name contains "Early Termination"
+         (case-insensitive).
+      2. Return the id and label of the first encounter referenced by that
+         timeline's ScheduledActivityInstances.
+      3. If no dedicated ET timeline exists, fall back to any encounter whose
+         label contains "early termination" or "termination".
+      4. Final fallback: return ("<study-prefix>-ET", "Early Termination").
+
+    Returns (fhir_instance_id, label).
+    """
+    import re as _re
+    sd = doc.study_design()
+    prefix = _study_prefix(doc)
+
+    # Build encounter lookup by USDM id
+    enc_by_id = {e["id"]: e for e in doc.encounters()}
+
+    # Strategy 1: timeline named "Early Termination …"
+    for tl in sd.get("scheduleTimelines", []):
+        tl_name = tl.get("name", "") or ""
+        if _re.search(r"early.terminat", tl_name, _re.IGNORECASE):
+            for si in tl.get("scheduledInstances", []):
+                enc_id = si.get("encounterId")
+                if enc_id and enc_id in enc_by_id:
+                    enc = enc_by_id[enc_id]
+                    enc_name = enc.get("name", enc_id)
+                    enc_label = enc.get("label", "Early Termination")
+                    fhir_id = f"{prefix}-{enc_name}-USDM"
+                    return fhir_id, enc_label
+
+    # Strategy 2: encounter label contains "early termination"
+    for enc in doc.encounters():
+        label = enc.get("label", "") or ""
+        if _re.search(r"early.terminat", label, _re.IGNORECASE):
+            enc_name = enc.get("name", enc["id"])
+            fhir_id = f"{prefix}-{enc_name}-USDM"
+            return fhir_id, label
+
+    # Fallback
+    return f"{prefix}-ET", "Early Termination"
+
+
 # ---------------------------------------------------------------------------
 # emit_research_study
 # ---------------------------------------------------------------------------
@@ -261,12 +371,32 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
     sv = doc.study_version()
     sd = doc.study_design()
 
+    # Derive study-specific ids once, used throughout this function
+    prefix = _study_prefix(doc)
+    sponsor_fhir_id = _sponsor_org_fhir_id(doc)
+    et_encounter_id, et_encounter_label = _et_encounter(doc)
+
+    # Identifier scope → system: map each scopeId to a FHIR system URI
+    # by resolving the org type from the USDM index.
+    _idx = doc._index  # USDMDoc flat index
+    def _id_system_for_scope(scope_id: str) -> str:
+        org = _idx.get(scope_id, {})
+        type_obj = org.get("type") or {}
+        std = type_obj.get("standardCode") or type_obj
+        type_code = std.get("code", "")
+        # C70793 = Sponsor → sponsor study-id system
+        # CT.gov registry org type varies; detect by name heuristic
+        org_name_lc = (org.get("name", "") or "").lower()
+        if "ct" in org_name_lc or "clinicaltrial" in org_name_lc or "registry" in org_name_lc:
+            return "https://clinicaltrials.gov/show/"
+        return "http://example.org/study-id"
+
     # ------------------------------------------------------------------
     # Sponsor Organization
     # ------------------------------------------------------------------
     sponsor = doc.sponsor_org()
     if sponsor:
-        org_id = "LILLY-USDM"
+        org_id = sponsor_fhir_id
         org_name = sponsor.get("name", "")
         org_label = sponsor.get("label", "")
         org_identifier = sponsor.get("identifier", "")
@@ -388,7 +518,7 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
         "// ============================================================",
         "// ResearchStudy (USDM-derived)",
         "// ============================================================",
-        "Instance: H2Q-MC-LZZT-ResearchStudy-USDM",
+        f"Instance: {prefix}-ResearchStudy-USDM",
         "InstanceOf: ResearchStudy",
         f'Title: "{_fsh_escape(study_title)}"',
         "Usage: #example",
@@ -402,23 +532,20 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
     for si in identifiers:
         si_text = si.get("text", "")
         si_scope = si.get("scopeId", "")
-        # Determine system from scope org type
-        si_system = "http://example.org/study-id"
-        if si_scope == "Organization_2":
-            si_system = "https://clinicaltrials.gov/show/"
+        si_system = _id_system_for_scope(si_scope)
         lines += [
             "* identifier[+]",
             f'  * value = "{_fsh_escape(si_text)}"',
             f'  * system = "{si_system}"',
         ]
-        if si_scope and si_scope == "Organization_1" and sponsor:
-            lines.append(f'  * assigner = Reference(Organization/LILLY-USDM)')
+        if si_scope and si_scope == sponsor.get("id", "") and sponsor:
+            lines.append(f'  * assigner = Reference(Organization/{sponsor_fhir_id})')
 
     # Sponsor reference
     if sponsor:
         lines += [
             "* associatedParty[+]",
-            "  * party = Reference(Organization/LILLY-USDM)",
+            f"  * party = Reference(Organization/{sponsor_fhir_id})",
             '  * role = #lead-sponsor',
         ]
 
@@ -505,6 +632,12 @@ def emit_research_study(doc: USDMDoc, out_path: str) -> None:
                 '  * extension[+].url = "' + _EXT_ARM_DESC + '"',
                 f'  * extension[=].valueString = "{_fsh_escape(arm_desc)}"',
             ]
+
+    # Protocol reference — points to the USDM-derived master ProtocolDesign
+    # PlanDefinition which is emitted by emit_protocol_design().
+    lines += [
+        "* protocol[+] = Reference(PlanDefinition/{prefix}-ProtocolDesign-USDM)".replace("{prefix}", prefix),
+    ]
 
     # Objectives
     for obj in objectives:
@@ -595,6 +728,7 @@ def emit_eligibility_groups(doc: USDMDoc, out_path: str) -> None:
     H2Q-MC-LZZT-ResearchStudy-Eligibility.fsh exactly.
     """
     sd = doc.study_design()
+    prefix = _study_prefix(doc)
     population = sd.get("population") or {}
     criterion_ids: list = population.get("criterionIds", [])
 
@@ -662,18 +796,18 @@ def emit_eligibility_groups(doc: USDMDoc, out_path: str) -> None:
             ])
 
     _emit_group(
-        instance_id="H2Q-MC-LZZT-ResearchStudy-Inclusion-USDM",
-        title="H2Q-MC-LZZT Inclusion Criteria (USDM-derived)",
-        description="H2Q-MC-LZZT Inclusion Criteria (USDM-derived)",
+        instance_id=f"{prefix}-ResearchStudy-Inclusion-USDM",
+        title=f"{prefix} Inclusion Criteria (USDM-derived)",
+        description=f"{prefix} Inclusion Criteria (USDM-derived)",
         criteria=inclusion,
         exclude_flag=False,
         first=True,
     )
 
     _emit_group(
-        instance_id="H2Q-MC-LZZT-ResearchStudy-Exclusion-USDM",
-        title="H2Q-MC-LZZT Exclusion Criteria (USDM-derived)",
-        description="H2Q-MC-LZZT Exclusion Criteria (USDM-derived)",
+        instance_id=f"{prefix}-ResearchStudy-Exclusion-USDM",
+        title=f"{prefix} Exclusion Criteria (USDM-derived)",
+        description=f"{prefix} Exclusion Criteria (USDM-derived)",
         criteria=exclusion,
         exclude_flag=True,
         first=False,
@@ -779,10 +913,9 @@ def _emit_transition_sub_action(
         lines.append(f'    * description = "{_fsh_escape(description)}"')
 
 
-# ET encounter id used for early-withdrawal edges (hand-authored; no USDM Encounter object).
-_ET_ENCOUNTER_ID = "H2Q-MC-LZZT-Study-ET-14"
-_ET_ENCOUNTER_LABEL = "Early Termination"
-
+# ---------------------------------------------------------------------------
+# Visit FSH emitter
+# ---------------------------------------------------------------------------
 
 def _emit_visit_fsh(
     encounter: dict,
@@ -793,6 +926,9 @@ def _emit_visit_fsh(
     transition_start_rule: Optional[dict],
     transition_end_rule: Optional[dict],
     include_et_edge: bool = True,
+    study_prefix: str = "usdm-study",
+    et_encounter_id: str = "",
+    et_encounter_label: str = "Early Termination",
 ) -> list[str]:
     """
     Emit FSH lines for a single visit PlanDefinition.
@@ -812,7 +948,7 @@ def _emit_visit_fsh(
     enc_name = encounter.get("name", "")
     enc_label = encounter.get("label", "")
     enc_desc = encounter.get("description", "") or enc_label
-    instance_id = f"H2Q-MC-LZZT-{enc_name}-USDM"
+    instance_id = f"{study_prefix}-{enc_name}-USDM"
 
     subtype = _derive_subtype(enc_label)
     repeat_allowed = "true" if subtype == "retreatment" else "false"
@@ -955,8 +1091,8 @@ def _emit_visit_fsh(
     if include_et_edge:
         _emit_transition_sub_action(
             lines,
-            target_id=_ET_ENCOUNTER_ID,
-            target_label=_ET_ENCOUNTER_LABEL,
+            target_id=et_encounter_id,
+            target_label=et_encounter_label,
             transition_type="early-termination",
             delay_str="0",
             window_lower_days=None,
@@ -1012,6 +1148,10 @@ def emit_visit_plan_definitions(
     # Build id-keyed maps
     enc_by_id: dict[str, dict] = {e["id"]: e for e in encounters}
 
+    # Derive study-wide constants once
+    prefix = _study_prefix(doc)
+    et_id, et_label = _et_encounter(doc)
+
     # Build next-encounter map: enc_id → enc whose previousId == enc_id
     next_by_id: dict[str, dict] = {}
     for enc in encounters:
@@ -1057,6 +1197,9 @@ def emit_visit_plan_definitions(
             transition_start_rule=transition_start_rule,
             transition_end_rule=transition_end_rule,
             include_et_edge=include_et_edge,
+            study_prefix=prefix,
+            et_encounter_id=et_id,
+            et_encounter_label=et_label,
         )
 
         out_path = os.path.join(visits_dir, f"{enc_name}.gen.fsh")
@@ -1152,6 +1295,10 @@ def emit_protocol_design(
     ordered = _ordered_encounters(doc)
     enc_by_id: dict = {e["id"]: e for e in doc.encounters()}
 
+    # Derive study-wide constants
+    prefix = _study_prefix(doc)
+    et_id, et_label = _et_encounter(doc)
+
     # Build next-encounter map
     next_by_id: dict = {}
     for enc in doc.encounters():
@@ -1164,10 +1311,10 @@ def emit_protocol_design(
         "// ============================================================",
         "// ProtocolDesign PlanDefinition (USDM-derived)",
         "// ============================================================",
-        "Instance: H2Q-MC-LZZT-ProtocolDesign-USDM",
+        f"Instance: {prefix}-ProtocolDesign-USDM",
         "InstanceOf: SOAPlanDefinition",
         "Usage: #definition",
-        'Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"',
+        f'Title: "{_fsh_escape(prefix)} Protocol Design (USDM-derived)"',
         "* status = #active",
         f'* version = "{_fsh_escape(study_version_id)}"',
     ]
@@ -1177,7 +1324,7 @@ def emit_protocol_design(
         enc_name = encounter.get("name", "")
         enc_label = encounter.get("label", "")
         enc_desc = encounter.get("description", "") or enc_label
-        instance_ref = f"H2Q-MC-LZZT-{enc_name}-USDM"
+        instance_ref = f"{prefix}-{enc_name}-USDM"
 
         scheduled_at_id = encounter.get("scheduledAtId")
         timing = timing_resolver.resolve(scheduled_at_id)
@@ -1290,8 +1437,8 @@ def emit_protocol_design(
         if include_et_edge:
             _emit_transition_sub_action(
                 lines,
-                target_id=_ET_ENCOUNTER_ID,
-                target_label=_ET_ENCOUNTER_LABEL,
+                target_id=et_id,
+                target_label=et_label,
                 transition_type="early-termination",
                 delay_str="0",
                 window_lower_days=None,

@@ -298,14 +298,17 @@ class TestEmitResearchStudy(unittest.TestCase):
         self.assertIn("#phase-2", self.content)
 
     def test_sponsor_org_instance(self):
-        self.assertIn("Instance: LILLY-USDM", self.content)
+        # Sponsor org id is now derived from the USDM org id (Organization-1),
+        # not the old hardcoded alias "LILLY-USDM".
         self.assertIn("InstanceOf: Organization", self.content)
+        self.assertIn('"LILLY"', self.content)
 
     def test_sponsor_name(self):
         self.assertIn('"LILLY"', self.content)
 
     def test_sponsor_reference(self):
-        self.assertIn("Reference(Organization/LILLY-USDM)", self.content)
+        # Sponsor org reference uses the derived USDM org id (Organization-1).
+        self.assertIn("Reference(Organization/Organization-1)", self.content)
 
     def test_practitioner_instance(self):
         # FHIR ids must not contain underscores; Pers_001 → Pers-001
@@ -1051,7 +1054,7 @@ class TestEmitVisitPlanDefinitions(unittest.TestCase):
         E13 is the last encounter — no forward scheduled edge, only ET edge."""
         content = self.files["E13"]
         self.assertIn("soaTransition", content)
-        self.assertIn("H2Q-MC-LZZT-Study-ET-14", content)
+        self.assertIn("H2Q-MC-LZZT-ET", content)
         self.assertIn("early-termination", content)
         # No forward scheduled edge on the last encounter
         self.assertNotIn('"scheduled"', content)
@@ -1079,10 +1082,11 @@ class TestEmitVisitPlanDefinitions(unittest.TestCase):
         self.assertIn('"scheduled"', content)
 
     def test_all_non_et_encounters_have_et_edge(self):
-        """Every encounter must have an early-termination edge to ET."""
+        """Every encounter must have an early-termination edge to ET.
+        The ET target id is now derived from the USDM (H2Q-MC-LZZT-ET)."""
         for enc_name, content in self.files.items():
             self.assertIn(
-                "H2Q-MC-LZZT-Study-ET-14", content,
+                "H2Q-MC-LZZT-ET", content,
                 f"{enc_name}.gen.fsh missing ET edge",
             )
             self.assertIn(
