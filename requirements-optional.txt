@@ -1,0 +1,11 @@
+# Optional dependencies — not required for the core pipeline but unlock
+# additional capabilities when installed.
+#
+# Install with:
+#   pip install -r requirements-optional.txt
+#
+# usdm4 — USDM v4 Pydantic model + DDF rule validation library
+#   Enables pre-flight validation in usdm_to_soa.py (step 0) and the
+#   standalone 'task validate' command.
+#   Homepage: https://pypi.org/project/usdm4/
+usdm4>=0.28.0
