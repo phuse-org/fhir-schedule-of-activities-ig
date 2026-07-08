@@ -2,7 +2,7 @@ Instance: H2Q-MC-LZZT-Bundle-4
 InstanceOf: Bundle
 Usage: #example
 Title: "H2Q-MC-LZZT Bundle 4 — USDM-derived resources"
-Description: "Fourth Deliverable — all resources generated from the USDM source (CDISC_Pilot_Study_v4_FIXED.json). Includes the ResearchStudy, visit PlanDefinitions with soaTimepoint timing and soaTransition graph edges, all ActivityDefinitions, ObservationDefinitions, Questionnaires, and eligibility Groups."
+Description: "Fourth Deliverable — all resources generated from the USDM source."
 * type = #transaction
 
 // ── Organization ------------------------------------------------
@@ -645,3 +645,18 @@ Description: "Fourth Deliverable — all resources generated from the USDM sourc
 * entry[=].fullUrl = "PlanDefinition/H2Q-MC-LZZT-E13-USDM"
 * entry[=].request.method = #PUT
 * entry[=].request.url = "PlanDefinition/H2Q-MC-LZZT-E13-USDM"
+
+* entry[+].resource = H2Q-MC-LZZT-ET-USDM
+* entry[=].fullUrl = "PlanDefinition/H2Q-MC-LZZT-ET-USDM"
+* entry[=].request.method = #PUT
+* entry[=].request.url = "PlanDefinition/H2Q-MC-LZZT-ET-USDM"
+
+* entry[+].resource = H2Q-MC-LZZT-AE-USDM
+* entry[=].fullUrl = "PlanDefinition/H2Q-MC-LZZT-AE-USDM"
+* entry[=].request.method = #PUT
+* entry[=].request.url = "PlanDefinition/H2Q-MC-LZZT-AE-USDM"
+
+* entry[+].resource = H2Q-MC-LZZT-RT-USDM
+* entry[=].fullUrl = "PlanDefinition/H2Q-MC-LZZT-RT-USDM"
+* entry[=].request.method = #PUT
+* entry[=].request.url = "PlanDefinition/H2Q-MC-LZZT-RT-USDM"

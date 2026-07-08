@@ -36,17 +36,15 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * value = 0
           * code = #d
           * system = "http://unitsofmeasure.org"
-    * description = "completion of screening activities / Subject identifier"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E2"
   * title = "Screening 2"
@@ -78,14 +76,22 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "E3"
+      * extension[soaTargetName].valueString = "Baseline"
+      * extension[soaTransitionType].valueString = "scheduled"
+      * extension[soaTransitionDelay].valueDuration
+        * value = 0
+        * code = #d
+        * system = "http://unitsofmeasure.org"
+  * action[+]
+    * extension[soaTransition]
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E3"
   * title = "Baseline"
@@ -113,17 +119,15 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * value = 3
           * code = #d
           * system = "http://unitsofmeasure.org"
-    * description = "Radomized / subject has connection of ambulatory ECG machine removed"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E4"
   * title = "Week 2"
@@ -173,14 +177,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E5"
   * title = "Week 4"
@@ -230,14 +233,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E7"
   * title = "Week 6"
@@ -287,14 +289,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E8"
   * title = "Week 8"
@@ -344,14 +345,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E9"
   * title = "Week 12"
@@ -401,14 +401,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E10"
   * title = "Week 16"
@@ -458,14 +457,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E11"
   * title = "Week 20"
@@ -515,14 +513,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E12"
   * title = "Week 24"
@@ -572,14 +569,13 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 * action[+]
   * id = "E13"
   * title = "Week 26"
@@ -611,11 +607,19 @@ Title: "H2Q-MC-LZZT Protocol Design (USDM-derived)"
     * offsetRange.low.code = #d
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
+
+* action[+]
+  * id = "H2Q-MC-LZZT-ET-USDM"
+  * title = "Early Termination"
+  * definitionUri = "PlanDefinition/H2Q-MC-LZZT-ET-USDM"
+* action[+]
+  * id = "H2Q-MC-LZZT-RT-USDM"
+  * title = "Retrieval Visit (Week 24)"
+  * definitionUri = "PlanDefinition/H2Q-MC-LZZT-RT-USDM"

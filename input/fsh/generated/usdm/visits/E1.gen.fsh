@@ -37,17 +37,15 @@ Description: "Screening encounter"
           * value = 0
           * code = #d
           * system = "http://unitsofmeasure.org"
-    * description = "completion of screening activities / Subject identifier"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 
 // --- Activity actions for E1 ---
 * action[+]

@@ -45,6 +45,7 @@ from usdm_loader import load as _usdm_load, USDM4_AVAILABLE  # noqa: E402
 from usdm_reader import USDMDoc, emit_research_study, emit_eligibility_groups  # noqa: E402
 from usdm_reader import emit_visit_plan_definitions, emit_protocol_design       # noqa: E402
 from usdm_reader import emit_activity_stubs, emit_visit_activity_actions        # noqa: E402
+from usdm_reader import emit_non_main_timeline_plans                            # noqa: E402
 from usdm_timing import TimingResolver                                           # noqa: E402
 from usdm_catalogs import (                                                      # noqa: E402
     extract_activity_catalog, write_activity_catalog,
@@ -115,7 +116,7 @@ def run(usdm_path: str) -> int:
         print(f"FATAL: emit_eligibility_groups failed: {exc}", file=sys.stderr)
         return 1
 
-    # Step 5: Visit PlanDefinitions
+    # Step 5: Visit PlanDefinitions (main timeline encounters)
     print(f"  → {fsh_out}/visits/*.gen.fsh", flush=True)
     try:
         written = emit_visit_plan_definitions(doc, fsh_out, timing_resolver=resolver)
@@ -133,7 +134,7 @@ def run(usdm_path: str) -> int:
         print(f"FATAL: emit_protocol_design failed: {exc}", file=sys.stderr)
         return 1
 
-    # Step 7: Activity catalog
+    # Step 7: Activity catalog (needed by Steps 7b and 11)
     act_path = os.path.join(data_out, "usdm-activity-catalog.csv")
     print(f"  → {act_path}", flush=True)
     try:
@@ -141,6 +142,15 @@ def run(usdm_path: str) -> int:
         write_activity_catalog(act_rows, act_path)
     except Exception as exc:
         print(f"FATAL: extract_activity_catalog failed: {exc}", file=sys.stderr)
+        return 1
+
+    # Step 7b: Non-main timeline PlanDefinitions (ET, AE, etc.)
+    try:
+        extra = emit_non_main_timeline_plans(doc, fsh_out, act_path)
+        if extra:
+            print(f"     {len(extra)} non-main timeline file(s) written", flush=True)
+    except Exception as exc:
+        print(f"FATAL: emit_non_main_timeline_plans failed: {exc}", file=sys.stderr)
         return 1
 
     # Step 8: Observation catalog

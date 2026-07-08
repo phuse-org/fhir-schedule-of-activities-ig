@@ -1258,9 +1258,9 @@ class TestEmitProtocolDesign(unittest.TestCase):
     # -----------------------------------------------------------------------
 
     def test_twelve_encounter_actions(self):
-        """12 encounter actions → 12 definitionUri lines."""
+        """12 main-timeline encounter actions + ET + RT = 14 definitionUri lines."""
         count = self.content.count("* definitionUri = ")
-        self.assertEqual(count, 12)
+        self.assertEqual(count, 14)
 
     def test_all_encounter_definition_uris_present(self):
         for enc_name in ("E1", "E2", "E3", "E4", "E5", "E7",
@@ -1671,12 +1671,14 @@ class TestEmitVisitActivityActions(unittest.TestCase):
         self.assertIn("Vital Signs and Temperature", self.files["E4"])
 
     def test_e13_has_tts_acceptability_survey(self):
-        """TTS Acceptability Survey appears only at E13."""
+        """TTS Acceptability Survey appears at E13 (and ET, per USDM).
+        It must NOT appear at any regular week visit (E4–E12)."""
         self.assertIn("TTS Acceptability Survey", self.files["E13"])
-        for enc, content in self.files.items():
-            if enc != "E13":
-                self.assertNotIn("tts-acceptability-survey", content,
-                                 f"TTS survey unexpectedly in {enc}")
+        # TTS also correctly appears in ET — skip that file
+        regular_visits = [e for e in self.files if e not in ("E13", "ET")]
+        for enc in regular_visits:
+            self.assertNotIn("tts-acceptability-survey", self.files[enc],
+                             f"TTS survey unexpectedly in {enc}")
 
     def test_activity_actions_have_related_action(self):
         """Every activity action block must have a relatedAction targeting the visit."""

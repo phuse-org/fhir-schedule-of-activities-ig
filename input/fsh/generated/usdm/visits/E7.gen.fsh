@@ -59,14 +59,13 @@ Description: "Day 42"
           * system = "http://unitsofmeasure.org"
   * action[+]
     * extension[soaTransition]
-      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET"
+      * extension[soaTargetId].valueString = "H2Q-MC-LZZT-ET-USDM"
       * extension[soaTargetName].valueString = "Early Termination"
       * extension[soaTransitionType].valueString = "early-termination"
       * extension[soaTransitionDelay].valueDuration
         * value = 0
         * code = #d
         * system = "http://unitsofmeasure.org"
-    * description = "Early withdrawal or adverse event"
 
 // --- Activity actions for E7 ---
 * action[+]

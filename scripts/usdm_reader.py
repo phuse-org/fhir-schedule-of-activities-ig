@@ -12,6 +12,10 @@ import re
 import html
 from pathlib import Path
 from typing import Optional
+import logging 
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
 # CDISC → FHIR phase code mapping
@@ -309,13 +313,12 @@ def _et_encounter(doc: "USDMDoc") -> tuple[str, str]:
     Detect the Early Termination encounter from the USDM schedule timelines.
 
     Strategy:
-      1. Find a ScheduleTimeline whose name contains "Early Termination"
-         (case-insensitive).
-      2. Return the id and label of the first encounter referenced by that
-         timeline's ScheduledActivityInstances.
-      3. If no dedicated ET timeline exists, fall back to any encounter whose
-         label contains "early termination" or "termination".
-      4. Final fallback: return ("<study-prefix>-ET", "Early Termination").
+      1a. Find a ScheduleTimeline whose name contains "Early Termination"
+          and whose SAI has an encounterId → use that encounter.
+      1b. Same timeline but SAI has no encounterId (common in USDM v4) →
+          use the SAI name directly as the FHIR instance id suffix.
+      2.  Fall back to any encounter whose label contains "early termination".
+      3.  Final fallback: return ("<study-prefix>-ET", "Early Termination").
 
     Returns (fhir_instance_id, label).
     """
@@ -326,18 +329,23 @@ def _et_encounter(doc: "USDMDoc") -> tuple[str, str]:
     # Build encounter lookup by USDM id
     enc_by_id = {e["id"]: e for e in doc.encounters()}
 
-    # Strategy 1: timeline named "Early Termination …"
     for tl in sd.get("scheduleTimelines", []):
         tl_name = tl.get("name", "") or ""
-        if _re.search(r"early.terminat", tl_name, _re.IGNORECASE):
-            for si in tl.get("scheduledInstances", []):
-                enc_id = si.get("encounterId")
-                if enc_id and enc_id in enc_by_id:
-                    enc = enc_by_id[enc_id]
-                    enc_name = enc.get("name", enc_id)
-                    enc_label = enc.get("label", "Early Termination")
-                    fhir_id = f"{prefix}-{enc_name}-USDM"
-                    return fhir_id, enc_label
+        if not _re.search(r"early.terminat", tl_name, _re.IGNORECASE):
+            continue
+        for si in tl.get("instances", []) or tl.get("scheduledInstances", []):
+            enc_id = si.get("encounterId")
+            if enc_id and enc_id in enc_by_id:
+                # Strategy 1a: SAI links to an Encounter object
+                enc = enc_by_id[enc_id]
+                enc_name = enc.get("name", enc_id)
+                enc_label = enc.get("label", "Early Termination")
+                return f"{prefix}-{enc_name}-USDM", enc_label
+            else:
+                # Strategy 1b: SAI has no encounterId — use SAI name as suffix
+                sai_name = si.get("name", si["id"])
+                sai_label = si.get("label", "Early Termination")
+                return f"{prefix}-{sai_name}-USDM", sai_label
 
     # Strategy 2: encounter label contains "early termination"
     for enc in doc.encounters():
@@ -347,7 +355,7 @@ def _et_encounter(doc: "USDMDoc") -> tuple[str, str]:
             fhir_id = f"{prefix}-{enc_name}-USDM"
             return fhir_id, label
 
-    # Fallback
+    # Final fallback
     return f"{prefix}-ET", "Early Termination"
 
 
@@ -909,8 +917,8 @@ def _emit_transition_sub_action(
             "          * code = #d",
             '          * system = "http://unitsofmeasure.org"',
         ]
-    if description:
-        lines.append(f'    * description = "{_fsh_escape(description)}"')
+    # if description:
+    #     lines.append(f'    * description = "{_fsh_escape(description)}"')
 
 
 # ---------------------------------------------------------------------------
@@ -1058,11 +1066,23 @@ def _emit_visit_fsh(
 
     # ---- soaTransition sub-actions: forward graph edges ----
 
-    # 1. Forward "scheduled" edge → next encounter in the main sequence
-    if next_encounter is not None and next_timing is not None:
+    # 1. Forward "scheduled" edge → next encounter in the main sequence.
+    # When next_timing is None the next encounter is an anchor (e.g. Baseline)
+    # with no fixed delay — emit the edge with delay=0 and no window so the
+    # graph remains connected.  The transition description is still populated
+    # from the transition rules.
+    if next_encounter is not None:
         next_name = next_encounter.get("name", "")
         next_label = next_encounter.get("label", "")
-        delay_str = _fmt_days(next_timing.planned_day_value)
+        if next_timing is not None:
+            delay_str = _fmt_days(next_timing.planned_day_value)
+            window_lower = next_timing.window_lower_days
+            window_upper = next_timing.window_upper_days
+        else:
+            # Anchor target — no scheduled delay in the USDM
+            delay_str = "0"
+            window_lower = None
+            window_upper = None
 
         # Transition description from this encounter's end-rule / next's start-rule
         rule_texts: list[str] = []
@@ -1082,11 +1102,10 @@ def _emit_visit_fsh(
             target_label=next_label,
             transition_type="scheduled",
             delay_str=delay_str,
-            window_lower_days=next_timing.window_lower_days,
-            window_upper_days=next_timing.window_upper_days,
+            window_lower_days=window_lower,
+            window_upper_days=window_upper,
             description=transition_desc,
         )
-
     # 2. Early-termination edge → ET encounter (every non-ET encounter)
     if include_et_edge:
         _emit_transition_sub_action(
@@ -1257,6 +1276,152 @@ def _ordered_encounters(doc: "USDMDoc") -> list:
     return ordered
 
 
+def emit_non_main_timeline_plans(
+    doc: "USDMDoc",
+    out_dir: str,
+    activity_catalog_path: str,
+) -> list[str]:
+    """
+    Emit one PlanDefinition FSH file per non-main timeline SAI that carries
+    activityIds but has no linked Encounter object (e.g. Early Termination,
+    Adverse Event).
+
+    Each SAI produces:
+      - One visit-skeleton action with soaTimepoint (subtype derived from name)
+      - Activity actions for every activityId in the SAI
+      - An ET edge is NOT added (these nodes ARE the alternate-path destinations)
+
+    Returns a list of written file paths.
+
+    Generated ids use the pattern:  {prefix}-{sai.name}-USDM
+    e.g. H2Q-MC-LZZT-ET-USDM  for the SAI named "ET".
+    """
+    sd = doc.study_design()
+    prefix = _study_prefix(doc)
+
+    activities = _load_csv_skip_comments(activity_catalog_path)
+    act_by_id_usdm: dict = {}  # USDM Activity id → catalog row
+    # Build reverse map: USDM Activity label → catalog id
+    label_to_cat: dict = {}
+    for row in activities:
+        label_to_cat[row.get("title", "").strip()] = row["id"]
+
+    # Build flat USDM id→object index for activity lookup
+    usdm_idx = doc._index
+
+    visits_dir = os.path.join(out_dir, "visits")
+    os.makedirs(visits_dir, exist_ok=True)
+
+    written: list[str] = []
+    import re as _re_tl
+
+    for tl in sd.get("scheduleTimelines", []):
+        if tl.get("mainTimeline", False):
+            continue  # skip main timeline — handled by emit_visit_plan_definitions
+
+        # Skip sub-procedure measurement timelines (e.g. Vital Sign BP Timeline).
+        # These are not independent visit-level encounters; their activities are
+        # already scheduled via the main timeline.
+        tl_name = tl.get("name", "") or ""
+        if _re_tl.search(r"vital.sign|blood.pressure|measurement|procedure", tl_name, _re_tl.IGNORECASE):
+            continue
+
+        for si in tl.get("instances", []) or tl.get("scheduledInstances", []):
+            # Only process SAIs with activities and no linked encounter
+            act_ids = si.get("activityIds", [])
+            if not act_ids:
+                continue
+            if si.get("encounterId"):
+                continue  # already handled as a regular encounter
+
+            sai_name = si.get("name", si["id"])
+            sai_label = si.get("label", sai_name)
+            sai_desc = si.get("description", "") or sai_label
+            instance_id = f"{prefix}-{sai_name}-USDM"
+
+            subtype = _derive_subtype(sai_label)
+            repeat_allowed = "true" if subtype == "retreatment" else "false"
+
+            lines = [
+                _fsh_header(),
+                f"Instance: {instance_id}",
+                "InstanceOf: SOAPlanDefinition",
+                "Usage: #definition",
+                f'Title: "{_fsh_escape(sai_label)}"',
+                f'Description: "{_fsh_escape(sai_desc)}"',
+                "* status = #active",
+                "* action[+]",
+                f'  * id = "{sai_name}"',
+                f'  * title = "{_fsh_escape(sai_label)}"',
+                "  * extension[soaTimepoint]",
+                '    * extension[soaTimePointType].valueString = "interaction"',
+                f'    * extension[soaTimePointSubType].valueString = "{subtype}"',
+                f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}",
+            ]
+
+            # For ET-type SAIs, add a forward retreatment edge to the RT visit.
+            # The RT visit is hand-authored (absent from USDM) with id {prefix}-RT-USDM.
+            if subtype == "early-termination":
+                rt_id = f"{prefix}-RT-USDM"
+                lines += [
+                    "  * action[+]",
+                    "    * extension[soaTransition]",
+                    f'      * extension[soaTargetId].valueString = "{rt_id}"',
+                    '      * extension[soaTargetName].valueString = "Retrieval Visit (Week 24)"',
+                    '      * extension[soaTransitionType].valueString = "retreatment"',
+                    "      * extension[soaTransitionDelay].valueDuration",
+                    "        * value = 0",
+                    "        * code = #d",
+                    '        * system = "http://unitsofmeasure.org"',
+                    '    * description = "Optional retrieval visit for patients who terminated early"',
+                ]
+
+            # Activity actions
+            lines += ["", f"// --- Activity actions for {sai_name} ---"]
+            for act_usdm_id in act_ids:
+                act_obj = usdm_idx.get(act_usdm_id, {})
+                act_label = act_obj.get("label", "").strip()
+                cat_id = label_to_cat.get(act_label)
+                if cat_id is None:
+                    continue
+                cat_row = next((r for r in activities if r["id"] == cat_id), None)
+                if cat_row is None:
+                    continue
+
+                archetype = cat_row.get("archetype", "")
+                title = cat_row.get("title", cat_id)
+                respondent_type = cat_row.get("respondent_type", "") or "practitioner"
+                q_id = cat_row.get("questionnaire_id", "") or cat_id
+
+                lines.append("* action[+]")
+                lines.append(f'  * title = "{_fsh_escape(title)}"')
+                if archetype == "instrument":
+                    q_fhir_id = _questionnaire_instance_id(q_id)
+                    lines.append(f"  * definitionCanonical = Canonical({q_fhir_id})")
+                    ptype_map = {
+                        "patient": "#patient",
+                        "practitioner": "#practitioner",
+                        "related-person": "#relatedperson",
+                    }
+                    ptype = ptype_map.get(respondent_type, "#practitioner")
+                    lines += ["  * participant[+]", f"    * type = {ptype}"]
+                else:
+                    act_fhir_id = _activity_instance_id(cat_id)
+                    lines.append(f'  * definitionUri = "ActivityDefinition/{act_fhir_id}"')
+                lines += [
+                    "  * relatedAction[+]",
+                    f'    * targetId = "{sai_name}"',
+                    "    * relationship = #after",
+                ]
+
+            lines.append("")
+            out_path = os.path.join(visits_dir, f"{sai_name}.gen.fsh")
+            _write_fsh(out_path, lines)
+            written.append(out_path)
+
+    return written
+
+
 def emit_protocol_design(
     doc: "USDMDoc",
     out_path: str,
@@ -1407,11 +1572,20 @@ def emit_protocol_design(
                 f"    * extension[soaRepeatAllowed].valueBoolean = {repeat_allowed}"
             )
 
-        # Forward "scheduled" transition → next encounter
-        if next_encounter is not None and next_timing is not None:
+        # Forward "scheduled" transition → next encounter.
+        # When next_timing is None the next encounter is an anchor — emit
+        # the edge with delay=0 so the graph stays connected.
+        if next_encounter is not None:
             next_name = next_encounter.get("name", "")
             next_label = next_encounter.get("label", "")
-            delay_str = _fmt_days(next_timing.planned_day_value)
+            if next_timing is not None:
+                delay_str = _fmt_days(next_timing.planned_day_value)
+                window_lower = next_timing.window_lower_days
+                window_upper = next_timing.window_upper_days
+            else:
+                delay_str = "0"
+                window_lower = None
+                window_upper = None
             rule_texts: list = []
             if transition_end_rule:
                 rt = (transition_end_rule.get("text") or "").strip()
@@ -1428,8 +1602,8 @@ def emit_protocol_design(
                 target_label=next_label,
                 transition_type="scheduled",
                 delay_str=delay_str,
-                window_lower_days=next_timing.window_lower_days,
-                window_upper_days=next_timing.window_upper_days,
+                window_lower_days=window_lower,
+                window_upper_days=window_upper,
                 description=transition_desc,
             )
 
@@ -1446,12 +1620,26 @@ def emit_protocol_design(
                 description="Early withdrawal or adverse event",
             )
 
-    lines.append("")
+    # ET action — links to the USDM-derived ET PlanDefinition
+    lines += [
+        "",
+        "* action[+]",
+        f'  * id = "{et_id}"',
+        f'  * title = "{_fsh_escape(et_label)}"',
+        f'  * definitionUri = "PlanDefinition/{et_id}"',
+    ]
+
+    # RT action — hand-authored; absent from USDM, present as narrative only
+    rt_id = f"{prefix}-RT-USDM"
+    lines += [
+        "* action[+]",
+        f'  * id = "{rt_id}"',
+        '  * title = "Retrieval Visit (Week 24)"',
+        f'  * definitionUri = "PlanDefinition/{rt_id}"',
+        "",
+    ]
+
     _write_fsh(out_path, lines)
-
-
-# ---------------------------------------------------------------------------
-# Activity stubs + visit activity actions
 # ---------------------------------------------------------------------------
 
 import csv as _csv

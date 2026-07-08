@@ -132,9 +132,12 @@ Extension: SOATransition
 Id: soaTransition
 Title: "SoA Transition Specification"
 Description: "Specifies SoA Transition Attributes"
-// Limit the context to PlanDefinition action.action
+// Context: action.action (sub-action graph edges) and action (for symmetry with
+// content-reference recursion — action.action IS-A action in FHIR R6).
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition.action.action"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.action"
 * extension contains 
     soaTargetId 0..1 and 
     soaTargetName 0..1 and
@@ -155,5 +158,8 @@ Id:             soaPlanDefinition
 Title:          "SOA PlanDefinition"
 Description:    "Schedule of Activities PlanDefinition Extensions"
 * action.extension contains SOATimePoint named soaTimepoint 0..1
-* action.action.extension contains SOATransition named soaTransition 0..1
+// soaTransition is used on action.action sub-actions (graph-edge metadata).
+// We do not constrain action.action in the profile to avoid breaking the
+// contentReference recursion that allows action.action.description etc.
+// The extension URL is sufficient for validators to locate the StructureDefinition.
 
