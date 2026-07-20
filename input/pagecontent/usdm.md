@@ -97,3 +97,9 @@ The following USDM constructs have no direct mapping in the current SoA profiles
 
 See [`docs/superpowers/usdm-reconciliation.md`](../docs/superpowers/usdm-reconciliation.md)
 for a full reconciliation comparing USDM-derived and hand-authored values.
+
+## Mapping methodology
+
+For the underlying mapping rules, algorithms, and profile conformance targets — written
+as a stack-independent reference for anyone implementing a similar transform — see
+[USDM to FHIR SoA Mapping](usdm-mapping.html).

@@ -19,6 +19,8 @@ menu:
   Artifacts: artifacts.html
   CDISC Operational Data Model (ODM): cdisc-odm.html
   Clinical Research Profile Backlog: deltas.html
+  USDM Transform: usdm.html
+  USDM to FHIR SoA Mapping: usdm-mapping.html
   Developer Setup: developer.html
 pages:
   index.md:
@@ -33,6 +35,8 @@ pages:
     title: Clinical Research Profile Backlog
   usdm.md:
     title: USDM Transform
+  usdm-mapping.md:
+    title: USDM to FHIR SoA Mapping
 
 # filter draft resources
 resources:
