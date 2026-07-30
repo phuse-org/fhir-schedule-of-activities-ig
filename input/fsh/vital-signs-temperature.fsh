@@ -21,27 +21,27 @@ Description: "Vital signs blood pressure and heart rate (repeated)"
 
 * action[+].title = "Vital Signs"
 * action[=].definitionUri = "ActivityDefinition/VitalSigns"
-* action[=].relatedAction.actionId = "SUPINE-Timing-Delay-5"
+* action[=].relatedAction.targetId = "SUPINE-Timing-Delay-5"
 * action[=].relatedAction.relationship = #after
 
 // ST (1 mins)
 * action[+].title = "STANDING-Timing-Delay-1"
 * action[=].timingDuration = #1min
-* action[=].relatedAction.actionId = "SUPINE-Timing-Delay-5"
+* action[=].relatedAction.targetId = "SUPINE-Timing-Delay-5"
 * action[=].relatedAction.relationship = #after
 
 * action[+].title = "Vital Signs"
 * action[=].definitionUri = "ActivityDefinition/VitalSigns"
-* action[=].relatedAction.actionId = "STANDING-Timing-Delay-1"
+* action[=].relatedAction.targetId = "STANDING-Timing-Delay-1"
 * action[=].relatedAction.relationship = #after
 
 // ST (3 mins)
 * action[+].title = "STANDING-Timing-Delay-3"
 * action[=].timingDuration = #3min
-* action[=].relatedAction.actionId = "SUPINE-Timing-Delay-1"
+* action[=].relatedAction.targetId = "SUPINE-Timing-Delay-1"
 * action[=].relatedAction.relationship = #after
 
 * action[+].title = "Vital Signs"
 * action[=].definitionUri = "ActivityDefinition/VitalSigns"
-* action[=].relatedAction.actionId = "STANDING-Timing-Delay-3"
+* action[=].relatedAction.targetId = "STANDING-Timing-Delay-3"
 * action[=].relatedAction.relationship = #after

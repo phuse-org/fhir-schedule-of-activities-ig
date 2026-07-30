@@ -7,7 +7,7 @@ canonical: http://example.org/br-and-r/soa
 name: ScheduleOfActivityIG
 status: draft
 version: 0.1.1  
-fhirVersion: 4.0.1
+fhirVersion: 6.0.0-ballot3
 copyrightYear: 2020+
 releaseLabel: ci-build
 
@@ -19,6 +19,8 @@ menu:
   Artifacts: artifacts.html
   CDISC Operational Data Model (ODM): cdisc-odm.html
   Clinical Research Profile Backlog: deltas.html
+  USDM Transform: usdm.html
+  USDM to FHIR SoA Mapping: usdm-mapping.html
   Developer Setup: developer.html
 pages:
   index.md:
@@ -31,6 +33,10 @@ pages:
     title: Study Design for H2Q-MC-LZZT
   deltas.md:
     title: Clinical Research Profile Backlog
+  usdm.md:
+    title: USDM Transform
+  usdm-mapping.md:
+    title: USDM to FHIR SoA Mapping
 
 # filter draft resources
 resources:
@@ -92,7 +98,7 @@ groups:
     - ActivityDefinition/H2Q-MC-LZZT-Physical-examination
     - ActivityDefinition/H2Q-MC-LZZT-Adverse-events
     - ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned
-    - ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-TEMP
+    - ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature
     - ActivityDefinition/H2Q-MC-LZZT-Medical-History
     - ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray
     - ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test
@@ -100,7 +106,7 @@ groups:
     - ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem
     - ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat
     - ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping
-    - ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey
+    - Questionnaire/H2Q-MC-LZZT-Questionnaire-TTS-Acceptability-Survey
     - ActivityDefinition/H2Q-MC-LZZT-Visit-Date
     - ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen
     - ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol
@@ -158,3 +164,25 @@ groups:
     resources:
     - Bundle/H2Q-MC-LZZT-Bundle-1
     - Bundle/H2Q-MC-LZZT-Bundle-2
+    - Bundle/H2Q-MC-LZZT-Bundle-3
+  H2Q-MC-LZZT-USDM:
+    name: H2Q-MC-LZZT USDM-Derived Resources
+    description: Resources generated from the USDM JSON source (DO NOT EDIT — see scripts/usdm_to_soa.py)
+    resources:
+    - ResearchStudy/H2Q-MC-LZZT-ResearchStudy-USDM
+    - Organization/Organization-1
+    - Practitioner/Pers-001
+    - Group/H2Q-MC-LZZT-ResearchStudy-Inclusion-USDM
+    - Group/H2Q-MC-LZZT-ResearchStudy-Exclusion-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E1-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E2-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E3-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E4-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E5-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E7-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E8-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E9-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E10-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E11-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E12-USDM
+    - PlanDefinition/H2Q-MC-LZZT-E13-USDM

@@ -9,8 +9,8 @@ Title: "Disability Assessment for Dementia"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(DAD-Observations)
-* observationResultRequirement = Reference(DAD-Observations)
+* observationRequirement = "ObservationDefinition/DAD-Observations"
+* observationResultRequirement = "ObservationDefinition/DAD-Observations"
 
 Instance: H2Q-MC-LZZT-Medications-returned
 InstanceOf: ActivityDefinition
@@ -18,8 +18,8 @@ Description: "Planned Activity [Medications returned]"
 Usage: #example
 Title: "Medications returned"
 * status = #active
-* observationRequirement = Reference(Medications-returned-Observations)
-* observationResultRequirement = Reference(Medications-returned-Observations)
+* observationRequirement = "ObservationDefinition/Medications-returned-Observations"
+* observationResultRequirement = "ObservationDefinition/Medications-returned-Observations"
 
 Instance: H2Q-MC-LZZT-Medications-dispensed
 InstanceOf: ActivityDefinition
@@ -32,8 +32,8 @@ Title: "Medications dispensed"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Medications-dispensed-Observations)
-* observationResultRequirement = Reference(Medications-dispensed-Observations)
+* observationRequirement = "ObservationDefinition/Medications-dispensed-Observations"
+* observationResultRequirement = "ObservationDefinition/Medications-dispensed-Observations"
 
 Instance: H2Q-MC-LZZT-Ambulatory-ECG-removed
 InstanceOf: ActivityDefinition
@@ -46,8 +46,8 @@ Title: "Ambulatory ECG removed"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Ambulatory-ECG-removed-Observations)
-* observationResultRequirement = Reference(Ambulatory-ECG-removed-Observations)
+* observationRequirement = "ObservationDefinition/Ambulatory-ECG-removed-Observations"
+* observationResultRequirement = "ObservationDefinition/Ambulatory-ECG-removed-Observations"
 
 Instance: H2Q-MC-LZZT-Laboratory-Urinalysis
 InstanceOf: ActivityDefinition
@@ -60,8 +60,8 @@ Title: "Laboratory (Urinalysis)"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Laboratory-Urinalysis-Observations)
-* observationResultRequirement = Reference(Laboratory-Urinalysis-Observations)
+* observationRequirement = "ObservationDefinition/Laboratory-Urinalysis-Observations"
+* observationResultRequirement = "ObservationDefinition/Laboratory-Urinalysis-Observations"
 
 Instance: H2Q-MC-LZZT-Physical-examination
 InstanceOf: ActivityDefinition
@@ -69,8 +69,8 @@ Description: "Planned Activity [Physical examination]"
 Usage: #example
 Title: "Physical examination"
 * status = #active
-* observationRequirement = Reference(Physical-examination-Observations)
-* observationResultRequirement = Reference(Physical-examination-Observations)
+* observationRequirement = "ObservationDefinition/Physical-examination-Observations"
+* observationResultRequirement = "ObservationDefinition/Physical-examination-Observations"
 
 Instance: H2Q-MC-LZZT-Adverse-events
 InstanceOf: ActivityDefinition
@@ -83,8 +83,8 @@ Title: "Adverse events"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Adverse-events-Observations)
-* observationResultRequirement = Reference(Adverse-events-Observations)
+* observationRequirement = "ObservationDefinition/Adverse-events-Observations"
+* observationResultRequirement = "ObservationDefinition/Adverse-events-Observations"
 
 Instance: H2Q-MC-LZZT-Patient-number-assigned
 InstanceOf: ActivityDefinition
@@ -97,8 +97,8 @@ Title: "Patient number assigned"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Patient-number-assigned-Observations)
-* observationResultRequirement = Reference(Patient-number-assigned-Observations)
+* observationRequirement = "ObservationDefinition/Patient-number-assigned-Observations"
+* observationResultRequirement = "ObservationDefinition/Patient-number-assigned-Observations"
 
 Instance: H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure
 InstanceOf: PlanDefinition
@@ -124,92 +124,6 @@ Title: "Vital Signs: Heart Rate and Blood Pressure"
 * action[+].title = "Diastolic BP (after 3m standing)"
 * action[=].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING"
 
-
-Instance: H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Pulse]"
-Usage: #example
-Title: "Supine Pulse"
-* status = #active
-* identifier[+].value = "I.PULSE_SUPINE"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-
-Instance: H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Systolic BP]"
-Usage: #example
-Title: "Supine Systolic BP"
-* status = #active
-* identifier[+].value = "I.SYSBP_SUPINE"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Diastolic BP]"
-Usage: #example
-Title: "Supine Diastolic BP"
-* status = #active
-* identifier[+].value = "I.DIABP_SUPINE"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Supine Pulse]"
-Usage: #example
-Title: "Supine Pulse"
-* status = #active
-* identifier[+].value = "I.PULSE_STANDING"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Standing Systolic BP]"
-Usage: #example
-Title: "Standing Systolic BP"
-* status = #active
-* identifier[+].value = "I.SYSBP_STANDING"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Standing Diastolic BP]"
-Usage: #example
-Title: "Standing Diastolic BP"
-* status = #active
-* identifier[+].value = "I.DIABP_STANDING"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-Instance: H2Q-MC-LZZT-Vital-Signs-HEIGHT
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Height]"
-Usage: #example
-Title: "Height"
-* status = #active
-* identifier[+].value = "I.HEIGHT"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
 Instance: H2Q-MC-LZZT-Vital-Signs-Height-PD
 InstanceOf: PlanDefinition
 Description: "Planned Activity [Vital signs] - Height"
@@ -223,18 +137,6 @@ Title: "Vital signs/Height"
 * identifier[=].use = #secondary
 * action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-HEIGHT"
 * action[=].title = "Height"
-
-Instance: H2Q-MC-LZZT-Vital-Signs-WEIGHT
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Weight]"
-Usage: #example
-Title: "Weight"
-* status = #active
-* identifier[+].value = "I.WEIGHT"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
 
 Instance: H2Q-MC-LZZT-Vital-Signs-Weight-PD
 InstanceOf: PlanDefinition
@@ -250,19 +152,6 @@ Title: "Vital signs/Weight"
 * action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-WEIGHT"
 * action[=].title = "Weight"
 
-Instance: H2Q-MC-LZZT-Vital-Signs-TEMP
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [Body Temperature]"
-Usage: #example
-Title: "Weight"
-* status = #active
-* identifier[+].value = "I.TEMP"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-
-
 Instance: H2Q-MC-LZZT-Vital-Signs-Temperature-PD
 InstanceOf: PlanDefinition
 Description: "Planned Activity [Vital signs] - Temperature"
@@ -274,7 +163,7 @@ Title: "Vital signs/Temperature"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vital-Signs-TEMP"
+* action[+].definitionUri = "ActivityDefinition/H2Q-MC-LZZT-Vitalsigns-Temperature"
 * action[=].title = "Body Temperature"
 
 Instance: H2Q-MC-LZZT-Medical-History
@@ -288,8 +177,8 @@ Title: "Medical History"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Medical-History-Observations)
-* observationResultRequirement = Reference(Medical-History-Observations)
+* observationRequirement = "ObservationDefinition/Medical-History-Observations"
+* observationResultRequirement = "ObservationDefinition/Medical-History-Observations"
 
 Instance: H2Q-MC-LZZT-Chest-x-ray
 InstanceOf: ActivityDefinition
@@ -302,8 +191,8 @@ Title: "Chest x-ray"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Chest-x-ray-Observations)
-* observationResultRequirement = Reference(Chest-x-ray-Observations)
+* observationRequirement = "ObservationDefinition/Chest-x-ray-Observations"
+* observationResultRequirement = "ObservationDefinition/Chest-x-ray-Observations"
 
 Instance: H2Q-MC-LZZT-Placebo-TTS-test
 InstanceOf: ActivityDefinition
@@ -311,8 +200,8 @@ Description: "Planned Activity [Placebo TTS test]"
 Usage: #example
 Title: "Placebo TTS test"
 * status = #active
-* observationRequirement = Reference(Placebo-TTS-test-Observations)
-* observationResultRequirement = Reference(Placebo-TTS-test-Observations)
+* observationRequirement = "ObservationDefinition/Placebo-TTS-test-Observations"
+* observationResultRequirement = "ObservationDefinition/Placebo-TTS-test-Observations"
 
 Instance: H2Q-MC-LZZT-CIBIC
 InstanceOf: ActivityDefinition
@@ -325,8 +214,8 @@ Title: "Clinician's Interview-Based Impression of Change"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(CIBIC-Observations)
-* observationResultRequirement = Reference(CIBIC-Observations)
+* observationRequirement = "ObservationDefinition/CIBIC-Observations"
+* observationResultRequirement = "ObservationDefinition/CIBIC-Observations"
 
 Instance: H2Q-MC-LZZT-Laboratory-Chem
 InstanceOf: ActivityDefinition
@@ -339,8 +228,8 @@ Title: "Laboratory (Blood Chemistry)"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Laboratory-Chem-Observations)
-* observationResultRequirement = Reference(Laboratory-Chem-Observations)
+* observationRequirement = "ObservationDefinition/Laboratory-Chem-Observations"
+* observationResultRequirement = "ObservationDefinition/Laboratory-Chem-Observations"
 
 Instance: H2Q-MC-LZZT-Laboratory-Hemat
 InstanceOf: ActivityDefinition
@@ -353,8 +242,8 @@ Title: "Laboratory (Hematology)"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].use = #secondary
-* observationRequirement = Reference(Laboratory-Hemat-Observations)
-* observationResultRequirement = Reference(Laboratory-Hemat-Observations)
+* observationRequirement = "ObservationDefinition/Laboratory-Hemat-Observations"
+* observationResultRequirement = "ObservationDefinition/Laboratory-Hemat-Observations"
 
 Instance: H2Q-MC-LZZT-Apo-E-genotyping
 InstanceOf: ActivityDefinition
@@ -362,22 +251,8 @@ Description: "Planned Activity [Apo E genotyping]"
 Usage: #example
 Title: "Apo E genotyping"
 * status = #active
-* observationRequirement = Reference(Apo-E-genotyping-Observations)
-* observationResultRequirement = Reference(Apo-E-genotyping-Observations)
-
-Instance: H2Q-MC-LZZT-TTS-Acceptability-Survey
-InstanceOf: ActivityDefinition
-Description: "Planned Activity [TTS Acceptability Survey]"
-Usage: #example
-Title: "TTS Acceptability Survey"
-* status = #active
-* identifier[+].value = "F.TTSACC"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
-* identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
-* identifier[=].type.coding[0].display = "OID"
-* identifier[=].use = #secondary
-* observationRequirement = Reference(TTS-Acceptability-Survey-Observations)
-* observationResultRequirement = Reference(TTS-Acceptability-Survey-Observations)
+* observationRequirement = "ObservationDefinition/Apo-E-genotyping-Observations"
+* observationResultRequirement = "ObservationDefinition/Apo-E-genotyping-Observations"
 
 /*
 The Visit Date activity represents an initiating action with a planned event
@@ -401,8 +276,8 @@ Description: "Planned Activity [Plasma Specimen (Xanomeline)]"
 Usage: #example
 Title: "Plasma Specimen (Xanomeline)"
 * status = #active
-* observationRequirement = Reference(Plasma-Specimen-Observations)
-* observationResultRequirement = Reference(Plasma-Specimen-Observations)
+* observationRequirement = "ObservationDefinition/Plasma-Specimen-Observations"
+* observationResultRequirement = "ObservationDefinition/Plasma-Specimen-Observations"
 
 Instance: H2Q-MC-LZZT-Habits-Alcohol
 InstanceOf: ActivityDefinition
@@ -414,8 +289,8 @@ Title: "Habits - Alcohol"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Habits-Observations-Alcohol)
-* observationResultRequirement = Reference(Habits-Observations-Alcohol)
+* observationRequirement = "ObservationDefinition/Habits-Observations-Alcohol"
+* observationResultRequirement = "ObservationDefinition/Habits-Observations-Alcohol"
 
 Instance: H2Q-MC-LZZT-Habits-Caffeine
 InstanceOf: ActivityDefinition
@@ -427,8 +302,8 @@ Title: "Habits - Caffeine"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Habits-Observations-Caffeine)
-* observationResultRequirement = Reference(Habits-Observations-Caffeine)
+* observationRequirement = "ObservationDefinition/Habits-Observations-Caffeine"
+* observationResultRequirement = "ObservationDefinition/Habits-Observations-Caffeine"
 
 Instance: H2Q-MC-LZZT-Habits-Smoking
 InstanceOf: ActivityDefinition
@@ -440,8 +315,8 @@ Title: "Habits - Smoking"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Habits-Observations-Smoking)
-* observationResultRequirement = Reference(Habits-Observations-Smoking)
+* observationRequirement = "ObservationDefinition/Habits-Observations-Smoking"
+* observationResultRequirement = "ObservationDefinition/Habits-Observations-Smoking"
 
 Instance: H2Q-MC-LZZT-Hemoglobin-A1C
 InstanceOf: ActivityDefinition
@@ -450,8 +325,8 @@ Usage: #example
 Title: "Hemoglobin A1C"
 * status = #active
 // TODO: separate out
-* observationRequirement = Reference(Hemoglobin-A1C-Observations)
-* observationResultRequirement = Reference(Hemoglobin-A1C-Observations)
+* observationRequirement = "ObservationDefinition/Hemoglobin-A1C-Observations"
+* observationResultRequirement = "ObservationDefinition/Hemoglobin-A1C-Observations"
 
 Instance: H2Q-MC-LZZT-Study-drug-record
 InstanceOf: ActivityDefinition
@@ -463,8 +338,8 @@ Title: "Study drug record: Medications Dispensed/Returned: Medications Dispensed
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Study-drug-record-Observations)
-* observationResultRequirement = Reference(Study-drug-record-Observations)
+* observationRequirement = "ObservationDefinition/Study-drug-record-Observations"
+* observationResultRequirement = "ObservationDefinition/Study-drug-record-Observations"
 
 Instance: H2Q-MC-LZZT-ADAS-Cog
 InstanceOf: ActivityDefinition
@@ -476,8 +351,8 @@ Title: "ADAS-Cog"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(ADAS-Cog-Observations)
-* observationResultRequirement = Reference(ADAS-Cog-Observations)
+* observationRequirement = "ObservationDefinition/ADAS-Cog-Observations"
+* observationResultRequirement = "ObservationDefinition/ADAS-Cog-Observations"
 
 Instance: H2Q-MC-LZZT-CT-Scan
 InstanceOf: ActivityDefinition
@@ -489,8 +364,8 @@ Title: "CT Scan"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(CT-Scan-Observations)
-* observationResultRequirement = Reference(CT-Scan-Observations)
+* observationRequirement = "ObservationDefinition/CT-Scan-Observations"
+* observationResultRequirement = "ObservationDefinition/CT-Scan-Observations"
 
 Instance: H2Q-MC-LZZT-Hachinski-4
 InstanceOf: ActivityDefinition
@@ -502,8 +377,8 @@ Title: "Hachinski 4"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Hachinski-4-Observations)
-* observationResultRequirement = Reference(Hachinski-4-Observations)
+* observationRequirement = "ObservationDefinition/Hachinski-4-Observations"
+* observationResultRequirement = "ObservationDefinition/Hachinski-4-Observations"
 
 Instance: H2Q-MC-LZZT-Patient-randomized
 InstanceOf: ActivityDefinition
@@ -511,8 +386,8 @@ Description: "Planned Activity [Patient randomized]"
 Usage: #example
 Title: "Patient randomized"
 * status = #active
-* observationRequirement = Reference(Patient-randomized-Observations)
-* observationResultRequirement = Reference(Patient-randomized-Observations)
+* observationRequirement = "ObservationDefinition/Patient-randomized-Observations"
+* observationResultRequirement = "ObservationDefinition/Patient-randomized-Observations"
 
 Instance: H2Q-MC-LZZT-Ambulatory-ECG-placed
 InstanceOf: ActivityDefinition
@@ -524,8 +399,8 @@ Title: "Ambulatory ECG placed"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Ambulatory-ECG-placed-Observations)
-* observationResultRequirement = Reference(Ambulatory-ECG-placed-Observations)
+* observationRequirement = "ObservationDefinition/Ambulatory-ECG-placed-Observations"
+* observationResultRequirement = "ObservationDefinition/Ambulatory-ECG-placed-Observations"
 
 Instance: H2Q-MC-LZZT-Informed-Consent
 InstanceOf: ActivityDefinition
@@ -537,8 +412,8 @@ Title: "Informed Consent"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Informed-Consent-Observations)
-* observationResultRequirement = Reference(Informed-Consent-Observations)
+* observationRequirement = "ObservationDefinition/Informed-Consent-Observations"
+* observationResultRequirement = "ObservationDefinition/Informed-Consent-Observations"
 
 Instance: H2Q-MC-LZZT-MMSE-10-23
 InstanceOf: ActivityDefinition
@@ -550,8 +425,8 @@ Title: "MMSE 10-23"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(MMSE-10-23-Observations)
-* observationResultRequirement = Reference(MMSE-10-23-Observations)
+* observationRequirement = "ObservationDefinition/MMSE-10-23-Observations"
+* observationResultRequirement = "ObservationDefinition/MMSE-10-23-Observations"
 
 Instance: H2Q-MC-LZZT-Concomitant-Medications
 InstanceOf: ActivityDefinition
@@ -563,8 +438,8 @@ Title: "Concomitant Medications"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(Concomitant-Medications-Observations)
-* observationResultRequirement = Reference(Concomitant-Medications-Observations)
+* observationRequirement = "ObservationDefinition/Concomitant-Medications-Observations"
+* observationResultRequirement = "ObservationDefinition/Concomitant-Medications-Observations"
 
 Instance: H2Q-MC-LZZT-ECG
 InstanceOf: ActivityDefinition
@@ -576,8 +451,8 @@ Title: "ECG"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(ECG-Observations)
-* observationResultRequirement = Reference(ECG-Observations)
+* observationRequirement = "ObservationDefinition/ECG-Observations"
+* observationResultRequirement = "ObservationDefinition/ECG-Observations"
 
 Instance: H2Q-MC-LZZT-NPI-X
 InstanceOf: ActivityDefinition
@@ -589,6 +464,6 @@ Title: "Neuropsychiatric Inventory Questionnaire – Revised"
 * identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/FormDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
-* observationRequirement = Reference(NPI-X-Observations)
-* observationResultRequirement = Reference(NPI-X-Observations)
+* observationRequirement = "ObservationDefinition/NPI-X-Observations"
+* observationResultRequirement = "ObservationDefinition/NPI-X-Observations"
 

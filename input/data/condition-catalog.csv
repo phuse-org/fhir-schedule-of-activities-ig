@@ -1,0 +1,2 @@
+condition_id,language,expression,description
+type1-diabetes,text/fhirpath,Condition.where(code.coding.where(system='http://snomed.info/sct' and code='46635009').exists()).exists(),Type I diabetics only

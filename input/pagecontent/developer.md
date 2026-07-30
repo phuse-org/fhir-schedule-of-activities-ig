@@ -71,4 +71,54 @@
 10. Change back to the `main` branch
 11. Pull the changes from the remote
 
+## Generating activity FSH
+
+Some ActivityDefinitions and their ObservationDefinitions are generated from
+CSV definitions. Regenerate before building when the CSVs change:
+
+    python3 scripts/gen-activities.py
+
+This writes `input/fsh/generated/Measurement-Activities.gen.fsh` (DO NOT EDIT).
+Run the generator's tests with:
+
+    python3 scripts/test_gen_activities.py
+
+## Activity catalogs (pipeline)
+
+The protocol-driven pipeline is fed by three editable catalogs under `input/data/`:
+
+- `activity-catalog.csv` — one row per study activity (archetype, codes, result/questionnaire links).
+- `observation-catalog.csv` — result ObservationDefinitions; `kind=panel` rows group
+  `kind=analyte` rows via `member_of` (rendered as `ObservationDefinition.hasMember`).
+- `condition-catalog.csv` — reusable applicability expressions for conditional scheduling.
+
+Validate them before regenerating:
+
+    python3 scripts/catalog.py        # exits non-zero on any error
+    python3 scripts/test_catalog.py   # unit + integration tests
+
+## USDM transform (Phase F)
+
+To regenerate all USDM-derived FSH and catalog CSVs:
+
+    python3 scripts/usdm_to_soa.py input/usdm/CDISC_Pilot_Study_v4_FIXED.json
+
+Then rerun sushi:
+
+    sushi .
+
+The `usdm-*` catalog files are USDM extracts for review only. To promote codes into
+the live pipeline, manually merge reviewed entries into `activity-catalog.csv` and
+`observation-catalog.csv`.
+
+To regenerate the reconciliation report (USDM vs. hand-authored):
+
+    python3 scripts/usdm_reconcile.py
+
+Run all tests (catalog + USDM reader + timing + catalogs):
+
+    python3 -m unittest discover scripts/
+
+See the [USDM Transform](usdm.html) page for architecture, archetype classification,
+code enrichment policy, and known gaps.
 

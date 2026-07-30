@@ -1,0 +1,9 @@
+id,title,description,oidsys,oid,loinc,loinc_display,unit,obsdef_id
+H2Q-MC-LZZT-Vital-Signs-HEIGHT,Height,Planned Activity [Height],ItemDef,I.HEIGHT,8302-2,Body height,cm,H2Q-MC-LZZT-Vital-Signs-HEIGHT-Obs
+H2Q-MC-LZZT-Vital-Signs-WEIGHT,Weight,Planned Activity [Weight],ItemDef,I.WEIGHT,29463-7,Body weight,kg,H2Q-MC-LZZT-Vital-Signs-WEIGHT-Obs
+H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE,Supine Pulse,Planned Activity [Supine Pulse],ItemDef,I.PULSE_SUPINE,8867-4,Heart rate,/min,H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE-Obs
+H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING,Standing Pulse,Planned Activity [Standing Pulse],ItemDef,I.PULSE_STANDING,8867-4,Heart rate,/min,H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING-Obs
+H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE,Supine Systolic BP,Planned Activity [Supine Systolic BP],ItemDef,I.SYSBP_SUPINE,8461-6,Systolic blood pressure--supine,mm[Hg],H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE-Obs
+H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING,Standing Systolic BP,Planned Activity [Standing Systolic BP],ItemDef,I.SYSBP_STANDING,8460-8,Systolic blood pressure--standing,mm[Hg],H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING-Obs
+H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE,Supine Diastolic BP,Planned Activity [Supine Diastolic BP],ItemDef,I.DIABP_SUPINE,8453-3,Diastolic blood pressure--supine,mm[Hg],H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE-Obs
+H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING,Standing Diastolic BP,Planned Activity [Standing Diastolic BP],ItemDef,I.DIABP_STANDING,8454-1,Diastolic blood pressure--standing,mm[Hg],H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING-Obs

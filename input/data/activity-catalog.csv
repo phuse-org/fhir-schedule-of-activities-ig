@@ -1,0 +1,12 @@
+id,oid,oidsys,title,archetype,code_system,code,code_display,unit,result_obsdef_id,questionnaire_id,respondent_type,default_condition
+H2Q-MC-LZZT-Vital-Signs-HEIGHT,I.HEIGHT,ItemDef,Height,measurement,LOINC,8302-2,Body height,cm,H2Q-MC-LZZT-Vital-Signs-HEIGHT-Obs,,,
+H2Q-MC-LZZT-Vital-Signs-WEIGHT,I.WEIGHT,ItemDef,Weight,measurement,LOINC,29463-7,Body weight,kg,H2Q-MC-LZZT-Vital-Signs-WEIGHT-Obs,,,
+H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE,I.PULSE_SUPINE,ItemDef,Supine Pulse,measurement,LOINC,8867-4,Heart rate,/min,H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE-Obs,,,
+H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING,I.PULSE_STANDING,ItemDef,Standing Pulse,measurement,LOINC,8867-4,Heart rate,/min,H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING-Obs,,,
+H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE,I.SYSBP_SUPINE,ItemDef,Supine Systolic BP,measurement,LOINC,8461-6,Systolic blood pressure--supine,mm[Hg],H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE-Obs,,,
+H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING,I.SYSBP_STANDING,ItemDef,Standing Systolic BP,measurement,LOINC,8460-8,Systolic blood pressure--standing,mm[Hg],H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING-Obs,,,
+H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE,I.DIABP_SUPINE,ItemDef,Supine Diastolic BP,measurement,LOINC,8453-3,Diastolic blood pressure--supine,mm[Hg],H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE-Obs,,,
+H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING,I.DIABP_STANDING,ItemDef,Standing Diastolic BP,measurement,LOINC,8454-1,Diastolic blood pressure--standing,mm[Hg],H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING-Obs,,,
+H2Q-MC-LZZT-Vitalsigns-Temperature,I.TEMP,ItemDef,Temperature Measurement,measurement,LOINC,8310-5,Body temperature,Cel,Temperature-Observation-LOINC,,,
+H2Q-MC-LZZT-Laboratory-Hemat,F.LB_HEM,FormDef,Laboratory (Hematology),measurement,LOINC,58410-2,CBC panel - Blood by Automated count,,H2Q-MC-LZZT-Hematology-Panel-Obs,,,
+H2Q-MC-LZZT-TTS-Acceptability-Survey,F.TTSACC,FormDef,TTS Acceptability Survey,instrument,LOINC,71969-0,Adverse drug reaction assessment,,,H2Q-MC-LZZT-Questionnaire-TTS-Acceptability-Survey,patient,

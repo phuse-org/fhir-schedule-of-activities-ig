@@ -1,0 +1,176 @@
+version: "3"
+
+# ---------------------------------------------------------------------------
+# Variables
+# ---------------------------------------------------------------------------
+vars:
+  PUBLISHER_JAR: input-cache/publisher.jar
+  USDM_SRC: input/usdm/CDISC_Pilot_Study_v4_FIXED.json
+  PYTHON: python3
+
+# ---------------------------------------------------------------------------
+# Tasks
+# ---------------------------------------------------------------------------
+tasks:
+
+  # --- Default: show available tasks ---
+  default:
+    silent: true
+    cmds:
+      - task --list
+
+  # --------------------------------------------------------------------------
+  # generate — run both Python generation steps
+  # --------------------------------------------------------------------------
+  generate:usdm:
+    desc: "Generate FSH from USDM source (usdm_to_soa.py)"
+    sources:
+      - "{{.USDM_SRC}}"
+      - scripts/usdm_to_soa.py
+      - scripts/usdm_reader.py
+      - scripts/usdm_catalogs.py
+      - scripts/usdm_timing.py
+    generates:
+      - input/fsh/generated/usdm/ActivityStubs.gen.fsh
+      - input/fsh/generated/usdm/ProtocolDesign.gen.fsh
+      - input/fsh/generated/usdm/ResearchStudy.gen.fsh
+      - input/data/usdm-activity-catalog.csv
+      - input/data/usdm-observation-catalog.csv
+      - input/data/usdm-soa-matrix.csv
+    cmds:
+      - "{{.PYTHON}} scripts/usdm_to_soa.py {{.USDM_SRC}}"
+
+  generate:labs:
+    desc: "Generate FSH from lab-panels.csv (lab_panels_to_fsh.py)"
+    sources:
+      - input/data/lab-panels.csv
+      - input/data/usdm-activity-catalog.csv
+      - scripts/lab_panels_to_fsh.py
+    generates:
+      - input/fsh/generated/usdm/LabPanels.gen.fsh
+    cmds:
+      - "{{.PYTHON}} scripts/lab_panels_to_fsh.py"
+
+  generate:
+    desc: "Run all generation steps (USDM + lab panels)"
+    cmds:
+      - task: generate:usdm
+      - task: generate:labs
+
+  # --------------------------------------------------------------------------
+  # validate — run usdm4 DDF rule validation standalone (requires usdm4)
+  # --------------------------------------------------------------------------
+  validate:
+    desc: "Validate USDM file with usdm4 DDF rules (requires: pip install usdm4)"
+    cmds:
+      - "{{.PYTHON}} scripts/usdm_validate.py {{.USDM_SRC}}"
+
+  # --------------------------------------------------------------------------
+  # test — Python unit tests
+  # --------------------------------------------------------------------------
+  test:
+    desc: "Run Python unit tests"
+    cmds:
+      - "{{.PYTHON}} -m unittest discover -s scripts -p 'test_*.py' -v"
+
+  # --------------------------------------------------------------------------
+  # sushi — compile FSH → FHIR JSON
+  # --------------------------------------------------------------------------
+  sushi:
+    desc: "Compile FSH to FHIR JSON with SUSHI"
+    sources:
+      - "input/fsh/**/*.fsh"
+      - sushi-config.yaml
+    generates:
+      - fsh-generated/resources/*.json
+    cmds:
+      - sushi .
+
+  # --------------------------------------------------------------------------
+  # ig — run the HL7 IG Publisher (full build)
+  # --------------------------------------------------------------------------
+  ig:
+    desc: "Run HL7 IG Publisher (full build, requires network)"
+    cmds:
+      - java -jar {{.PUBLISHER_JAR}} -ig .
+
+  ig:notx:
+    desc: "Run HL7 IG Publisher without terminology server (offline)"
+    cmds:
+      - java -jar {{.PUBLISHER_JAR}} -ig . -tx n/a
+
+  ig:nosushi:
+    desc: "Run HL7 IG Publisher skipping SUSHI (uses pre-compiled FSH JSON)"
+    cmds:
+      - java -jar {{.PUBLISHER_JAR}} -ig . -no-sushi
+
+  # --------------------------------------------------------------------------
+  # build — full pipeline: generate → test → sushi → ig
+  # --------------------------------------------------------------------------
+  build:
+    desc: "Full pipeline: generate → test → sushi → ig publisher"
+    cmds:
+      - task: generate
+      - task: test
+      - task: sushi
+      - task: ig
+
+  build:notx:
+    desc: "Full pipeline without terminology server (offline-friendly)"
+    cmds:
+      - task: generate
+      - task: test
+      - task: sushi
+      - task: ig:notx
+
+  # --------------------------------------------------------------------------
+  # ci — what CI runs (generate → test → sushi; publisher handled separately)
+  # --------------------------------------------------------------------------
+  ci:
+    desc: "CI pipeline: generate → test → sushi (no publisher)"
+    cmds:
+      - task: generate
+      - task: test
+      - task: sushi
+
+  # --------------------------------------------------------------------------
+  # update-publisher — download latest publisher.jar
+  # --------------------------------------------------------------------------
+  update-publisher:
+    desc: "Download the latest HL7 IG Publisher jar"
+    cmds:
+      - mkdir -p input-cache
+      - >
+        curl -L
+        https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar
+        -o {{.PUBLISHER_JAR}}
+
+  # --------------------------------------------------------------------------
+  # clean — remove generated artefacts
+  # --------------------------------------------------------------------------
+  clean:generated:
+    desc: "Delete generated FSH files (keeps hand-authored FSH)"
+    cmds:
+      - rm -f input/fsh/generated/usdm/*.gen.fsh
+      - rm -f input/fsh/generated/usdm/visits/*.gen.fsh
+      - rm -f input/data/usdm-activity-catalog.csv
+      - rm -f input/data/usdm-observation-catalog.csv
+      - rm -f input/data/usdm-soa-matrix.csv
+      - rm -f input/fsh/generated/usdm/LabPanels.gen.fsh
+
+  clean:sushi:
+    desc: "Delete SUSHI-compiled FHIR JSON (fsh-generated/)"
+    cmds:
+      - rm -rf fsh-generated/
+
+  clean:ig:
+    desc: "Delete IG Publisher output (output/, temp/, template/)"
+    cmds:
+      - rm -rf output/ temp/ template/
+
+  clean:
+    desc: "Delete all generated artefacts (generated FSH + sushi + ig output)"
+    cmds:
+      - task: clean:generated
+      - task: clean:sushi
+      - task: clean:ig

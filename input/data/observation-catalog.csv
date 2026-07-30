@@ -1,0 +1,14 @@
+obsdef_id,kind,member_of,code,code_display,unit,datatype
+H2Q-MC-LZZT-Vital-Signs-HEIGHT-Obs,analyte,,8302-2,Body height,cm,Quantity
+H2Q-MC-LZZT-Vital-Signs-WEIGHT-Obs,analyte,,29463-7,Body weight,kg,Quantity
+H2Q-MC-LZZT-Vital-Signs-PULSE-SUPINE-Obs,analyte,,8867-4,Heart rate,/min,Quantity
+H2Q-MC-LZZT-Vital-Signs-PULSE-STANDING-Obs,analyte,,8867-4,Heart rate,/min,Quantity
+H2Q-MC-LZZT-Vital-Signs-SYSBP-SUPINE-Obs,analyte,,8461-6,Systolic blood pressure--supine,mm[Hg],Quantity
+H2Q-MC-LZZT-Vital-Signs-SYSBP-STANDING-Obs,analyte,,8460-8,Systolic blood pressure--standing,mm[Hg],Quantity
+H2Q-MC-LZZT-Vital-Signs-DIABP-SUPINE-Obs,analyte,,8453-3,Diastolic blood pressure--supine,mm[Hg],Quantity
+H2Q-MC-LZZT-Vital-Signs-DIABP-STANDING-Obs,analyte,,8454-1,Diastolic blood pressure--standing,mm[Hg],Quantity
+Temperature-Observation-LOINC,analyte,,8310-5,Body temperature,Cel,Quantity
+H2Q-MC-LZZT-Hematology-Panel-Obs,panel,,58410-2,CBC panel - Blood by Automated count,,
+H2Q-MC-LZZT-Hematology-WBC-Obs,analyte,H2Q-MC-LZZT-Hematology-Panel-Obs,6690-2,Leukocytes,10*3/uL,Quantity
+H2Q-MC-LZZT-Hematology-HGB-Obs,analyte,H2Q-MC-LZZT-Hematology-Panel-Obs,718-7,Hemoglobin,g/dL,Quantity
+H2Q-MC-LZZT-Hematology-PLT-Obs,analyte,H2Q-MC-LZZT-Hematology-Panel-Obs,777-3,Platelets,10*3/uL,Quantity

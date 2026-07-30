@@ -1,0 +1,90 @@
+# Lab panel definitions — supplemental input for activities whose USDM BiomedicalConcepts
+# are absent or incomplete (Hematology, Chemistry, Urinalysis).
+#
+# HOW TO USE
+# ----------
+# 1. Fill in your analyte rows below (one row per test).
+# 2. Run:  python3 scripts/lab_panels_to_fsh.py
+#    This generates input/fsh/generated/usdm/LabPanels.gen.fsh
+#    containing ObservationDefinition instances for each panel and analyte.
+#
+# COLUMNS
+# -------
+# panel_id        : slug id of the parent panel (must match an activity id in
+#                   usdm-activity-catalog.csv, e.g. hematology, chemistry, uninalysis)
+# panel_title     : human-readable panel title (used for the panel ObservationDefinition)
+# panel_loinc     : LOINC code for the panel (e.g. 58410-2 for CBC panel)
+# analyte_id      : slug id for this analyte ObservationDefinition (e.g. hemoglobin)
+# analyte_title   : human-readable analyte name
+# loinc           : LOINC code for this analyte (e.g. 718-7 for Haemoglobin)
+# loinc_display   : LOINC long common name
+# unit            : UCUM unit string (e.g. g/dL, 10*3/uL, %)
+# datatype        : quantity | string | integer  (default: quantity)
+#
+# NOTES
+# -----
+# - Leave panel_loinc blank if unknown; the generator will emit a TODO comment.
+# - The panel ObservationDefinition is emitted once per unique panel_id.
+# - All analyte rows with the same panel_id get hasMember links to that panel.
+# - USDM already provides 3 Chemistry analytes (ALT, ALP, AST via BCCat_3) and
+#   4 Urinalysis analytes (ALB, CREAT, K, SODIUM via BCCat_4). Add any missing
+#   analytes here; the generator merges both sources.
+#
+panel_id,panel_title,panel_loinc,analyte_id,analyte_title,loinc,loinc_display,unit,datatype
+# --- Hematology (USDM has no BC members for Activity_20; provide full panel here) ---
+hematology,Complete Blood Count,58410-2,hemoglobin,Hemoglobin,718-7,Hemoglobin [Mass/volume] in Blood,g/dL,quantity
+hematology,Complete Blood Count,58410-2,hematocrit,Hematocrit,4544-3,Hematocrit [Volume Fraction] of Blood by Automated count,%,quantity
+hematology,Complete Blood Count,58410-2,rbc,Erythrocyte count (RBC),789-8,Erythrocytes [#/volume] in Blood by Automated count,10*6/uL,quantity
+hematology,Complete Blood Count,58410-2,mcv,Mean cell volume (MCV),787-2,MCV [Entitic volume] by Automated count,fL,quantity
+hematology,Complete Blood Count,58410-2,mch,Mean cell hemoglobin (MCH),785-6,MCH [Entitic mass] by Automated count,pg,quantity
+hematology,Complete Blood Count,58410-2,mchc,Mean cell hemoglobin concentration (MCHC),786-4,MCHC [Mass/volume] by Automated count,g/dL,quantity
+hematology,Complete Blood Count,58410-2,wbc,Leukocytes (WBC),6690-2,Leukocytes [#/volume] in Blood by Automated count,10*3/uL,quantity
+hematology,Complete Blood Count,58410-2,neutrophils_seg,"Neutrophils, segmented",770-8,Neutrophils/100 leukocytes in Blood by Automated count,%,quantity
+hematology,Complete Blood Count,58410-2,neutrophils_bands,"Neutrophils, juvenile (bands)",764-1,Neutrophils.band/100 leukocytes in Blood by Manual count,%,quantity
+hematology,Complete Blood Count,58410-2,lymphocytes,Lymphocytes,736-9,Lymphocytes/100 leukocytes in Blood by Automated count,%,quantity
+hematology,Complete Blood Count,58410-2,monocytes,Monocytes,5905-5,Monocytes/100 leukocytes in Blood by Automated count,%,quantity
+hematology,Complete Blood Count,58410-2,eosinophils,Eosinophils,713-8,Eosinophils/100 leukocytes in Blood by Automated count,%,quantity
+hematology,Complete Blood Count,58410-2,basophils,Basophils,706-2,Basophils/100 leukocytes in Blood by Automated count,%,quantity
+hematology,Complete Blood Count,58410-2,platelet,Platelet,777-3,Platelets [#/volume] in Blood by Automated count,10*3/uL,quantity
+hematology,Complete Blood Count,58410-2,cell_morphology,Cell morphology,33256-9,Cellular morphology [Interpretation] in Blood,{finding},string
+# --- Chemistry additions (USDM BCCat_3 already has ALT/ALP/AST; add remaining tests) ---
+chemistry,Biochemistry Panel,24323-8,sodium,Sodium,2951-2,Sodium [Moles/volume] in Serum or Plasma,mmol/L,quantity
+chemistry,Biochemistry Panel,24323-8,potassium,Potassium,2823-3,Potassium [Moles/volume] in Serum or Plasma,mmol/L,quantity
+chemistry,Biochemistry Panel,24323-8,bicarbonate,Bicarbonate,1963-8,Bicarbonate [Moles/volume] in Serum or Plasma,mmol/L,quantity
+chemistry,Biochemistry Panel,24323-8,chloride,Chloride,2075-0,Chloride [Moles/volume] in Serum or Plasma,mmol/L,quantity
+chemistry,Biochemistry Panel,24323-8,total_bilirubin,Total bilirubin,1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,alp,Alkaline phosphatase (ALP),6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,U/L,quantity
+chemistry,Biochemistry Panel,24323-8,ggt,Gamma-glutamyl transferase (GGT),2324-2,Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma,U/L,quantity
+chemistry,Biochemistry Panel,24323-8,alt_sgpt,Alanine transaminase (ALT/SGPT),1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,U/L,quantity
+chemistry,Biochemistry Panel,24323-8,ast_sgot,Aspartate transaminase (AST/SGOT),1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,U/L,quantity
+chemistry,Biochemistry Panel,24323-8,bun,Blood urea nitrogen (BUN),3094-0,Urea nitrogen [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,creatinine,Serum creatinine,2160-0,Creatinine [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,uric_acid,Uric acid,3084-1,Urate [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,phosphorus,Phosphorus,2777-1,Phosphate [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,calcium,Calcium,17861-6,Calcium [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,glucose_nonfasting,"Glucose, nonfasting",2345-7,Glucose [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,total_protein,Total protein,2885-2,Protein [Mass/volume] in Serum or Plasma,g/dL,quantity
+chemistry,Biochemistry Panel,24323-8,albumin,Albumin,1751-7,Albumin [Mass/volume] in Serum or Plasma,g/dL,quantity
+chemistry,Biochemistry Panel,24323-8,cholesterol,Cholesterol,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,mg/dL,quantity
+chemistry,Biochemistry Panel,24323-8,ck,Creatine kinase (CK),2157-6,Creatine kinase [Enzymatic activity/volume] in Serum or Plasma,U/L,quantity
+# --- Urinalysis additions (USDM BCCat_4 already has ALB/CREAT/K/SODIUM; add remaining tests) ---
+uninalysis,Urinalysis Panel,24356-8,color,Color,5778-6,Color of Urine,{color},string
+uninalysis,Urinalysis Panel,24356-8,specific_gravity,Specific gravity,5811-5,Specific gravity of Urine by Test strip,{SG},quantity
+uninalysis,Urinalysis Panel,24356-8,ph,pH,5803-2,pH of Urine by Test strip,pH,quantity
+uninalysis,Urinalysis Panel,24356-8,protein,Protein,5804-0,Protein [Mass/volume] in Urine by Test strip,mg/dL,quantity
+uninalysis,Urinalysis Panel,24356-8,glucose,Glucose,5792-7,Glucose [Mass/volume] in Urine by Test strip,mg/dL,quantity
+uninalysis,Urinalysis Panel,24356-8,ketones,Ketones,5797-6,Ketones [Mass/volume] in Urine by Test strip,mg/dL,quantity
+uninalysis,Urinalysis Panel,24356-8,bilirubin,Bilirubin,5770-3,Bilirubin.total [Presence] in Urine by Test strip,{presence},ordinal
+uninalysis,Urinalysis Panel,24356-8,urobilinogen,Urobilinogen,5818-0,Urobilinogen [Mass/volume] in Urine by Test strip,mg/dL,quantity
+uninalysis,Urinalysis Panel,24356-8,blood,Blood,5794-3,Hemoglobin [Presence] in Urine by Test strip,{presence},ordinal
+uninalysis,Urinalysis Panel,24356-8,nitrite,Nitrite,5802-4,Nitrite [Presence] in Urine by Test strip,{presence},ordinal
+uninalysis,Urinalysis Panel,24356-8,sediment_microscopy,Microscopic examination of sediment,11218-5,Microscopic observation [Identifier] in Urine sediment by Microscopy,{finding},string
+# --- Thyroid Function Tests ---
+thyroid,"Thyroid Function Test (Visit 1 only)",,free_thyroid_index,Free thyroid index,32215-6,Thyroxine index [Interpretation],{index},quantity
+thyroid,"Thyroid Function Test (Visit 1 only)",,t3_uptake,T3 Uptake,3053-6,Thyroxine binding globulin saturation [Mass/volume] in Serum or Plasma by Uptake test,%,quantity
+thyroid,"Thyroid Function Test (Visit 1 only)",,t4,T4,3024-7,Thyroxine [Mass/volume] in Serum or Plasma,ug/dL,quantity
+thyroid,"Thyroid Function Test (Visit 1 only)",,tsh,Thyroid-stimulating hormone (TSH),3016-3,Thyrotropin [Units/volume] in Serum or Plasma,mIU/L,quantity
+other,"Other Tests (Visit 1 only)",,folate,Folate,2284-8,Folate [Mass/volume] in Serum or Plasma,ng/mL,quantity
+other,"Other Tests (Visit 1 only)",,vitamin_b12,Vitamin B12,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma,pg/mL,quantity
+other,"Other Tests (Visit 1 only)",,syphilis_screening,Syphilis screening,20507-0,Treponema pallidum Ab [Presence] in Serum,{presence},ordinal
+other,"Other Tests (Visit 1 only)",,hba1c,Hemoglobin A1C (IDDM patients only),4548-4,Hemoglobin A1c/Hemoglobin.total in Blood,%,quantity

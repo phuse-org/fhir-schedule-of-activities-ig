@@ -1,5 +1,5 @@
 Instance: H2Q-MC-LZZT-Vitalsigns-Temperature
-InstanceOf: SOAStudyActivityDefinition
+InstanceOf: StudyActivitySoa
 Usage: #example
 Title: "Temperature Measurement"
 Description: "Temperature Measurement"
@@ -7,12 +7,15 @@ Description: "Temperature Measurement"
 * identifier[=].type = #PLAC
 * identifier[=].use = #usual
 * identifier[+].value = "I.TEMP"
-* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/StudyDef#"
+* identifier[=].system = "http://www.cdisc.org/ns/odm/v1.3/ItemDef#"
 * identifier[=].type.coding[0].system = "http://www.cdisc.org/ns/odm/v1.3#"
 * identifier[=].type.coding[0].display = "OID"
 * identifier[=].type.text = "OID"
 * identifier[=].use = #secondary
 * status = #active
+* kind = #ServiceRequest
+* intent = #plan
+* participant[+].type = #practitioner
 * code.coding[+].code = #56342008
 * code.coding[=].system = "http://snomed.info/sct"
 * code.coding[=].display = "Temperature taking (procedure)"
@@ -33,3 +36,4 @@ Description: "Temperature Measurement"
 * bodySite.coding[=].system = "http://snomed.info/sct"
 * bodySite.coding[=].display = "Tympanic membrane structure"
 
+* observationResultRequirement = "ObservationDefinition/Temperature-Observation-LOINC"
